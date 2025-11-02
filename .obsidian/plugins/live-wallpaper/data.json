@@ -1,0 +1,57 @@
+{
+  "wallpaperPath": "plugins/live-wallpaper/wallpapers/active/normal/card_after_training2.png",
+  "wallpaperType": "image",
+  "playbackSpeed": 1,
+  "Quality": false,
+  "Reposition": false,
+  "opacity": 25,
+  "zIndex": 5,
+  "blurRadius": 0,
+  "brightness": 100,
+  "HistoryPaths": [
+    {
+      "path": "plugins/live-wallpaper/wallpapers/history/card_after_training2.png",
+      "type": "image",
+      "fileName": "card_after_training2.png"
+    }
+  ],
+  "mobileBackgroundWidth": "100vw",
+  "mobileBackgroundHeight": "100vh",
+  "AdnvOpend": false,
+  "modalStyle": {
+    "effect": "blur+dim",
+    "blurRadius": 10,
+    "dimOpacity": 0.7,
+    "dimColor": "black",
+    "disableModalBg": false
+  },
+  "TextArenas": [
+    {
+      "attribute": ""
+    }
+  ],
+  "Color": "#000000",
+  "Position": "Center",
+  "PositionX": 50,
+  "PositionY": 50,
+  "Scale": 1,
+  "useObjectFit": true,
+  "INBUILD": false,
+  "SizeLimited": true,
+  "scheduledWallpapers": {
+    "wallpaperDayPaths": [],
+    "wallpaperWeekPaths": [],
+    "options": {
+      "dayNightMode": false,
+      "weekly": false,
+      "shuffle": false,
+      "dayStartTime": "08:00",
+      "nightStartTime": "20:00",
+      "intervalCheckTime": "00:10",
+      "isCustomInterval": false
+    },
+    "wallpaperDayTypes": [],
+    "wallpaperWeekTypes": []
+  },
+  "migrated": true
+}

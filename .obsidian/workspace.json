@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "871bdb72c5fe6cdc",
+    "id": "69ea04db54d32c38",
     "type": "split",
     "children": [
       {
-        "id": "72f82ac640101eab",
+        "id": "f622d95136e965b9",
         "type": "tabs",
         "children": [
           {
-            "id": "8f5317b331352a9d",
+            "id": "1a6330c96a491993",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "98de66a6351c0663",
+    "id": "eba1d5fc517e9ae6",
     "type": "split",
     "children": [
       {
-        "id": "cf0478f94847b5dd",
+        "id": "431faa8d56ba8f6f",
         "type": "tabs",
         "children": [
           {
-            "id": "77ae86e4baf1b0d6",
+            "id": "98b9aa9102ab68ec",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "76508c493194223b",
+            "id": "0b1be87c57a5d6ca",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "e3f2db4f981bc298",
+            "id": "ade18a2ef208e9e5",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,23 +78,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
-    "id": "1a41620e4400c887",
+    "id": "8e7d086a1f71da22",
     "type": "split",
     "children": [
       {
-        "id": "823e88aac6598f6e",
+        "id": "f864c72f7a3fd5e1",
         "type": "tabs",
         "children": [
           {
-            "id": "7f38dd486fe92630",
+            "id": "ea202fd7c334a594",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "选题讨论.md",
+                "file": "essential/ch6/ch6_notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "选题讨论 的反向链接列表"
+              "title": "ch6_notes 的反向链接列表"
             }
           },
           {
-            "id": "6295fd23b6c0c9a0",
+            "id": "80de39b479ddfd05",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "选题讨论.md",
+                "file": "essential/ch6/ch6_notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "选题讨论 的出链列表"
+              "title": "ch6_notes 的出链列表"
             }
           },
           {
-            "id": "255ad5fa3ed400a8",
+            "id": "d769956fbd3487cf",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,26 +137,36 @@
             }
           },
           {
-            "id": "844a7c5a05ba9d3e",
+            "id": "b9942677ef7ce279",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "选题讨论.md",
+                "file": "essential/ch7/ch7_notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "选题讨论 的大纲"
+              "title": "ch7_notes 的大纲"
+            }
+          },
+          {
+            "id": "b1cb7cb3004e9e67",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,11 +180,39 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8f5317b331352a9d",
+  "active": "1a6330c96a491993",
   "lastOpenFiles": [
-    "pictures/deb739c5296989d06b63923e67812a1c.jpg",
-    "pictures",
-    "新建文件夹",
-    "README.md"
+    "pictures/linkedlist_stack_step1.png",
+    "pictures/linkedlist_stack_step1.png.crdownload",
+    "Hello/4.数组与链表.md",
+    "Hello/5.栈与列表.md",
+    "Untitled.md",
+    "Hello/3.数据结构.md",
+    "pictures/linkedlist_common_types.png",
+    "pictures/linkedlist_common_types.png.crdownload",
+    "Hello/2.复杂度分析.md",
+    "pictures/space_types.png",
+    "pictures/space_types.png.crdownload",
+    "Hello/1.exe",
+    "Hello/1.cpp",
+    "pictures/recursion_tree.png",
+    "pictures/recursion_tree.png.crdownload",
+    "pictures/recursion_sum.png",
+    "recursion_sum.png",
+    "cs61b/course_1_notes.md",
+    "Hello",
+    "cs61b/coursecodes/src/LargerDemo.java",
+    "cs61b/coursecodes/bin/LargerDemo.class",
+    "cs61b/coursecodes/src/HelloFunctions.java",
+    "cs61b/coursecodes/README.md",
+    "essential/ch7/ch7_notes.md",
+    "consumption_category_growth_2024.png",
+    "national_consumption_pie_2024.png",
+    "urban_rural_consumption_2024.png",
+    "income_consumption_growth_2024.png",
+    "essential/ch5/enum枚举类型的使用.md",
+    "pictures/2025-10-11221022.png",
+    "essential/ch5/ch5_notes.md",
+    "essential/ch6/ch6_notes.md"
   ]
 }
