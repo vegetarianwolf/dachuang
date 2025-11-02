@@ -1,6 +1,6 @@
 {
-  "commitMessage": "笔记更新：{{date}}",
-  "autoCommitMessage": "\"笔记更新：{{date}}\"",
+  "commitMessage": "\"自动保存：{{date}}\"",
+  "autoCommitMessage": "\"\\\"自动保存：{{date}}\\\"\"",
   "commitMessageScript": "",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
   "autoSaveInterval": 2,
