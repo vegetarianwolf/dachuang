@@ -1,0 +1,949 @@
+Total databases: 37
+
+=== DB: 上市公司与子公司专利 ===
+  [MATCHED DB KEYWORD]
+  Table: {'table': 'PT_COMPANYINFO', 'tableName': '公司基本信息表(1990-2017)', 'startTime': '1990-12-31', 'endTime': '2017-12-31'}
+  Table: {'table': 'PT_APPLY', 'tableName': '专利申请情况表(1990-2017)', 'startTime': '1990-12-31', 'endTime': '2017-12-31'}
+    Matching Fields:
+      - {'field': 'Apply', 'fieldName': '专利申请', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Apply1stYr', 'fieldName': '专利申请(当年授权个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Apply2ndYr', 'fieldName': '专利申请(第二年授权个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Apply3rdYr', 'fieldName': '专利申请(第三年授权个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Apply4thYr', 'fieldName': '专利申请(第四年授权个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ApplyGrant', 'fieldName': '专利申请(授权个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ApplyTermination', 'fieldName': '专利申请(终止个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ApplyPending', 'fieldName': '专利申请(未决个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ApplyUnGrantDecided', 'fieldName': '专利申请(未授权已决个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'PT_GRANT', 'tableName': '专利授权情况表(1992-2017)', 'startTime': '1992-12-31', 'endTime': '2017-12-31'}
+    Matching Fields:
+      - {'field': 'Grants', 'fieldName': '专利授权', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'GrantAvgYears', 'fieldName': '专利授权(平均年限)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'GrantTermination', 'fieldName': '专利授权(终止个数)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'PT_TERMINATION', 'tableName': '专利终止情况表(1992-2017)', 'startTime': '1992-12-31', 'endTime': '2017-12-31'}
+    Matching Fields:
+      - {'field': 'Termination', 'fieldName': '专利终止', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TerminationAvgYears', 'fieldName': '专利终止(平均年限)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'PT_WITHDRAWDISMISS', 'tableName': '专利撤回、驳回情况表(1992-2017)', 'startTime': '1992-12-31', 'endTime': '2017-12-31'}
+    Matching Fields:
+      - {'field': 'Withdraw', 'fieldName': '专利撤回', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'WithdrawAvgYears', 'fieldName': '专利撤回(平均年限)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Dismiss', 'fieldName': '专利驳回', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DismissAvgYears', 'fieldName': '专利驳回(平均年限)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'PT_VALID', 'tableName': '专利有效情况表(1990-2017)', 'startTime': '1990-12-31', 'endTime': '2017-12-31'}
+    Matching Fields:
+      - {'field': 'ValidPatent', 'fieldName': '有效专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+
+=== DB: 上市公司人物特征 ===
+
+=== DB: 上市公司贷款 ===
+
+=== DB: 专利被引用 ===
+  [MATCHED DB KEYWORD]
+  Table: {'table': 'PCT_Cited', 'tableName': '上市公司及其子公司授权专利被引用信息表', 'startTime': '1992-01-01', 'endTime': '2023-12-31'}
+    Matching Fields:
+      - {'field': 'Agency', 'fieldName': '专利代理机构', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Patentee', 'fieldName': '专利权人', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Num_Overseas', 'fieldName': '其中被国外专利引用次数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Num_China', 'fieldName': '其中国内专利引用次数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'PCT_Citing', 'tableName': '引用专利信息表', 'startTime': '2000-02-02', 'endTime': '2024-02-14'}
+    Matching Fields:
+      - {'field': 'CdGrantNo', 'fieldName': '被引用专利授权公告号', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'CgPubDate', 'fieldName': '引用专利公开日期', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Date'}
+      - {'field': 'CgAppPubNo', 'fieldName': '引用专利申请公布号', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'CgPatentee', 'fieldName': '引用专利所有权人', 'fieldType': 'text', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'CgTitle', 'fieldName': '引用专利名称', 'fieldType': 'text', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'CgPrioDate', 'fieldName': '引用专利优先权日', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'PCT_CitedNumPub', 'tableName': '分年度专利被引用次数统计表', 'startTime': '2000-01-01', 'endTime': '2024-12-31'}
+
+=== DB: 专精特新企业 ===
+  [MATCHED DB KEYWORD]
+  Table: {'table': 'SRDI_EntIdentInfo', 'tableName': '专精特新企业认定情况表', 'startTime': '2013-01-01', 'endTime': '2026-12-31'}
+  Table: {'table': 'SRDI_EntNumStat', 'tableName': '专精特新企业数量统计表', 'startTime': '2013-01-01', 'endTime': '2026-12-31'}
+    Matching Fields:
+      - {'field': 'InnMinorEntNum', 'fieldName': '创新型中小企业数量', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'MinorEntNum', 'fieldName': '专精特新中小企业数量', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'SGntEntNum', 'fieldName': '专精特新“小巨人”企业数量', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'SRDI_EntInfo', 'tableName': '专精特新企业基本信息表', 'startTime': '2013-10-27', 'endTime': '2026-03-02'}
+  Table: {'table': 'SRDI_EntManagement', 'tableName': '专精特新企业主要管理人员信息表', 'startTime': '2018-02-08', 'endTime': '2026-01-20'}
+  Table: {'table': 'SRDI_EntShareholder', 'tableName': '专精特新企业主要股东情况表', 'startTime': '2018-02-08', 'endTime': '2026-01-20'}
+  Table: {'table': 'SRDI_EntSubsidiary', 'tableName': '专精特新企业附属公司情况表', 'startTime': '2018-12-07', 'endTime': '2026-01-20'}
+  Table: {'table': 'SRDI_EntMainFinIndex', 'tableName': '专精特新企业主要财务指标表', 'startTime': '2013-03-31', 'endTime': '2025-12-31'}
+  Table: {'table': 'SRDI_EntPatentInfo', 'tableName': '专精特新企业专利情况表', 'startTime': '1986-12-31', 'endTime': '2023-12-31'}
+    Matching Fields:
+      - {'field': 'Applicant', 'fieldName': '申请(专利权)人', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Type', 'fieldName': '专利类型', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'ApplicationNumber', 'fieldName': '专利申请号', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'PatentName', 'fieldName': '专利名称', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+
+=== DB: 业绩预告 ===
+
+=== DB: 企业创新 ===
+  [MATCHED DB KEYWORD]
+  Table: {'table': 'INN_RDFULLTIMEPEREQU', 'tableName': '全国R&D人员全时当量', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_RDEXPENDITURE', 'tableName': '全国R&D经费支出', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_NATSCITECOUTRES', 'tableName': '全国科技产出及成果情况', 'startTime': '1990-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'PatentAppAcc', 'fieldName': '专利申请受理数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAccInvPatent', 'fieldName': '专利申请受理数-发明专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAut', 'fieldName': '专利申请受权数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAutInvPatent', 'fieldName': '专利申请受权数-发明专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'INN_IMPEXPHIGTECPROTM', 'tableName': '高技术产品进出口及技术市场情况', 'startTime': '1990-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_SCIRESDEVORGINFO', 'tableName': '科学研究与开发机构基本情况', 'startTime': '2005-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_SCIRESDEVORGRDFTPE', 'tableName': '科学研究与开发机构R&D人员全时当量', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_SCIRESDEVORGRDEXP', 'tableName': '科学研究与开发机构R&D经费支出', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_SCIRESDEVORGRDPRS', 'tableName': '科学研究与开发机构R&D项目情况', 'startTime': '2005-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_SCIRESDEVORGRESSIT', 'tableName': '科学研究与开发机构科技产出及成果情况', 'startTime': '2002-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'PatentAppAcc', 'fieldName': '专利申请受理数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAccInvPatent', 'fieldName': '专利申请受理数-发明专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAut', 'fieldName': '专利申请受权数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAutInvPatent', 'fieldName': '专利申请受权数-发明专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'INN_COUNIVERSINFO', 'tableName': '高等学校基本情况', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_COUNIVERSRDFTPE', 'tableName': '高等学校R&D人员全时当量', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_COUNIVERSRDEXP', 'tableName': '高等学校R&D经费支出', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_COUNIVERSRDPRS', 'tableName': '高等学校R&D项目情况', 'startTime': '2005-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_COUNIVERSRESSIT', 'tableName': '高等学校科技产出及成果情况', 'startTime': '2002-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'PatentAppAcc', 'fieldName': '专利申请受理数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAccInvPatent', 'fieldName': '专利申请受理数-发明专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAut', 'fieldName': '专利申请受权数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentAppAutInvPatent', 'fieldName': '专利申请受权数-发明专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'INN_INDUSTRIALENTINFO', 'tableName': '工业企业基本情况', 'startTime': '1990-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'PatentApplication', 'fieldName': '专利申请数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentApplicationPatent', 'fieldName': '专利申请数-发明专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'EffectiveInventionPatent', 'fieldName': '有效发明专利数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'INN_ENINDENTRDFTPE', 'tableName': '按登记注册类型分R&D人员全时当量', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ENINDENTRDEXP', 'tableName': '按登记注册类型分R&D经费', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ENINDENTRDPRS', 'tableName': '按登记注册类型分R&D项目数', 'startTime': '2004-01-01', 'endTime': '2021-12-31'}
+  Table: {'table': 'INN_ENINDENTPATAPP', 'tableName': '按登记注册类型分专利申请数', 'startTime': '1996-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ENINDENTINVP', 'tableName': '按登记注册类型分发明专利数', 'startTime': '2000-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ENINDENTEFFINVP', 'tableName': '按登记注册类型分有效发明专利数', 'startTime': '2000-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ININDENTEFFINVP', 'tableName': '按行业分有效发明专利数', 'startTime': '2000-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ININDENTINVP', 'tableName': '按行业分发明专利数', 'startTime': '2000-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ININDENTPATAPP', 'tableName': '按行业分专利申请数', 'startTime': '1996-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ININDENTRDFTPE', 'tableName': '按行业分R&D人员全时当量', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ININDENTRDEXP', 'tableName': '按行业分R&D经费', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ININDENTRDPRS', 'tableName': '按行业分R&D项目数', 'startTime': '2004-01-01', 'endTime': '2022-12-31'}
+  Table: {'table': 'INN_ASINDENTRDPRS', 'tableName': '按地区规模分R&D项目数', 'startTime': '2004-01-01', 'endTime': '2021-12-31'}
+  Table: {'table': 'INN_ASINDENTRDFTPE', 'tableName': '按地区规模分R&D人员全时当量', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ASINDENTRDEXP', 'tableName': '按地区规模分R&D经费', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ASINDENTPATAPP', 'tableName': '按地区规模分R&D专利申请数', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ASINDENTEFFINVP', 'tableName': '按地区规模分R&D有效发明专利数', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ASINDENTINVP', 'tableName': '按地区规模分R&D发明专利数', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ENNEWPROITEM', 'tableName': '按登记注册类型分新产品开发项目数', 'startTime': '1996-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ENNEWPROEXP', 'tableName': '按登记注册类型分新产品开发经费支出', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ENNEWPROSALREV', 'tableName': '按登记注册类型分新产品销售收入', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ENNEWPROEXPEAR', 'tableName': '按登记注册类型分新产品出口收入', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNEWPROEXPEAR', 'tableName': '按行业分新产品出口收入', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNEWPROSALREV', 'tableName': '按行业分新产品销售收入', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNEWPROEXP', 'tableName': '按行业分新产品开发经费支出', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNEWPROITEM', 'tableName': '按行业分新产品开发项目数', 'startTime': '1996-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ASNEWPROITEM', 'tableName': '按地区分新产品开发项目数', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ASNEWPROEXP', 'tableName': '按地区分新产品开发经费支出', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ASNEWPROSALREV', 'tableName': '按地区分新产品销售收入', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_ASNEWPROEXPEAR', 'tableName': '按地区分新产品出口收入', 'startTime': '2008-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_HIGTECHINDENTINFO', 'tableName': '工业企业高技术产业基本情况', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'PatentApplication', 'fieldName': '专利申请数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'EffectiveInventionPatent', 'fieldName': '有效发明专利数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestmentAmount', 'fieldName': '投资额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'INN_PROOPEHIGTINDENT', 'tableName': '工业企业高技术产业生产经营情况', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDPROOPEHIGTECIND', 'tableName': '按行业分高技术产业生产经营情况(1995-2017)', 'startTime': '1995-01-01', 'endTime': '2017-12-31'}
+  Table: {'table': 'INN_INDHIGTECINDINSNUM', 'tableName': '按行业分高技术产业R&D机构数', 'startTime': '2003-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDHIGTECINDRDFTPE', 'tableName': '按行业分高技术产业R&D人员全时当量', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDHIGTECINDRDEXP', 'tableName': '按行业分高技术产业R&D经费支出', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDHIGTECINDRDITEM', 'tableName': '按行业分高技术产业R&D项目数', 'startTime': '2009-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDHIGTECINDRDIEXP', 'tableName': '按行业分高技术产业R&D项目经费(2009-2019)', 'startTime': '2009-01-01', 'endTime': '2019-12-31'}
+  Table: {'table': 'INN_INDNHIGTECINDITEM', 'tableName': '按行业分高技术产业新产品开发项目数', 'startTime': '2009-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNHIGTECINDEXP', 'tableName': '按行业分高技术产业新产品开发经费支出', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNHIGTECINDSALR', 'tableName': '按行业分高技术产业新产品销售收入', 'startTime': '2001-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNHIGTECINDEEXP', 'tableName': '按行业分高技术产业新产品出口收入', 'startTime': '2001-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNHIGTECINDPAPP', 'tableName': '按行业分高技术产业新产品专利申请数', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNHIGTECINDINVP', 'tableName': '按行业分高技术产业新产品发明专利数', 'startTime': '2001-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_INDNHIGTECINDEINVP', 'tableName': '按行业分高技术产业新产品有效发明专利数', 'startTime': '1995-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_HOMABRRGY', 'tableName': '国内外三种专利申请受理授权数', 'startTime': '1985-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_DAREAARGY', 'tableName': '分地区国内三种专利申请受理授权数', 'startTime': '1985-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_FAREAARGY', 'tableName': '按国别(地区)分国外专利申请受理授权数', 'startTime': '1985-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'INN_IUIPCCLASAGY', 'tableName': '发明、实用新型申请授权按IPC大类的分类统计表(年)', 'startTime': '1985-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'PtTyeCd', 'fieldName': '专利类型编码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'PtTye', 'fieldName': '专利类型', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+
+=== DB: 债券基本信息 ===
+
+=== DB: 债券市场交易 ===
+  Table: {'table': 'BND_SHCMainTypeHoldStruct', 'tableName': '主要券种投资者持有结构（上清所）', 'startTime': '2020-01-01', 'endTime': '2026-01-01'}
+    Matching Fields:
+      - {'field': 'InvestorType', 'fieldName': '投资者类型', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+  Table: {'table': 'BND_CCDCMainTypeHldStruc', 'tableName': '主要券种投资者持有结构（中债）', 'startTime': '2021-03-01', 'endTime': '2026-01-01'}
+    Matching Fields:
+      - {'field': 'InvestorType', 'fieldName': '投资者类型', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+  Table: {'table': 'BND_CCDCCFETSSetStatB', 'tableName': '银行间市场按投资者结算统计（中债）', 'startTime': '2021-03-01', 'endTime': '2026-01-01'}
+    Matching Fields:
+      - {'field': 'InvestorType', 'fieldName': '投资者类型', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+  Table: {'table': 'BND_SSEMainTypeHoldStruct', 'tableName': '主要券种投资者持有结构（上证）', 'startTime': '2016-07-01', 'endTime': '2026-02-01'}
+    Matching Fields:
+      - {'field': 'InvestorType', 'fieldName': '投资者类型', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'REIT', 'fieldName': '不动产投资信托', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'BND_SZSEMainTypeHldStruc', 'tableName': '主要券种投资者持有结构（深证）', 'startTime': '2019-05-01', 'endTime': '2026-02-01'}
+    Matching Fields:
+      - {'field': 'InvestorType', 'fieldName': '投资者类型', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'InnEntConvertBond', 'fieldName': '创新创业可转换债券', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'REIT', 'fieldName': '不动产投资信托', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+
+=== DB: 公募基金 ===
+  [MATCHED DB KEYWORD]
+  Table: {'table': 'FUND_MainInfo', 'tableName': '基金主体信息表', 'startTime': '1998-03-27', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'FullName', 'fieldName': '基金全称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundCompanyID', 'fieldName': '基金管理公司ID', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundCompanyName', 'fieldName': '基金管理公司名称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OverseasconsultorID', 'fieldName': '境外投资顾问ID', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Overseasconsultor', 'fieldName': '境外投资顾问', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestmentGoal', 'fieldName': '投资目标', 'fieldType': 'text', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestmentScope', 'fieldName': '投资范围', 'fieldType': 'text', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Strategy', 'fieldName': '投资策略', 'fieldType': 'longtext', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InceptionTNA', 'fieldName': '基金成立规模', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InceptionShares', 'fieldName': '基金成立时份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Fundstatus', 'fieldName': '基金状态', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundTypeID', 'fieldName': '基金运作方式ID', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundType', 'fieldName': '基金运作方式', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'CategoryID', 'fieldName': '基金类别ID', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Category', 'fieldName': '基金类别', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestmentStyle', 'fieldName': '投资风格', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'IsUmbrella', 'fieldName': '是否伞型基金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'IsIndexFund', 'fieldName': '是否指数基金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Structrued', 'fieldName': '是否分级基金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'IsInnovative', 'fieldName': '是否创新型基金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TransExplanation', 'fieldName': '基金转型说明', 'fieldType': 'longtext', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ETFCategory', 'fieldName': 'ETF基金类型', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_UnitClassInfo', 'tableName': '基金份额类别信息表', 'startTime': '1998-03-27', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'FrontendCode', 'fieldName': '基金前端代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'BackendCode', 'fieldName': '基金后端代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Expired', 'fieldName': '基金净值代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FullName', 'fieldName': '基金全称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ShortName', 'fieldName': '基金简称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'RelationCode', 'fieldName': '基金关系编码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Relation', 'fieldName': '基金关系', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TransExplanation', 'fieldName': '基金转型说明', 'fieldType': 'text', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_FundCodeInfo', 'tableName': '基金代码信息表', 'startTime': '', 'endTime': ''}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'FundCode', 'fieldName': '基金相关代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+  Table: {'table': 'Fund_Listing', 'tableName': '上市基金基本信息', 'startTime': '1998-04-07', 'endTime': '2026-03-06'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'UnitsIssuedShare', 'fieldName': '基金单位发行总份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'VerificationInstitution', 'fieldName': '基金验资机构', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'HolderNumber', 'fieldName': '基金持有人户数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_FundCompany', 'tableName': '基金管理人基本情况表', 'startTime': '2005-04-08', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'FundNUM', 'fieldName': '公司管理基金数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OpenFundNUM', 'fieldName': '公司管理开放式基金数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OpenFullName', 'fieldName': '公司管理开放式基金名称', 'fieldType': 'text', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'CloseFundNUM', 'fieldName': '公司管理封闭式基金数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'CloseFullName', 'fieldName': '公司管理封闭式基金名称', 'fieldType': 'text', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_Custodian', 'tableName': '基金托管人基本情况表', 'startTime': '2005-04-08', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'ApprovalNO', 'fieldName': '基金托管业务批准文号', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_Promoter', 'tableName': '基金发起人基本情况表', 'startTime': '1998-04-06', 'endTime': '2008-10-25'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+  Table: {'table': 'Fund_ShareholderCompany', 'tableName': '管理公司股东文件', 'startTime': '2004-11-25', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'FundCompanyID', 'fieldName': '基金管理公司ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundCompanyName', 'fieldName': '基金管理公司名称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_MainPersonnel', 'tableName': '管理公司主要人员情况表', 'startTime': '1999-07-06', 'endTime': '2026-03-03'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'FundCompanyID', 'fieldName': '基金管理公司ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundCompanyName', 'fieldName': '基金管理公司名称', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+  Table: {'table': 'Fund_FundManager', 'tableName': '基金经理文件', 'startTime': '1998-03-27', 'endTime': '2026-03-03'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'FundCompanyID', 'fieldName': '基金管理公司ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundCompanyName', 'fieldName': '基金管理公司名称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_ShareChange', 'tableName': '份额变动文件', 'startTime': '1992-03-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'EstablishDateShares', 'fieldName': '基金合同生效日总份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundSplitChangeShare', 'fieldName': '本期基金拆分变动份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_FeesChange', 'tableName': '费率变动文件', 'startTime': '2001-09-04', 'endTime': '2026-03-03'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+  Table: {'table': 'Fund_Prospectuses', 'tableName': '首次招募说明书及招募结果文件', 'startTime': '1998-07-14', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'IndividualInvestors', 'fieldName': '个人投资者认购下限', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InstitutionalInvestors', 'fieldName': '机构投资者认购下限', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InceptionTNA', 'fieldName': '设立募集期募集的基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PromoterSubscription', 'fieldName': '基金发起人认购基金单位份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_KuomuInstructions', 'tableName': '扩募说明书文件', 'startTime': '1999-11-02', 'endTime': '2002-09-07'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'Area', 'fieldName': '基金所属地区', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'BeforeRaisingshares', 'fieldName': '扩募前总基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'BeforePromoterShare', 'fieldName': '其中：扩募前基金发起人份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AfterRaisingShares', 'fieldName': '扩募后总基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AfterPromoterShare', 'fieldName': '其中：扩募后基金发起人份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DividendRatio', 'fieldName': '持有人送基金份额比率(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ParValue', 'fieldName': '基金面值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'StandardName', 'fieldName': '规范前基金名称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_ReportDate', 'tableName': '基金公告日期', 'startTime': '1998-06-30', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'EffectiveDate', 'fieldName': '基金合同生效日', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_NAV', 'tableName': '基金日净值文件', 'startTime': '1998-03-27', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'NAV', 'fieldName': '基金份额净值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AccumulativeNAV', 'fieldName': '基金份额累计净值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AchieveReturn', 'fieldName': '每万份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MillionAchieveReturn', 'fieldName': '每百万份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'HundredAchieveReturn', 'fieldName': '每百份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_Performance_Compare', 'tableName': '基金净值表现表', 'startTime': '2004-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+  Table: {'table': 'Fund_Performance_Deviation', 'tableName': '货币型基金净值偏离文件', 'startTime': '2010-12-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+  Table: {'table': 'Fund_NAV_Week', 'tableName': '基金周净值文件', 'startTime': '1998-03-26', 'endTime': '2026-03-05'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'PrvAchieveReturn', 'fieldName': '上周每万份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AchieveReturn', 'fieldName': '周每万份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_NAV_Month', 'tableName': '基金月净值文件', 'startTime': '1998-03-01', 'endTime': '2026-02-01'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'PrvAchieveReturn', 'fieldName': '上月每万份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AchieveReturn', 'fieldName': '月每万份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_NAV_Year', 'tableName': '基金年净值文件', 'startTime': '1998-01-01', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'PrvAchieveReturn', 'fieldName': '上年每万份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AchieveReturn', 'fieldName': '年每万份基金已实现收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_MKT_Quotation', 'tableName': '基金历史日行情信息表', 'startTime': '1998-04-07', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ReturnDaily', 'fieldName': '考虑现金红利基金日回报率', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SimpleReturnDaily', 'fieldName': '不考虑现金红利基金日回报率', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_MKT_QuotationWeek', 'tableName': '基金周行情信息表', 'startTime': '1998-04-09', 'endTime': '2026-03-05'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'ReturnDaily', 'fieldName': '考虑现金红利再投资的基金周回报率', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SimpleReturnDaily', 'fieldName': '不考虑现金红利再投资的基金周回报率', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_MKT_QuotationMonth', 'tableName': '基金月行情信息表', 'startTime': '1998-04-01', 'endTime': '2026-03-01'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'ReturnDaily', 'fieldName': '考虑现金红利再投资的基金月回报率', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SimpleReturnDaily', 'fieldName': '不考虑现金红利再投资的基金月回报率', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_MKT_QuotationYear', 'tableName': '基金年行情信息表', 'startTime': '1998-01-01', 'endTime': '2026-12-31'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'ReturnDaily', 'fieldName': '考虑现金红利再投资的基金年回报率', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SimpleReturnDaily', 'fieldName': '不考虑现金红利再投资的基金年回报率', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_MKTDAYRETURN', 'tableName': '基金日市场回报率文件', 'startTime': '1998-04-07', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'MarketTypeID', 'fieldName': '基金市场类型编码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MarketType', 'fieldName': '基金市场类型', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DayCalFndNum', 'fieldName': '计算日市场回报率的有效基金数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DayAveRetReinv', 'fieldName': '考虑现金红利再投资的日市场回报率(等权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DayAveRetNonReinv', 'fieldName': '不考虑现金红利再投资的日市场回报率(等权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DayWhtRetReinv', 'fieldName': '考虑现金红利再投资的日市场回报率(总市值加权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DayWhtRetNonReinv', 'fieldName': '不考虑现金红利再投资的日市场回报率(总市值加权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_MKTWEEKRETURN', 'tableName': '基金周市场回报率文件', 'startTime': '1998-04-09', 'endTime': '2026-02-26'}
+    Matching Fields:
+      - {'field': 'MarketTypeID', 'fieldName': '基金市场类型编码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MarketType', 'fieldName': '基金市场类型', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'WkFndValue', 'fieldName': '周市场基金总市值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'WkCalFndNum', 'fieldName': '计算周市场回报率的有效基金数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'WkAveRetReinv', 'fieldName': '考虑现金红利再投资的周市场回报率(等权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'WkAveRetNonReinv', 'fieldName': '不考虑现金红利再投资的周市场回报率(等权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'WkWhtRetReinv', 'fieldName': '考虑现金红利再投资的周市场回报率(总市值加权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'WkWhtRetNonReinv', 'fieldName': '不考虑现金红利再投资的周市场回报率(总市值加权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_MKTMONTHRETURN', 'tableName': '基金月市场回报率文件', 'startTime': '1998-04-30', 'endTime': '2026-02-27'}
+    Matching Fields:
+      - {'field': 'MarketTypeID', 'fieldName': '基金市场类型编码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MarketType', 'fieldName': '基金市场类型', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MthFndValue', 'fieldName': '月市场基金总市值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MthCalFndNum', 'fieldName': '计算月市场回报率的有效基金数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MthAveRetReinv', 'fieldName': '考虑现金红利再投资的月市场回报率(等权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MthAveRetNonReinv', 'fieldName': '不考虑现金红利再投资的月市场回报率(等权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MthWhtRetReinv', 'fieldName': '考虑现金红利再投资的月市场回报率(总市值加权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MthWhtRetNonReinv', 'fieldName': '不考虑现金红利再投资的月市场回报率(总市值加权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_MKTYEARRETURN', 'tableName': '基金年市场回报率文件', 'startTime': '1998-12-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'MarketTypeID', 'fieldName': '基金市场类型编码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MarketType', 'fieldName': '基金市场类型', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'YrFndValue', 'fieldName': '年市场基金总市值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'YrCalFndNum', 'fieldName': '计算年市场回报率的有效基金数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'YrAveRetReinv', 'fieldName': '考虑现金红利再投资的年市场回报率(等权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'YrAveRetNonReinv', 'fieldName': '不考虑现金红利再投资的年市场回报率(等权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'YrWhtRetReinv', 'fieldName': '考虑现金红利再投资的年市场回报率(总市值加权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'YrWhtRetNonReinv', 'fieldName': '不考虑现金红利再投资的年市场回报率(总市值加权平均法)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_INDEXRETURN', 'tableName': '基金指数文件', 'startTime': '1997-07-22', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'IndexReturn', 'fieldName': '基金指数回报率(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_FundDividend', 'tableName': '基金分配文件', 'startTime': '1999-03-29', 'endTime': '2026-03-03'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'DividendReinvestmentDate', 'fieldName': '红利转再投资日', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'RedemptionStartDate', 'fieldName': '再投资赎回起始日', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_Resolution', 'tableName': '基金拆分信息文件', 'startTime': '2005-02-17', 'endTime': '2026-02-09'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'SplitNAV_Before', 'fieldName': '拆分前基金份额净值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SharesAfterAdjust', 'fieldName': '拆分后基金份额净值调整', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SplitRatio', 'fieldName': '基金份额分拆比例', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_Portfolio_Stock', 'tableName': '股票投资明细表', 'startTime': '1998-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'InvestmentType', 'fieldName': '投资类型分类', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+  Table: {'table': 'Fund_Portfolio_Bond', 'tableName': '债券投资明细表', 'startTime': '2004-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+  Table: {'table': 'Fund_Portfolio_ABS', 'tableName': '前十名资产支持证券明细表', 'startTime': '2006-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+  Table: {'table': 'Fund_Allocation', 'tableName': '资产配置文件', 'startTime': '1998-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'Equity', 'fieldName': '权益类投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundValue', 'fieldName': '基金投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FixedIncome', 'fieldName': '固定收益类投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PreciousMetals', 'fieldName': '贵金属投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Derivative', 'fieldName': '金融衍生品投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'StructuredProduct', 'fieldName': '结构性投资产品', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_IndustryStockClass', 'tableName': '按行业分类的股票投资组合文件', 'startTime': '1998-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': None, 'ableNull': None, 'fieldKey': 'Code'}
+      - {'field': 'InvestmentType', 'fieldName': '投资类型分类', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FairValueToNAV', 'fieldName': '占基金资产净值比例', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'Fund_Ptf_BondSpe', 'tableName': '按品种分类的债券投资组合', 'startTime': '2004-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'FairValueToNAV', 'fieldName': '占基金资产净值比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_Portfolio_BondCredit', 'tableName': '按债券信用等级分类的债券投资组合', 'startTime': '2008-09-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'FairToNAV', 'fieldName': '占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_HolderStructure', 'tableName': '持有人结构文件', 'startTime': '2004-06-30', 'endTime': '2025-06-30'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'HolderNumber', 'fieldName': '基金份额持有人户数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AverageShares', 'fieldName': '平均每户持有基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalAverageShares', 'fieldName': '总产品平均每户持有基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InstitutionShares', 'fieldName': '机构投资者持有的基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InstitutionRatio', 'fieldName': '机构投资占总份额比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'IndividualShares', 'fieldName': '个人投资者持有的基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'IndividualRatio', 'fieldName': '个人投资占总份额比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PractitionersShare', 'fieldName': '基金从业人员持有基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PractitionersRatio', 'fieldName': '基金从业人员持有基金份额占总份额比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OtherShares', 'fieldName': '其他持有人持有基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalInstitutionShares', 'fieldName': '总产品机构投资者持有的基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalInstitutionRatio', 'fieldName': '总产品机构投资者持有的基金份额占总份额比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalIndividualShares', 'fieldName': '总产品个人投资者持有的基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalIndividualRatio', 'fieldName': '总产品个人投资者持有的基金份额占总份额比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalPractitionersShare', 'fieldName': '总产品基金从业人员持有基金份额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalPractitionersRatio', 'fieldName': '总产品基金从业人员持有基金份额占总份额比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'RelationCode', 'fieldName': '基金关系编码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_Portfolio_Currency', 'tableName': '货币市场基金投资组合剩余期限', 'startTime': '2010-12-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'Day30', 'fieldName': '30天以内资产占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day30Maturity397', 'fieldName': '其中：30天以内剩余存续期超过397天的浮动利率债占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day60', 'fieldName': '30天(含)-60天资产占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day60Maturity397', 'fieldName': '其中30天(含)-60天：剩余存续期超过397天的浮动利率债占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day90', 'fieldName': '60天(含)-90天资产占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day90Maturity397', 'fieldName': '其中：60天(含)-90天剩余存续期超过397天的浮动利率债占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day180', 'fieldName': '90天(含)-180天资产占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day180Maturity397', 'fieldName': '其中：90天(含)-180天剩余存续期超过397天的浮动利率债占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day397', 'fieldName': '180天(含)-397天(含)资产占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Day397Maturity397', 'fieldName': '其中：180天(含)-397天(含)剩余存续期超过397天的浮动利率债占基金资产净值的比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_TenHolders', 'tableName': '期末上市基金前十名份额持有人', 'startTime': '1998-04-03', 'endTime': '2026-02-27'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': None, 'ableNull': None, 'fieldKey': 'Code'}
+  Table: {'table': 'FUND_AREACLASS', 'tableName': '按国家或地区分类的股票及存托凭证投资分布情况', 'startTime': '2010-12-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'Proportion', 'fieldName': '占基金资产净值比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_PTF_BSSTOCK', 'tableName': '累计买卖价值超出期初基金资产净值百分之二或前20名权益投资明细', 'startTime': '2009-06-30', 'endTime': '2025-06-30'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Proportion', 'fieldName': '占基金资产净值比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_PTF_BSSTOCKTOTAL', 'tableName': '权益投资的买入成本及卖出收入情况', 'startTime': '2010-09-30', 'endTime': '2025-06-30'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+  Table: {'table': 'FUND_PTF_DER', 'tableName': '金融衍生品投资明细', 'startTime': '2010-12-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'Proportion', 'fieldName': '占基金资产净值比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_PTF_FUND', 'tableName': '基金投资明细', 'startTime': '2010-12-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'Type', 'fieldName': '基金类型', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Manager', 'fieldName': '基金管理人', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundName', 'fieldName': '基金名称', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Proportion', 'fieldName': '占基金资产净值比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_PTF_WARRANT', 'tableName': '权证投资组合明细', 'startTime': '2006-03-31', 'endTime': '2024-06-30'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'Proportion', 'fieldName': '占基金资产净值比例(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_Fin_Index', 'tableName': '基金财务指标表', 'startTime': '1998-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'TotalTNA', 'fieldName': '期末基金资产净值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'NAV', 'fieldName': '期末基金份额净值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AdjustNAV', 'fieldName': '期末还原后基金份额累计净值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ROE', 'fieldName': '本期基金净值收益率(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AccumulatedROE', 'fieldName': '累计基金净值收益率(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DistributionType', 'fieldName': '基金收益分配结转方式', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ProfitPerShare', 'fieldName': '单位基金净收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AVGProfitPerShare', 'fieldName': '加权单位基金本期净收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalAsset', 'fieldName': '期末基金资产总值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_FIN_Balance', 'tableName': '资产负债表', 'startTime': '1998-12-31', 'endTime': '2025-06-30'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'StockValue', 'fieldName': '其中:股票投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'StockCost', 'fieldName': '其中：股票投资成本', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'BondValue', 'fieldName': '其中:债券投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'BondCost', 'fieldName': '其中：债券投资成本', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundValue', 'fieldName': '其中:基金投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestmentBillValue', 'fieldName': '其中:票据投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OptionValue', 'fieldName': '其中：权证投资成本', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PreciousMetals', 'fieldName': '贵金属投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ShareCapital', 'fieldName': '实收基金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'CreditInvestment', 'fieldName': '债权投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'BondInvestment', 'fieldName': '其中：债券投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ABSInvestment', 'fieldName': '其中：资产支持证券投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OtherInvestment', 'fieldName': '其中：其他投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OtherCreditInvestment', 'fieldName': '其他债权投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OtherEquityinvestment', 'fieldName': '其他权益工具投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_FIN_Income', 'tableName': '业绩与收益分配表', 'startTime': '1998-12-31', 'endTime': '2025-06-30'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': 'Code'}
+      - {'field': 'InvestmentIncome', 'fieldName': '投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'StockInvestmentIncome', 'fieldName': '其中：股票投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'BondInvestmentIncome', 'fieldName': '其中：债券投资收益/(损失)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ABSInvestmentIncome', 'fieldName': '其中：资产支持证券投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundInvestmentIncome', 'fieldName': '其中：基金投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundDividend', 'fieldName': '其中：基金分红收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'BillInvestmentIncome', 'fieldName': '其中：票据投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OptionInvestmentIncome', 'fieldName': '其中：权证投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OtherInvestmentIncome', 'fieldName': '其中：其他投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PreciousMetalsIncome', 'fieldName': '贵金属投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'Fund_FIN_EquityChange', 'tableName': '基金所有者权益', 'startTime': '1998-12-31', 'endTime': '2025-06-30'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'BeginningEquity', 'fieldName': '期初所有者权益(基金净值)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OperatingActivity', 'fieldName': '本期经营活动产生的基金净值变动数(本期净利润)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ShareChange', 'fieldName': '本期基金份额交易产生的基金净值变动数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SubscriptionAmount', 'fieldName': '基金申购款', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'RedemptionAmount', 'fieldName': '基金赎回款', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ProfitDistribution', 'fieldName': '本期向基金份额持有人分配利润产生的基金净值变动数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'EndingEquity', 'fieldName': '期末所有者权益(基金净值)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PreEndingEquity', 'fieldName': '上期期末净资产（基金净值）', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_PURREDLIS', 'tableName': 'ETF基金申购赎回清单', 'startTime': '2011-01-04', 'endTime': '2026-03-03'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'ShortName', 'fieldName': '基金简称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Category', 'fieldName': '基金类型', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'NAV', 'fieldName': '基金份额净值', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PchasCei', 'fieldName': '当天累计可申购的基金份额上限', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'RedeeCei', 'fieldName': '当天累计可赎回的基金份额上限', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_CONSTSEC', 'tableName': 'ETF基金成分证券信息', 'startTime': '2011-01-04', 'endTime': '2026-03-03'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'ShortName', 'fieldName': '基金简称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_ETFMARTRA', 'tableName': 'ETF融资融券交易明细表', 'startTime': '2011-12-05', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+      - {'field': 'ShortName', 'fieldName': '基金简称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'FUND_PurchRedChg', 'tableName': '基金申购赎回状态变更表', 'startTime': '2015-04-10', 'endTime': '2027-01-04'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Code'}
+  Table: {'table': 'Fund_MKInfoStaDay', 'tableName': '基金市场概况统计(日)', 'startTime': '2010-01-04', 'endTime': '2026-03-03'}
+    Matching Fields:
+      - {'field': 'CategoryID', 'fieldName': '基金类型编号', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Category', 'fieldName': '基金类型', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'SymbolNum', 'fieldName': '基金代码数量', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundNum', 'fieldName': '基金数量', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'TotalFundSHARES', 'fieldName': '基金总份额', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'TotalFundNAV', 'fieldName': '基金总资产净值', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'Fund_MKInfoStaMonth', 'tableName': '基金市场规模统计(月)', 'startTime': '2010-01-01', 'endTime': '2026-03-01'}
+    Matching Fields:
+      - {'field': 'CategoryID', 'fieldName': '基金类型编号', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Category', 'fieldName': '基金类型', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'SymbolNum', 'fieldName': '基金代码数量', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundNum', 'fieldName': '基金数量', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'TotalFundSHARES', 'fieldName': '基金总份额', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'TotalFundNAV', 'fieldName': '基金总资产净值', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'Fund_MKHolderStru', 'tableName': '市场整体持有人结构', 'startTime': '2010-06-30', 'endTime': '2025-06-30'}
+    Matching Fields:
+      - {'field': 'CategoryID', 'fieldName': '基金类型编号', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Category', 'fieldName': '基金类型', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'TotalInstShares', 'fieldName': '机构投资者持有总份额', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'TotalIndividShares', 'fieldName': '个人投资者持有总份额', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'Fund_MKShareChange', 'tableName': '基金市场份额统计', 'startTime': '2010-03-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'CategoryID', 'fieldName': '基金类型编号', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Category', 'fieldName': '基金类型', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'FUND_ClassInfoChange', 'tableName': '基金基本属性变更表', 'startTime': '2005-02-23', 'endTime': '2026-03-06'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'FUND_ApprChgRegi', 'tableName': '基金募集申请核准进度公示表(变更注册)', 'startTime': '2015-05-29', 'endTime': '2026-02-09'}
+    Matching Fields:
+      - {'field': 'FundCompanyName', 'fieldName': '基金管理人', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundCompanyNameID', 'fieldName': '基金管理人ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Custodian', 'fieldName': '基金托管人', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'CustodianID', 'fieldName': '基金托管人ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Fundid', 'fieldName': '基金ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'FUND_Approved', 'tableName': '基金募集申请核准进度公示表', 'startTime': '2015-05-04', 'endTime': '2026-02-27'}
+    Matching Fields:
+      - {'field': 'FundCompanyName', 'fieldName': '基金管理人', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundCompanyNameID', 'fieldName': '基金管理人ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Custodian', 'fieldName': '基金托管人', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'CustodianID', 'fieldName': '基金托管人ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Trustee', 'fieldName': '基金信托人', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Agent', 'fieldName': '基金代理人', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Fundid', 'fieldName': '基金ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'Fund_Meetings', 'tableName': '基金持有人大会', 'startTime': '2003-07-30', 'endTime': '2026-03-02'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'MasterFundCode', 'fieldName': '基金主代码', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'Fund_SusptInfo', 'tableName': '基金停复牌信息表', 'startTime': '2013-01-07', 'endTime': '2026-03-03'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'ShortName', 'fieldName': '基金简称', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'FUND_ListedFdScale', 'tableName': '上市基金规模统计(日)', 'startTime': '2012-01-04', 'endTime': '2026-02-27'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '基金ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundClassID', 'fieldName': '基金份额类别ID', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'Symbol', 'fieldName': '基金代码', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'ShortName', 'fieldName': '基金简称', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+      - {'field': 'FundMarketSize', 'fieldName': '基金规模', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'FUND_HeavStkHldSta', 'tableName': '基金重仓持股统计表', 'startTime': '1998-01-01', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundsNumber', 'fieldName': '基金家数', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'FUND_InduAllocaSta', 'tableName': '基金行业配置统计表', 'startTime': '2001-01-01', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundsNumber', 'fieldName': '基金家数', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+  Table: {'table': 'FUND_AllocationSta', 'tableName': '基金资产配置统计表', 'startTime': '1998-01-01', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'Proportion', 'fieldName': '占基金总值比', 'fieldType': None, 'ableNull': None, 'fieldKey': ''}
+
+=== DB: 关联交易 ===
+
+=== DB: 分析师预测 ===
+
+=== DB: 发债企业财报 ===
+
+=== DB: 增发配股 ===
+
+=== DB: 天使投资 ===
+  [MATCHED DB KEYWORD]
+  Table: {'table': 'AIV_SMEsBasicInfo', 'tableName': '中小企业基本信息表(1860-2012)', 'startTime': '', 'endTime': ''}
+  Table: {'table': 'AIV_SMEsBas', 'tableName': '中小企业资产负债表(1998-2012)', 'startTime': '1998-12-31', 'endTime': '2012-12-31'}
+    Matching Fields:
+      - {'field': 'A001102', 'fieldName': '短期投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'A001201', 'fieldName': '长期投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'A00120110', 'fieldName': '其中：长期债券投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'A00120120', 'fieldName': '其中：长期股权投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'AIV_SMEsIS', 'tableName': '中小企业利润表(1998-2012)', 'startTime': '1998-12-31', 'endTime': '2012-12-31'}
+    Matching Fields:
+      - {'field': 'B001301', 'fieldName': '投资收益', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'B00160020', 'fieldName': '其中：无法收回的长期债券投资损失', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'B00160030', 'fieldName': '其中：无法收回的长期股权投资损失', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'AIV_SMEsCFS', 'tableName': '中小企业现金流量表(2005-2007)', 'startTime': '2005-12-31', 'endTime': '2007-12-31'}
+    Matching Fields:
+      - {'field': 'C002001', 'fieldName': '收回短期投资、长期债券投资和长期股权投资收到的现金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'C002002', 'fieldName': '取得投资收益收到的现金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'C002004', 'fieldName': '收到的其他与投资活动有关的现金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'C0021', 'fieldName': '投资活动现金流入小计', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'C002005', 'fieldName': '短期投资、长期债券投资和长期股权投资支付的现金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'C002007', 'fieldName': '支付其他与投资活动有关的现金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'C0022', 'fieldName': '投资活动现金流出小计', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'C002', 'fieldName': '投资活动产生的现金流量净额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'C003002', 'fieldName': '吸收投资者投资收到的现金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'AIV_InvInstitutionInfo', 'tableName': '天使投资机构基本信息表(1831-2014)', 'startTime': '', 'endTime': ''}
+  Table: {'table': 'AIV_StrategyInfo', 'tableName': '天使投资机构投资策略信息表(2014-2014)', 'startTime': '', 'endTime': ''}
+    Matching Fields:
+      - {'field': 'District', 'fieldName': '投资地区', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Stage', 'fieldName': '投资阶段', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Standard', 'fieldName': '投资标准', 'fieldType': 'longtext', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Field', 'fieldName': '投资领域', 'fieldType': 'longtext', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Industry', 'fieldName': '投资行业', 'fieldType': 'longtext', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'AIV_InvestorInfo', 'tableName': '天使投资人基本信息表(2019-2019)', 'startTime': '', 'endTime': ''}
+    Matching Fields:
+      - {'field': 'InvestorID', 'fieldName': '投资人ID', 'fieldType': 'decimal', 'ableNull': 'NO', 'fieldKey': ''}
+  Table: {'table': 'AIV_CaseInfo', 'tableName': '天使投资案例信息表(1994-2013)', 'startTime': '1994-03-00', 'endTime': '2013-07-04'}
+    Matching Fields:
+      - {'field': 'InvestDate', 'fieldName': '投资时间', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': 'Date'}
+      - {'field': 'InvCurrencyCode', 'fieldName': '投资金额货币代码', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestAmount', 'fieldName': '投资金额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestNum', 'fieldName': '投资轮次', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'AIV_Innovation', 'tableName': '天使投资创新创业项目表(2013-2014)', 'startTime': '', 'endTime': ''}
+  Table: {'table': 'AIV_MentorInfo', 'tableName': '天使投资导师基本信息表(2013-2013)', 'startTime': '', 'endTime': ''}
+  Table: {'table': 'AIV_Policies', 'tableName': '天使投资政策法规表(1989-2015)', 'startTime': '1989-03-06', 'endTime': '2015-10-21'}
+
+=== DB: 对外担保 ===
+
+=== DB: 并购重组 ===
+  [No Tables Found or Returned None]
+
+=== DB: 影子银行 ===
+  Table: {'table': 'SBK_FPR_INSTTY', 'tableName': '不同投资者类型理财产品发行募集情况(年度)(2013-2018)', 'startTime': '2013-01-01', 'endTime': '2018-12-31'}
+  Table: {'table': 'SBK_FPB_INVETY', 'tableName': '不同投资者类型理财产品余额情况(年度)(2013-2018)', 'startTime': '2013-01-01', 'endTime': '2018-12-31'}
+  Table: {'table': 'SBK_BFP_IVSTDISBY', 'tableName': '中国银行理财产品投资资产分布情况(年度)', 'startTime': '2013-01-01', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'InvestTypeCode', 'fieldName': '投资类别编码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'InvestType', 'fieldName': '投资类别', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestTypeRatio', 'fieldName': '投资类别占比(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'SBK_FPI_NONSTANASSY', 'tableName': '理财产品投资非标资产情况(年度)(2014-2015)', 'startTime': '2014-01-01', 'endTime': '2015-12-31'}
+    Matching Fields:
+      - {'field': 'InvestmentBnc', 'fieldName': '投资余额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InvestmentBncRatio', 'fieldName': '投资余额占比(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'SBK_FPI_KEYMONITAY', 'tableName': '理财资金投资重点监控领域情况(年度)(2013-2015)', 'startTime': '2013-01-01', 'endTime': '2015-12-31'}
+  Table: {'table': 'SBK_FPCF_INSTTY', 'tableName': '不同投资者类型理财产品兑付收益情况(年度)(2013-2016)', 'startTime': '2013-01-01', 'endTime': '2016-12-31'}
+  Table: {'table': 'SBK_FPCF_INSTTANNYLDY', 'tableName': '不同投资者类型理财产品兑付年化收益率(年度)(2014-2015)', 'startTime': '2014-01-01', 'endTime': '2015-12-31'}
+  Table: {'table': 'SBK_FPBR_INSTTY', 'tableName': '不同投资者类型理财产品银行端收益实现情况(年度)(2014-2015)', 'startTime': '2014-01-01', 'endTime': '2015-12-31'}
+  Table: {'table': 'SBK_PFLIVSTQ', 'tableName': '证券投资信托情况表(季度)', 'startTime': '2010-03-01', 'endTime': '2025-06-01'}
+    Matching Fields:
+      - {'field': 'PortfolioInvestment', 'fieldName': '证券投资信托额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundBalance', 'fieldName': '基金余额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundBalanceRatio', 'fieldName': '基金余额占比(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PortfolioInvestmentBnc', 'fieldName': '组合投资余额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PortfolioIvstBncRatio', 'fieldName': '组合投资余额占比(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TstPEBnc', 'fieldName': '私募基金合作余额', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TstPEBncRatio', 'fieldName': '私募基金合作余额占比(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'SBK_NETLNINVCLASS', 'tableName': '网贷投资人分级(2014-2016)', 'startTime': '2014-01-01', 'endTime': '2016-12-31'}
+    Matching Fields:
+      - {'field': 'InvestmentRange', 'fieldName': '投资数额区间', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'InvestorNumRatio', 'fieldName': '投资人数占比(%)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+
+=== DB: 投资者关系 ===
+  [MATCHED DB KEYWORD]
+  Table: {'table': 'IRM_RESEARCHINFO', 'tableName': '调研情况基本信息表', 'startTime': '2012-07-09', 'endTime': '2026-03-01'}
+  Table: {'table': 'IRM_INSTITUTION', 'tableName': '调研情况机构关联表', 'startTime': '', 'endTime': ''}
+  Table: {'table': 'IRM_ACTIVERECORD', 'tableName': '投资者关系活动记录表', 'startTime': '2011-04-22', 'endTime': '2026-03-01'}
+    Matching Fields:
+      - {'field': 'Researcher', 'fieldName': '投资调研者', 'fieldType': 'longtext', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'IRM_MEETINGMINUTES', 'tableName': '调研问答纪要表', 'startTime': '2011-04-22', 'endTime': '2026-03-01'}
+    Matching Fields:
+      - {'field': 'Question', 'fieldName': '投资者提问', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'IRM_INSTITUTIONCLASS', 'tableName': '调研机构分类明细表', 'startTime': '2011-04-22', 'endTime': '2026-03-01'}
+  Table: {'table': 'IRM_RESEARCHSTATISTICS', 'tableName': '调研情况统计表', 'startTime': '2011-04-22', 'endTime': '2026-03-01'}
+
+=== DB: 数字经济 ===
+  Table: {'table': 'DM_IndHigTecPatentY', 'tableName': '分行业高技术产业专利情况(年)', 'startTime': '2011-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'PatentApplication', 'fieldName': '专利申请数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentApplicationPatent', 'fieldName': '发明专利申请数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'EffectiveInventionPatent', 'fieldName': '有效发明专利数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'DM_AreaInduFixedInvestY', 'tableName': '各地区分行业全社会固定资产投资额(年)(1950-2017)', 'startTime': '1950-01-01', 'endTime': '2017-12-31'}
+  Table: {'table': 'DM_AreaInduFixExFarmY', 'tableName': '各地区分行业固定资产投资额(不含农户)(年)(2002-2017)', 'startTime': '2002-01-01', 'endTime': '2017-12-31'}
+  Table: {'table': 'DM_AreaInduUrbanFixedNew', 'tableName': '各地区分行业新增固定资产投资额(年)(2003-2017)', 'startTime': '2003-01-01', 'endTime': '2017-12-31'}
+  Table: {'table': 'DM_AreaInduFixExFarmGY', 'tableName': '各地区分行业固定资产投资(不含农户)同比增长率(年)', 'startTime': '2018-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'DM_IndEntDesSizePatentsY', 'tableName': '规模以上工业企业专利情况(年)', 'startTime': '2004-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'PatentApplication', 'fieldName': '专利申请数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'PatentApplicationPatent', 'fieldName': '发明专利申请数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'EffectiveInventionPatent', 'fieldName': '有效发明专利数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'DM_AreaIndEntDsSzInnoActY', 'tableName': '各地区规模以上企业创新活动情况(年)', 'startTime': '2016-01-01', 'endTime': '2024-12-31'}
+    Matching Fields:
+      - {'field': 'DvlpInnActivityEnterprise', 'fieldName': '开展创新活动企业数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'RealizeInnEnterprise', 'fieldName': '实现创新企业数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FourRealizeInnEnterprise', 'fieldName': '同时实现四种创新企业数', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'DvlpInnActEnterpriseRatio', 'fieldName': '开展创新活动企业占全部企业比例', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'RealizeInnEnterpriseRatio', 'fieldName': '实现创新企业占全部企业比例', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FourReaInnEnterpriseRatio', 'fieldName': '同时实现四种创新企业占全部企业比例', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'DM_DigEcLstdComPtntApplY', 'tableName': '数字经济上市公司专利申请获得情况(年)', 'startTime': '2007-12-31', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'Patents', 'fieldName': '专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'Invention', 'fieldName': '发明专利', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'DM_ManageDiInnClassIndexY', 'tableName': '管理层数字创新导向分类指标表（年）', 'startTime': '2007-01-01', 'endTime': '2024-12-31'}
+  Table: {'table': 'DM_ManageDiInnIndexStaY', 'tableName': '管理层数字创新导向指标统计表', 'startTime': '2007-01-01', 'endTime': '2024-12-31'}
+
+=== DB: 机构投资者 ===
+  [MATCHED DB KEYWORD]
+  Table: {'table': 'INI_HolderSystematics', 'tableName': '机构持股分类统计表', 'startTime': '1998-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundHoldShares', 'fieldName': '基金持股数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundHoldProportion', 'fieldName': '基金持股比例(相对总股本)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'QFIIHoldShares', 'fieldName': '合格境外投资者持股数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'QFIIHoldProportion', 'fieldName': '合格境外投资者持股比例(相对总股本)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SecurityFundHoldShares', 'fieldName': '社保基金持股数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SecurityFundHoldProportion', 'fieldName': '社保基金持股比例(相对总股本)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'TotalHoldShares', 'fieldName': '机构投资者持股数量', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InsInvestorProp', 'fieldName': '机构投资者持股比例(相对总股本)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FundHoldProportion1', 'fieldName': '基金持股比例(相对流通A股)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'QFIIHoldProportion1', 'fieldName': '合格境外投资者持股比例(相对流通A股)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'SecurityFundHProportion1', 'fieldName': '社保基金持股比例(相对流通A股)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'InsInvestorProp1', 'fieldName': '机构投资者持股比例(相对流通A股)', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'INI_Holder_IncrOrDesr', 'tableName': '机构增减持统计表', 'startTime': '1998-06-30', 'endTime': '2025-12-31'}
+  Table: {'table': 'INI_Holder_Detail', 'tableName': '机构持股明细表', 'startTime': '1998-06-30', 'endTime': '2025-12-31'}
+    Matching Fields:
+      - {'field': 'FundID', 'fieldName': '股东ID对应的基金ID', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+
+=== DB: 民营上市公司 ===
+
+=== DB: 治理结构 ===
+
+=== DB: 海外上市公司 ===
+
+=== DB: 社会责任 ===
+
+=== DB: 红利分配 ===
+
+=== DB: 股东 ===
+  Table: {'table': 'HLD_Fundhold', 'tableName': '基金持股文件', 'startTime': '1998-06-30', 'endTime': '2025-09-30'}
+    Matching Fields:
+      - {'field': 'Fundcd', 'fieldName': '基金代码', 'fieldType': 'varchar', 'ableNull': 'NO', 'fieldKey': ''}
+      - {'field': 'Fundnm', 'fieldName': '基金名称', 'fieldType': 'varchar', 'ableNull': 'YES', 'fieldKey': ''}
+
+=== DB: 股权性质 ===
+
+=== DB: 股票市场交易 ===
+
+=== DB: 股票市场交易(升级测试) ===
+
+=== DB: 融资融券 ===
+
+=== DB: 财务报告审计意见 ===
+
+=== DB: 财务报表 ===
+
+=== DB: 财务指标分析 ===
+
+=== DB: 违规处理 ===
+
+=== DB: 银行体系 ===
+  Table: {'table': 'MBK_NIIPQUARTER', 'tableName': '中国国际投资头寸表(季)', 'startTime': '2011-03-01', 'endTime': '2025-09-01'}
+    Matching Fields:
+      - {'field': 'AssetsDirInvest', 'fieldName': '资产：直接投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsDirInvestEquity', 'fieldName': '资产：直接投资：股权', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsDirInvestRelEntDebt', 'fieldName': '资产：直接投资：关联企业债务', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsSecInvest', 'fieldName': '资产：证券投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsSecInvestEquity', 'fieldName': '资产：证券投资：股权', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsSecInvestBond', 'fieldName': '资产：证券投资：债券', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsOthInvest', 'fieldName': '资产：其他投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsOthInvestOthEquity', 'fieldName': '资产：其他投资：其他股权', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsOthInvestCurrDeposit', 'fieldName': '资产：其他投资：货币和存款', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsOthInvestLoan', 'fieldName': '资产：其他投资：贷款', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsOthInvestInsPension', 'fieldName': '资产：其他投资：保险和养老金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsOthInvestTradeCredit', 'fieldName': '资产：其他投资：贸易信贷', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsOthInvestOther', 'fieldName': '资产：其他投资：其他', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'AssetsResAssResPosition', 'fieldName': '资产：储备资产：在国际货币基金组织的储备头寸', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityDirInvest', 'fieldName': '负债：直接投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityDirInvestEquity', 'fieldName': '负债：直接投资：股权', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityDirInvestRelEntD', 'fieldName': '负债：直接投资：关联企业债务', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilitySecInvest', 'fieldName': '负债：证券投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilitySecInvestEquity', 'fieldName': '负债：证券投资：股权', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilitySecInvestBond', 'fieldName': '负债：证券投资：债券', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityOthInvest', 'fieldName': '负债：其他投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityOthInvestOthEquit', 'fieldName': '负债：其他投资：其他股权', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityOthInvestCurrDep', 'fieldName': '负债：其他投资：货币和存款', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityOthInvestLoan', 'fieldName': '负债：其他投资：贷款', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityOthInvestInsPens', 'fieldName': '负债：其他投资：保险和养老金', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityOthInvestTrCredit', 'fieldName': '负债：其他投资：贸易信贷', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityOthInvestOther', 'fieldName': '负债：其他投资：其他', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'LiabilityOthInvestSDRS', 'fieldName': '负债：其他投资：特别提款权', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'MBK_FININSTDIRINVFLOWQ', 'tableName': '金融机构直接投资流量表(季)(2012-2019)', 'startTime': '2012-03-01', 'endTime': '2019-09-01'}
+    Matching Fields:
+      - {'field': 'FDINetInflow', 'fieldName': '来华直接投资净流入', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FDIInflow', 'fieldName': '来华直接投资流入', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FDIOutflow', 'fieldName': '来华直接投资流出', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OFDINetOutflow', 'fieldName': '对外直接投资净流出', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OFDIInflow', 'fieldName': '对外直接投资流入', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OFDIOutflow', 'fieldName': '对外直接投资流出', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'MBK_FININSTDIRINVFLOWY', 'tableName': '金融机构直接投资流量表(年)', 'startTime': '2012-01-01', 'endTime': '2018-12-31'}
+    Matching Fields:
+      - {'field': 'FDINetInflow', 'fieldName': '来华直接投资净流入', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FDIInflow', 'fieldName': '来华直接投资流入', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'FDIOutflow', 'fieldName': '来华直接投资流出', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OFDINetOutflow', 'fieldName': '对外直接投资净流出', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OFDIInflow', 'fieldName': '对外直接投资流入', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OFDIOutflow', 'fieldName': '对外直接投资流出', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+  Table: {'table': 'MBK_FININSTDIRINVSTOCKY', 'tableName': '金融机构直接投资存量表(年)', 'startTime': '2011-01-01', 'endTime': '2018-12-31'}
+    Matching Fields:
+      - {'field': 'FDI', 'fieldName': '来华直接投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+      - {'field': 'OFDI', 'fieldName': '对外直接投资', 'fieldType': 'decimal', 'ableNull': 'YES', 'fieldKey': ''}
+
+=== DB: 首次公开发行（A股） ===
