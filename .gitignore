@@ -1,7 +1,5 @@
 .venv/
 __pycache__/
-*.csv
 *.log
 token.txt
-csmar_data_export/
 .DS_Store
