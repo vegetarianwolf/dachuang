@@ -31,17 +31,16 @@ def main():
             columns = [field.get("field") for field in fields_data if field.get("field")]
             first_col = columns[0]
             
-            # Find total count
-            # Use columns[0] is not null to find count
-            condition = f"{first_col} is not null"
+            # Hardcode counts to avoid triggering CSMAR 30-min repeat rules on queryCount
+            counts_dict = {
+                'SRDI_EntInfo': 1014686,
+                'SRDI_EntPatentInfo': 2031805
+            }
+            count = counts_dict.get(table, 0)
             
-            count = csmar.queryCount(columns, condition, table)
-            if not isinstance(count, int) or count <= 0:
-                print(f"  queryCount failed or returned 0 ({count}). Checking with empty condition.")
-                count = csmar.queryCount(columns, "", table)
-                if not isinstance(count, int) or count <= 0:
-                    print(f"  Unable to fetch count for {table}. Skipping.")
-                    continue
+            if count <= 0:
+                print(f"  Unable to fetch count for {table}. Skipping.")
+                continue
             
             print(f"  Total records for {table}: {count}")
             

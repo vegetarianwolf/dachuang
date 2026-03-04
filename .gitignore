@@ -1,5 +1,6 @@
 .venv/
 __pycache__/
 *.log
-token.txt
+*token.txt
+signCode.txt
 .DS_Store
