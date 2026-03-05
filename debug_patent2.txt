@@ -1,0 +1,35 @@
+申请-总计 rows: 612
+授权-总计 rows: 140
+授权-发明 rows: 612
+
+授权-总计 years: [2013, 2014, 2015, 2016]
+授权-发明 years: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+申请-总计 years: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+广东省 授权 data by year:
+  2013: [{'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 20084}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 77503}, {'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 72843}, {'PatentTypeCode': 1, 'PatentType': '总计', 'Accumulated': 170430}]
+  2014: [{'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 22276}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 83202}, {'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 74475}, {'PatentTypeCode': 1, 'PatentType': '总计', 'Accumulated': 179953}]
+  2015: [{'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 33477}, {'PatentTypeCode': 1, 'PatentType': '总计', 'Accumulated': 241176}, {'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 102445}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 105254}]
+  2016: [{'PatentTypeCode': 1, 'PatentType': '总计', 'Accumulated': 259032}, {'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 38626}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 118157}, {'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 102249}]
+  2017: [{'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 169017}, {'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 45740}, {'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 117895}]
+  2018: [{'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 268508}, {'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 53259}, {'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 156315}]
+  2019: [{'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 184907}, {'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 59742}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 282741}]
+  2020: [{'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 258148}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 380882}, {'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 70695}]
+  2021: [{'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 102850}, {'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 285039}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 484320}]
+  2022: [{'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 264480}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 457716}, {'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 115080}]
+  2023: [{'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 143141}, {'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 235623}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 324931}]
+  2024: [{'PatentTypeCode': 4, 'PatentType': '外观设计', 'Accumulated': 227825}, {'PatentTypeCode': 3, 'PatentType': '实用新型', 'Accumulated': 295997}, {'PatentTypeCode': 2, 'PatentType': '发明', 'Accumulated': 168813}]
+
+上海 授权 data by year:
+  2013: [{'PatentTypeCode': 2, 'Accumulated': 10644}, {'PatentTypeCode': 3, 'Accumulated': 29859}, {'PatentTypeCode': 4, 'Accumulated': 8177}, {'PatentTypeCode': 1, 'Accumulated': 48680}]
+  2014: [{'PatentTypeCode': 2, 'Accumulated': 11614}, {'PatentTypeCode': 3, 'Accumulated': 30704}, {'PatentTypeCode': 4, 'Accumulated': 8170}, {'PatentTypeCode': 1, 'Accumulated': 50488}]
+  2015: [{'PatentTypeCode': 4, 'Accumulated': 9891}, {'PatentTypeCode': 2, 'Accumulated': 17601}, {'PatentTypeCode': 1, 'Accumulated': 60623}, {'PatentTypeCode': 3, 'Accumulated': 33131}]
+  2016: [{'PatentTypeCode': 2, 'Accumulated': 20086}, {'PatentTypeCode': 1, 'Accumulated': 64230}, {'PatentTypeCode': 4, 'Accumulated': 10043}, {'PatentTypeCode': 3, 'Accumulated': 34101}]
+  2017: [{'PatentTypeCode': 2, 'Accumulated': 20681}, {'PatentTypeCode': 3, 'Accumulated': 39942}, {'PatentTypeCode': 4, 'Accumulated': 12183}]
+  2018: [{'PatentTypeCode': 3, 'Accumulated': 55581}, {'PatentTypeCode': 4, 'Accumulated': 15548}, {'PatentTypeCode': 2, 'Accumulated': 21331}]
+  2019: [{'PatentTypeCode': 2, 'Accumulated': 22735}, {'PatentTypeCode': 3, 'Accumulated': 61640}, {'PatentTypeCode': 4, 'Accumulated': 16212}]
+  2020: [{'PatentTypeCode': 4, 'Accumulated': 23323}, {'PatentTypeCode': 2, 'Accumulated': 24208}, {'PatentTypeCode': 3, 'Accumulated': 92249}]
+  2021: [{'PatentTypeCode': 4, 'Accumulated': 25600}, {'PatentTypeCode': 2, 'Accumulated': 32860}, {'PatentTypeCode': 3, 'Accumulated': 120857}]
+  2022: [{'PatentTypeCode': 3, 'Accumulated': 118460}, {'PatentTypeCode': 2, 'Accumulated': 36797}, {'PatentTypeCode': 4, 'Accumulated': 23066}]
+  2023: [{'PatentTypeCode': 4, 'Accumulated': 19390}, {'PatentTypeCode': 3, 'Accumulated': 95380}, {'PatentTypeCode': 2, 'Accumulated': 44345}]
+  2024: [{'PatentTypeCode': 4, 'Accumulated': 19914}, {'PatentTypeCode': 2, 'Accumulated': 50676}, {'PatentTypeCode': 3, 'Accumulated': 80176}]

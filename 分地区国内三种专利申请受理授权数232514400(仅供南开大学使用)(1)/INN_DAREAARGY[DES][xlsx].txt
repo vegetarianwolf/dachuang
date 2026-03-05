@@ -1,0 +1,8 @@
+SgnYear [统计年度] - 数据统计年份。
+AreaCode [地区代码] - 地区代码。
+AreaName [地区名称] - 与地区代码对应。 中国=国内；世界=国外
+StatisticalTypeCode [统计类型编码] - 统计类型编码。
+StatisticalType [统计类型] - 与统计类型编码对应。
+PatentTypeCode [专业类型编码] - 专利类型编码。
+PatentType [专业类型] - 与专利类型编码对应。
+Accumulated [当年累计] - 专利申请受理授权数。
