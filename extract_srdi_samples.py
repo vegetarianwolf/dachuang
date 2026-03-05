@@ -9,38 +9,16 @@ def mark_and_extract_srdi():
     pe_df = pd.read_csv(pe_file)
     
     print(f"Loading {csmar_file}...")
-    srdi_df = pd.read_csv(csmar_file, usecols=['InstitutionName', 'IdentifyYear'])
+    srdi_df = pd.read_csv(csmar_file, usecols=['InstitutionName'])
     
-    # 1. Find the earliest IdentifyYear for each SRDI enterprise
-    # Some enterprises may be certified multiple times (e.g. city level then national level)
-    # The earliest year is when they first became recognized as an SRDI
-    srdi_min_year = srdi_df.groupby('InstitutionName')['IdentifyYear'].min().reset_index()
-    # Clean the names up from CSMAR
-    srdi_min_year['Target_Company'] = srdi_min_year['InstitutionName'].dropna().astype(str).str.strip()
-    
-    # Create a dictionary mapping Company Name -> First Identify Year
-    srdi_year_dict = dict(zip(srdi_min_year['Target_Company'], srdi_min_year['IdentifyYear']))
+    # Store all unique SRDI names
+    srdi_names = set(srdi_df['InstitutionName'].dropna().astype(str).str.strip())
     
     # 2. Annotate the original PE CSV dynamically
     pe_df['Target_Company'] = pe_df['Target_Company'].fillna('')
     
-    def check_dynamic_srdi(row):
-        company = row['Target_Company']
-        inv_year = row['Year']
-        
-        # If it's not even an SRDI or we don't have the investment year, return 0
-        if company not in srdi_year_dict or pd.isna(inv_year):
-            return 0
-            
-        first_srdi_yr = srdi_year_dict[company]
-        
-        # Post-2013 logic: the investment object in the corresponding year was selected as SRDI.
-        # This means Investment Year >= Identify Year
-        if inv_year >= first_srdi_yr:
-            return 1
-        return 0
-        
-    pe_df['Is_SRDI'] = pe_df.apply(check_dynamic_srdi, axis=1)
+    # Relaxed Post-2013 logic: the enterprise was eventually selected as SRDI.
+    pe_df['Is_SRDI'] = pe_df['Target_Company'].apply(lambda x: 1 if x in srdi_names else 0)
     
     # Specifically for the user's ratio request later, filter out pre-2013 globally
     # "专精特新评定是13年才开始的... 把13年之后的挑出来"
