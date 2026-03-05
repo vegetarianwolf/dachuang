@@ -36,21 +36,51 @@ def clean_pe_data():
     full_pe_df['Date'] = pd.to_datetime(full_pe_df['投资时间'], errors='coerce')
     full_pe_df['Year'] = full_pe_df['Date'].dt.year
     
-    def extract_city(loc_str):
+    # 2. Extract City
+    # Relax geographical restriction: A government guidance fund from City A can invest in an enterprise in City B.
+    # Therefore, we should identify the city of the *Fund* itself first.
+    try:
+        valid_cities_df = pd.read_csv('cleaned_data/city_fiscal_panel.csv', usecols=['City'])
+        valid_cities = valid_cities_df['City'].dropna().unique().tolist()
+    except Exception:
+        valid_cities = []
+        
+    city_map = {}
+    for c in valid_cities:
+        base = c.replace('市', '').replace('地区', '').replace('自治州', '')
+        if len(base) >= 2:
+            city_map[base] = c
+
+    def extract_city(row):
+        # 1. Try to find the fund's city from its names (e.g. 投资方全称, 基金全称, 机构全称)
+        names_to_check = [str(row.get('投资方全称', '')), str(row.get('基金全称', '')), 
+                          str(row.get('投资方', '')), str(row.get('机构全称', ''))]
+        
+        for name in names_to_check:
+            if name and name.strip() not in ['nan', '--', '']:
+                for base, full_city in city_map.items():
+                    if base in name:
+                        return full_city
+        
+        # 2. If no city is found in the fund's name, fallback to extracting from the event's region (legacy fallback)
+        loc_str = row.get('地区')
         if pd.isna(loc_str) or str(loc_str).strip() in ['--', '']:
             return np.nan
         parts = str(loc_str).split('|')
-        
-        # Taking the last part which is typically the city
         city_clean = parts[-1].strip()
         
-        # Remove suffixes
         for suffix in ['市', '地区', '自治州', '省']:
             city_clean = city_clean.replace(suffix, '')
             
-        return city_clean
+        # Optional: return the formatted full_city if we want consistency
+        if city_clean in city_map:
+            return city_map[city_clean]
         
-    full_pe_df['City'] = full_pe_df['地区'].apply(extract_city)
+        # Add '市' suffix blindly to match panel format if not in map
+        return city_clean + '市' if city_clean else np.nan
+        
+    full_pe_df['City'] = full_pe_df.apply(extract_city, axis=1)
+    
     # 3. Standardize Investment Amount
     # Using '投资金额(RMB/M)' which is already in millions RMB, if missing use another proxy if wanted
     def clean_amount(val):
