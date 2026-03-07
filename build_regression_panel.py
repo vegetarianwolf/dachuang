@@ -126,113 +126,48 @@ def normalize_city(name):
 
 
 # =====================================================================
-# 专利数据
+# 专利数据 (地级市层面, 2000-2023)
 # =====================================================================
 
-CITY_TO_PATENT_AREA = {
-    '北京': '北京市', '天津': '天津市', '上海': '上海市', '重庆': '重庆市',
-    '广州': '广州市', '深圳': '深圳市', '武汉': '武汉市', '西安': '西安市',
-    '沈阳': '沈阳市', '大连': '大连市', '哈尔滨': '哈尔滨市', '青岛': '青岛市',
-    '长春': '长春市', '南京': '南京市', '杭州': '杭州市', '济南': '济南市',
-    '成都': '成都市', '厦门': '厦门市', '宁波': '宁波市',
-}
+def load_city_patent_data():
+    """
+    加载地级市专利申请、授权数据 (2000-2023).
+    数据源: 马克数据网, 包含 300 个地级市.
+    """
+    fp = '地级市专利申请、授权数据（2000-2023年）/地级市专利申请、授权数据（2000-2023年）.csv'
+    df = pd.read_csv(fp, encoding='gbk')
+    df = df.dropna(subset=['年份']).copy()
+    df['年份'] = df['年份'].astype(int)
+    df['City'] = df['地区'].apply(normalize_city)
+    df['Year'] = df['年份']
 
-PROVINCE_NAME_MAP = {
-    '北京市': '北京市', '天津市': '天津市', '上海市': '上海市', '重庆市': '重庆市',
-    '河北省': '河北省', '山西省': '山西省', '内蒙古自治区': '内蒙古自治区',
-    '辽宁省': '辽宁省', '吉林省': '吉林省', '黑龙江省': '黑龙江省',
-    '江苏省': '江苏省', '浙江省': '浙江省', '安徽省': '安徽省', '福建省': '福建省',
-    '江西省': '江西省', '山东省': '山东省', '河南省': '河南省', '湖北省': '湖北省',
-    '湖南省': '湖南省', '广东省': '广东省', '广西壮族自治区': '广西壮族自治区',
-    '海南省': '海南省', '四川省': '四川省', '贵州省': '贵州省', '云南省': '云南省',
-    '西藏自治区': '西藏自治区', '陕西省': '陕西省', '甘肃省': '甘肃省',
-    '青海省': '青海省', '宁夏回族自治区': '宁夏回族自治区',
-    '新疆维吾尔自治区': '新疆维吾尔自治区',
-    '广西': '广西壮族自治区', '内蒙古': '内蒙古自治区',
-    '西藏': '西藏自治区', '宁夏': '宁夏回族自治区', '新疆': '新疆维吾尔自治区',
-}
+    # 重命名专利字段
+    patent_cols = {
+        '专利申请总量': 'patent_apply',
+        '专利申请_发明专利': 'inv_patent_apply',
+        '专利申请_实用新型': 'utility_patent_apply',
+        '专利申请_外观设计': 'design_patent_apply',
+        '专利授权总量': 'patent_grant',
+        '专利授权_发明专利': 'inv_patent_grant',
+        '专利授权_实用新型': 'utility_patent_grant',
+        '专利授权_外观设计': 'design_patent_grant',
+    }
+    for cn, en in patent_cols.items():
+        df[en] = pd.to_numeric(df[cn], errors='coerce').fillna(0)
 
+    # 取对数
+    df['ln_patent_apply']      = np.log(df['patent_apply'] + 1)
+    df['ln_inv_patent']        = np.log(df['inv_patent_apply'] + 1)
+    df['ln_patent_grant']      = np.log(df['patent_grant'] + 1)
+    df['ln_inv_patent_grant']  = np.log(df['inv_patent_grant'] + 1)
 
-def build_city_province_map(pe_df):
-    """从 PE 数据的 '地区' 字段自动推导城市->省份(专利地区)映射"""
-    mapping = dict(CITY_TO_PATENT_AREA)
-    for loc in pe_df['地区'].dropna().unique():
-        parts = str(loc).split('|')
-        if len(parts) >= 3:
-            province_raw = parts[1].strip()
-            city_raw = parts[2].strip()
-            city_base = normalize_city(city_raw)
-            if city_base and city_base not in mapping:
-                prov_match = PROVINCE_NAME_MAP.get(province_raw)
-                if prov_match:
-                    mapping[city_base] = prov_match
-        elif len(parts) == 2:
-            province_raw = parts[1].strip()
-            city_base = province_raw.replace('市', '')
-            if city_base not in mapping:
-                prov_match = PROVINCE_NAME_MAP.get(province_raw)
-                if prov_match:
-                    mapping[city_base] = prov_match
-    return mapping
-
-
-def load_patent_data():
-    fp = '分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)/INN_DAREAARGY.csv'
-    df = pd.read_csv(fp, encoding='gbk', header=0)
-    df = df.iloc[2:].reset_index(drop=True)
-    df.columns = ['Year', 'AreaCode', 'AreaName', 'StatTypeCode', 'StatType',
-                  'PatTypeCode', 'PatType', 'Accumulated']
-    df['Year'] = pd.to_numeric(df['Year'], errors='coerce')
-    df['Accumulated'] = pd.to_numeric(df['Accumulated'], errors='coerce')
-    df = df.dropna(subset=['Year', 'Accumulated'])
-    df['Year'] = df['Year'].astype(int)
-    return df
-
-
-def _get_application_data(df, pat_type):
-    apply_df = df[(df['StatType'] == '申请') & (df['PatType'] == pat_type)][
-        ['AreaName', 'Year', 'Accumulated']].copy()
-    accept_df = df[(df['StatType'] == '受理') & (df['PatType'] == pat_type)][
-        ['AreaName', 'Year', 'Accumulated']].copy()
-    early_accept = accept_df[~accept_df.set_index(['AreaName', 'Year']).index.isin(
-        apply_df.set_index(['AreaName', 'Year']).index)]
-    combined = pd.concat([apply_df, early_accept], ignore_index=True)
-    return combined
-
-
-def _get_grant_data(df, pat_type):
-    if pat_type != '总计':
-        return df[(df['StatType'] == '授权') & (df['PatType'] == pat_type)][
-            ['AreaName', 'Year', 'Accumulated']].copy()
-    total_df = df[(df['StatType'] == '授权') & (df['PatType'] == '总计')][
-        ['AreaName', 'Year', 'Accumulated']].copy()
-    detail_types = ['发明', '实用新型', '外观设计']
-    detail_df = df[(df['StatType'] == '授权') & (df['PatType'].isin(detail_types))].copy()
-    detail_sum = detail_df.groupby(['AreaName', 'Year'])['Accumulated'].sum().reset_index()
-    existing_keys = set(zip(total_df['AreaName'], total_df['Year']))
-    supplement = detail_sum[~detail_sum.apply(
-        lambda r: (r['AreaName'], r['Year']) in existing_keys, axis=1)]
-    combined = pd.concat([total_df, supplement], ignore_index=True)
-    return combined
-
-
-def build_patent_panel(patent_raw):
-    df = patent_raw.copy()
-    inv_apply = _get_application_data(df, '发明').rename(columns={'Accumulated': 'inv_patent_apply'})
-    total_apply = _get_application_data(df, '总计').rename(columns={'Accumulated': 'patent_apply'})
-    total_grant = _get_grant_data(df, '总计').rename(columns={'Accumulated': 'patent_grant'})
-    inv_grant = df[(df['StatType'] == '授权') & (df['PatType'] == '发明')][
-        ['AreaName', 'Year', 'Accumulated']].rename(columns={'Accumulated': 'inv_patent_grant'})
-    panel = total_apply.merge(inv_apply, on=['AreaName', 'Year'], how='outer')
-    panel = panel.merge(total_grant, on=['AreaName', 'Year'], how='outer')
-    panel = panel.merge(inv_grant, on=['AreaName', 'Year'], how='outer')
-    for col in ['patent_apply', 'inv_patent_apply', 'patent_grant', 'inv_patent_grant']:
-        panel[col] = panel[col].fillna(0)
-    panel['ln_patent_apply'] = np.log(panel['patent_apply'] + 1)
-    panel['ln_inv_patent'] = np.log(panel['inv_patent_apply'] + 1)
-    panel['ln_patent_grant'] = np.log(panel['patent_grant'] + 1)
-    panel['ln_inv_patent_grant'] = np.log(panel['inv_patent_grant'] + 1)
-    return panel
+    keep_cols = ['City', 'Year',
+                 'patent_apply', 'inv_patent_apply', 'patent_grant', 'inv_patent_grant',
+                 'ln_patent_apply', 'ln_inv_patent', 'ln_patent_grant', 'ln_inv_patent_grant']
+    result = df[keep_cols].copy()
+    print(f"  City-level patent data: {len(result)} obs, {result['City'].nunique()} cities, "
+          f"years {result['Year'].min()}-{result['Year'].max()}")
+    return result
 
 
 # =====================================================================
@@ -392,13 +327,10 @@ def load_macro_data():
 # =====================================================================
 
 def build_final_dataset():
-    # --- 1. 专利面板 ---
+    # --- 1. 专利面板 (地级市层面) ---
     print("=" * 60)
-    print("[1/5] Loading patent data ...")
-    patent_raw = load_patent_data()
-    patent_panel = build_patent_panel(patent_raw)
-    print(f"  Patent panel: {len(patent_panel)} rows, "
-          f"years {patent_panel['Year'].min()}-{patent_panel['Year'].max()}")
+    print("[1/5] Loading city-level patent data ...")
+    patent_panel = load_city_patent_data()
 
     # --- 2. PE 面板 ---
     print("=" * 60)
@@ -426,23 +358,14 @@ def build_final_dataset():
     panel['L1_fiscal_gap_rate'] = panel.groupby('City')['fiscal_gap_rate'].shift(1)
     panel['L1_debt_rate']       = panel.groupby('City')['debt_rate'].shift(1)
 
-    # 匹配专利数据
-    city_province_map = build_city_province_map(pe_df)
-    def city_to_patent_area(city_name):
-        return city_province_map.get(normalize_city(city_name), None)
-
-    panel['Patent_Area'] = panel['City'].apply(city_to_patent_area)
+    # 匹配专利数据 (直接按城市名 + 年份匹配)
     panel = panel.merge(
-        patent_panel[['AreaName', 'Year',
-                       'patent_apply', 'inv_patent_apply', 'patent_grant', 'inv_patent_grant',
-                       'ln_patent_apply', 'ln_inv_patent', 'ln_patent_grant', 'ln_inv_patent_grant']],
-        left_on=['Patent_Area', 'Year'],
-        right_on=['AreaName', 'Year'],
+        patent_panel,
+        on=['City', 'Year'],
         how='left'
     )
     matched = panel['ln_inv_patent'].notna().sum()
     print(f"  Patent matched: {matched}/{len(panel)} ({matched/len(panel)*100:.1f}%)")
-    panel = panel.drop(columns=['AreaName', 'Patent_Area'], errors='ignore')
 
     # --- 5. 输出 ---
     print("=" * 60)
