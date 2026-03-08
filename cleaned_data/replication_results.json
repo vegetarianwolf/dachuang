@@ -1,0 +1,349 @@
+{
+  "t2": {
+    "c1": {
+      "coef": 0.1559,
+      "se": 0.1253,
+      "pvalue": 0.2134,
+      "sig": "",
+      "nobs": 5573,
+      "r2": 0.0417
+    },
+    "c2": {
+      "coef": 0.0639,
+      "se": 0.1029,
+      "pvalue": 0.5347,
+      "sig": "",
+      "nobs": 5573,
+      "r2": 0.0209
+    },
+    "c3": {
+      "coef": 0.1673,
+      "se": 0.1299,
+      "pvalue": 0.1978,
+      "sig": "",
+      "nobs": 5459,
+      "r2": 0.4037
+    },
+    "c4": {
+      "coef": 0.0812,
+      "se": 0.109,
+      "pvalue": 0.4563,
+      "sig": "",
+      "nobs": 5459,
+      "r2": -2.0003
+    }
+  },
+  "t2_ctrl_coefs": {
+    "pressure": {
+      "coef": 0.1673,
+      "se": 0.1299,
+      "pvalue": 0.1978,
+      "sig": ""
+    },
+    "ln_pergdp": {
+      "coef": 0.289,
+      "se": 0.2972,
+      "pvalue": 0.331,
+      "sig": ""
+    },
+    "RD_pct": {
+      "coef": 0.5924,
+      "se": 0.7566,
+      "pvalue": 0.4337,
+      "sig": ""
+    }
+  },
+  "rob_weighted": {
+    "no_ctrl": {
+      "coef": 0.1976,
+      "se": 0.1564,
+      "pvalue": 0.2066,
+      "sig": "",
+      "nobs": 5573,
+      "r2": 0.0424
+    },
+    "ctrl": {
+      "coef": 0.2193,
+      "se": 0.162,
+      "pvalue": 0.1759,
+      "sig": "",
+      "nobs": 5459,
+      "r2": 0.1909
+    }
+  },
+  "rob_no_zhixia": {
+    "patent": {
+      "coef": 0.1473,
+      "se": 0.1276,
+      "pvalue": 0.2484,
+      "sig": "",
+      "nobs": 4326,
+      "r2": 0.0437
+    },
+    "inv": {
+      "coef": 0.0629,
+      "se": 0.1044,
+      "pvalue": 0.547,
+      "sig": "",
+      "nobs": 4326,
+      "r2": 0.0233
+    },
+    "patent_ctrl": {
+      "coef": 0.1564,
+      "se": 0.1323,
+      "pvalue": 0.2375,
+      "sig": "",
+      "nobs": 4219,
+      "r2": 0.3375
+    }
+  },
+  "rob_ind_fe": {
+    "patent": {
+      "coef": null,
+      "se": null,
+      "pvalue": null,
+      "sig": "",
+      "nobs": 0,
+      "r2": null
+    },
+    "inv": {
+      "coef": null,
+      "se": null,
+      "pvalue": null,
+      "sig": "",
+      "nobs": 0,
+      "r2": null
+    }
+  },
+  "iv": {
+    "first": {
+      "coef": 0.1932,
+      "se": 0.0315,
+      "pvalue": 0.0,
+      "sig": "***",
+      "nobs": 4181,
+      "r2": 0.2737
+    },
+    "first_F": 244.8,
+    "patent": {
+      "coef": 0.1628,
+      "se": 0.4788,
+      "pvalue": 0.7338,
+      "sig": "",
+      "nobs": 4181,
+      "r2": 0.0199
+    },
+    "inv": {
+      "coef": 0.1718,
+      "se": 0.4458,
+      "pvalue": 0.7,
+      "sig": "",
+      "nobs": 4181,
+      "r2": 0.0268
+    }
+  },
+  "het_region": {
+    "东部": {
+      "patent": {
+        "coef": 0.1866,
+        "se": 0.2018,
+        "pvalue": 0.3552,
+        "sig": "",
+        "nobs": 4314,
+        "r2": 0.0344
+      },
+      "inv": {
+        "coef": 0.0411,
+        "se": 0.1672,
+        "pvalue": 0.8059,
+        "sig": "",
+        "nobs": 4314,
+        "r2": 0.0093
+      }
+    },
+    "中部": {
+      "patent": {
+        "coef": 0.0224,
+        "se": 0.2271,
+        "pvalue": 0.9214,
+        "sig": "",
+        "nobs": 734,
+        "r2": 0.013
+      },
+      "inv": {
+        "coef": -0.0914,
+        "se": 0.1746,
+        "pvalue": 0.601,
+        "sig": "",
+        "nobs": 734,
+        "r2": -0.067
+      }
+    },
+    "西部": {
+      "patent": {
+        "coef": 0.2807,
+        "se": 0.229,
+        "pvalue": 0.2209,
+        "sig": "",
+        "nobs": 525,
+        "r2": 0.1981
+      },
+      "inv": {
+        "coef": 0.2467,
+        "se": 0.1928,
+        "pvalue": 0.2014,
+        "sig": "",
+        "nobs": 525,
+        "r2": 0.194
+      }
+    }
+  },
+  "het_factor": {
+    "技术密集型": {
+      "patent": {
+        "coef": -0.0359,
+        "se": 0.133,
+        "pvalue": 0.7874,
+        "sig": "",
+        "nobs": 3955,
+        "r2": -0.0099
+      },
+      "inv": {
+        "coef": -0.0471,
+        "se": 0.1114,
+        "pvalue": 0.6722,
+        "sig": "",
+        "nobs": 3955,
+        "r2": -0.0161
+      }
+    },
+    "资本密集型": {
+      "patent": {
+        "coef": 0.7165,
+        "se": 0.3441,
+        "pvalue": 0.0378,
+        "sig": "**",
+        "nobs": 710,
+        "r2": 0.1616
+      },
+      "inv": {
+        "coef": 0.4142,
+        "se": 0.3426,
+        "pvalue": 0.2271,
+        "sig": "",
+        "nobs": 710,
+        "r2": 0.1005
+      }
+    },
+    "劳动密集型": {
+      "patent": {
+        "coef": 1.2312,
+        "se": 0.5361,
+        "pvalue": 0.0228,
+        "sig": "**",
+        "nobs": 248,
+        "r2": 0.3257
+      },
+      "inv": {
+        "coef": 0.65,
+        "se": 0.6571,
+        "pvalue": 0.3238,
+        "sig": "",
+        "nobs": 248,
+        "r2": 0.1329
+      }
+    }
+  },
+  "het_soe": {
+    "distribution": {
+      "0": 5573
+    },
+    "note": "insufficient SOE=1 samples"
+  },
+  "desc": {
+    "ln_Patent": {
+      "name": "创新数量lnPatent",
+      "n": 5573,
+      "mean": 2.0286,
+      "std": 1.2509,
+      "min": 0.0,
+      "max": 4.7516,
+      "paper_n": 17279,
+      "paper_mean": 3.104,
+      "paper_std": 1.527
+    },
+    "ln_inv_patent": {
+      "name": "发明专利lnInv",
+      "n": 5573,
+      "mean": 1.3506,
+      "std": 1.0839,
+      "min": 0.0,
+      "max": 4.1234,
+      "paper_n": null,
+      "paper_mean": null,
+      "paper_std": null
+    },
+    "pressure": {
+      "name": "财政压力",
+      "n": 5573,
+      "mean": 0.4272,
+      "std": 0.5909,
+      "min": -0.0889,
+      "max": 3.2882,
+      "paper_n": 17279,
+      "paper_mean": 0.559,
+      "paper_std": 0.775
+    },
+    "ln_pergdp": {
+      "name": "人均GDP(ln)",
+      "n": 5519,
+      "mean": 11.4689,
+      "std": 0.4352,
+      "min": 10.1811,
+      "max": 12.0774,
+      "paper_n": 17279,
+      "paper_mean": 11.38,
+      "paper_std": 0.513
+    },
+    "RD_pct": {
+      "name": "研发投入强度",
+      "n": 5511,
+      "mean": 0.0579,
+      "std": 0.0437,
+      "min": 0.003,
+      "max": 0.2608,
+      "paper_n": 17279,
+      "paper_mean": 0.023,
+      "paper_std": 0.016
+    },
+    "is_soe": {
+      "name": "国有企业",
+      "n": 5573,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "paper_n": 17279,
+      "paper_mean": 0.276,
+      "paper_std": 0.447
+    },
+    "ln_age": {
+      "name": "企业年龄(ln)",
+      "n": 5250,
+      "mean": 1.18,
+      "std": 0.9324,
+      "min": 0.0,
+      "max": 3.0445,
+      "paper_n": 17279,
+      "paper_mean": 1.865,
+      "paper_std": 0.94
+    }
+  },
+  "sample": {
+    "nobs": 5573,
+    "nfirms": 992,
+    "ncities": 135,
+    "year_min": 2010,
+    "year_max": 2020
+  }
+}
