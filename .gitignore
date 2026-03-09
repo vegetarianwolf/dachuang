@@ -4,3 +4,4 @@ __pycache__/
 *token.txt
 signCode.txt
 .DS_Store
+.marker_env/
