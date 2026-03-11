@@ -5,3 +5,6 @@ __pycache__/
 signCode.txt
 .DS_Store
 .marker_env/
+
+# Cursor
+.cursor/
