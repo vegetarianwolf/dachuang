@@ -1,4 +1,6 @@
 .venv/
+.cursor/
+.marker_env/
 __pycache__/
 *.log
 *token.txt
