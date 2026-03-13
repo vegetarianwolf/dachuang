@@ -8,3 +8,6 @@ signCode.txt
 
 # Cursor
 .cursor/
+
+# Copilot skills
+.github/skills/
