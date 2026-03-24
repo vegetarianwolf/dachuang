@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术路线流程图</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "SimSun", "宋体", "Microsoft YaHei", serif;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+  }
+
+  .flowchart {
+    position: relative;
+    width: 1000px;
+  }
+
+  /* ---- generic box ---- */
+  .box {
+    border: 2px solid #000;
+    background: #fff;
+    text-align: center;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    position: absolute;
+  }
+  .box.bold { font-weight: bold; }
+
+  /* ---- dashed box ---- */
+  .box.dashed { border-style: dashed; }
+
+  /* ---- arrow (vertical downward connector) ---- */
+  .arrow-down {
+    position: absolute;
+    width: 2px;
+    background: #000;
+  }
+  .arrow-down::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid #000;
+  }
+
+  /* ---- horizontal line ---- */
+  .hline {
+    position: absolute;
+    height: 2px;
+    background: #000;
+  }
+
+  /* ---- vertical line (no arrow) ---- */
+  .vline {
+    position: absolute;
+    width: 2px;
+    background: #000;
+  }
+
+  /* ---- arrow head (on horizontal lines, pointing right) ---- */
+  .arrow-right {
+    position: absolute;
+    height: 2px;
+    background: #000;
+  }
+  .arrow-right::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid #000;
+  }
+
+  .arrow-left {
+    position: absolute;
+    height: 2px;
+    background: #000;
+  }
+  .arrow-left::after {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 10px solid #000;
+  }
+
+  /* ---- SVG overlay for curved / complex arrows ---- */
+  svg.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="flowchart" style="height: 2200px;">
+
+  <!-- ===================== ROW 0: Title ===================== -->
+  <div class="box bold" style="left:250px; top:0; width:500px;">
+    财政压力、政府产业引导基金<br>与地方创新绩效<br>——技术路线流程图
+  </div>
+
+  <!-- arrow down from title -->
+  <div class="arrow-down" style="left:499px; top:78px; height:40px;"></div>
+
+  <!-- ===================== ROW 1: 总体逻辑 ===================== -->
+  <div class="box" style="left:250px; top:120px; width:500px;">
+    总体逻辑：样本构建与变量界定 → 基准效应识别 →<br>作用机制检验 → 异质性分析 → 内生性处理 → 稳健性检验
+  </div>
+
+  <!-- arrow down -->
+  <div class="arrow-down" style="left:499px; top:178px; height:30px;"></div>
+
+  <!-- ===================== ROW 2: Step 1 ===================== -->
+  <div class="box bold" style="left:300px; top:210px; width:400px;">
+    第一步：变量界定、样本构建与数据整理
+  </div>
+
+  <!-- three arrows going down from Step 1 -->
+  <!-- left branch -->
+  <div class="vline" style="left:499px; top:248px; height:20px;"></div>
+  <div class="hline" style="left:150px; top:268px; width:700px;"></div>
+  <div class="arrow-down" style="left:150px; top:268px; height:22px;"></div>
+  <div class="arrow-down" style="left:499px; top:268px; height:22px;"></div>
+  <div class="arrow-down" style="left:850px; top:268px; height:22px;"></div>
+
+  <!-- Sub-boxes under Step 1 -->
+  <div class="box" style="left:30px; top:292px; width:240px;">
+    构建被解释变量<br>采用城市发明专利授权量<br>加一后取对数衡量创新产出
+  </div>
+
+  <div class="box" style="left:380px; top:292px; width:240px;">
+    构建核心解释变量<br>财政缺口率 / 债务压力<br>（滞后一期）
+  </div>
+
+  <div class="box" style="left:730px; top:292px; width:240px;">
+    构建机制与控制变量<br>早期投资占比、投资金额等<br>人均GDP、科技支出占比等
+  </div>
+
+  <!-- merge lines from three sub-boxes -->
+  <div class="vline" style="left:150px; top:370px; height:20px;"></div>
+  <div class="vline" style="left:499px; top:370px; height:20px;"></div>
+  <div class="vline" style="left:850px; top:370px; height:20px;"></div>
+  <div class="hline" style="left:150px; top:390px; width:700px;"></div>
+  <div class="arrow-down" style="left:499px; top:390px; height:22px;"></div>
+
+  <!-- Two data source boxes (dashed) -->
+  <div class="box dashed" style="left:60px; top:395px; width:120px; font-size:12px;">
+    CNRDS<br>专利数据库
+  </div>
+  <div class="box dashed" style="left:820px; top:395px; width:120px; font-size:12px;">
+    CEIC / 清科<br>CVSource 等
+  </div>
+
+  <!-- ===================== ROW 3: Step 2 ===================== -->
+  <div class="box bold" style="left:280px; top:414px; width:440px;">
+    第二步：基准模型设定与总体效应识别
+  </div>
+
+  <div class="arrow-down" style="left:499px; top:452px; height:20px;"></div>
+
+  <div class="box" style="left:280px; top:474px; width:440px; font-size:13px;">
+    双向固定效应模型<br>
+    识别财政压力对地方创新绩效的总体基准效应<br>
+    同时控制城市固定效应与年份固定效应
+  </div>
+
+  <div class="arrow-down" style="left:499px; top:565px; height:25px;"></div>
+
+  <!-- ===================== ROW 4: Step 3 ===================== -->
+  <div class="box bold" style="left:280px; top:585px; width:440px;">
+    第三步：作用机制检验与传导路径展开
+  </div>
+
+  <div class="vline" style="left:499px; top:635px; height:18px;"></div>
+
+  <!-- two mechanism branches -->
+  <div class="hline" style="left:250px; top:653px; width:500px;"></div>
+  <div class="arrow-down" style="left:250px; top:653px; height:22px;"></div>
+  <div class="arrow-down" style="left:750px; top:653px; height:22px;"></div>
+
+  <div class="box" style="left:120px; top:677px; width:260px; font-size:13px;">
+    路径一：风险偏好扭曲<br>
+    财政压力 → 弱化"投早投小"导向<br>→ 降低早期投资占比
+  </div>
+
+  <div class="box" style="left:620px; top:677px; width:260px; font-size:13px;">
+    路径二：投资规模压缩<br>
+    财政压力 → 压缩出资能力<br>→ 减少投资金额与笔数
+  </div>
+
+  <!-- merge and mechanism equation -->
+  <div class="vline" style="left:250px; top:765px; height:18px;"></div>
+  <div class="vline" style="left:750px; top:765px; height:18px;"></div>
+  <div class="hline" style="left:250px; top:783px; width:500px;"></div>
+  <div class="arrow-down" style="left:499px; top:783px; height:22px;"></div>
+
+  <div class="box" style="left:300px; top:807px; width:400px; font-size:13px;">
+    两步法机制检验<br>
+    以机制变量为被解释变量进行回归模型估计<br>
+    验证财政压力是否显著改变特定投资行为特征
+  </div>
+
+  <div class="arrow-down" style="left:499px; top:895px; height:22px;"></div>
+
+  <!-- ===================== ROW 5: Step 4 ===================== -->
+  <div class="box bold" style="left:280px; top:925px; width:440px;">
+    第四步：异质性分析与作用边界识别
+  </div>
+
+  <div class="vline" style="left:499px; top:975px; height:18px;"></div>
+
+  <!-- Six heterogeneity dimensions -->
+  <div class="hline" style="left:50px; top:993px; width:900px;"></div>
+  <div class="arrow-down" style="left:50px; top:993px; height:20px;"></div>
+  <div class="arrow-down" style="left:220px; top:993px; height:20px;"></div>
+  <div class="arrow-down" style="left:390px; top:993px; height:20px;"></div>
+  <div class="arrow-down" style="left:560px; top:993px; height:20px;"></div>
+  <div class="arrow-down" style="left:730px; top:993px; height:20px;"></div>
+  <div class="arrow-down" style="left:900px; top:993px; height:20px;"></div>
+
+  <div class="box" style="left:10px; top:1015px; width:82px; font-size:11px; padding:6px 4px;">地区差异</div>
+  <div class="box" style="left:130px; top:1015px; width:110px; font-size:11px; padding:6px 4px;">城市行政等级</div>
+  <div class="box" style="left:310px; top:1015px; width:100px; font-size:11px; padding:6px 4px;">市场化程度</div>
+  <div class="box" style="left:490px; top:1015px; width:100px; font-size:11px; padding:6px 4px;">财政透明度</div>
+  <div class="box" style="left:670px; top:1015px; width:90px; font-size:11px; padding:6px 4px;">产业结构</div>
+  <div class="box" style="left:840px; top:1015px; width:90px; font-size:11px; padding:6px 4px;">基金规模</div>
+
+  <!-- merge lines from six boxes -->
+  <div class="vline" style="left:50px; top:1060px; height:15px;"></div>
+  <div class="vline" style="left:220px; top:1060px; height:15px;"></div>
+  <div class="vline" style="left:390px; top:1060px; height:15px;"></div>
+  <div class="vline" style="left:560px; top:1060px; height:15px;"></div>
+  <div class="vline" style="left:730px; top:1060px; height:15px;"></div>
+  <div class="vline" style="left:900px; top:1060px; height:15px;"></div>
+  <div class="hline" style="left:50px; top:1075px; width:850px;"></div>
+  <div class="arrow-down" style="left:499px; top:1075px; height:22px;"></div>
+
+  <!-- ===================== ROW 6: Step 5 ===================== -->
+  <div class="box bold" style="left:280px; top:1100px; width:440px;">
+    第五步：内生性处理与因果识别强化
+  </div>
+
+  <div class="vline" style="left:499px; top:1150px; height:18px;"></div>
+
+  <!-- Three IV branches -->
+  <div class="hline" style="left:120px; top:1168px; width:760px;"></div>
+  <div class="arrow-down" style="left:120px; top:1168px; height:22px;"></div>
+  <div class="arrow-down" style="left:499px; top:1168px; height:22px;"></div>
+  <div class="arrow-down" style="left:880px; top:1168px; height:22px;"></div>
+
+  <div class="box" style="left:20px; top:1195px; width:200px; font-size:12px;">
+    工具变量法（2SLS）<br>
+    同省其他城市平均<br>财政缺口率作为IV
+  </div>
+
+  <div class="box" style="left:370px; top:1195px; width:260px; font-size:12px; padding:10px 8px;">
+    第一阶段：<br>用工具变量回归提取财政压力的外生成分<br>
+    第二阶段：<br>利用提取的外生成分对创新绩效进行回归，识别净效应
+  </div>
+
+  <div class="box" style="left:760px; top:1195px; width:200px; font-size:12px;">
+    辅助方法<br>
+    动态面板GMM<br>
+    政策冲击DID<br>
+    安慰剂检验
+  </div>
+
+  <!-- merge -->
+  <div class="vline" style="left:120px; top:1320px; height:15px;"></div>
+  <div class="vline" style="left:499px; top:1320px; height:15px;"></div>
+  <div class="vline" style="left:860px; top:1320px; height:15px;"></div>
+  <div class="hline" style="left:120px; top:1335px; width:740px;"></div>
+  <div class="arrow-down" style="left:499px; top:1335px; height:22px;"></div>
+
+  <!-- ===================== ROW 7: Step 6 ===================== -->
+  <div class="box bold" style="left:280px; top:1360px; width:440px;">
+    第六步：稳健性检验与研究结论确认
+  </div>
+
+  <div class="arrow-down" style="left:499px; top:1410px; height:18px;"></div>
+
+  <!-- Robustness items in two rows of dashed boxes -->
+  <div class="box dashed" style="left:80px; top:1430px; width:160px; font-size:11px; padding:6px;">
+    替换被解释变量口径<br>替换核心解释变量口径
+  </div>
+  <div class="box dashed" style="left:270px; top:1430px; width:140px; font-size:11px; padding:6px;">
+    替换机制变量<br>调整缩尾比例
+  </div>
+  <div class="box dashed" style="left:440px; top:1430px; width:140px; font-size:11px; padding:6px;">
+    变更样本区间<br>剔除极端城市
+  </div>
+  <div class="box dashed" style="left:610px; top:1430px; width:140px; font-size:11px; padding:6px;">
+    加入更严格<br>的固定效应
+  </div>
+  <div class="box dashed" style="left:780px; top:1430px; width:140px; font-size:11px; padding:6px;">
+    随机安慰剂检验
+  </div>
+
+  <!-- merge from robustness -->
+  <div class="vline" style="left:160px; top:1490px; height:12px;"></div>
+  <div class="vline" style="left:340px; top:1490px; height:12px;"></div>
+  <div class="vline" style="left:499px; top:1490px; height:12px;"></div>
+  <div class="vline" style="left:680px; top:1490px; height:12px;"></div>
+  <div class="vline" style="left:850px; top:1490px; height:12px;"></div>
+  <div class="hline" style="left:160px; top:1500px; width:690px;"></div>
+  <div class="arrow-down" style="left:499px; top:1500px; height:22px;"></div>
+
+  <!-- ===================== ROW 8: Key Problems ===================== -->
+  <div class="box bold" style="left:300px; top:1525px; width:400px;">
+    拟解决的关键问题
+  </div>
+
+  <div class="vline" style="left:499px; top:1575px; height:18px;"></div>
+
+  <div class="hline" style="left:50px; top:1593px; width:900px;"></div>
+  <div class="arrow-down" style="left:125px; top:1593px; height:20px;"></div>
+  <div class="arrow-down" style="left:375px; top:1593px; height:20px;"></div>
+  <div class="arrow-down" style="left:625px; top:1593px; height:20px;"></div>
+  <div class="arrow-down" style="left:875px; top:1593px; height:20px;"></div>
+
+  <div class="box" style="left:25px; top:1615px; width:200px; font-size:11px;">
+    (1) 财政压力对<br>地方创新绩效的<br>总体影响及其<br>经济意义
+  </div>
+  <div class="box" style="left:275px; top:1615px; width:200px; font-size:11px;">
+    (2) 财政压力影响<br>地方创新绩效的<br>传导机制
+  </div>
+  <div class="box" style="left:525px; top:1615px; width:200px; font-size:11px;">
+    (3) 财政压力作用的<br>异质性与边界条件
+  </div>
+  <div class="box" style="left:775px; top:1615px; width:200px; font-size:11px;">
+    (4) 因果识别的<br>有效性与研究<br>结论的可信度
+  </div>
+
+  <!-- merge from problems -->
+  <div class="vline" style="left:125px; top:1720px; height:15px;"></div>
+  <div class="vline" style="left:375px; top:1720px; height:15px;"></div>
+  <div class="vline" style="left:625px; top:1720px; height:15px;"></div>
+  <div class="vline" style="left:875px; top:1720px; height:15px;"></div>
+  <div class="hline" style="left:125px; top:1735px; width:750px;"></div>
+  <div class="arrow-down" style="left:499px; top:1735px; height:22px;"></div>
+
+  <!-- ===================== ROW 9: Expected Outcomes ===================== -->
+  <div class="box bold" style="left:350px; top:1760px; width:300px;">
+    预期成果
+  </div>
+
+  <div class="vline" style="left:499px; top:1805px; height:18px;"></div>
+
+  <div class="hline" style="left:25px; top:1823px; width:950px;"></div>
+  <div class="arrow-down" style="left:100px; top:1823px; height:20px;"></div>
+  <div class="arrow-down" style="left:310px; top:1823px; height:20px;"></div>
+  <div class="arrow-down" style="left:500px; top:1823px; height:20px;"></div>
+  <div class="arrow-down" style="left:700px; top:1823px; height:20px;"></div>
+  <div class="arrow-down" style="left:900px; top:1823px; height:20px;"></div>
+
+  <div class="box" style="left:20px; top:1845px; width:160px; font-size:11px;">
+    (1) 学术论文1篇<br>目标投稿CSSCI<br>或SSCI期刊
+  </div>
+  <div class="box" style="left:210px; top:1845px; width:200px; font-size:11px;">
+    (2) 多源整合<br>面板数据库1套<br>约300个地级市<br>2010—2023年
+  </div>
+  <div class="box" style="left:420px; top:1845px; width:160px; font-size:11px;">
+    (3) 核心实证发现<br>因果效应量化<br>传导机制验证<br>异质性规律揭示
+  </div>
+  <div class="box" style="left:615px; top:1845px; width:170px; font-size:11px;">
+    (4) 政策建议报告<br>优化引导基金<br>运营机制
+  </div>
+  <div class="box" style="left:810px; top:1845px; width:180px; font-size:11px;">
+    (5) 预期成果表<br>含11张核心表图<br>包括基准回归<br>稳健性检验等
+  </div>
+
+</div>
+
+</body>
+</html>
