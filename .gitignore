@@ -8,3 +8,7 @@ signCode.txt
 
 # Cursor
 .cursor/
+
+# Copilot skills
+.github/skills/
+*marker_help.txt

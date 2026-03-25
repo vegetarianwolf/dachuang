@@ -1,0 +1,379 @@
+﻿{
+  "root": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang",
+  "summary_date": "2026-03-14",
+  "data_folders": [
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\docs",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\regression_v1",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\regression_v2",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金投资2015-2024",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金相关信息",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\清科政府引导基金投资事件截止到2024年"
+  ],
+  "root_files": [
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\1997-2024年市场化指数和各分项指数 的副本.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地方政府债务：地级市：余额.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市人均GDP.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市总GDP.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市第二产业.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政支出.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政收入.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\实际利用外资.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\市级政府财政透明度（2013-2024年） 的副本.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\常住人口.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\财政支出：科学：地级市.csv",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\金融机构贷款余额.csv"
+  ],
+  "encoding_rules": [
+    "UTF-8/UTF-8-SIG 为主",
+    "部分来源可能需 GBK/GB18030",
+    "CSV 读取时常见 BOM"
+  ],
+  "missing_values": [
+    "--",
+    "",
+    "nan",
+    "未披露"
+  ],
+  "header_patterns": [
+    {
+      "id": "single_line",
+      "description": "首行即字段名，数据从第二行开始",
+      "examples": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\政府引导基金_基金目录_整合.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\政府引导基金_投资事件_整合.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\市级政府财政透明度（2013-2024年） 的副本.csv"
+      ]
+    },
+    {
+      "id": "index_then_header",
+      "description": "第1行是0,1,2...占位，第2行才是字段名，数据从第3行开始",
+      "examples": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\政府引导基金清科目录（1).csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\投中数据全部政府引导基金名录（上）.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\投资数据全部政府引导基金目录（下）.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\引导基金基金清科目录24-25（1）.csv"
+      ]
+    },
+    {
+      "id": "ceic_multi_meta",
+      "description": "宽表，首行是指标列名（含省/市），后续含元数据行：区域/次国家/频率/单位/数据来源，时间序列在其后",
+      "meta_row_labels": [
+        "区域",
+        "次国家",
+        "频率",
+        "单位",
+        "数据来源"
+      ],
+      "examples": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地方政府债务：地级市：余额.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市总GDP.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政支出.csv"
+      ]
+    },
+    {
+      "id": "year_indicator_two_line",
+      "description": "第1行为年份，第2行为指标名，第一列为城市或地区",
+      "examples": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\常住人口.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\实际利用外资.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\金融机构贷款余额.csv"
+      ]
+    },
+    {
+      "id": "english_then_chinese_header",
+      "description": "第1行英文字段，第2行中文字段说明",
+      "examples": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)\\INN_DAREAARGY.csv"
+      ]
+    }
+  ],
+  "join_keys": {
+    "gov_fund_catalog_to_events": "基金全称",
+    "city_panel": "城市 + 年份"
+  },
+  "datasets": {
+    "gov_funds_integrated": {
+      "dir": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据",
+      "files": [
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\政府引导基金_基金目录_整合.csv",
+          "rows": 9863,
+          "columns": [
+            "基金简称",
+            "基金全称",
+            "管理机构",
+            "基金类型",
+            "基金级别",
+            "成立时间",
+            "原始地区",
+            "省份",
+            "城市",
+            "目标规模_万元",
+            "管理机构是否国资",
+            "数据来源"
+          ],
+          "notes": [
+            "地区由原始地区解析，直辖市省市同名",
+            "规模统一为万元"
+          ]
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\政府引导基金_投资事件_整合.csv",
+          "rows": 25793,
+          "columns": [
+            "基金名称",
+            "基金全称",
+            "管理机构",
+            "管理机构全称",
+            "被投企业",
+            "被投企业全称",
+            "企业标签",
+            "行业_清科",
+            "被投企业地区_原始",
+            "被投企业省份",
+            "被投企业城市",
+            "投资类型",
+            "投资阶段",
+            "投资时间",
+            "投资币种",
+            "投资金额_百万",
+            "投资金额_RMB百万",
+            "投资金额_USD百万",
+            "股权比例",
+            "轮次",
+            "数据来源"
+          ],
+          "time_span_note": "整合说明写1991-2024，文件名覆盖1999-2024，使用时建议确认最早年份"
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\城市_投资统计_2000-2024.csv",
+          "columns": [
+            "城市",
+            "省份",
+            "总投资次数",
+            "总投资额_百万元",
+            "早期投资次数",
+            "早期投资额_百万元",
+            "早期投资次数占比",
+            "早期投资额占比",
+            "广义早期投资次数",
+            "广义早期投资额_百万元",
+            "广义早期投资次数占比",
+            "广义早期投资额占比",
+            "早期投资次数占比%",
+            "早期投资额占比%",
+            "广义早期投资次数占比%",
+            "广义早期投资额占比%"
+          ]
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\城市_投资统计_分年份_2000-2024.csv",
+          "columns": [
+            "城市",
+            "省份",
+            "年份",
+            "总投资次数",
+            "总投资额_百万元",
+            "早期投资次数",
+            "早期投资额_百万元",
+            "早期投资次数占比",
+            "早期投资额占比",
+            "广义早期投资次数",
+            "广义早期投资额_百万元",
+            "广义早期投资次数占比",
+            "广义早期投资额占比",
+            "早期投资次数占比%",
+            "早期投资额占比%",
+            "广义早期投资次数占比%",
+            "广义早期投资额占比%"
+          ]
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\_stats.json",
+          "content": "去重与来源贡献统计"
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\数据整合说明.md",
+          "content": "字段统一、去重键、地区解析与时间跨度说明"
+        }
+      ],
+      "dedup_rules": {
+        "catalog": "基金全称（去空格，统一括号）",
+        "events": "基金全称+被投企业全称+投资时间+投资金额"
+      },
+      "stats_from__stats_json": {
+        "catalog_total_before_dedup": 12085,
+        "catalog_total_after_dedup": 9383,
+        "catalog_duplicates_removed": 2702,
+        "catalog_city_supplemented": 55,
+        "events_total_before_dedup": 34181,
+        "events_total_after_dedup": 25793,
+        "events_duplicates_removed": 8388,
+        "catalog_total_after_event_supplement": 9863
+      }
+    },
+    "gov_funds_raw": {
+      "catalog_sources": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\政府引导基金清科目录（1).csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\政府引导基金清科目录（2).csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\政府引导基金清科目录（3）.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\引导基金基金清科目录24-25（1）.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\引导基金基金清科目录24-25（2）.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\投中数据全部政府引导基金名录（上）.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\投资数据全部政府引导基金目录（下）.csv"
+      ],
+      "catalog_header_pattern": "index_then_header",
+      "detail_info_sources": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金相关信息\\政府引导基金1 的副本.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金相关信息\\政府引导基金2 的副本.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金相关信息\\政府引导基金3 的副本.csv"
+      ],
+      "detail_info_note": "含出资人多行展开，整合时仅保留基金主行",
+      "events_sources_full": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\清科政府引导基金投资事件截止到2024年",
+      "events_sources_subset": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金投资2015-2024",
+      "events_note": "2015-2024 子集与全量重复，整合时按文件名去重"
+    },
+    "patent": {
+      "cnrds_package_dir": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包",
+      "cnrds_readme": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\中国创新专利研究数据库说明书.pdf",
+      "cnrds_subpackages": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\上市公司专利申请与获得",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\上市公司专利分类号信息",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\上市公司专利分类号信息（细分）",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\上市公司研发费用",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\科研机构专利申请与获得",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\各省市创新专利情况",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\非上市公司专利申请与获得",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\【赠品】上市公司基本信息年度表(csmar，2024)",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\【赠品】上市前专利申请与获得"
+      ],
+      "regional_patent_dataset": {
+        "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)\\INN_DAREAARGY.csv",
+        "columns_en": [
+          "SgnYear",
+          "AreaCode",
+          "AreaName",
+          "StatisticalTypeCode",
+          "StatisticalType",
+          "PatentTypeCode",
+          "PatentType",
+          "Accumulated"
+        ],
+        "header_pattern": "english_then_chinese_header",
+        "field_desc": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)\\INN_DAREAARGY[DES][xlsx].txt"
+      }
+    },
+    "csmar_srdi": {
+      "dir": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export",
+      "files": [
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntIdentInfo.csv",
+          "columns": [
+            "IdentifyYear",
+            "InstitutionID",
+            "InstitutionName",
+            "ProvinceName",
+            "CityName",
+            "SelectedBatch",
+            "IdentifyType",
+            "IdentifyLevel",
+            "IsListed",
+            "Symbol",
+            "Relationship",
+            "RelatedSymbol"
+          ]
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntInfo_Full.csv",
+          "columns_count": 27
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntInfo_packed.csv",
+          "columns_count": 27
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntPatentInfo.csv",
+          "columns": [
+            "EndDate",
+            "InstitutionID",
+            "InstitutionName",
+            "Applicant",
+            "Type",
+            "ApplicationNumber",
+            "PatentName",
+            "ApplicationDate",
+            "OpenNumber",
+            "OpenDate",
+            "IPCClassification",
+            "Inventor",
+            "Agent",
+            "Agency",
+            "ApplicantAddress",
+            "ApplicantZip"
+          ]
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntPatentInfo_Full.csv",
+          "columns_count": 16
+        },
+        {
+          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntPatentInfo_packed.csv",
+          "columns_count": 16
+        }
+      ]
+    },
+    "macro_city": {
+      "ceic_style_wide": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地方政府债务：地级市：余额.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市总GDP.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市人均GDP.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市第二产业.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政支出.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政收入.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\财政支出：科学：地级市.csv"
+      ],
+      "year_indicator_two_line": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\常住人口.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\实际利用外资.csv",
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\金融机构贷款余额.csv"
+      ],
+      "simple_city_year_wide": [
+        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\市级政府财政透明度（2013-2024年） 的副本.csv"
+      ],
+      "year_range_note": "多数城市指标覆盖约1990-2025，具体以列名为准"
+    },
+    "marketization_index": {
+      "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\1997-2024年市场化指数和各分项指数 的副本.csv",
+      "columns": [
+        "省份",
+        "year",
+        "market",
+        "政府与市场关系",
+        "非国有经济发展",
+        "产品市场的发育程度",
+        "要素市场的发育程度",
+        "市场中介组织的发育和法律制度环境"
+      ]
+    }
+  },
+  "scripts": [
+    {
+      "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\merge_gov_funds.py",
+      "purpose": "整合政府引导基金目录与投资事件，统一字段、解析地区、去重、补充基金"
+    },
+    {
+      "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\build_city_stats.py",
+      "purpose": "基于投资事件与基金注册城市生成2000-2024城市投资统计面板"
+    }
+  ],
+  "non_data_files": [
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\ceic_token.txt",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\token.txt",
+    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\signCode.txt"
+  ]
+}
