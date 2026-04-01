@@ -12,3 +12,6 @@ signCode.txt
 # Copilot skills
 .github/skills/
 *marker_help.txt
+
+.vscode/
+.obsidian/
