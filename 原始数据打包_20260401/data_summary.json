@@ -1,278 +1,811 @@
 ﻿{
-  "root": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang",
-  "summary_date": "2026-03-14",
-  "data_folders": [
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\docs",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\regression_v1",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\regression_v2",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金投资2015-2024",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金相关信息",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\清科政府引导基金投资事件截止到2024年"
-  ],
-  "root_files": [
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\1997-2024年市场化指数和各分项指数 的副本.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地方政府债务：地级市：余额.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市人均GDP.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市总GDP.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市第二产业.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政支出.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政收入.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\实际利用外资.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\市级政府财政透明度（2013-2024年） 的副本.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\常住人口.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\财政支出：科学：地级市.csv",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\金融机构贷款余额.csv"
-  ],
-  "encoding_rules": [
-    "UTF-8/UTF-8-SIG 为主",
-    "部分来源可能需 GBK/GB18030",
-    "CSV 读取时常见 BOM"
-  ],
-  "missing_values": [
-    "--",
-    "",
-    "nan",
-    "未披露"
-  ],
+  "schema_version": "2.1",
+  "project_name": "dachuang",
+  "project_root": ".",
+  "bundle_root": "原始数据打包_20260401",
+  "summary_date": "2026-04-01",
+  "scope": {
+    "included_data_files": "only csv files under bundle_root",
+    "included_metadata_files": [
+      "txt",
+      "pdf",
+      "json"
+    ],
+    "excluded_from_data_inventory": "all non-csv spreadsheet files"
+  },
+  "path_rules": {
+    "all_paths_relative_to": "dachuang",
+    "separator": "/",
+    "case_sensitive": false,
+    "example_data_path": "原始数据打包_20260401/市级数据/常住人口.csv",
+    "example_metadata_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利申请与获得/上市公司专利申请情况/上市公司专利申请情况_字段说明.txt"
+  },
+  "inventory": {
+    "csv_data_file_count": 99,
+    "metadata_file_count": {
+      "txt": 26,
+      "pdf": 29,
+      "json": 1
+    },
+    "top_level_entries": [
+      {
+        "relative_path": "原始数据打包_20260401/CNRDS专利数据包",
+        "type": "directory",
+        "family_id": "cnrds_patent_package",
+        "csv_data_file_count": 43,
+        "metadata_file_count": {
+          "txt": 25,
+          "pdf": 28
+        }
+      },
+      {
+        "relative_path": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）",
+        "type": "directory",
+        "family_id": "csmar_srdi",
+        "csv_data_file_count": 6,
+        "metadata_file_count": {}
+      },
+      {
+        "relative_path": "原始数据打包_20260401/分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)",
+        "type": "directory",
+        "family_id": "regional_patent_official",
+        "csv_data_file_count": 1,
+        "metadata_file_count": {
+          "txt": 1,
+          "pdf": 1
+        }
+      },
+      {
+        "relative_path": "原始数据打包_20260401/市级数据",
+        "type": "directory",
+        "family_id": "city_macro_panels",
+        "csv_data_file_count": 12,
+        "metadata_file_count": {}
+      },
+      {
+        "relative_path": "原始数据打包_20260401/政府引导基金投资2015-2024",
+        "type": "directory",
+        "family_id": "gov_fund_events_raw_subset",
+        "csv_data_file_count": 12,
+        "metadata_file_count": {}
+      },
+      {
+        "relative_path": "原始数据打包_20260401/政府引导基金清科目录（3）",
+        "type": "directory",
+        "family_id": "gov_fund_catalog_raw",
+        "csv_data_file_count": 7,
+        "metadata_file_count": {}
+      },
+      {
+        "relative_path": "原始数据打包_20260401/政府引导基金相关信息",
+        "type": "directory",
+        "family_id": "gov_fund_detail_raw",
+        "csv_data_file_count": 3,
+        "metadata_file_count": {}
+      },
+      {
+        "relative_path": "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年",
+        "type": "directory",
+        "family_id": "gov_fund_events_raw_full",
+        "csv_data_file_count": 15,
+        "metadata_file_count": {}
+      },
+      {
+        "relative_path": "原始数据打包_20260401/data_summary.json",
+        "type": "file",
+        "role": "bundle manifest"
+      }
+    ]
+  },
+  "global_reading_rules": {
+    "preferred_tabular_format": "csv",
+    "encoding_candidates": [
+      "utf-8",
+      "utf-8-sig",
+      "gbk",
+      "gb18030"
+    ],
+    "missing_value_tokens": [
+      "--",
+      "",
+      "nan",
+      "未披露",
+      "不披露"
+    ],
+    "metadata_file_roles": {
+      "txt": "field dictionary, descriptor, or column description",
+      "pdf": "manual, copyright notice, or source statement"
+    }
+  },
   "header_patterns": [
     {
-      "id": "single_line",
-      "description": "首行即字段名，数据从第二行开始",
+      "id": "single_line_header",
+      "header_row_count": 1,
+      "data_start_row_index_1based": 2,
+      "detection_rules": [
+        "row 1 already contains semantic field names",
+        "no placeholder row before real field names"
+      ],
       "examples": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\政府引导基金_基金目录_整合.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\政府引导基金_投资事件_整合.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\市级政府财政透明度（2013-2024年） 的副本.csv"
+        "原始数据打包_20260401/政府引导基金相关信息/政府引导基金1 的副本.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资1999.csv",
+        "原始数据打包_20260401/市级数据/市级政府财政透明度（2013-2024年） 的副本.csv",
+        "原始数据打包_20260401/市级数据/1997-2024年市场化指数和各分项指数 的副本.csv",
+        "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntIdentInfo.csv"
       ]
     },
     {
       "id": "index_then_header",
-      "description": "第1行是0,1,2...占位，第2行才是字段名，数据从第3行开始",
+      "header_row_count": 2,
+      "data_start_row_index_1based": 3,
+      "detection_rules": [
+        "row 1 is a placeholder index row such as 0,1,2,3",
+        "row 2 contains the actual field names"
+      ],
       "examples": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\政府引导基金清科目录（1).csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\投中数据全部政府引导基金名录（上）.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\投资数据全部政府引导基金目录（下）.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\引导基金基金清科目录24-25（1）.csv"
+        "原始数据打包_20260401/政府引导基金清科目录（3）/政府引导基金清科目录（1).csv",
+        "原始数据打包_20260401/政府引导基金清科目录（3）/投中数据全部政府引导基金名录（上）.csv",
+        "原始数据打包_20260401/政府引导基金清科目录（3）/投资数据全部政府引导基金目录（下）.csv"
       ]
     },
     {
-      "id": "ceic_multi_meta",
-      "description": "宽表，首行是指标列名（含省/市），后续含元数据行：区域/次国家/频率/单位/数据来源，时间序列在其后",
+      "id": "ceic_multi_meta_wide",
+      "header_row_count": 7,
+      "data_start_row_index_1based": 8,
+      "detection_rules": [
+        "row 1 contains series names across cities or city subtypes",
+        "row 2-row 7 first cell labels are fixed metadata labels",
+        "rows after metadata are observation periods"
+      ],
       "meta_row_labels": [
         "区域",
         "次国家",
         "频率",
         "单位",
-        "数据来源"
+        "数据来源",
+        "状态"
       ],
       "examples": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地方政府债务：地级市：余额.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市总GDP.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政支出.csv"
+        "原始数据打包_20260401/市级数据/地方政府债务：地级市：余额.csv",
+        "原始数据打包_20260401/市级数据/地级市总GDP.csv",
+        "原始数据打包_20260401/市级数据/地级市财政支出.csv"
       ]
     },
     {
-      "id": "year_indicator_two_line",
-      "description": "第1行为年份，第2行为指标名，第一列为城市或地区",
+      "id": "year_indicator_two_line_wide",
+      "header_row_count": 2,
+      "data_start_row_index_1based": 3,
+      "detection_rules": [
+        "row 1 contains year labels",
+        "row 2 repeats indicator name and unit",
+        "column 1 is city or region name"
+      ],
       "examples": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\常住人口.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\实际利用外资.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\金融机构贷款余额.csv"
+        "原始数据打包_20260401/市级数据/常住人口.csv",
+        "原始数据打包_20260401/市级数据/实际利用外资.csv",
+        "原始数据打包_20260401/市级数据/金融机构贷款余额.csv"
       ]
     },
     {
-      "id": "english_then_chinese_header",
-      "description": "第1行英文字段，第2行中文字段说明",
+      "id": "english_chinese_two_line",
+      "header_row_count": 2,
+      "data_start_row_index_1based": 3,
+      "detection_rules": [
+        "row 1 contains machine-friendly English field names",
+        "row 2 contains Chinese field explanations"
+      ],
       "examples": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)\\INN_DAREAARGY.csv"
+        "原始数据打包_20260401/CNRDS专利数据包/上市公司专利申请与获得/上市公司专利申请情况/上市公司专利申请情况.csv",
+        "原始数据打包_20260401/CNRDS专利数据包/各省市创新专利情况/各省市专利申请情况/各省市专利申请情况.csv",
+        "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_1.csv"
+      ]
+    },
+    {
+      "id": "english_chinese_unit_three_line",
+      "header_row_count": 3,
+      "data_start_row_index_1based": 4,
+      "detection_rules": [
+        "row 1 contains English field names",
+        "row 2 contains Chinese field explanations",
+        "row 3 contains units or placeholder unit labels"
+      ],
+      "examples": [
+        "原始数据打包_20260401/分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)/INN_DAREAARGY.csv",
+        "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市公司基本信息年度表(csmar，2024)/STK_LISTEDCOINFOANL.csv"
       ]
     }
   ],
-  "join_keys": {
-    "gov_fund_catalog_to_events": "基金全称",
-    "city_panel": "城市 + 年份"
-  },
-  "datasets": {
-    "gov_funds_integrated": {
-      "dir": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据",
+  "artifact_patterns": [
+    {
+      "id": "csv_only_dataset",
+      "description": "logical dataset is represented by one CSV file",
+      "common_in": [
+        "原始数据打包_20260401/政府引导基金清科目录（3）",
+        "原始数据打包_20260401/市级数据",
+        "原始数据打包_20260401/csmar_data_export（最开始的专精特新）"
+      ]
+    },
+    {
+      "id": "csv_with_metadata_bundle",
+      "description": "logical dataset contains one CSV file plus TXT/PDF metadata companions",
+      "common_in": [
+        "原始数据打包_20260401/CNRDS专利数据包 most leaf datasets",
+        "原始数据打包_20260401/分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)"
+      ]
+    },
+    {
+      "id": "chunked_csv_with_metadata_bundle",
+      "description": "one logical dataset is split into multiple numbered CSV files plus shared TXT/PDF metadata",
+      "common_in": [
+        "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得"
+      ]
+    }
+  ],
+  "dataset_families": {
+    "gov_fund_catalog_raw": {
+      "relative_path": "原始数据打包_20260401/政府引导基金清科目录（3）",
+      "role": "raw government guided fund catalog files from multiple source exports",
+      "entity_grain": "one row per fund",
+      "csv_data_file_count": 7,
+      "logical_dataset_count": 7,
+      "header_pattern_id": "index_then_header",
+      "key_candidates": [
+        "基金全称",
+        "基金简称",
+        "管理机构全称"
+      ],
+      "sample_columns": [
+        "基金简称",
+        "基金全称",
+        "管理机构",
+        "管理机构全称",
+        "基金级别",
+        "基金分类",
+        "注册地区",
+        "成立时间",
+        "组织形式",
+        "目标规模(人民币/百万)",
+        "目标规模(美元/百万)",
+        "管理机构是否国资"
+      ],
       "files": [
+        "原始数据打包_20260401/政府引导基金清科目录（3）/政府引导基金清科目录（1).csv",
+        "原始数据打包_20260401/政府引导基金清科目录（3）/政府引导基金清科目录（2).csv",
+        "原始数据打包_20260401/政府引导基金清科目录（3）/政府引导基金清科目录（3）.csv",
+        "原始数据打包_20260401/政府引导基金清科目录（3）/引导基金基金清科目录24-25（1）.csv",
+        "原始数据打包_20260401/政府引导基金清科目录（3）/引导基金基金清科目录24-25（2）.csv",
+        "原始数据打包_20260401/政府引导基金清科目录（3）/投中数据全部政府引导基金名录（上）.csv",
+        "原始数据打包_20260401/政府引导基金清科目录（3）/投资数据全部政府引导基金目录（下）.csv"
+      ]
+    },
+    "gov_fund_detail_raw": {
+      "relative_path": "原始数据打包_20260401/政府引导基金相关信息",
+      "role": "fund detail files with investor and entry requirement fields",
+      "entity_grain": "one row per fund or fund-investor expansion row",
+      "csv_data_file_count": 3,
+      "logical_dataset_count": 3,
+      "header_pattern_id": "single_line_header",
+      "key_candidates": [
+        "基金全称",
+        "管理机构全称",
+        "出资人名称"
+      ],
+      "sample_columns": [
+        "基金简称",
+        "管理机构",
+        "基金全称",
+        "管理机构全称",
+        "基金级别",
+        "基金分类",
+        "注册地区",
+        "成立时间",
+        "组织形式",
+        "募集状态",
+        "目标规模(人民币/百万)",
+        "管理机构是否国资",
+        "出资人名称",
+        "出资人是否国资"
+      ],
+      "files": [
+        "原始数据打包_20260401/政府引导基金相关信息/政府引导基金1 的副本.csv",
+        "原始数据打包_20260401/政府引导基金相关信息/政府引导基金2 的副本.csv",
+        "原始数据打包_20260401/政府引导基金相关信息/政府引导基金3 的副本.csv"
+      ]
+    },
+    "gov_fund_events_raw_full": {
+      "relative_path": "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年",
+      "role": "full raw investment event history for guided funds",
+      "entity_grain": "one row per investment event",
+      "csv_data_file_count": 15,
+      "logical_dataset_count": 15,
+      "header_pattern_id": "single_line_header",
+      "key_candidates": [
+        "基金全称",
+        "融资主体",
+        "投资时间",
+        "投资金额(RMB/M)"
+      ],
+      "sample_columns": [
+        "投资方",
+        "投资方全称",
+        "机构名称",
+        "机构全称",
+        "上级机构",
+        "上级机构全称",
+        "基金名称",
+        "基金全称",
+        "企业",
+        "融资主体",
+        "企业标签",
+        "行业(清科)",
+        "地区",
+        "投资类型",
+        "投资阶段",
+        "投资时间",
+        "投资币种",
+        "投资金额(M)",
+        "投资金额(RMB/M)",
+        "投资金额(USD/M)",
+        "股权%",
+        "轮次"
+      ],
+      "files": [
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资1999.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2000-2012.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2013-2014.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2015.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2016.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2017.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2018.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2019.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2020.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2021.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2022.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2023.csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2024（1).csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2024（2).csv",
+        "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/政府引导基金投资2024（3）.csv"
+      ]
+    },
+    "gov_fund_events_raw_subset": {
+      "relative_path": "原始数据打包_20260401/政府引导基金投资2015-2024",
+      "role": "subset of guided fund investment events covering 2015-2024",
+      "entity_grain": "one row per investment event",
+      "csv_data_file_count": 12,
+      "logical_dataset_count": 12,
+      "header_pattern_id": "single_line_header",
+      "same_schema_as": "gov_fund_events_raw_full",
+      "files": [
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2015.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2016.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2017.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2018.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2019.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2020.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2021.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2022.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2023.csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2024（1).csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2024（2).csv",
+        "原始数据打包_20260401/政府引导基金投资2015-2024/政府引导基金投资2024（3）.csv"
+      ]
+    },
+    "city_macro_panels": {
+      "relative_path": "原始数据打包_20260401/市级数据",
+      "role": "city and province macro controls, transparency, and marketization panels",
+      "csv_data_file_count": 12,
+      "groups": [
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\政府引导基金_基金目录_整合.csv",
-          "rows": 9863,
-          "columns": [
-            "基金简称",
-            "基金全称",
-            "管理机构",
-            "基金类型",
-            "基金级别",
-            "成立时间",
-            "原始地区",
-            "省份",
-            "城市",
-            "目标规模_万元",
-            "管理机构是否国资",
-            "数据来源"
+          "group_id": "ceic_city_wide",
+          "header_pattern_id": "ceic_multi_meta_wide",
+          "entity_grain": "one indicator table, wide by city series",
+          "files": [
+            "原始数据打包_20260401/市级数据/地方政府债务：地级市：余额.csv",
+            "原始数据打包_20260401/市级数据/地级市总GDP.csv",
+            "原始数据打包_20260401/市级数据/地级市人均GDP.csv",
+            "原始数据打包_20260401/市级数据/地级市第二产业.csv",
+            "原始数据打包_20260401/市级数据/地级市财政支出.csv",
+            "原始数据打包_20260401/市级数据/地级市财政收入.csv",
+            "原始数据打包_20260401/市级数据/财政支出：科学：地级市.csv"
           ],
-          "notes": [
-            "地区由原始地区解析，直辖市省市同名",
-            "规模统一为万元"
+          "series_name_parser": {
+            "separator": ":",
+            "examples": [
+              "地方政府债务余额:河北:石家庄",
+              "地方政府债务余额:一般:江苏:南京",
+              "地方政府债务余额:专项:江苏:苏州"
+            ]
+          }
+        },
+        {
+          "group_id": "year_indicator_two_line_city_wide",
+          "header_pattern_id": "year_indicator_two_line_wide",
+          "entity_grain": "one indicator table, wide by year",
+          "files": [
+            "原始数据打包_20260401/市级数据/常住人口.csv",
+            "原始数据打包_20260401/市级数据/实际利用外资.csv",
+            "原始数据打包_20260401/市级数据/金融机构贷款余额.csv"
           ]
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\政府引导基金_投资事件_整合.csv",
-          "rows": 25793,
-          "columns": [
-            "基金名称",
-            "基金全称",
-            "管理机构",
-            "管理机构全称",
-            "被投企业",
-            "被投企业全称",
-            "企业标签",
-            "行业_清科",
-            "被投企业地区_原始",
-            "被投企业省份",
-            "被投企业城市",
-            "投资类型",
-            "投资阶段",
-            "投资时间",
-            "投资币种",
-            "投资金额_百万",
-            "投资金额_RMB百万",
-            "投资金额_USD百万",
-            "股权比例",
-            "轮次",
-            "数据来源"
+          "group_id": "single_line_city_wide",
+          "header_pattern_id": "single_line_header",
+          "entity_grain": "one row per city, one column per year specific metric",
+          "key_fields": [
+            "所属省份",
+            "城市"
           ],
-          "time_span_note": "整合说明写1991-2024，文件名覆盖1999-2024，使用时建议确认最早年份"
-        },
-        {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\城市_投资统计_2000-2024.csv",
-          "columns": [
-            "城市",
-            "省份",
-            "总投资次数",
-            "总投资额_百万元",
-            "早期投资次数",
-            "早期投资额_百万元",
-            "早期投资次数占比",
-            "早期投资额占比",
-            "广义早期投资次数",
-            "广义早期投资额_百万元",
-            "广义早期投资次数占比",
-            "广义早期投资额占比",
-            "早期投资次数占比%",
-            "早期投资额占比%",
-            "广义早期投资次数占比%",
-            "广义早期投资额占比%"
+          "files": [
+            "原始数据打包_20260401/市级数据/市级政府财政透明度（2013-2024年） 的副本.csv"
           ]
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\城市_投资统计_分年份_2000-2024.csv",
-          "columns": [
-            "城市",
+          "group_id": "province_year_long",
+          "header_pattern_id": "single_line_header",
+          "entity_grain": "one row per province-year",
+          "key_fields": [
             "省份",
-            "年份",
-            "总投资次数",
-            "总投资额_百万元",
-            "早期投资次数",
-            "早期投资额_百万元",
-            "早期投资次数占比",
-            "早期投资额占比",
-            "广义早期投资次数",
-            "广义早期投资额_百万元",
-            "广义早期投资次数占比",
-            "广义早期投资额占比",
-            "早期投资次数占比%",
-            "早期投资额占比%",
-            "广义早期投资次数占比%",
-            "广义早期投资额占比%"
+            "year"
+          ],
+          "columns": [
+            "省份",
+            "year",
+            "market",
+            "政府与市场关系",
+            "非国有经济发展",
+            "产品市场的发育程度",
+            "要素市场的发育程度",
+            "市场中介组织的发育和法律制度环境"
+          ],
+          "files": [
+            "原始数据打包_20260401/市级数据/1997-2024年市场化指数和各分项指数 的副本.csv"
+          ]
+        }
+      ]
+    },
+    "regional_patent_official": {
+      "relative_path": "原始数据打包_20260401/分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)",
+      "role": "official regional patent acceptance and grant statistics",
+      "entity_grain": "one row per area-year-statistical_type-patent_type",
+      "csv_data_file_count": 1,
+      "metadata_file_count": {
+        "txt": 1,
+        "pdf": 1
+      },
+      "artifact_pattern_id": "csv_with_metadata_bundle",
+      "header_pattern_id": "english_chinese_unit_three_line",
+      "key_candidates": [
+        "SgnYear",
+        "AreaCode",
+        "StatisticalTypeCode",
+        "PatentTypeCode"
+      ],
+      "files": {
+        "csv": [
+          "原始数据打包_20260401/分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)/INN_DAREAARGY.csv"
+        ],
+        "txt": [
+          "原始数据打包_20260401/分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)/INN_DAREAARGY[DES][xlsx].txt"
+        ],
+        "pdf": [
+          "原始数据打包_20260401/分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)/版权声明.pdf"
+        ]
+      },
+      "columns_en": [
+        "SgnYear",
+        "AreaCode",
+        "AreaName",
+        "StatisticalTypeCode",
+        "StatisticalType",
+        "PatentTypeCode",
+        "PatentType",
+        "Accumulated"
+      ],
+      "columns_zh": [
+        "统计年度",
+        "地区代码",
+        "地区名称",
+        "统计类型编码",
+        "统计类型",
+        "专业类型编码",
+        "专业类型",
+        "当年累计"
+      ]
+    },
+    "cnrds_patent_package": {
+      "relative_path": "原始数据打包_20260401/CNRDS专利数据包",
+      "role": "nested patent, R&D, listed-company, non-listed-company, and regional patent bundles from CNRDS",
+      "csv_data_file_count": 43,
+      "metadata_file_count": {
+        "txt": 25,
+        "pdf": 28
+      },
+      "logical_leaf_dataset_count": 25,
+      "default_header_pattern_id": "english_chinese_two_line",
+      "default_artifact_pattern_id": "csv_with_metadata_bundle",
+      "top_level_docs": [
+        "原始数据打包_20260401/CNRDS专利数据包/中国创新专利研究数据库说明书.pdf"
+      ],
+      "branches": [
+        {
+          "name": "【赠品】上市公司基本信息年度表(csmar，2024)",
+          "leaf_dataset_count": 1,
+          "leaf_datasets": [
+            {
+              "name": "STK_LISTEDCOINFOANL",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市公司基本信息年度表(csmar，2024)",
+              "artifact_pattern_id": "csv_with_metadata_bundle",
+              "header_pattern_id": "english_chinese_unit_three_line",
+              "files": {
+                "csv": [
+                  "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市公司基本信息年度表(csmar，2024)/STK_LISTEDCOINFOANL.csv"
+                ],
+                "txt": [
+                  "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市公司基本信息年度表(csmar，2024)/STK_LISTEDCOINFOANL[DES][xlsx].txt"
+                ],
+                "pdf": [
+                  "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市公司基本信息年度表(csmar，2024)/版权声明.pdf"
+                ]
+              }
+            }
           ]
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\_stats.json",
-          "content": "去重与来源贡献统计"
+          "name": "【赠品】上市前专利申请与获得",
+          "branch_docs": [
+            "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市前专利申请与获得/公司上市前专利数据库说明书.pdf"
+          ],
+          "leaf_dataset_count": 4,
+          "leaf_datasets": [
+            {
+              "name": "公司上市前专利申请后获得情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市前专利申请与获得/公司上市前专利申请后获得情况"
+            },
+            {
+              "name": "公司上市前专利申请情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市前专利申请与获得/公司上市前专利申请情况"
+            },
+            {
+              "name": "公司上市前专利获得年限情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市前专利申请与获得/公司上市前专利获得年限情况"
+            },
+            {
+              "name": "公司上市前专利获得情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/【赠品】上市前专利申请与获得/公司上市前专利获得情况"
+            }
+          ]
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金整合数据\\数据整合说明.md",
-          "content": "字段统一、去重键、地区解析与时间跨度说明"
+          "name": "上市公司专利申请与获得",
+          "leaf_dataset_count": 4,
+          "leaf_datasets": [
+            {
+              "name": "上市公司专利申请后获得情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利申请与获得/上市公司专利申请后获得情况"
+            },
+            {
+              "name": "上市公司专利申请情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利申请与获得/上市公司专利申请情况"
+            },
+            {
+              "name": "上市公司专利获得年限情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利申请与获得/上市公司专利获得年限情况"
+            },
+            {
+              "name": "上市公司专利获得情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利申请与获得/上市公司专利获得情况"
+            }
+          ]
+        },
+        {
+          "name": "上市公司专利分类号信息",
+          "leaf_dataset_count": 4,
+          "leaf_datasets": [
+            {
+              "name": "上市公司发明申请专利分类号",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利分类号信息/上市公司发明申请专利分类号"
+            },
+            {
+              "name": "上市公司发明获得专利分类号",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利分类号信息/上市公司发明获得专利分类号"
+            },
+            {
+              "name": "上市公司实用新型申请专利分类号",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利分类号信息/上市公司实用新型申请专利分类号"
+            },
+            {
+              "name": "上市公司实用新型获得专利分类号",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利分类号信息/上市公司实用新型获得专利分类号"
+            }
+          ]
+        },
+        {
+          "name": "上市公司专利分类号信息（细分）",
+          "leaf_dataset_count": 4,
+          "leaf_datasets": [
+            {
+              "name": "上市公司发明申请专利细分分类号",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利分类号信息（细分）/上市公司发明申请专利细分分类号"
+            },
+            {
+              "name": "上市公司发明获得专利细分分类号",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利分类号信息（细分）/上市公司发明获得专利细分分类号"
+            },
+            {
+              "name": "上市公司实用新型申请专利细分分类号",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利分类号信息（细分）/上市公司实用新型申请专利细分分类号"
+            },
+            {
+              "name": "上市公司实用新型获得专利细分分类号",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利分类号信息（细分）/上市公司实用新型获得专利细分分类号"
+            }
+          ]
+        },
+        {
+          "name": "上市公司研发费用",
+          "leaf_dataset_count": 2,
+          "leaf_datasets": [
+            {
+              "name": "上市公司研发支出",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司研发费用/上市公司研发支出"
+            },
+            {
+              "name": "上市公司研发费用明细",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司研发费用/上市公司研发费用明细"
+            }
+          ]
+        },
+        {
+          "name": "各省市创新专利情况",
+          "leaf_dataset_count": 2,
+          "leaf_datasets": [
+            {
+              "name": "各省市专利申请情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/各省市创新专利情况/各省市专利申请情况"
+            },
+            {
+              "name": "各省市专利获得情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/各省市创新专利情况/各省市专利获得情况"
+            }
+          ]
+        },
+        {
+          "name": "科研机构专利申请与获得",
+          "leaf_dataset_count": 2,
+          "leaf_datasets": [
+            {
+              "name": "科研机构专利申请情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/科研机构专利申请与获得/科研机构专利申请情况"
+            },
+            {
+              "name": "科研机构专利获得情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/科研机构专利申请与获得/科研机构专利获得情况"
+            }
+          ]
+        },
+        {
+          "name": "非上市公司专利申请与获得",
+          "leaf_dataset_count": 2,
+          "leaf_datasets": [
+            {
+              "name": "非上市公司专利申请情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况",
+              "artifact_pattern_id": "chunked_csv_with_metadata_bundle",
+              "chunk_count": 10
+            },
+            {
+              "name": "非上市公司专利获得情况",
+              "relative_path": "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况",
+              "artifact_pattern_id": "chunked_csv_with_metadata_bundle",
+              "chunk_count": 10
+            }
+          ]
         }
       ],
-      "dedup_rules": {
-        "catalog": "基金全称（去空格，统一括号）",
-        "events": "基金全称+被投企业全称+投资时间+投资金额"
-      },
-      "stats_from__stats_json": {
-        "catalog_total_before_dedup": 12085,
-        "catalog_total_after_dedup": 9383,
-        "catalog_duplicates_removed": 2702,
-        "catalog_city_supplemented": 55,
-        "events_total_before_dedup": 34181,
-        "events_total_after_dedup": 25793,
-        "events_duplicates_removed": 8388,
-        "catalog_total_after_event_supplement": 9863
-      }
-    },
-    "gov_funds_raw": {
-      "catalog_sources": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\政府引导基金清科目录（1).csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\政府引导基金清科目录（2).csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\政府引导基金清科目录（3）.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\引导基金基金清科目录24-25（1）.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\引导基金基金清科目录24-25（2）.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\投中数据全部政府引导基金名录（上）.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金清科目录（3）\\投资数据全部政府引导基金目录（下）.csv"
-      ],
-      "catalog_header_pattern": "index_then_header",
-      "detail_info_sources": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金相关信息\\政府引导基金1 的副本.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金相关信息\\政府引导基金2 的副本.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金相关信息\\政府引导基金3 的副本.csv"
-      ],
-      "detail_info_note": "含出资人多行展开，整合时仅保留基金主行",
-      "events_sources_full": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\清科政府引导基金投资事件截止到2024年",
-      "events_sources_subset": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\政府引导基金投资2015-2024",
-      "events_note": "2015-2024 子集与全量重复，整合时按文件名去重"
-    },
-    "patent": {
-      "cnrds_package_dir": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包",
-      "cnrds_readme": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\中国创新专利研究数据库说明书.pdf",
-      "cnrds_subpackages": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\上市公司专利申请与获得",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\上市公司专利分类号信息",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\上市公司专利分类号信息（细分）",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\上市公司研发费用",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\科研机构专利申请与获得",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\各省市创新专利情况",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\非上市公司专利申请与获得",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\【赠品】上市公司基本信息年度表(csmar，2024)",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\CNRDS专利数据包\\【赠品】上市前专利申请与获得"
-      ],
-      "regional_patent_dataset": {
-        "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)\\INN_DAREAARGY.csv",
-        "columns_en": [
-          "SgnYear",
-          "AreaCode",
-          "AreaName",
-          "StatisticalTypeCode",
-          "StatisticalType",
-          "PatentTypeCode",
-          "PatentType",
-          "Accumulated"
-        ],
-        "header_pattern": "english_then_chinese_header",
-        "field_desc": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)\\INN_DAREAARGY[DES][xlsx].txt"
-      }
+      "sample_schema_examples": [
+        {
+          "dataset": "上市公司专利申请情况",
+          "relative_path": "原始数据打包_20260401/CNRDS专利数据包/上市公司专利申请与获得/上市公司专利申请情况/上市公司专利申请情况.csv",
+          "columns_en": [
+            "Scode",
+            "Year",
+            "Ftyp",
+            "Aplctm",
+            "Invia",
+            "Umia",
+            "Desia",
+            "Invja",
+            "Umja",
+            "Desja"
+          ],
+          "columns_zh": [
+            "股票代码",
+            "会计年度",
+            "公司类型",
+            "申请时间",
+            "当年独立申请的发明数量",
+            "当年独立申请的实用新型数量",
+            "当年独立申请的外观设计数量",
+            "当年联合申请的发明数量",
+            "当年联合申请的实用新型数量",
+            "当年联合申请的外观设计数量"
+          ],
+          "key_candidates": [
+            "Scode",
+            "Year",
+            "Ftyp",
+            "Aplctm"
+          ]
+        },
+        {
+          "dataset": "各省市专利申请情况",
+          "relative_path": "原始数据打包_20260401/CNRDS专利数据包/各省市创新专利情况/各省市专利申请情况/各省市专利申请情况.csv",
+          "columns_en": [
+            "Prvn",
+            "Pftn",
+            "Year",
+            "Inva",
+            "Uma",
+            "Desa"
+          ],
+          "columns_zh": [
+            "省份名称",
+            "地市名称",
+            "会计年度",
+            "当年申请的发明数量",
+            "当年申请的实用新型数量",
+            "当年申请的外观设计数量"
+          ],
+          "key_candidates": [
+            "Prvn",
+            "Pftn",
+            "Year"
+          ]
+        },
+        {
+          "dataset": "非上市公司专利申请情况",
+          "relative_path": "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_1.csv",
+          "columns_en": [
+            "Coname",
+            "Year",
+            "Invia",
+            "Umia",
+            "Desia",
+            "Invja",
+            "Umja",
+            "Desja"
+          ],
+          "columns_zh": [
+            "公司名称",
+            "会计年度",
+            "当年独立申请的发明数量",
+            "当年独立申请的实用新型数量",
+            "当年独立申请的外观设计数量",
+            "当年联合申请的发明数量",
+            "当年联合申请的实用新型数量",
+            "当年联合申请的外观设计数量"
+          ],
+          "key_candidates": [
+            "Coname",
+            "Year"
+          ]
+        }
+      ]
     },
     "csmar_srdi": {
-      "dir": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export",
-      "files": [
+      "relative_path": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）",
+      "role": "SRDI firm identification, firm snapshot, and patent record exports",
+      "csv_data_file_count": 6,
+      "logical_dataset_count": 6,
+      "header_pattern_id": "single_line_header",
+      "key_candidates": [
+        "InstitutionID",
+        "InstitutionName"
+      ],
+      "logical_tables": [
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntIdentInfo.csv",
+          "file": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntIdentInfo.csv",
+          "entity_grain": "institution-year identification record",
           "columns": [
             "IdentifyYear",
             "InstitutionID",
@@ -289,15 +822,50 @@
           ]
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntInfo_Full.csv",
-          "columns_count": 27
+          "file": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntInfo_Full.csv",
+          "entity_grain": "institution snapshot by EndDate",
+          "columns": [
+            "EndDate",
+            "InstitutionID",
+            "InstitutionName",
+            "BusinessState",
+            "Auditor",
+            "AuditorSgnTime",
+            "EstablishDate",
+            "RegisteredCapital",
+            "RegisteredCurrency",
+            "StaffNumber",
+            "StaffNumberSgnType",
+            "StaffNumberSgnTime",
+            "MainBussinessIndustry",
+            "OtherBussinessIndustry",
+            "GBCode2017MainClass",
+            "MainProduct",
+            "EnterpriseNature",
+            "ProvinceName",
+            "CityName",
+            "RegisteredAddress",
+            "OfficeAddress",
+            "RegNumber",
+            "Website",
+            "Tel",
+            "Email",
+            "SocialCreditCode",
+            "ISIN"
+          ]
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntInfo_packed.csv",
-          "columns_count": 27
+          "file": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntInfo_packed.csv",
+          "entity_grain": "institution snapshot by EndDate",
+          "same_schema_as": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntInfo_Full.csv"
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntPatentInfo.csv",
+          "file": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntPatentInfo.csv",
+          "entity_grain": "institution patent record",
+          "key_candidates": [
+            "InstitutionID",
+            "ApplicationNumber"
+          ],
           "columns": [
             "EndDate",
             "InstitutionID",
@@ -318,62 +886,74 @@
           ]
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntPatentInfo_Full.csv",
-          "columns_count": 16
+          "file": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntPatentInfo_Full.csv",
+          "entity_grain": "institution patent record",
+          "same_schema_as": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntPatentInfo.csv"
         },
         {
-          "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\csmar_data_export\\SRDI_EntPatentInfo_packed.csv",
-          "columns_count": 16
+          "file": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntPatentInfo_packed.csv",
+          "entity_grain": "institution patent record",
+          "same_schema_as": "原始数据打包_20260401/csmar_data_export（最开始的专精特新）/SRDI_EntPatentInfo.csv"
         }
-      ]
-    },
-    "macro_city": {
-      "ceic_style_wide": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地方政府债务：地级市：余额.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市总GDP.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市人均GDP.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市第二产业.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政支出.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\地级市财政收入.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\财政支出：科学：地级市.csv"
-      ],
-      "year_indicator_two_line": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\常住人口.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\实际利用外资.csv",
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\金融机构贷款余额.csv"
-      ],
-      "simple_city_year_wide": [
-        "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\市级政府财政透明度（2013-2024年） 的副本.csv"
-      ],
-      "year_range_note": "多数城市指标覆盖约1990-2025，具体以列名为准"
-    },
-    "marketization_index": {
-      "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\1997-2024年市场化指数和各分项指数 的副本.csv",
-      "columns": [
-        "省份",
-        "year",
-        "market",
-        "政府与市场关系",
-        "非国有经济发展",
-        "产品市场的发育程度",
-        "要素市场的发育程度",
-        "市场中介组织的发育和法律制度环境"
       ]
     }
   },
-  "scripts": [
+  "cross_dataset_links": [
     {
-      "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\merge_gov_funds.py",
-      "purpose": "整合政府引导基金目录与投资事件，统一字段、解析地区、去重、补充基金"
+      "from_family": "gov_fund_catalog_raw",
+      "to_family": "gov_fund_detail_raw",
+      "keys": [
+        "基金全称",
+        "管理机构全称"
+      ],
+      "confidence": "medium"
     },
     {
-      "path": "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\build_city_stats.py",
-      "purpose": "基于投资事件与基金注册城市生成2000-2024城市投资统计面板"
+      "from_family": "gov_fund_catalog_raw",
+      "to_family": "gov_fund_events_raw_full",
+      "keys": [
+        "基金全称"
+      ],
+      "confidence": "high"
+    },
+    {
+      "from_family": "city_macro_panels",
+      "to_family": "regional_patent_official",
+      "keys": [
+        "城市或地区标准化名称",
+        "年份"
+      ],
+      "preprocessing_required": [
+        "wide to long reshape for 市级数据 files",
+        "area code or city name normalization"
+      ]
+    },
+    {
+      "from_family": "city_macro_panels",
+      "to_family": "cnrds_patent_package",
+      "keys": [
+        "省份/城市",
+        "Year"
+      ],
+      "applicable_subbranch": "各省市创新专利情况"
+    },
+    {
+      "from_family": "city_macro_panels",
+      "to_family": "csmar_srdi",
+      "keys": [
+        "ProvinceName/CityName",
+        "IdentifyYear or EndDate derived year"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "from_family": "cnrds_patent_package",
+      "to_family": "csmar_srdi",
+      "keys": [
+        "Scode or Symbol",
+        "Year"
+      ],
+      "applicable_subbranch": "上市公司相关子包"
     }
-  ],
-  "non_data_files": [
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\ceic_token.txt",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\token.txt",
-    "C:\\Users\\21288\\Desktop\\DACHUANG\\dachuang\\signCode.txt"
   ]
 }
