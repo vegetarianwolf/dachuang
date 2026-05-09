@@ -1,0 +1,7 @@
+interface:
+  display_name: "Panel Reg"
+  short_description: "Run Stata regressions and save do/log outputs."
+  default_prompt: "Use $reg to write a runnable Stata panel regression do file, save it under 运行日志与do代码, and run it with Stata MCP."
+
+policy:
+  allow_implicit_invocation: true
