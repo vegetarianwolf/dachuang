@@ -14,6 +14,55 @@ PATENT_DIR = os.path.join(RAW_DIR, "CNRDS专利数据包", "各省市创新专�
 DEBT_CITY_DIR = os.path.join(CITY_DATA_DIR, "地方债务", "全国地方债务余额(省级+地级市)2006-2023", "地级市")
 STAGING_DIR = os.path.join(ROOT, "staging_ascii")
 
+DIRECT_MUNICIPALITY_BARE = {"北京", "天津", "上海", "重庆"}
+DIRECT_MUNICIPALITY_FULL = {f"{name}市" for name in DIRECT_MUNICIPALITY_BARE}
+PROVINCE_LEVEL_NAMES = {
+    "河北",
+    "山西",
+    "辽宁",
+    "吉林",
+    "黑龙江",
+    "江苏",
+    "浙江",
+    "安徽",
+    "福建",
+    "江西",
+    "山东",
+    "河南",
+    "湖北",
+    "湖南",
+    "广东",
+    "海南",
+    "四川",
+    "贵州",
+    "云南",
+    "陕西",
+    "甘肃",
+    "青海",
+    "台湾",
+    "内蒙古",
+    "广西",
+    "西藏",
+    "宁夏",
+    "新疆",
+    "香港",
+    "澳门",
+}
+CITY_ALIAS_MAP = {
+    "儋州市（含洋浦）": "儋州市",
+    "襄樊市": "襄阳市",
+    "恩施州": "恩施土家族苗族自治州",
+    "吐鲁番地区": "吐鲁番市",
+    "哈密地区": "哈密市",
+    "山南地区": "山南市",
+    "海东地区": "海东市",
+    "林芝地区": "林芝市",
+    "那曲地区": "那曲市",
+    "毕节地区": "毕节市",
+    "铜仁地区": "铜仁市",
+}
+PATENT_AGGREGATE_AREAS = {"省直辖县级行政区划", "自治区直辖县级行政区划"}
+
 
 def find_file(name: str, start: str = ROOT) -> str:
     for current_root, _, files in os.walk(start):
@@ -23,6 +72,10 @@ def find_file(name: str, start: str = ROOT) -> str:
     raise FileNotFoundError(name)
 
 
+def normalize_city_alias(text: str) -> str:
+    return CITY_ALIAS_MAP.get(text, text)
+
+
 def standardize_city(city: str) -> str | None:
     if city is None or (isinstance(city, float) and np.isnan(city)):
         return None
@@ -30,13 +83,39 @@ def standardize_city(city: str) -> str | None:
     text = text.replace("哈密​​", "哈密市")
     if text in {"", "nan", "--", "未披露"}:
         return None
-    if text in {"北京", "天津", "上海", "重庆"}:
+    text = normalize_city_alias(text)
+    if text in DIRECT_MUNICIPALITY_BARE:
         return f"{text}市"
+    if text in DIRECT_MUNICIPALITY_FULL:
+        return text
+    if text in PROVINCE_LEVEL_NAMES or text.endswith(("省", "自治区", "特别行政区")):
+        return text
     if text.endswith(("市", "州", "地区", "盟", "区", "县", "旗")):
         return text
     if re.fullmatch(r"[\u4e00-\u9fa5]{2,4}", text):
         return f"{text}市"
     return text
+
+
+def extract_patent_city(province: str, prefecture: str) -> str | None:
+    province_text = standardize_city(province)
+    prefecture_text = "" if prefecture is None else str(prefecture).strip().replace(" ", "")
+    if prefecture_text in {"", "nan", "--", "未披露"}:
+        prefecture_text = ""
+    prefecture_text = normalize_city_alias(prefecture_text)
+
+    if prefecture_text in PATENT_AGGREGATE_AREAS:
+        if province_text:
+            return f"{province_text}_{prefecture_text}"
+        return prefecture_text
+
+    if prefecture_text in {"市辖区", "城区"} and province_text in DIRECT_MUNICIPALITY_FULL:
+        return province_text
+    if prefecture_text:
+        return standardize_city(prefecture_text)
+    if province_text in DIRECT_MUNICIPALITY_FULL:
+        return province_text
+    return None
 
 
 def add_log1p(df: pd.DataFrame, source_col: str, target_col: str) -> None:
@@ -84,7 +163,8 @@ def load_establishment_panel() -> pd.DataFrame:
 
 def load_investment_panel() -> pd.DataFrame:
     staged = os.path.join(STAGING_DIR, "fund_invest.csv")
-    path = staged if os.path.exists(staged) else find_file("市级基金投资事件面板_2015_2024.csv", PANEL_DIR)
+    panel_path = find_file("市级基金投资事件面板_2015_2024.csv", PANEL_DIR)
+    path = panel_path if os.path.exists(panel_path) else staged
     df = read_csv_any(path)
     df = df.rename(
         columns={
@@ -105,7 +185,8 @@ def load_investment_panel() -> pd.DataFrame:
 
 def load_social_capital_panel() -> pd.DataFrame:
     staged = os.path.join(STAGING_DIR, "social_capital.csv")
-    path = staged if os.path.exists(staged) else find_file("city_social_capital_panel.csv", CITY_DATA_DIR)
+    raw_path = find_file("city_social_capital_panel.csv", CITY_DATA_DIR)
+    path = raw_path if os.path.exists(raw_path) else staged
     df = read_csv_any(path)
     df = df.rename(
         columns={
@@ -139,6 +220,7 @@ def load_patent_panel() -> pd.DataFrame:
 
     apply_df = apply_df.rename(
         columns={
+            "Prvn": "省份",
             "Pftn": "城市",
             "Year": "年份",
             "Inva": "发明申请量",
@@ -148,6 +230,7 @@ def load_patent_panel() -> pd.DataFrame:
     )
     grant_df = grant_df.rename(
         columns={
+            "Prvn": "省份",
             "Pftn": "城市",
             "Year": "年份",
             "Invg": "发明获得量",
@@ -160,15 +243,34 @@ def load_patent_panel() -> pd.DataFrame:
     apply_df = apply_df[pd.to_numeric(apply_df["年份"], errors="coerce").notna()].copy()
     grant_df = grant_df[pd.to_numeric(grant_df["年份"], errors="coerce").notna()].copy()
 
+    apply_df["城市"] = [
+        extract_patent_city(province, prefecture)
+        for province, prefecture in zip(apply_df["省份"], apply_df["城市"])
+    ]
+    grant_df["城市"] = [
+        extract_patent_city(province, prefecture)
+        for province, prefecture in zip(grant_df["省份"], grant_df["城市"])
+    ]
+
     apply_df = apply_df[["城市", "年份", "发明申请量", "实用新型申请量", "外观设计申请量"]].copy()
     grant_df = grant_df[["城市", "年份", "发明获得量", "实用新型获得量", "外观设计获得量"]].copy()
 
     for df in (apply_df, grant_df):
         df["城市"] = df["城市"].map(standardize_city)
         df["年份"] = pd.to_numeric(df["年份"], errors="coerce").astype("Int64")
+        df.dropna(subset=["城市"], inplace=True)
         for col in df.columns:
             if col not in {"城市", "年份"}:
                 df[col] = pd.to_numeric(df[col], errors="coerce")
+        value_cols = [col for col in df.columns if col not in {"城市", "年份"}]
+        grouped = (
+            df.groupby(["城市", "年份"], as_index=False)[value_cols]
+            .sum(min_count=1)
+            .reindex(columns=["城市", "年份"] + value_cols)
+        )
+        df.drop(df.index, inplace=True)
+        for col in grouped.columns:
+            df[col] = grouped[col].to_numpy()
 
     df = apply_df.merge(grant_df, on=["城市", "年份"], how="outer")
     df["专利申请总量"] = df[["发明申请量", "实用新型申请量", "外观设计申请量"]].sum(axis=1, min_count=1)
@@ -489,6 +591,19 @@ def build_master_panel() -> pd.DataFrame:
         if panel is None or panel.empty:
             continue
         master = master.merge(panel, on=["城市", "年份"], how="left")
+
+    # Missing investment rows after the left join mean "no event observed", not sample loss.
+    if "基金投资事件总数" in master.columns:
+        no_invest_event = master["基金投资事件总数"].isna()
+        fill_zero_cols = [
+            "基金投资总额_人民币万元",
+            "基金投资事件总数",
+            "早期投资金额_人民币万元",
+            "早期投资事件数",
+        ]
+        for col in fill_zero_cols:
+            if col in master.columns:
+                master.loc[no_invest_event, col] = 0
 
     # control variables moved to the end by explicit ordering
     control_cols = [c for c in ["地区生产总值", "财政科技支出", "常住人口", "第二产业增加值", "实际利用外资额"] if c in master.columns]

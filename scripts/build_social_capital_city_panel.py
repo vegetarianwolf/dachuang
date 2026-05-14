@@ -7,6 +7,7 @@ import pandas as pd
 
 BASE_DIR = os.path.join(".", "dachuang", "原始数据打包_20260401", "政府引导基金清科投中目录")
 OUTPUT_DIR = os.path.join(".", "dachuang", "原始数据打包_20260401", "市级数据")
+MUNICIPALITIES = {"北京市", "天津市", "上海市", "重庆市"}
 
 
 def find_file_by_suffix(root: str, suffix: str) -> str:
@@ -85,6 +86,8 @@ def extract_city(location: str) -> str | None:
         return None
     if "|" in text:
         parts = [p.strip() for p in text.split("|") if p.strip()]
+        if parts and parts[0] in MUNICIPALITIES:
+            return parts[0]
         # Prefer prefecture-level unit and ignore county/district when an upper city exists.
         for idx, part in enumerate(parts):
             if part.endswith(("市", "州", "地区", "盟")) and idx >= 1:
@@ -95,6 +98,8 @@ def extract_city(location: str) -> str | None:
         return parts[1] if len(parts) > 1 else None
     if "-" in text:
         parts = [p.strip() for p in text.split("-") if p.strip()]
+        if parts and parts[0] in MUNICIPALITIES:
+            return parts[0]
         for idx, part in enumerate(parts):
             if part.endswith(("市", "州", "地区", "盟")) and idx >= 1:
                 next_part = parts[idx + 1] if idx + 1 < len(parts) else ""
