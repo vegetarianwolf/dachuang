@@ -214,8 +214,16 @@ def build_panel(source_file: Path) -> tuple[list[dict[str, object]], dict[str, i
                 early_amount_value = round(early_amount, 6)
 
             amount_share: float | str = ""
-            if total_amount_value != "" and early_amount_value != "" and float(total_amount_value) > 0:
+            # Only compute the amount share when every event amount in the city-year
+            # is disclosed; otherwise the ratio is mechanically based on a partial
+            # amount sample and can be misleading.
+            if 0 < disclosed_total_amount_count < total_count:
+                audit["city_year_partial_amount_disclosure"] += 1
+            if disclosed_total_amount_count == total_count and float(total_amount_value) > 0:
                 amount_share = round(float(early_amount_value) / float(total_amount_value), 6)
+                audit["city_year_amount_share_computed"] += 1
+            elif total_count > 0 and disclosed_total_amount_count > 0:
+                audit["city_year_amount_share_suppressed_partial_disclosure"] += 1
 
             panel_rows.append(
                 {
