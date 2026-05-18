@@ -546,6 +546,29 @@ def load_marketization_panel() -> pd.DataFrame:
         return pd.DataFrame(columns=["城市", "年份"])
 
 
+def load_entrepreneurship_panel() -> pd.DataFrame:
+    try:
+        path = find_file("地级市创业活跃度（2000-2024年）.csv", CITY_DATA_DIR)
+        df = read_csv_any(path)
+        rename_map = {
+            "注册企业数": "注册企业数",
+            "常住人口数万人": "创业活跃度口径常住人口_万人",
+            "注册企业数f": "注册企业数_填补",
+            "常住人口数万人f": "创业活跃度口径常住人口_万人_填补",
+            "创业活跃度": "创业活跃度",
+        }
+        keep = ["城市", "年份"] + [col for col in rename_map if col in df.columns]
+        df = df[keep].rename(columns=rename_map).copy()
+        df["城市"] = df["城市"].map(standardize_city)
+        df["年份"] = pd.to_numeric(df["年份"], errors="coerce").astype("Int64")
+        for col in df.columns:
+            if col not in {"城市", "年份"}:
+                df[col] = pd.to_numeric(df[col], errors="coerce")
+        return df.groupby(["城市", "年份"], as_index=False).first()
+    except Exception:
+        return pd.DataFrame(columns=["城市", "年份"])
+
+
 def load_control_panels() -> pd.DataFrame:
     specs = [
         ("gdp.csv", "time_rows", "地区生产总值"),
@@ -585,6 +608,7 @@ def build_master_panel() -> pd.DataFrame:
         load_financing_constraint_panels(),
         load_financial_development_panel(),
         load_marketization_panel(),
+        load_entrepreneurship_panel(),
         load_control_panels(),
     ]
     for panel in panels:
