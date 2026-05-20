@@ -1,0 +1,167 @@
+\documentclass[UTF8,a4paper,zihao=5,fontset=mac]{ctexart}
+
+% 本模板依据《经济研究》网站 2025-01-03 发布的“稿件体例要求”整理。
+% 网页已明确的字体字号要求已尽量固化；页边距和行距网页未明示，以下采用中性设置，可按编辑部反馈微调。
+% 建议使用 XeLaTeX 编译。
+
+\usepackage[a4paper,left=2.8cm,right=2.8cm,top=2.8cm,bottom=2.6cm,footskip=1.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{array,booktabs,longtable,tabularx,threeparttable}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{perpage}
+
+\setmainfont{Times New Roman}
+\defaultfontfeatures{Ligatures=TeX}
+
+\MakePerPage{footnote}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setstretch{1.45}
+\pagestyle{plain}
+
+\makeatletter
+\renewcommand\footnotesize{\songti\zihao{6}}
+\renewcommand{\footnoterule}{%
+  \vspace{0.6\baselineskip}%
+  \hrule width 0.18\textwidth
+  \vspace{0.3\baselineskip}%
+}
+\makeatother
+
+\newcommand{\ERJTitleSize}{\zihao{-3}} % 需要三号时改为 \zihao{3}
+\newcommand{\ERJAuthorSize}{\zihao{-4}}
+
+\DeclareCaptionFont{erjfigurefont}{\heiti\zihao{-5}}
+\DeclareCaptionFont{erjtablefont}{\songti\zihao{5}}
+\captionsetup{justification=centering,singlelinecheck=false}
+\captionsetup[figure]{font=erjfigurefont,labelsep=space}
+\captionsetup[table]{font=erjtablefont,labelsep=space,position=top}
+
+\renewcommand{\thesection}{\chinese{section}}
+\renewcommand{\thesubsection}{（\chinese{subsection}）}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}.}
+\renewcommand{\theparagraph}{(\arabic{paragraph})}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\section}
+  {\centering\songti\zihao{-4}}
+  {\thesection、}
+  {0.5em}
+  {}
+\titlespacing*{\section}{0pt}{1.4\baselineskip}{0.8\baselineskip}
+
+\titleformat{\subsection}[hang]
+  {\songti\zihao{5}}
+  {\hspace*{2em}\thesubsection}
+  {0.3em}
+  {}
+\titlespacing*{\subsection}{0pt}{0.9\baselineskip}{0.3\baselineskip}
+
+\titleformat{\subsubsection}[hang]
+  {\songti\zihao{5}}
+  {\hspace*{2em}\thesubsubsection}
+  {0.3em}
+  {}
+\titlespacing*{\subsubsection}{0pt}{0.7\baselineskip}{0.2\baselineskip}
+
+\titleformat{\paragraph}[runin]
+  {\songti\zihao{5}}
+  {\hspace*{2em}\theparagraph}
+  {0.3em}
+  {}
+\titlespacing*{\paragraph}{0pt}{0.5\baselineskip}{0.5em}
+
+\newcommand{\erjthanks}[1]{\thanks{\hspace*{2em}#1}}
+\newcommand{\erjfootnote}[1]{\footnote{\hspace*{2em}#1}}
+
+\newcommand{\ERJAbstract}[1]{%
+  \par\noindent{\fangsong\zihao{5}内容摘要：#1\par}%
+}
+
+\newcommand{\ERJKeywords}[1]{%
+  \par\noindent{\fangsong\zihao{5}关键词：#1\par}%
+}
+
+\newcommand{\ERJWhere}[1]{%
+  \par\noindent\hspace*{2em}{\songti\zihao{5}其中，#1\par}%
+}
+
+\newcommand{\ERJRef}[1]{%
+  \par\noindent\hspace*{2em}\hangindent=2em\hangafter=1 {#1}\par%
+}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begingroup
+  \renewcommand{\thefootnote}{\fnsymbol{footnote}}%
+  \begin{center}
+    {\songti\ERJTitleSize \@title\par}
+    \vspace{1.1em}
+    {\songti\ERJAuthorSize \@author\par}
+  \end{center}
+  \vspace{1.0em}
+  \@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \renewcommand{\thefootnote}{\arabic{footnote}}%
+}
+\makeatother
+
+\title{地方债务压力约束下政府产业引导基金与城市创新：实证检验}
+\author{%
+  作者甲\erjthanks{作者单位，邮政编码：100000，电子信箱：author1@example.com。本文系某基金项目“项目名称”（项目编号：XXXXXX）的阶段性成果。}%
+  \quad
+  作者乙\erjthanks{作者单位，邮政编码：100000，电子信箱：author2@example.com。}%
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\ERJAbstract{本文基于2015—2024年地级市—年份面板结果，考察政府产业引导基金能否促进城市创新，以及地方债务压力是否削弱这一促进效应。基准固定效应估计显示，基金设立数量与累计设立规模均与城市专利申请产出显著正相关，其中累计设立规模的结果最为稳定。进一步引入债务压力后，基金累计规模与滞后一期债务压力的交互项在发明申请、实用新型申请和专利申请总量三个口径下均显著为负，说明债务压力会明显削弱基金促进创新的边际作用。机制检验进一步表明，债务压力可能通过三条路径抑制基金绩效：其一，降低基金投向早期项目的比例，削弱耐心资本属性；其二，在低金融发展地区降低社会资本撬动效率；其三，削弱基金改善地区金融发展环境、缓解融资约束的能力。需要说明的是，耐心资本机制依赖于基金投资事件数不少于2的分母稳定化样本，社会资本机制主要出现在低金融发展样本中，金融发展机制的显著性也接近5\%边界，因此相关机制结论应理解为有条件成立。}
+\ERJKeywords{政府产业引导基金；债务压力；城市创新；耐心资本；社会资本撬动效率}
+
+\section{引言}
+
+这里填写整篇论文的引言部分。建议在本节补充研究背景、现实问题、研究空白与本文边际贡献。当前主稿已经接入完整的实证分析章节，后续可在不改变版式的前提下继续扩写。
+
+\section{理论分析与研究假说}
+
+这里填写整篇论文的理论分析与研究假说部分。建议围绕“政府产业引导基金促进创新”“债务压力削弱基金绩效”以及耐心资本、社会资本撬动效率和融资约束缓解三条机制提出可检验假说。
+
+\input{经济研究_实证部分稿.tex}
+
+\section{结论及进一步讨论}
+
+这里填写整篇论文的总体结论与政策含义。当前实证章节末尾已经给出本节小结，本节可在引言与理论分析补齐之后，再统一整合为全文结论。
+
+\section*{参考文献}
+
+{\songti\zihao{6}以下条目仅根据现有结果说明文档中已点名文献整理，具体年份、卷期和页码待统一核对补全。}
+
+{\songti\zihao{6}
+\ERJRef{蔡庆丰等：《政府产业引导基金与域内企业创新：引导效应还是挤出效应？》（出版信息待补）。}
+\ERJRef{刘玉斌等：《战略性新兴产业创业投资引导基金能促进企业创新吗？》（出版信息待补）。}
+\ERJRef{徐明：《政府风险投资、代理问题与企业创新》（出版信息待补）。}
+\ERJRef{施国平等：《引导基金能引导创投机构投向早期和高科技企业吗？》（出版信息待补）。}
+\ERJRef{张杰等：《探寻以耐心资本为内核的中国特色现代金融体系发展路径与改革突破口》（出版信息待补）。}
+\ERJRef{张壹帆等：《政府引导基金“耐心度”培育》（出版信息待补）。}
+\ERJRef{刘贯春等：《地方政府债务治理与企业投融资期限错配改善》（出版信息待补）。}
+\ERJRef{徐彦坤等：《地方政府债务如何影响企业投融资行为》（出版信息待补）。}
+\ERJRef{周伟等：《财政压力、地方政府行为与企业创新》（出版信息待补）。}
+\ERJRef{张跃文等：《财政压力、合作型政府干预与企业投资》（出版信息待补）。}
+}
+
+\vspace{2\baselineskip}
+\begin{flushright}
+（责任编辑：\underline{\hspace{4em}}）（校对：\underline{\hspace{4em}}）
+\end{flushright}
+
+\end{document}
