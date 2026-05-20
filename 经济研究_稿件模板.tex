@@ -1,0 +1,210 @@
+\documentclass[UTF8,a4paper,zihao=5,fontset=mac]{ctexart}
+
+% 本模板依据《经济研究》网站 2025-01-03 发布的“稿件体例要求”整理。
+% 网页已明确的字体字号要求已尽量固化；页边距和行距网页未明示，以下采用中性设置，可按编辑部反馈微调。
+% 建议使用 XeLaTeX 编译。
+
+\usepackage[a4paper,left=2.8cm,right=2.8cm,top=2.8cm,bottom=2.6cm,footskip=1.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{array,booktabs,longtable,tabularx,threeparttable}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{perpage}
+
+\setmainfont{Times New Roman}
+\defaultfontfeatures{Ligatures=TeX}
+
+\MakePerPage{footnote}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setstretch{1.45}
+\pagestyle{plain}
+
+\makeatletter
+\renewcommand\footnotesize{\songti\zihao{6}}
+\renewcommand{\footnoterule}{%
+  \vspace{0.6\baselineskip}%
+  \hrule width 0.18\textwidth
+  \vspace{0.3\baselineskip}%
+}
+\makeatother
+
+\newcommand{\ERJTitleSize}{\zihao{-3}} % 需要三号时改为 \zihao{3}
+\newcommand{\ERJAuthorSize}{\zihao{-4}}
+
+\DeclareCaptionFont{erjfigurefont}{\heiti\zihao{-5}}
+\DeclareCaptionFont{erjtablefont}{\songti\zihao{5}}
+\captionsetup{justification=centering,singlelinecheck=false}
+\captionsetup[figure]{font=erjfigurefont,labelsep=space}
+\captionsetup[table]{font=erjtablefont,labelsep=space,position=top}
+
+\renewcommand{\thesection}{\chinese{section}}
+\renewcommand{\thesubsection}{（\chinese{subsection}）}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}.}
+\renewcommand{\theparagraph}{(\arabic{paragraph})}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\section}
+  {\centering\songti\zihao{-4}}
+  {\thesection、}
+  {0.5em}
+  {}
+\titlespacing*{\section}{0pt}{1.4\baselineskip}{0.8\baselineskip}
+
+\titleformat{\subsection}[hang]
+  {\songti\zihao{5}}
+  {\hspace*{2em}\thesubsection}
+  {0.3em}
+  {}
+\titlespacing*{\subsection}{0pt}{0.9\baselineskip}{0.3\baselineskip}
+
+\titleformat{\subsubsection}[hang]
+  {\songti\zihao{5}}
+  {\hspace*{2em}\thesubsubsection}
+  {0.3em}
+  {}
+\titlespacing*{\subsubsection}{0pt}{0.7\baselineskip}{0.2\baselineskip}
+
+\titleformat{\paragraph}[runin]
+  {\songti\zihao{5}}
+  {\hspace*{2em}\theparagraph}
+  {0.3em}
+  {}
+\titlespacing*{\paragraph}{0pt}{0.5\baselineskip}{0.5em}
+
+\newcommand{\erjthanks}[1]{\thanks{\hspace*{2em}#1}}
+\newcommand{\erjfootnote}[1]{\footnote{\hspace*{2em}#1}}
+
+\newcommand{\ERJAbstract}[1]{%
+  \par\noindent{\fangsong\zihao{5}内容摘要：#1\par}%
+}
+
+\newcommand{\ERJKeywords}[1]{%
+  \par\noindent{\fangsong\zihao{5}关键词：#1\par}%
+}
+
+\newcommand{\ERJWhere}[1]{%
+  \par\noindent\hspace*{2em}{\songti\zihao{5}其中，#1\par}%
+}
+
+\newcommand{\ERJRef}[1]{%
+  \par\noindent\hspace*{2em}\hangindent=2em\hangafter=1 {#1}\par%
+}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begingroup
+  \renewcommand{\thefootnote}{\fnsymbol{footnote}}%
+  \begin{center}
+    {\songti\ERJTitleSize \@title\par}
+    \vspace{1.1em}
+    {\songti\ERJAuthorSize \@author\par}
+  \end{center}
+  \vspace{1.0em}
+  \@thanks
+  \endgroup
+  \setcounter{footnote}{0}%
+  \renewcommand{\thefootnote}{\arabic{footnote}}%
+}
+\makeatother
+
+\title{稿件标题}
+\author{%
+  作者甲\erjthanks{作者单位，邮政编码：100000，电子信箱：author1@example.com。本文系某基金项目“项目名称”（项目编号：XXXXXX）的阶段性成果。}%
+  \quad
+  作者乙\erjthanks{作者单位，邮政编码：100000，电子信箱：author2@example.com。}%
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\ERJAbstract{这里填写摘要正文。网页示例要求“内容摘要”使用仿宋五号，正文可直接在本段替换。}
+\ERJKeywords{关键词一；关键词二；关键词三；关键词四}
+
+\section{引言}
+
+这里填写正文。根据网页示例，正文中的中文一般使用宋体，英文和数字使用 Times New Roman。中文文献在正文中的常见写法为“作者甲和作者乙（2024）”或“作者甲等（2024）”；英文文献在正文中的常见写法为“Amiti and Konings (2014)”或“Wang et al. (2013)”。
+
+\subsection{文献综述与研究假说}
+
+这里填写二级标题对应的内容。网页要求二级标题使用“（一）”标序，前空两格；下级标题依次使用“1.”和“(1)”。
+
+\subsubsection{基准识别思路}
+
+这里填写三级标题对应的内容。
+
+\paragraph{机制检验思路} 这里填写四级标题对应的内容。若需脚注，请优先使用 \textbackslash erjfootnote\{...\} 以保持脚注内容前空两格。示例\erjfootnote{这里填写脚注内容。网页要求脚注每页重新编号，脚注内容前空两格，宋体六号。}
+
+\section{模型设定与变量说明}
+
+模型写作可直接使用 LaTeX 公式环境。网页示例强调数学公式应规范排版，并在“其中”说明前空两格。
+
+\begin{equation}
+Y_{it}=\alpha+\beta X_{it}+\gamma Z_{it}+\mu_i+\lambda_t+\varepsilon_{it}.
+\end{equation}
+\ERJWhere{$Y_{it}$ 为被解释变量，$X_{it}$ 为核心解释变量，$Z_{it}$ 为控制变量，$\mu_i$ 和 $\lambda_t$ 分别表示个体固定效应和年份固定效应。}
+
+\section{实证结果分析}
+
+\subsection{基准回归结果}
+
+表格建议使用仿宋体，字号比正文略小；表下注释再小一号并用宋体。
+
+\begin{table}[htbp]
+  \centering
+  \caption{基准回归结果}
+  {\fangsong\zihao{-5}
+  \begin{tabular}{lcc}
+    \toprule
+    变量 & (1) & (2) \\
+    \midrule
+    核心解释变量 & 0.123*** & 0.118*** \\
+                    & (3.21) & (3.08) \\
+    控制变量       & 是 & 是 \\
+    个体固定效应   & 是 & 是 \\
+    年份固定效应   & 是 & 是 \\
+    样本量         & 2500 & 2500 \\
+    \bottomrule
+  \end{tabular}
+
+  \par\smallskip
+  {\songti\zihao{6}注：括号内为 t 值；*、**、*** 分别表示在 10\%、5\%、1\% 水平上显著。}
+  }
+\end{table}
+
+\subsection{图形展示}
+
+网页要求图标题使用黑体小五、居中，并尽量使用黑白图。
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\rule{0pt}{5cm}\rule{0.82\linewidth}{0pt}}
+  \caption{核心变量变化趋势}
+\end{figure}
+
+\section{结论及进一步讨论}
+
+这里填写结论与政策含义。
+
+\section*{参考文献}
+
+{\songti\zihao{6}
+\ERJRef{作者甲、作者乙，2024：《中文文献标题》，《经济研究》第 1 期。}
+\ERJRef{作者甲、作者乙、作者丙，2023：《另一篇中文文献标题》，《统计研究》第 6 期。}
+\ERJRef{Amiti, M., O. Itskhoki, and J. Konings, 2014, “Importers, Exporters, and Exchange Rate Disconnect”, \textit{American Economic Review}, 104(7), 1942--1978.}
+\ERJRef{Koopman, R., W. Powers, Z. Wang, and S. J. Wei, 2010, “Give Credit Where Credit Is Due: Tracing Value Added in Global Production Chains”, NBER Working Paper, 16426.}
+}
+
+\vspace{2\baselineskip}
+\begin{flushright}
+（责任编辑：\underline{\hspace{4em}}）（校对：\underline{\hspace{4em}}）
+\end{flushright}
+
+\end{document}
