@@ -43,6 +43,15 @@
 \captionsetup[figure]{font=erjfigurefont,labelsep=space}
 \captionsetup[table]{font=erjtablefont,labelsep=space,position=top}
 
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcommand{\ERJTableFont}{%
+  \fangsong\zihao{-5}%
+  \setlength{\tabcolsep}{2pt}%
+  \renewcommand{\arraystretch}{1.16}%
+}
+\newcommand{\ERJTableNoteFont}{\songti\zihao{6}}
+
 \renewcommand{\thesection}{\chinese{section}}
 \renewcommand{\thesubsection}{（\chinese{subsection}）}
 \renewcommand{\thesubsubsection}{\arabic{subsubsection}.}
@@ -93,7 +102,7 @@
 }
 
 \newcommand{\coefse}[2]{%
-  \begin{tabular}{@{}c@{}}#1\\ (#2)\end{tabular}%
+  \begin{tabular}{@{}c@{}}#1\\[-0.1em] (#2)\end{tabular}%
 }
 
 \newcommand{\ERJRef}[1]{%
