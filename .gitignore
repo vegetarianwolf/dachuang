@@ -15,3 +15,20 @@ signCode.txt
 
 .vscode/
 .obsidian/
+
+# LaTeX generated files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+latex工作区/.latex-build/
+.latex-build/
