@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:782c87d2fa7976a7b87ec594eadd2d32639ea57842d64cfa42836b54f6883878
-size 367
+scheme,sample,spec,xvar,dvar,mvar,yvar,b_base_xn,se_base_xn,p_base_xn,N_base,r2w_base,b_mech,se_mech,p_mech,N_mech,r2w_mech,b_y_key,se_y_key,p_y_key,b_y_m,se_y_m,p_y_m,b_y_xn,se_y_xn,p_y_xn,N_y,r2w_y,base_ok10,base_ok05,mech_ok10,mech_ok05,ykey_ok10,ykey_ok05,theory_ok10,theory_ok05,attenuated,strict_ok10,strict_ok05,sig_base_xn,sig_mech,sig_y_key,sig_y_m,sig_y_xn
