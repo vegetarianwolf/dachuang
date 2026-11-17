@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3b215c8be7edfad9549f0c29d78a52949ad01511cf00965f957ef60f5aff6e99
-size 284
+model,yrole,ytiming,ytransform,dtransform,mtransform,sample_rule,yvar,dvar,mvar,N,beta_b,beta_se,beta_p,path1_b,path1_se,path1_p,path2_b,path2_se,path2_p,direct_b,direct_se,direct_p,attenuation,r2w,theory10,theory05,path1_theory,path2_theory,beta_theory,beta_sig,path1_sig,path2_sig

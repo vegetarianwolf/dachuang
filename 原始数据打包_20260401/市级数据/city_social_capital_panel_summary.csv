@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0cec84881059d2e3a7aaad91e202cccfcaef165b310249a257cba1d0826bce0d
-size 347
+﻿metric,value
+dedup_funds,7247.0
+funds_with_amount,6544.0
+funds_with_social,4861.0
+funds_with_government,6170.0
+funds_with_both,4542.0
+funds_with_city,7207.0
+funds_with_year,6878.0
+funds_city_year_amount,6539.0
+city_year_rows,1194.0
+city_count,235.0
+match_ratio_amt_mean,0.9054605136466466
+match_ratio_amt_median,0.9892268894587122

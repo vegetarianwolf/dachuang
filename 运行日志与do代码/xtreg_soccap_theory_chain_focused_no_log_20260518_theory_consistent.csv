@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1c03d5dc1f794e4b16803d77bc24083ca7d5ede81156e0f5d9ff9edd587a881c
-size 1554
+sample,spec,xvar,dvar,mvar,yvar,b_debt,se_debt,p_debt,N_m,r2w_m,b_m,se_m,p_m,N_y,r2w_y,chain_ok10,chain_ok05,sig_debt,sig_m
+low_market,noctrl,fund_est_scale_cum,debt_pressure,D1_soccap_leverage_w,ln_pat_utility_apply,-.0020513014204881,.00096134999,.038891528,96,.15115091,.030994803,.015960973,.05903998,96,.77679795,1,0,**,*
+low_market,noctrl,fund_est_scale_cum,debt_pressure_w,D1_soccap_leverage_w,ln_pat_utility_apply,-.0020513014204881,.00096134999,.038891528,96,.15115091,.030994803,.015960973,.05903998,96,.77679795,1,0,**,*
+low_market,noctrl,fund_est_scale_cum,debt_burden_w,D1_soccap_leverage_w,ln_pat_utility_apply,-.0192250449215908,.0097339014,.055190876,93,.14667851,.028975639,.016196949,.081196606,93,.78537238,1,0,*,*
+low_market,noctrl,fund_est_scale_cum,debt_burden,D1_soccap_leverage_w,ln_pat_utility_apply,-.0192250449215908,.0097339014,.055190876,93,.14667851,.028975639,.016196949,.081196606,93,.78537238,1,0,*,*
+low_market,noctrl,fund_est_scale_cum,debt_burden_l1_w,D1_soccap_leverage_w,ln_pat_utility_apply,-.015771042098113,.0082117347,.062121976,93,.13640632,.030244496,.017626682,.094127342,93,.7656185,1,0,*,*
+low_market,noctrl,fund_est_scale_cum,debt_burden_l1,D1_soccap_leverage_w,ln_pat_utility_apply,-.015771042098113,.0082117347,.062121976,93,.13640632,.030244496,.017626682,.094127342,93,.7656185,1,0,*,*
+low_market,basic,fund_est_scale_roll5,debt_pressure_l1,L1_nongov_share_total_zero_w,ln_pat_apply_total,-.0000759777603198,.000044822133,.092469975,605,.047802068,.13026017,.066758484,.053198904,605,.53121352,1,0,*,*
