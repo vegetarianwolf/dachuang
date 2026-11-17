@@ -1,1 +1,43 @@
-*.csv filter=lfs diff=lfs merge=lfs -text
+# Ordinary Git data; preserve original text handling.
+* -filter
+*.csv -filter -text
+"/1997-2024年市场化指数和各分项指数 的副本.csv" -filter -text
+"/cleaned_data/PE_investment_events_SRDI_only.csv" -filter -text
+"/cleaned_data/PE_investment_events_cleaned.csv" -filter -text
+"/cleaned_data/city_fiscal_panel.csv" -filter -text
+"/cleaned_data/final_regression_dataset.csv" -filter -text
+"/csmar_data_export/SRDI_EntIdentInfo.csv" -filter -text
+"/csmar_data_export/SRDI_EntInfo_Full.csv" -filter -text
+"/csmar_data_export/SRDI_EntInfo_packed.csv" -filter -text
+"/csmar_data_export/SRDI_EntPatentInfo.csv" -filter -text
+"/csmar_data_export/SRDI_EntPatentInfo_Full.csv" -filter -text
+"/csmar_data_export/SRDI_EntPatentInfo_packed.csv" -filter -text
+"/分地区国内三种专利申请受理授权数232514400(仅供南开大学使用)(1)/INN_DAREAARGY.csv" -filter -text
+"/地方政府债务：地级市：余额.csv" -filter -text
+"/地级市专利申请、授权数据（2000-2023年）/地级市专利申请、授权数据（2000-2023年）.csv" -filter -text
+"/地级市人均GDP.csv" -filter -text
+"/地级市总GDP.csv" -filter -text
+"/地级市第二产业.csv" -filter -text
+"/地级市财政支出.csv" -filter -text
+"/地级市财政收入.csv" -filter -text
+"/实际利用外资.csv" -filter -text
+"/常住人口.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资1999.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2000-2012.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2013-2014.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2015.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2016.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2017.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2018.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2019.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2020.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2021.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2022.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2023.csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2024（1).csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2024（2).csv" -filter -text
+"/清科政府引导基金投资事件截止到2024年/政府引导基金投资2024（3）.csv" -filter -text
+"/财政支出：科学：地级市.csv" -filter -text
+"/金融机构贷款余额.csv" -filter -text
+/data_parts/*/*.bin -filter -text -diff -merge
+/data_parts/manifest.json text eol=lf
