@@ -1,0 +1,276 @@
+[
+  {
+    "model": "I1",
+    "outcome": "y1",
+    "rhs": "c.g##c.p",
+    "target": "c.g#c.p",
+    "required": [
+      "y1",
+      "g",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2022,
+    "weight": ""
+  },
+  {
+    "model": "I2",
+    "outcome": "y1",
+    "rhs": "c.g##c.p l_gdp l_secondary",
+    "target": "c.g#c.p",
+    "required": [
+      "y1",
+      "g",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2022,
+    "weight": ""
+  },
+  {
+    "model": "I3",
+    "outcome": "y1",
+    "rhs": "c.g##c.p l_gdp l_secondary",
+    "target": "c.g#c.p",
+    "required": [
+      "y1",
+      "y2",
+      "g",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2021,
+    "weight": ""
+  },
+  {
+    "model": "I4",
+    "outcome": "y2",
+    "rhs": "c.g##c.p l_gdp l_secondary",
+    "target": "c.g#c.p",
+    "required": [
+      "y1",
+      "y2",
+      "g",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2021,
+    "weight": ""
+  },
+  {
+    "model": "I5",
+    "outcome": "y1",
+    "rhs": "c.g##c.p l_gdp l_secondary",
+    "target": "c.g#c.p",
+    "required": [
+      "y1",
+      "g",
+      "p",
+      "d",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2022,
+    "weight": ""
+  },
+  {
+    "model": "I6",
+    "outcome": "y1",
+    "rhs": "c.g##c.p##c.d l_gdp l_secondary",
+    "target": "c.g#c.p#c.d",
+    "required": [
+      "y1",
+      "g",
+      "p",
+      "d",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2022,
+    "weight": ""
+  },
+  {
+    "model": "I7a",
+    "outcome": "y1",
+    "rhs": "c.g##c.p l_gdp l_secondary",
+    "target": "c.g#c.p",
+    "required": [
+      "y1",
+      "g",
+      "p",
+      "l_scitech",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2022,
+    "weight": ""
+  },
+  {
+    "model": "I7",
+    "outcome": "y1",
+    "rhs": "c.g##c.p l_gdp l_secondary l_scitech",
+    "target": "c.g#c.p",
+    "required": [
+      "y1",
+      "g",
+      "p",
+      "l_scitech",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2022,
+    "weight": ""
+  },
+  {
+    "model": "I8",
+    "outcome": "grant1",
+    "rhs": "c.g##c.p l_gdp l_secondary",
+    "target": "c.g#c.p",
+    "required": [
+      "grant1",
+      "g",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2022,
+    "weight": ""
+  },
+  {
+    "model": "I9",
+    "outcome": "y1",
+    "rhs": "early_share g p l_gdp l_secondary",
+    "target": "early_share",
+    "required": [
+      "y1",
+      "early_share",
+      "g",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2022,
+    "weight": ""
+  },
+  {
+    "model": "I10",
+    "outcome": "y1",
+    "rhs": "c.g##c.p l_gdp l_secondary",
+    "target": "c.g#c.p",
+    "required": [
+      "y1",
+      "g",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2023,
+    "weight": ""
+  },
+  {
+    "model": "B1",
+    "outcome": "g",
+    "rhs": "p l_gdp l_secondary",
+    "target": "p",
+    "required": [
+      "g",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2024,
+    "weight": ""
+  },
+  {
+    "model": "B2",
+    "outcome": "early_share",
+    "rhs": "p l_gdp l_secondary",
+    "target": "p",
+    "required": [
+      "early_share",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2024,
+    "weight": ""
+  },
+  {
+    "model": "B3",
+    "outcome": "early_share",
+    "rhs": "p l_gdp l_secondary",
+    "target": "p",
+    "required": [
+      "early_share",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2024,
+    "weight": "known_count"
+  },
+  {
+    "model": "B4",
+    "outcome": "early_share",
+    "rhs": "p l_gdp l_secondary electronic_share biomedical_share industry_known_share",
+    "target": "p",
+    "required": [
+      "early_share",
+      "p",
+      "l_gdp",
+      "l_secondary",
+      "electronic_share",
+      "biomedical_share",
+      "industry_known_share"
+    ],
+    "investment_year_max": 2024,
+    "weight": ""
+  },
+  {
+    "model": "B5",
+    "outcome": "early_share",
+    "rhs": "c.p##c.d l_gdp l_secondary",
+    "target": "c.p#c.d",
+    "required": [
+      "early_share",
+      "p",
+      "d",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2024,
+    "weight": ""
+  },
+  {
+    "model": "B6",
+    "outcome": "ln_amount",
+    "rhs": "p l_gdp l_secondary",
+    "target": "p",
+    "required": [
+      "ln_amount",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2024,
+    "weight": ""
+  },
+  {
+    "model": "B7",
+    "outcome": "known_share",
+    "rhs": "p l_gdp l_secondary",
+    "target": "p",
+    "required": [
+      "known_share",
+      "p",
+      "l_gdp",
+      "l_secondary"
+    ],
+    "investment_year_max": 2024,
+    "weight": ""
+  }
+]

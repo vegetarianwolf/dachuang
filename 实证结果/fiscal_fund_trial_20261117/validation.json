@@ -1,0 +1,449 @@
+{
+  "status": "passed",
+  "hash_checks": {
+    "fund_trial_20261117.csv": "49dbcd825a779e41db9dfc6900af54997a2623627043f59ede18510e507b866f",
+    "fiscal_macro_trial_20261117.csv": "15b3968f19b7d1e9dcb41314fde407aaca351374fd22b17de14da20fdab19ad0",
+    "fiscal_fund_trial_20261117.csv": "21fa03333c22d4fd3a906d04c336f99726202be268fa90379c4b5491024b565f"
+  },
+  "source_hashes": "all_match",
+  "exact_calendar_joins": [
+    "p",
+    "d",
+    "l_gdp",
+    "l_secondary",
+    "l_scitech",
+    "y1",
+    "y2",
+    "grant1",
+    "grant2"
+  ],
+  "common_sample_pairs": [
+    "I1/I2",
+    "I3/I4",
+    "I5/I6",
+    "I7a/I7",
+    "B2/B3/B4"
+  ],
+  "sample_checks": [
+    {
+      "scope": "municipal",
+      "model": "I1",
+      "N": 235,
+      "clusters": 68,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I2",
+      "N": 235,
+      "clusters": 68,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I3",
+      "N": 196,
+      "clusters": 62,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I4",
+      "N": 196,
+      "clusters": 62,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I5",
+      "N": 194,
+      "clusters": 60,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I6",
+      "N": 194,
+      "clusters": 60,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I7a",
+      "N": 235,
+      "clusters": 68,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I7",
+      "N": 235,
+      "clusters": 68,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I8",
+      "N": 235,
+      "clusters": 68,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I9",
+      "N": 235,
+      "clusters": 68,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "I10",
+      "N": 272,
+      "clusters": 73,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "B1",
+      "N": 296,
+      "clusters": 74,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "B2",
+      "N": 296,
+      "clusters": 74,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "B3",
+      "N": 296,
+      "clusters": 74,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "B4",
+      "N": 296,
+      "clusters": 74,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "B5",
+      "N": 253,
+      "clusters": 68,
+      "status": "ok"
+    },
+    {
+      "scope": "municipal",
+      "model": "B6",
+      "N": 38,
+      "clusters": 18,
+      "status": "insufficient_sample"
+    },
+    {
+      "scope": "municipal",
+      "model": "B7",
+      "N": 296,
+      "clusters": 74,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I1",
+      "N": 720,
+      "clusters": 134,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I2",
+      "N": 720,
+      "clusters": 134,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I3",
+      "N": 614,
+      "clusters": 129,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I4",
+      "N": 614,
+      "clusters": 129,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I5",
+      "N": 607,
+      "clusters": 124,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I6",
+      "N": 607,
+      "clusters": 124,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I7a",
+      "N": 718,
+      "clusters": 133,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I7",
+      "N": 718,
+      "clusters": 133,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I8",
+      "N": 720,
+      "clusters": 134,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I9",
+      "N": 720,
+      "clusters": 134,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "I10",
+      "N": 828,
+      "clusters": 142,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "B1",
+      "N": 916,
+      "clusters": 144,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "B2",
+      "N": 916,
+      "clusters": 144,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "B3",
+      "N": 916,
+      "clusters": 144,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "B4",
+      "N": 916,
+      "clusters": 144,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "B5",
+      "N": 798,
+      "clusters": 137,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "B6",
+      "N": 117,
+      "clusters": 46,
+      "status": "ok"
+    },
+    {
+      "scope": "broad",
+      "model": "B7",
+      "N": 916,
+      "clusters": 144,
+      "status": "ok"
+    }
+  ],
+  "regression_checks": [
+    {
+      "scope": "municipal",
+      "model": "I2",
+      "N": 235,
+      "clusters": 68,
+      "coefficient": -0.07283783697924906,
+      "stata_coefficient": -0.0728378369792544,
+      "coefficient_error": 5.342948306008566e-15,
+      "clustered_se": 0.2001317138219914,
+      "stata_clustered_se": 0.20013171,
+      "se_error": 3.821991417796156e-09,
+      "p": 0.7170417357154837,
+      "p_error": 5.715483641921537e-09,
+      "finite_sample_correction": 1.0697862041145625,
+      "marginal_coefficient_max_error": 6.87398533927297e-10
+    },
+    {
+      "scope": "municipal",
+      "model": "I6",
+      "N": 194,
+      "clusters": 60,
+      "coefficient": 0.0026611684965112126,
+      "stata_coefficient": 0.0026611684965073,
+      "coefficient_error": 3.9126688000656884e-15,
+      "clustered_se": 0.032525708824475794,
+      "stata_clustered_se": 0.032525707,
+      "se_error": 1.8244757926666466e-09,
+      "p": 0.9350688617293083,
+      "p_error": 1.1729308302399488e-08,
+      "finite_sample_correction": 1.108876759551853,
+      "marginal_coefficient_max_error": null
+    },
+    {
+      "scope": "municipal",
+      "model": "B1",
+      "N": 296,
+      "clusters": 74,
+      "coefficient": -1.7153756294385827,
+      "stata_coefficient": -1.715375629438587,
+      "coefficient_error": 4.218847493575595e-15,
+      "clustered_se": 0.8406364826440976,
+      "stata_clustered_se": 0.84063649,
+      "se_error": 7.355902331696029e-09,
+      "p": 0.044910951392204045,
+      "p_error": 6.077959524564136e-10,
+      "finite_sample_correction": 1.056682317633961,
+      "marginal_coefficient_max_error": null
+    },
+    {
+      "scope": "municipal",
+      "model": "B2",
+      "N": 296,
+      "clusters": 74,
+      "coefficient": 0.03255188416946983,
+      "stata_coefficient": 0.0325518841694642,
+      "coefficient_error": 5.627442956068762e-15,
+      "clustered_se": 0.4969744055246838,
+      "stata_clustered_se": 0.49697441,
+      "se_error": 4.475316173202515e-09,
+      "p": 0.9479548565691706,
+      "p_error": 2.656917053034391e-08,
+      "finite_sample_correction": 1.056682317633961,
+      "marginal_coefficient_max_error": null
+    },
+    {
+      "scope": "municipal",
+      "model": "B3",
+      "N": 296,
+      "clusters": 74,
+      "coefficient": 0.06807034252841344,
+      "stata_coefficient": 0.0680703425284514,
+      "coefficient_error": 3.795574965437254e-14,
+      "clustered_se": 0.5323051109994441,
+      "stata_clustered_se": 0.53230512,
+      "se_error": 9.000555856175652e-09,
+      "p": 0.8985968077283031,
+      "p_error": 1.2271696880894467e-08,
+      "finite_sample_correction": 1.4240052185257666,
+      "marginal_coefficient_max_error": null
+    },
+    {
+      "scope": "broad",
+      "model": "I2",
+      "N": 720,
+      "clusters": 134,
+      "coefficient": 0.05078174940134028,
+      "stata_coefficient": 0.0507817494013327,
+      "coefficient_error": 7.5842110369706e-15,
+      "clustered_se": 0.10845970042912716,
+      "stata_clustered_se": 0.1084597,
+      "se_error": 4.291271504808236e-10,
+      "p": 0.6404019161412234,
+      "p_error": 1.6141223468935095e-08,
+      "finite_sample_correction": 1.0246195403643479,
+      "marginal_coefficient_max_error": 1.1870325312968166e-09
+    },
+    {
+      "scope": "broad",
+      "model": "I6",
+      "N": 607,
+      "clusters": 124,
+      "coefficient": -0.014940224323016338,
+      "stata_coefficient": -0.0149402243229986,
+      "coefficient_error": 1.7737547541862853e-14,
+      "clustered_se": 0.01380434825801902,
+      "stata_clustered_se": 0.013804348,
+      "se_error": 2.580190210793587e-10,
+      "p": 0.2812435972195433,
+      "p_error": 7.2195432965216355e-09,
+      "finite_sample_correction": 1.0354692021496485,
+      "marginal_coefficient_max_error": null
+    },
+    {
+      "scope": "broad",
+      "model": "B1",
+      "N": 916,
+      "clusters": 144,
+      "coefficient": 0.2158590904255102,
+      "stata_coefficient": 0.2158590904254872,
+      "coefficient_error": 2.300937218535637e-14,
+      "clustered_se": 0.5862406775047508,
+      "stata_clustered_se": 0.58624065,
+      "se_error": 2.7504750810258827e-08,
+      "p": 0.7132618922684766,
+      "p_error": 7.731523421483644e-09,
+      "finite_sample_correction": 1.020374973863346,
+      "marginal_coefficient_max_error": null
+    },
+    {
+      "scope": "broad",
+      "model": "B2",
+      "N": 916,
+      "clusters": 144,
+      "coefficient": -0.2910775573025486,
+      "stata_coefficient": -0.2910775573025717,
+      "coefficient_error": 2.3092638912203256e-14,
+      "clustered_se": 0.22273880866780252,
+      "stata_clustered_se": 0.2227388,
+      "se_error": 8.66780253128141e-09,
+      "p": 0.19337451998564859,
+      "p_error": 9.985648585786322e-09,
+      "finite_sample_correction": 1.020374973863346,
+      "marginal_coefficient_max_error": null
+    },
+    {
+      "scope": "broad",
+      "model": "B3",
+      "N": 916,
+      "clusters": 144,
+      "coefficient": -0.3411357631821643,
+      "stata_coefficient": -0.3411357631821668,
+      "coefficient_error": 2.4980018054066022e-15,
+      "clustered_se": 0.2240214572090407,
+      "stata_clustered_se": 0.22402146,
+      "se_error": 2.7909592970054575e-09,
+      "p": 0.13002168442857853,
+      "p_error": 5.57142146306866e-09,
+      "finite_sample_correction": 1.2123665807876336,
+      "marginal_coefficient_max_error": null
+    }
+  ],
+  "independent_method": "NumPy full city/year dummy OLS or WLS; city-cluster sandwich covariance; independent t-distribution calculation",
+  "interpretation_notes": [
+    "Fund geography is a registration-city proxy, not verified fiscal sponsor.",
+    "Only observed positive-event city-years enter; no extensive-margin zero claim.",
+    "areg WLS and xtreg have different documented finite-sample covariance corrections."
+  ]
+}

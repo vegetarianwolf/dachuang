@@ -1,0 +1,265 @@
+{
+  "city_universe": "面板数据/地级市总面板_2015_2024_英文版.csv",
+  "n_cities": 277,
+  "n_rows": 3047,
+  "years": [
+    2014,
+    2024
+  ],
+  "inputs_sha256": {
+    "面板数据/地级市总面板_2015_2024_英文版.csv": "776664c88bcf61f5eb08a14391d0e42a5893ce4cb8604bad13df919f09dc4621",
+    "原始数据打包_20260401/市级数据/2000-2024年290+地级市财政收支压力/2000-2024年290+地级市财政收支压力.xlsx": "a8cdda54b033552295a018c172028b33822726f1d5846128a4e8d1cba904a2b4",
+    "原始数据打包_20260401/市级数据/地方债务/全国地方债务余额(省级+地级市)2006-2023/地级市/整合.csv": "51415fd86a6ffba09651ab4e7a9384d825676ebd51e584b7b7d02cd9e98b475b",
+    "原始数据打包_20260401/CNRDS专利数据包/各省市创新专利情况/各省市专利申请情况/各省市专利申请情况.csv": "1de8754d18f617b6b991584380e54028cc89d3115782c923df6b6ef070187f4f",
+    "原始数据打包_20260401/CNRDS专利数据包/各省市创新专利情况/各省市专利获得情况/各省市专利获得情况.csv": "3443c6701cb8fa39ef0ca3273c0ee833f6832b3c3eb59549b44fee3e61d521ef",
+    "原始数据打包_20260401/市级数据/地级市总GDP.csv": "e29a45f27ab00f6d0eb56c833ccd3315fea89a30ec6d5e7ee181f344c86c47da",
+    "原始数据打包_20260401/市级数据/地级市第二产业.csv": "7eae0bfc2ce0d5cf2fd1c290848f234ea54ca4188dca626c4fdbf2bd7d023168",
+    "原始数据打包_20260401/市级数据/财政支出：科学：地级市.csv": "1c74eb17d2dd7d98cb5bb05944a1d45f3495ee311a7f52b115c49f0dfe73978c"
+  },
+  "fiscal_definition": {
+    "source_label": "财政收支压力",
+    "actual_source_formula": "revenue / expenditure",
+    "analysis_formula": "fiscal_gap = 1 - revenue / expenditure",
+    "raw_valid_rows": 7450,
+    "max_formula_error": 4.884981308350689e-15,
+    "input_imputation": "none in this script; upstream imputation status undocumented"
+  },
+  "debt_definition": {
+    "debt_ratio": "(local-government bonds + LGFV bonds) / public fiscal revenue; source percent divided by 100",
+    "debt_gdp_ratio": "source debt burden percent divided by 100",
+    "ratio_vs_source_numerator_max_abs_difference": 6.485176817783156e-07,
+    "missing_to_zero": false,
+    "calendar_lags": "to be constructed by exact city-year joins downstream"
+  },
+  "controls": {
+    "ln_gdp": "ln(GDP in billion RMB), positive observations",
+    "secondary_share": "secondary value added / GDP, both billion RMB",
+    "ln_scitech": "ln(1 + fiscal science expenditure in million RMB)",
+    "constant_gdp_unit_rescaling": "ln(c*GDP) = ln(GDP)+ln(c); additive constant absorbed by fixed effects",
+    "population": "excluded from primary controls: source contains transcription/mapping anomalies",
+    "gdp_restored_city_years": 400,
+    "gdp_restored_cities": [
+      "亳州市",
+      "儋州市",
+      "兰州市",
+      "台州市",
+      "吉林市",
+      "宿州市",
+      "常州市",
+      "广州市",
+      "徐州市",
+      "德州市",
+      "忻州市",
+      "惠州市",
+      "扬州市",
+      "抚州市",
+      "杭州市",
+      "柳州市",
+      "梅州市",
+      "梧州市",
+      "池州市",
+      "沧州市",
+      "泉州市",
+      "泰州市",
+      "泸州市",
+      "温州市",
+      "湖州市",
+      "滁州市",
+      "滨州市",
+      "漳州市",
+      "福州市",
+      "苏州市",
+      "荆州市",
+      "衢州市",
+      "贺州市",
+      "赣州市",
+      "达州市",
+      "郑州市",
+      "郴州市",
+      "鄂州市",
+      "钦州市",
+      "随州市"
+    ],
+    "restoration_rule": "match source city names against explicit existing-panel full and bare municipal names; do not treat bare names ending in 州 as autonomous prefecture names"
+  },
+  "patent_validation": {
+    "pat_invent_apply": {
+      "nonmissing_panel": 2720,
+      "missing_raw_match": 0,
+      "unequal_count": 0
+    },
+    "pat_invent_grant": {
+      "nonmissing_panel": 2720,
+      "missing_raw_match": 0,
+      "unequal_count": 0
+    }
+  },
+  "patent_outcomes": {
+    "ln_pat_apply": "ln(1 + invention applications)",
+    "ln_pat_grant": "ln(1 + invention grants)",
+    "2014": "missing: inherited panel starts in 2015",
+    "annual_totals": {
+      "2014": {
+        "pat_invent_apply": null,
+        "pat_invent_grant": null,
+        "pat_apply_total": null
+      },
+      "2015": {
+        "pat_invent_apply": 834602.0,
+        "pat_invent_grant": 235194.0,
+        "pat_apply_total": 2177300.0
+      },
+      "2016": {
+        "pat_invent_apply": 1037869.0,
+        "pat_invent_grant": 297322.0,
+        "pat_apply_total": 2566774.0
+      },
+      "2017": {
+        "pat_invent_apply": 1243855.0,
+        "pat_invent_grant": 317955.0,
+        "pat_apply_total": 3134351.0
+      },
+      "2018": {
+        "pat_invent_apply": 1375018.0,
+        "pat_invent_grant": 337439.0,
+        "pat_apply_total": 3527571.0
+      },
+      "2019": {
+        "pat_invent_apply": 1229053.0,
+        "pat_invent_grant": 352342.0,
+        "pat_apply_total": 3892493.0
+      },
+      "2020": {
+        "pat_invent_apply": 1420018.0,
+        "pat_invent_grant": 431748.0,
+        "pat_apply_total": 4794024.0
+      },
+      "2021": {
+        "pat_invent_apply": 1451461.0,
+        "pat_invent_grant": 574818.0,
+        "pat_apply_total": 4620996.0
+      },
+      "2022": {
+        "pat_invent_apply": 1511619.0,
+        "pat_invent_grant": 684994.0,
+        "pat_apply_total": 4456534.0
+      },
+      "2023": {
+        "pat_invent_apply": 1509038.0,
+        "pat_invent_grant": 808033.0,
+        "pat_apply_total": 4609990.0
+      },
+      "2024": {
+        "pat_invent_apply": 1126035.0,
+        "pat_invent_grant": 925976.0,
+        "pat_apply_total": 1877830.0
+      }
+    },
+    "2024_to_2023_city_application_ratio_median": 0.7880826134808231,
+    "cities_below_0_8_in_2024": 148,
+    "interpretation": "2024 application counts decline broadly while invention grants rise; source completeness/publication lag is not documented. Keep outcome<=2023 primary and report inclusion of 2024 separately."
+  },
+  "nonmissing_by_year": {
+    "2014": {
+      "fiscal_gap": 250,
+      "debt_ratio": 234,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 0,
+      "ln_pat_grant": 0
+    },
+    "2015": {
+      "fiscal_gap": 250,
+      "debt_ratio": 237,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2016": {
+      "fiscal_gap": 250,
+      "debt_ratio": 240,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2017": {
+      "fiscal_gap": 250,
+      "debt_ratio": 239,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2018": {
+      "fiscal_gap": 250,
+      "debt_ratio": 231,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2019": {
+      "fiscal_gap": 250,
+      "debt_ratio": 235,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2020": {
+      "fiscal_gap": 250,
+      "debt_ratio": 235,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2021": {
+      "fiscal_gap": 250,
+      "debt_ratio": 30,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2022": {
+      "fiscal_gap": 250,
+      "debt_ratio": 241,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2023": {
+      "fiscal_gap": 250,
+      "debt_ratio": 216,
+      "ln_gdp": 250,
+      "secondary_share": 250,
+      "ln_scitech": 247,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    },
+    "2024": {
+      "fiscal_gap": 250,
+      "debt_ratio": 0,
+      "ln_gdp": 248,
+      "secondary_share": 248,
+      "ln_scitech": 119,
+      "ln_pat_apply": 272,
+      "ln_pat_grant": 272
+    }
+  },
+  "no_interpolation_or_winsorization": true,
+  "output_sha256": "15b3968f19b7d1e9dcb41314fde407aaca351374fd22b17de14da20fdab19ad0"
+}

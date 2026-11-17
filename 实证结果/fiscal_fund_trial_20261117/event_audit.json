@@ -1,0 +1,109 @@
+{
+  "source": "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/2015-2024投资事件_附基金级别分类注册地区_扩展匹配.csv",
+  "source_sha256": "f1d645473ef1761e483b4d42ed6cec471a899f11290146fba8d2a1823279402a",
+  "counts": {
+    "raw_rows": 24306,
+    "exact_event_duplicates_removed": 2,
+    "invalid_year_rows_removed": 1,
+    "unique_valid_events": 24303,
+    "amount_missing": 12402,
+    "amount_estimated": 291,
+    "rmb_generic_fallback": 8,
+    "registration_city_unparsed": 1648,
+    "recipient_city_unparsed": 171,
+    "stage_unknown": 35
+  },
+  "fund_levels_valid_events": {
+    "地市级": 1091,
+    "国家级": 1263,
+    "缺失": 19254,
+    "省级": 1600,
+    "区县级": 1095
+  },
+  "duplicate_key_columns": [
+    "投资方",
+    "投资方全称",
+    "机构名称",
+    "机构全称",
+    "上级机构",
+    "上级机构全称",
+    "基金名称",
+    "基金全称",
+    "企业",
+    "融资主体",
+    "企业标签",
+    "行业(清科)",
+    "地区",
+    "投资类型",
+    "投资阶段",
+    "投资时间",
+    "投资币种",
+    "投资金额(M)",
+    "投资金额(RMB/M)",
+    "投资金额(USD/M)",
+    "股权%",
+    "轮次",
+    "投资人",
+    "企业估值(RMB/M)",
+    "企业估值(USD/M)",
+    "P/E",
+    "行业(国标)",
+    "行业(证监会)",
+    "上市交易所",
+    "企业简介"
+  ],
+  "dedup_rule": "Exact economic-event fields; provenance and annotation metadata excluded; conflicting attribution retained.",
+  "scope": "Observed city-years in 2015-2024; municipal: explicit 地市级 plus parsed registration city; broad: every parsed registration city.",
+  "sponsor_status": "No source field verifies fiscal contributor or supervising jurisdiction. Registration-city attribution is a proxy.",
+  "geography_rule": "Fund registration city only; recipient geography is retained separately and never fills missing fund geography.",
+  "missing_year_rule": "No synthetic zero-investment city-years; all city-years contain at least one observed event.",
+  "early_stage_definition": [
+    "初创期",
+    "种子期"
+  ],
+  "known_stage_definition": [
+    "初创期",
+    "成熟期",
+    "扩张期",
+    "种子期"
+  ],
+  "early_share_denominator": "known_count; unknown stages excluded; no-event years absent",
+  "amount_unit": "RMB million (百万元); source column 投资金额(RMB/M)",
+  "amount_rule": "disclosed_amount_rmb_m is the sum of numeric disclosed/estimated amounts; complete_amount_rmb_m is present only if all event amounts are known; missing remains missing. (e) values counted separately.",
+  "local_share_denominator": "All observed events; recipient_known_count records geography coverage.",
+  "industry_definition": {
+    "source": "清科一级行业 (substring before |)",
+    "electronic_share": [
+      "IT",
+      "互联网",
+      "半导体及电子设备",
+      "电信及增值业务"
+    ],
+    "biomedical_share": [
+      "生物技术/医疗健康"
+    ],
+    "denominator": "All observed events; industry_known_share records classification coverage."
+  },
+  "samples": {
+    "municipal": {
+      "events": 1086,
+      "cities": 110,
+      "city_years": 334,
+      "unknown_stage_events": 2,
+      "missing_amount_events": 668,
+      "local_events": 833,
+      "recipient_known_events": 1080,
+      "complete_amount_city_years": 71
+    },
+    "broad": {
+      "events": 22655,
+      "cities": 185,
+      "city_years": 968,
+      "unknown_stage_events": 34,
+      "missing_amount_events": 11627,
+      "local_events": 8137,
+      "recipient_known_events": 22499,
+      "complete_amount_city_years": 172
+    }
+  }
+}

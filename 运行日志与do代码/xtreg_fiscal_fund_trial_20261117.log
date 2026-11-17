@@ -1,0 +1,2101 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/vegetarianwolf/Projects/dachuang/运行日志与do代码/xtreg_fis
+> cal_fund_trial_20261117.log
+  log type:  text
+ opened on:  17 Nov 2026, 12:04:50
+
+. global trial_out "`outdir'"
+
+. import delimited using "`datafile'", clear varnames(1) encoding(UTF-8) case(p
+> reserve)
+(50 vars, 1,302 obs)
+
+. isid sample city year
+
+. xtset panel_id year
+
+Panel variable: panel_id (unbalanced)
+ Time variable: year, 2015 to 2024, but with gaps
+         Delta: 1 unit
+
+. tempname results coefficients margins
+
+. tempfile results_file coefficients_file margins_file
+
+. postfile `results' str12 scope str6 model str24 outcome str60 target str30 st
+> atus double b se p lo hi N clusters year_min year_max r2w using `results_file
+> ', replace
+(file /var/folders/vg/d131wddn7t1g02rrshk6lhh00000gn/T//St24636.000001 not
+    found)
+
+. postfile `coefficients' str12 scope str6 model str80 term double b se p lo hi
+>  using `coefficients_file', replace
+(file /var/folders/vg/d131wddn7t1g02rrshk6lhh00000gn/T//St24636.000002 not
+    found)
+
+. postfile `margins' str12 scope str6 model str20 kind double p_value d_value e
+> stimate se p lo hi using `margins_file', replace
+(file /var/folders/vg/d131wddn7t1g02rrshk6lhh00000gn/T//St24636.000003 not
+    found)
+
+. global trial_results `results'
+
+. global trial_coefficients `coefficients'
+
+. global trial_margins `margins'
+
+. 
+. capture program drop trial
+
+. program define trial
+  1.     syntax, scope(string) model(string) outcome(name) rhs(string) target(s
+> tring) flag(name) [weight(name) margin(integer 0)]
+  2.     tempvar eligible tag used
+  3.     gen byte `eligible' = sample == "`scope'" & `flag' == 1
+  4.     quietly count if `eligible'
+  5.     local n = r(N)
+  6.     quietly egen `tag' = tag(city_id) if `eligible'
+  7.     quietly count if `tag' == 1
+  8.     local clusters = r(N)
+  9.     if `n' < 40 | `clusters' < 20 {
+ 10.         post $trial_results ("`scope'") ("`model'") ("`outcome'") ("`targe
+> t'") ("insufficient_sample") (.) (.) (.) (.) (.) (`n') (`clusters') (.) (.) (
+> .)
+ 11.         exit
+ 12.     }
+ 13.     local w ""
+ 14.     if "`weight'" != "" local w "[aw=`weight']"
+ 15.     noisily display "TRIAL `scope' `model': `outcome' `rhs'"
+ 16.     if "`weight'" == "" {
+ 17.         capture noisily xtreg `outcome' `rhs' i.year if `eligible', fe vce
+> (cluster city_id)
+ 18.     }
+ 19.     else {
+ 20.         capture noisily areg `outcome' `rhs' i.year if `eligible' `w', abs
+> orb(panel_id) vce(cluster city_id)
+ 21.     }
+ 22.     local rc = _rc
+ 23.     if `rc' != 0 {
+ 24.         post $trial_results ("`scope'") ("`model'") ("`outcome'") ("`targe
+> t'") ("stata_error_`rc'") (.) (.) (.) (.) (.) (`n') (`clusters') (.) (.) (.)
+ 25.         exit
+ 26.     }
+ 27.     gen byte `used' = e(sample)
+ 28.     quietly summarize year if `used', meanonly
+ 29.     local ymin = r(min)
+ 30.     local ymax = r(max)
+ 31.     local critical = invttail(e(df_r), .025)
+ 32.     local b = _b[`target']
+ 33.     local se = _se[`target']
+ 34.     local p = cond(`se' > 0, 2*ttail(e(df_r), abs(`b'/`se')), .)
+ 35.     local status "ok"
+ 36.     if `se' == 0 local status "target_omitted"
+ 37.     local r2w = .
+ 38.     if "`weight'" == "" local r2w = e(r2_w)
+ 39.     post $trial_results ("`scope'") ("`model'") ("`outcome'") ("`target'")
+>  ("`status'") (`b') (`se') (`p') (`b'-`critical'*`se') (`b'+`critical'*`se') 
+> (e(N)) (`clusters') (`ymin') (`ymax') (`r2w')
+ 40.     local terms : colnames e(b)
+ 41.     foreach term of local terms {
+ 42.         local b = _b[`term']
+ 43.         local se = _se[`term']
+ 44.         local p = cond(`se' > 0, 2*ttail(e(df_r), abs(`b'/`se')), .)
+ 45.         post $trial_coefficients ("`scope'") ("`model'") ("`term'") (`b') 
+> (`se') (`p') (`b'-`critical'*`se') (`b'+`critical'*`se')
+ 46.     }
+ 47.     if `margin' == 1 {
+ 48.         quietly summarize p if `used', detail
+ 49.         local points "`r(p5)' `r(p25)' `r(p50)' `r(p75)' `r(p95)'"
+ 50.         foreach point of local points {
+ 51.             quietly lincom g + `point'*c.g#c.p
+ 52.             post $trial_margins ("`scope'") ("`model'") ("fund_slope") (`p
+> oint') (.) (r(estimate)) (r(se)) (r(p)) (r(lb)) (r(ub))
+ 53.         }
+ 54.     }
+ 55.     if `margin' == 2 {
+ 56.         quietly summarize d if `used', detail
+ 57.         local dpoints "`r(p25)' `r(p50)' `r(p75)'"
+ 58.         foreach point of local dpoints {
+ 59.             quietly lincom c.g#c.p + `point'*c.g#c.p#c.d
+ 60.             post $trial_margins ("`scope'") ("`model'") ("fiscal_moderatio
+> n") (.) (`point') (r(estimate)) (r(se)) (r(p)) (r(lb)) (r(ub))
+ 61.         }
+ 62.     }
+ 63.     preserve
+ 64.     keep if `used'
+ 65.     keep city city_id year sample inv_count known_count early_share p d g 
+> l_gdp l_secondary y1 y2 grant1
+ 66.     export delimited using "$trial_out/samples/`scope'_`model'.csv", repla
+> ce
+ 67.     restore
+ 68. end
+
+. 
+. trial, scope(municipal) model(I1) outcome(y1) rhs("c.g##c.p") target("c.g#c.p
+> ") flag(use_I1) margin(1)
+TRIAL municipal I1: y1 c.g##c.p
+
+Fixed-effects (within) regression               Number of obs     =        235
+Group variable: panel_id                        Number of groups  =         68
+
+R-squared:                                      Obs per group:
+     Within  = 0.1870                                         min =          2
+     Between = 0.5158                                         avg =        3.5
+     Overall = 0.4271                                         max =          8
+
+                                                F(10, 67)         =       7.62
+corr(u_i, Xb) = -0.7244                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 68 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |   .0124314   .0763017     0.16   0.871    -.1398673    .1647302
+           p |   .8997668   .6587239     1.37   0.177    -.4150516    2.214585
+             |
+     c.g#c.p |  -.0504151   .1990705    -0.25   0.801    -.4477615    .3469312
+             |
+        year |
+       2016  |   .2309832    .065744     3.51   0.001     .0997577    .3622088
+       2017  |   .2973628   .0698368     4.26   0.000     .1579679    .4367577
+       2018  |   .0632965   .0818912     0.77   0.442     -.100159    .2267519
+       2019  |   .2369441   .0896408     2.64   0.010     .0580203    .4158679
+       2020  |   .1766176   .1033992     1.71   0.092    -.0297681    .3830033
+       2021  |   .2205684   .1171747     1.88   0.064    -.0133132      .45445
+       2022  |    .258009   .1192132     2.16   0.034     .0200585    .4959595
+             |
+       _cons |   7.874597   .2453646    32.09   0.000     7.384847    8.364346
+-------------+----------------------------------------------------------------
+     sigma_u |  1.6556009
+     sigma_e |   .2185928
+         rho |  .98286616   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,067 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I1.csv saved
+
+. trial, scope(municipal) model(I2) outcome(y1) rhs("c.g##c.p l_gdp l_secondary
+> ") target("c.g#c.p") flag(use_I2) margin(1)
+TRIAL municipal I2: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        235
+Group variable: panel_id                        Number of groups  =         68
+
+R-squared:                                      Obs per group:
+     Within  = 0.2005                                         min =          2
+     Between = 0.6185                                         avg =        3.5
+     Overall = 0.5708                                         max =          8
+
+                                                F(12, 67)         =       7.07
+corr(u_i, Xb) = -0.8196                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 68 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |   .0277151   .0744922     0.37   0.711    -.1209721    .1764023
+           p |   1.027156   .6181118     1.66   0.101    -.2066007    2.260912
+             |
+     c.g#c.p |  -.0728378   .2001317    -0.36   0.717    -.4723024    .3266267
+             |
+       l_gdp |  -.0067204   .5694403    -0.01   0.991    -1.143328    1.129887
+ l_secondary |   1.568145   1.910047     0.82   0.415    -2.244326    5.380615
+             |
+        year |
+       2016  |   .2484674   .0779897     3.19   0.002     .0927993    .4041356
+       2017  |   .3368391   .1552746     2.17   0.034     .0269097    .6467685
+       2018  |   .1152537   .1889833     0.61   0.544    -.2619585    .4924659
+       2019  |   .3047319    .250202     1.22   0.228    -.1946733    .8041372
+       2020  |   .2614406   .3322307     0.79   0.434    -.4016947     .924576
+       2021  |   .3195639   .3744483     0.85   0.396    -.4278379    1.066966
+       2022  |   .3540571   .4158317     0.85   0.398    -.4759464    1.184061
+             |
+       _cons |   7.109201   2.609776     2.72   0.008     1.900066    12.31834
+-------------+----------------------------------------------------------------
+     sigma_u |   1.712799
+     sigma_e |  .21816635
+         rho |  .98403484   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,067 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I2.csv saved
+
+. trial, scope(municipal) model(I3) outcome(y1) rhs("c.g##c.p l_gdp l_secondary
+> ") target("c.g#c.p") flag(use_I3) margin(1)
+TRIAL municipal I3: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        196
+Group variable: panel_id                        Number of groups  =         62
+
+R-squared:                                      Obs per group:
+     Within  = 0.2393                                         min =          2
+     Between = 0.6926                                         avg =        3.2
+     Overall = 0.6266                                         max =          7
+
+                                                F(11, 61)         =       9.51
+corr(u_i, Xb) = -0.8509                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 62 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0080956   .0840733    -0.10   0.924    -.1762105    .1600192
+           p |   .8042779   .6304722     1.28   0.207    -.4564291    2.064985
+             |
+     c.g#c.p |   .1154998   .1823862     0.63   0.529     -.249204    .4802035
+             |
+       l_gdp |  -.0697857    .493884    -0.14   0.888    -1.057368    .9177963
+ l_secondary |   1.128861   1.703042     0.66   0.510    -2.276583    4.534304
+             |
+        year |
+       2016  |   .2287415    .071433     3.20   0.002     .0859024    .3715806
+       2017  |   .2991007   .1407189     2.13   0.038     .0177159    .5804855
+       2018  |   .0912065   .1781182     0.51   0.610    -.2649629     .447376
+       2019  |   .2788297   .2289566     1.22   0.228    -.1789974    .7366568
+       2020  |   .2536908   .2978144     0.85   0.398    -.3418258    .8492075
+       2021  |   .3083112   .3380614     0.91   0.365    -.3676843    .9843068
+             |
+       _cons |   7.716882    2.34425     3.29   0.002     3.029264     12.4045
+-------------+----------------------------------------------------------------
+     sigma_u |  1.7431241
+     sigma_e |  .20372399
+         rho |  .98652478   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,106 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I3.csv saved
+
+. trial, scope(municipal) model(I4) outcome(y2) rhs("c.g##c.p l_gdp l_secondary
+> ") target("c.g#c.p") flag(use_I4) margin(1)
+TRIAL municipal I4: y2 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        196
+Group variable: panel_id                        Number of groups  =         62
+
+R-squared:                                      Obs per group:
+     Within  = 0.2040                                         min =          2
+     Between = 0.8015                                         avg =        3.2
+     Overall = 0.7768                                         max =          7
+
+                                                F(11, 61)         =       5.47
+corr(u_i, Xb) = -0.9260                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 62 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0676701   .0846481    -0.80   0.427    -.2369345    .1015943
+           p |   .7842321   .5024227     1.56   0.124    -.2204243    1.788888
+             |
+     c.g#c.p |   .1504922   .2215187     0.68   0.499    -.2924618    .5934462
+             |
+       l_gdp |  -.2059959   .6183442    -0.33   0.740    -1.442452     1.03046
+ l_secondary |   .9247995   1.975833     0.47   0.641    -3.026122    4.875721
+             |
+        year |
+       2016  |   .0911967   .0906163     1.01   0.318    -.0900019    .2723952
+       2017  |  -.1440427   .1575075    -0.91   0.364    -.4589985    .1709131
+       2018  |   .0172898   .2115764     0.08   0.935    -.4057833     .440363
+       2019  |   .0628678   .3244431     0.19   0.847    -.5858963    .7116319
+       2020  |   .0728245    .398283     0.18   0.856    -.7235915    .8692406
+       2021  |   .0944369   .4492625     0.21   0.834    -.8039189    .9927928
+             |
+       _cons |   8.924116   2.723184     3.28   0.002     3.478774    14.36946
+-------------+----------------------------------------------------------------
+     sigma_u |   1.836818
+     sigma_e |   .1852172
+         rho |  .98993447   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,106 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I4.csv saved
+
+. trial, scope(municipal) model(I5) outcome(y1) rhs("c.g##c.p l_gdp l_secondary
+> ") target("c.g#c.p") flag(use_I5) margin(1)
+TRIAL municipal I5: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        194
+Group variable: panel_id                        Number of groups  =         60
+
+R-squared:                                      Obs per group:
+     Within  = 0.2408                                         min =          2
+     Between = 0.6253                                         avg =        3.2
+     Overall = 0.5541                                         max =          7
+
+                                                F(12, 59)         =       8.83
+corr(u_i, Xb) = -0.8081                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 60 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0109218   .0858689    -0.13   0.899    -.1827451    .1609014
+           p |   .6579074   .6324136     1.04   0.302    -.6075494    1.923364
+             |
+     c.g#c.p |   .1131135   .1878093     0.60   0.549     -.262692    .4889191
+             |
+       l_gdp |  -.0472832   .4903052    -0.10   0.924    -1.028382    .9338153
+ l_secondary |   1.236507   1.788358     0.69   0.492    -2.341989    4.815003
+             |
+        year |
+       2016  |   .2271243   .0720135     3.15   0.003     .0830257     .371223
+       2017  |   .3078123   .1411681     2.18   0.033     .0253355    .5902891
+       2018  |   .1037332   .1785351     0.58   0.563    -.2535147    .4609811
+       2019  |    .296303   .2289015     1.29   0.201    -.1617279    .7543338
+       2020  |   .2637823   .2971937     0.89   0.378    -.3309009    .8584656
+       2021  |   .3304741   .3392363     0.97   0.334    -.3483362    1.009284
+       2022  |   .4586603   .3823687     1.20   0.235    -.3064578    1.223778
+             |
+       _cons |    7.69442   2.327491     3.31   0.002      3.03712    12.35172
+-------------+----------------------------------------------------------------
+     sigma_u |  1.6415506
+     sigma_e |  .20501218
+         rho |  .98464219   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,108 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I5.csv saved
+
+. trial, scope(municipal) model(I6) outcome(y1) rhs("c.g##c.p##c.d l_gdp l_seco
+> ndary") target("c.g#c.p#c.d") flag(use_I6) margin(2)
+TRIAL municipal I6: y1 c.g##c.p##c.d l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        194
+Group variable: panel_id                        Number of groups  =         60
+
+R-squared:                                      Obs per group:
+     Within  = 0.2591                                         min =          2
+     Between = 0.7002                                         avg =        3.2
+     Overall = 0.6403                                         max =          7
+
+                                                F(16, 59)         =       8.37
+corr(u_i, Xb) = -0.8693                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 60 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |   .0346431    .121603     0.28   0.777    -.2086839      .27797
+           p |   .5757989   .7552794     0.76   0.449    -.9355117     2.08711
+             |
+     c.g#c.p |    .066147   .2601581     0.25   0.800    -.4544283    .5867222
+             |
+           d |   .0509045   .0282868     1.80   0.077    -.0056973    .1075063
+             |
+     c.g#c.d |   -.009474   .0135478    -0.70   0.487    -.0365831    .0176351
+             |
+     c.p#c.d |  -.0395508    .060271    -0.66   0.514    -.1601528    .0810512
+             |
+ c.g#c.p#c.d |   .0026612   .0325257     0.08   0.935    -.0624226     .067745
+             |
+       l_gdp |  -.2830222   .5547701    -0.51   0.612    -1.393115    .8270701
+ l_secondary |   1.322773   1.890851     0.70   0.487    -2.460811    5.106358
+             |
+        year |
+       2016  |   .2337679   .0761872     3.07   0.003     .0813176    .3862182
+       2017  |   .3250917   .1574304     2.06   0.043     .0100741    .6401093
+       2018  |   .1314004   .1991361     0.66   0.512      -.26707    .5298709
+       2019  |    .348723   .2516595     1.39   0.171    -.1548465    .8522924
+       2020  |   .3450648   .3262229     1.06   0.294    -.3077057    .9978353
+       2021  |   .3942074   .3748515     1.05   0.297    -.3558688    1.144284
+       2022  |   .5382247    .416441     1.29   0.201    -.2950719    1.371521
+             |
+       _cons |   8.959715   2.682342     3.34   0.001     3.592362    14.32707
+-------------+----------------------------------------------------------------
+     sigma_u |  1.7532879
+     sigma_e |  .20592567
+         rho |  .98639294   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,108 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I6.csv saved
+
+. trial, scope(municipal) model(I7a) outcome(y1) rhs("c.g##c.p l_gdp l_secondar
+> y") target("c.g#c.p") flag(use_I7a) margin(1)
+TRIAL municipal I7a: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        235
+Group variable: panel_id                        Number of groups  =         68
+
+R-squared:                                      Obs per group:
+     Within  = 0.2005                                         min =          2
+     Between = 0.6185                                         avg =        3.5
+     Overall = 0.5708                                         max =          8
+
+                                                F(12, 67)         =       7.07
+corr(u_i, Xb) = -0.8196                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 68 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |   .0277151   .0744922     0.37   0.711    -.1209721    .1764023
+           p |   1.027156   .6181118     1.66   0.101    -.2066007    2.260912
+             |
+     c.g#c.p |  -.0728378   .2001317    -0.36   0.717    -.4723024    .3266267
+             |
+       l_gdp |  -.0067204   .5694403    -0.01   0.991    -1.143328    1.129887
+ l_secondary |   1.568145   1.910047     0.82   0.415    -2.244326    5.380615
+             |
+        year |
+       2016  |   .2484674   .0779897     3.19   0.002     .0927993    .4041356
+       2017  |   .3368391   .1552746     2.17   0.034     .0269097    .6467685
+       2018  |   .1152537   .1889833     0.61   0.544    -.2619585    .4924659
+       2019  |   .3047319    .250202     1.22   0.228    -.1946733    .8041372
+       2020  |   .2614406   .3322307     0.79   0.434    -.4016947     .924576
+       2021  |   .3195639   .3744483     0.85   0.396    -.4278379    1.066966
+       2022  |   .3540571   .4158317     0.85   0.398    -.4759464    1.184061
+             |
+       _cons |   7.109201   2.609776     2.72   0.008     1.900066    12.31834
+-------------+----------------------------------------------------------------
+     sigma_u |   1.712799
+     sigma_e |  .21816635
+         rho |  .98403484   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,067 observations deleted)
+(file
+    /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_202611
+    > 17/samples/municipal_I7a.csv not found)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I7a.csv saved
+
+. trial, scope(municipal) model(I7) outcome(y1) rhs("c.g##c.p l_gdp l_secondary
+>  l_scitech") target("c.g#c.p") flag(use_I7) margin(1)
+TRIAL municipal I7: y1 c.g##c.p l_gdp l_secondary l_scitech
+
+Fixed-effects (within) regression               Number of obs     =        235
+Group variable: panel_id                        Number of groups  =         68
+
+R-squared:                                      Obs per group:
+     Within  = 0.2156                                         min =          2
+     Between = 0.2941                                         avg =        3.5
+     Overall = 0.2493                                         max =          8
+
+                                                F(13, 67)         =       8.63
+corr(u_i, Xb) = -0.5930                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 68 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |   .0137326   .0712564     0.19   0.848    -.1284958    .1559609
+           p |   1.013069   .6052063     1.67   0.099    -.1949281    2.221066
+             |
+     c.g#c.p |  -.0613391   .2057863    -0.30   0.767    -.4720902     .349412
+             |
+       l_gdp |  -.0708156   .5856275    -0.12   0.904    -1.239733    1.098102
+ l_secondary |   1.620887   1.960117     0.83   0.411    -2.291522    5.533296
+   l_scitech |   .1173824   .0579978     2.02   0.047     .0016183    .2331465
+             |
+        year |
+       2016  |    .238038   .0799344     2.98   0.004     .0784882    .3975877
+       2017  |   .3100823   .1615196     1.92   0.059    -.0123122    .6324768
+       2018  |   .0706362   .2073201     0.34   0.734    -.3431765    .4844488
+       2019  |   .2559735   .2748457     0.93   0.355    -.2926208    .8045677
+       2020  |    .201126   .3659883     0.55   0.584    -.5293896    .9316417
+       2021  |   .2642209   .4107684     0.64   0.522    -.5556761    1.084118
+       2022  |   .2979746   .4556918     0.65   0.515    -.6115901    1.207539
+             |
+       _cons |   6.674152   2.798635     2.38   0.020     1.088053    12.26025
+-------------+----------------------------------------------------------------
+     sigma_u |  1.6278161
+     sigma_e |  .21679524
+         rho |  .98257178   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,067 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I7.csv saved
+
+. trial, scope(municipal) model(I8) outcome(grant1) rhs("c.g##c.p l_gdp l_secon
+> dary") target("c.g#c.p") flag(use_I8) margin(1)
+TRIAL municipal I8: grant1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        235
+Group variable: panel_id                        Number of groups  =         68
+
+R-squared:                                      Obs per group:
+     Within  = 0.7443                                         min =          2
+     Between = 0.5578                                         avg =        3.5
+     Overall = 0.4608                                         max =          8
+
+                                                F(12, 67)         =     107.91
+corr(u_i, Xb) = 0.4807                          Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 68 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+      grant1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |   .0775136   .0527823     1.47   0.147    -.0278404    .1828676
+           p |   1.092703   .3916442     2.79   0.007      .310978    1.874428
+             |
+     c.g#c.p |  -.2091322   .1238847    -1.69   0.096    -.4564072    .0381427
+             |
+       l_gdp |   .4971314   .4050012     1.23   0.224    -.3112544    1.305517
+ l_secondary |   .4003533    .918996     0.44   0.664     -1.43397    2.234677
+             |
+        year |
+       2016  |   .0170996    .076946     0.22   0.825    -.1364852    .1706845
+       2017  |   .0204346    .125186     0.16   0.871    -.2294378    .2703069
+       2018  |  -.1081408   .1669461    -0.65   0.519    -.4413666    .2250849
+       2019  |   .0587057   .2241705     0.26   0.794    -.3887404    .5061519
+       2020  |   .3063747   .2533983     1.21   0.231    -.1994103    .8121598
+       2021  |   .5311744   .2768712     1.92   0.059    -.0214629    1.083812
+       2022  |   .7216849   .2965385     2.43   0.018     .1297915    1.313578
+             |
+       _cons |   3.363851   2.020418     1.66   0.101      -.66892    7.396622
+-------------+----------------------------------------------------------------
+     sigma_u |  1.4229321
+     sigma_e |  .21355357
+         rho |  .97797216   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,067 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I8.csv saved
+
+. trial, scope(municipal) model(I9) outcome(y1) rhs("early_share g p l_gdp l_se
+> condary") target("early_share") flag(use_I9) margin(0)
+TRIAL municipal I9: y1 early_share g p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        235
+Group variable: panel_id                        Number of groups  =         68
+
+R-squared:                                      Obs per group:
+     Within  = 0.2009                                         min =          2
+     Between = 0.5861                                         avg =        3.5
+     Overall = 0.5315                                         max =          8
+
+                                                F(12, 67)         =       7.07
+corr(u_i, Xb) = -0.7947                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 68 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ early_share |  -.0235171   .0527473    -0.45   0.657    -.1288012    .0817669
+           g |  -.0009858   .0429672    -0.02   0.982    -.0867486    .0847771
+           p |   .9220883   .5565444     1.66   0.102    -.1887791    2.032956
+       l_gdp |   .0112803   .5402963     0.02   0.983    -1.067156    1.089716
+ l_secondary |   1.445982   1.866608     0.77   0.441    -2.279784    5.171747
+             |
+        year |
+       2016  |   .2473736   .0778873     3.18   0.002       .09191    .4028372
+       2017  |    .326858   .1513749     2.16   0.034     .0247125    .6290035
+       2018  |   .1025089   .1801363     0.57   0.571    -.2570446    .4620625
+       2019  |   .2879758   .2329665     1.24   0.221    -.1770274    .7529789
+       2020  |   .2424065   .3098565     0.78   0.437    -.3760697    .8608828
+       2021  |   .3014391   .3483478     0.87   0.390     -.393866    .9967442
+       2022  |   .3329066   .3914289     0.85   0.398    -.4483887    1.114202
+             |
+       _cons |   7.120138   2.499509     2.85   0.006     2.131097    12.10918
+-------------+----------------------------------------------------------------
+     sigma_u |  1.6904219
+     sigma_e |  .21811239
+         rho |  .98362431   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,067 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I9.csv saved
+
+. trial, scope(municipal) model(I10) outcome(y1) rhs("c.g##c.p l_gdp l_secondar
+> y") target("c.g#c.p") flag(use_I10) margin(1)
+TRIAL municipal I10: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        272
+Group variable: panel_id                        Number of groups  =         73
+
+R-squared:                                      Obs per group:
+     Within  = 0.2276                                         min =          2
+     Between = 0.6274                                         avg =        3.7
+     Overall = 0.5875                                         max =          9
+
+                                                F(13, 72)         =       8.60
+corr(u_i, Xb) = -0.8422                         Prob > F          =     0.0000
+
+                               (Std. err. adjusted for 73 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |   .0476899    .076632     0.62   0.536    -.1050732    .2004531
+           p |   1.242559   .6986034     1.78   0.080    -.1500816    2.635199
+             |
+     c.g#c.p |  -.1056028   .1876986    -0.56   0.575    -.4797732    .2685676
+             |
+       l_gdp |  -.0274787   .7167108    -0.04   0.970    -1.456216    1.401258
+ l_secondary |   2.338079   2.226599     1.05   0.297    -2.100564    6.776722
+             |
+        year |
+       2016  |   .2596123   .0947778     2.74   0.008     .0706762    .4485485
+       2017  |   .3655322   .1856458     1.97   0.053    -.0045459    .7356103
+       2018  |   .1294131   .2323046     0.56   0.579    -.3336776    .5925039
+       2019  |   .3325601   .3111945     1.07   0.289    -.2877947    .9529149
+       2020  |    .284628   .4148449     0.69   0.495    -.5423502    1.111606
+       2021  |   .3466664   .4601763     0.75   0.454    -.5706783    1.264011
+       2022  |   .3934883   .5237496     0.75   0.455    -.6505873    1.437564
+       2023  |   .1388932   .5683115     0.24   0.808    -.9940151    1.271801
+             |
+       _cons |   6.781292   3.318829     2.04   0.045     .1653287    13.39726
+-------------+----------------------------------------------------------------
+     sigma_u |  1.7353673
+     sigma_e |  .23274303
+         rho |  .98233034   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,030 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_I10.csv saved
+
+. trial, scope(municipal) model(B1) outcome(g) rhs("p l_gdp l_secondary") targe
+> t("p") flag(use_B1) margin(0)
+TRIAL municipal B1: g p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        296
+Group variable: panel_id                        Number of groups  =         74
+
+R-squared:                                      Obs per group:
+     Within  = 0.0887                                         min =          2
+     Between = 0.0977                                         avg =        4.0
+     Overall = 0.0624                                         max =         10
+
+                                                F(12, 73)         =       1.28
+corr(u_i, Xb) = -0.9694                         Prob > F          =     0.2504
+
+                               (Std. err. adjusted for 74 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+           g | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -1.715376   .8406365    -2.04   0.045    -3.390762   -.0399895
+       l_gdp |   1.896674   1.501861     1.26   0.211     -1.09653    4.889879
+ l_secondary |  -3.384449   3.520151    -0.96   0.339     -10.4001    3.631202
+             |
+        year |
+       2016  |   .1018121   .1381733     0.74   0.464    -.1735668    .3771911
+       2017  |   .0233388   .2427993     0.10   0.924    -.4605595    .5072372
+       2018  |  -.1584929   .3568387    -0.44   0.658    -.8696714    .5526856
+       2019  |  -.3956536    .541826    -0.73   0.468    -1.475511     .684204
+       2020  |  -.4852895   .7012019    -0.69   0.491    -1.882783    .9122039
+       2021  |  -.4533123   .7706152    -0.59   0.558    -1.989146    1.082522
+       2022  |  -.7532646   .8854009    -0.85   0.398    -2.517866    1.011337
+       2023  |  -.9236575   .9430308    -0.98   0.331    -2.803115    .9558001
+       2024  |  -.9350567    1.04857    -0.89   0.375    -3.024853    1.154739
+             |
+       _cons |  -7.829051   7.417651    -1.06   0.295    -22.61241    6.954305
+-------------+----------------------------------------------------------------
+     sigma_u |  1.8238655
+     sigma_e |   .5044675
+         rho |  .92893343   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,006 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_B1.csv saved
+
+. trial, scope(municipal) model(B2) outcome(early_share) rhs("p l_gdp l_seconda
+> ry") target("p") flag(use_B2) margin(0)
+TRIAL municipal B2: early_share p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        296
+Group variable: panel_id                        Number of groups  =         74
+
+R-squared:                                      Obs per group:
+     Within  = 0.1052                                         min =          2
+     Between = 0.0006                                         avg =        4.0
+     Overall = 0.0042                                         max =         10
+
+                                                F(12, 73)         =       2.87
+corr(u_i, Xb) = -0.9573                         Prob > F          =     0.0028
+
+                               (Std. err. adjusted for 74 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ early_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |   .0325519   .4969744     0.07   0.948    -.9579167     1.02302
+       l_gdp |   .9612863   .5029423     1.91   0.060    -.0410762    1.963649
+ l_secondary |  -4.696081   1.254094    -3.74   0.000    -7.195486   -2.196676
+             |
+        year |
+       2016  |  -.0481431   .1803332    -0.27   0.790    -.4075465    .3112604
+       2017  |  -.3739907   .1987562    -1.88   0.064    -.7701112    .0221298
+       2018  |  -.5277474   .2084092    -2.53   0.013    -.9431063   -.1123885
+       2019  |  -.7579843   .2841989    -2.67   0.009    -1.324392   -.1915768
+       2020  |  -.9591688   .3237827    -2.96   0.004    -1.604467   -.3138709
+       2021  |   -1.03827   .3321465    -3.13   0.003    -1.700237   -.3763028
+       2022  |  -1.090007   .3921356    -2.78   0.007    -1.871532   -.3084815
+       2023  |  -1.163858   .4090869    -2.85   0.006    -1.979167   -.3485493
+       2024  |  -1.119481   .4233133    -2.64   0.010    -1.963143   -.2758186
+             |
+       _cons |  -2.727743   2.570808    -1.06   0.292    -7.851356    2.395869
+-------------+----------------------------------------------------------------
+     sigma_u |  .98630928
+     sigma_e |  .35288953
+         rho |  .88651524   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,006 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_B2.csv saved
+
+. trial, scope(municipal) model(B3) outcome(early_share) rhs("p l_gdp l_seconda
+> ry") target("p") flag(use_B3) margin(0) weight(known_count)
+TRIAL municipal B3: early_share p l_gdp l_secondary
+(sum of wgt is 1,033)
+
+Linear regression, absorbing indicators             Number of obs     =    296
+Absorbed variable: panel_id                         No. of categories =     74
+                                                    F(12, 73)         =   3.33
+                                                    Prob > F          = 0.0007
+                                                    R-squared         = 0.6162
+                                                    Adj R-squared     = 0.4609
+                                                    Root MSE          = 0.2467
+
+                               (Std. err. adjusted for 74 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ early_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |   .0680703   .5323051     0.13   0.899    -.9928122    1.128953
+       l_gdp |   .8402714    .490688     1.71   0.091    -.1376684    1.818211
+ l_secondary |  -4.727507   1.219009    -3.88   0.000    -7.156988   -2.298025
+             |
+        year |
+       2016  |   .0707855   .1366158     0.52   0.606    -.2014893    .3430603
+       2017  |  -.3128337   .1780446    -1.76   0.083    -.6676761    .0420088
+       2018  |  -.4336854    .199807    -2.17   0.033    -.8319003   -.0354706
+       2019  |  -.6124996   .2684088    -2.28   0.025    -1.147438   -.0775616
+       2020  |  -.8912352   .3310438    -2.69   0.009    -1.551004   -.2314659
+       2021  |  -.9774913    .341006    -2.87   0.005    -1.657115   -.2978674
+       2022  |  -.9597462   .3921452    -2.45   0.017     -1.74129   -.1782021
+       2023  |   -.898246   .4320437    -2.08   0.041    -1.759308   -.0371841
+       2024  |  -.9034129   .4350607    -2.08   0.041    -1.770488   -.0363382
+             |
+       _cons |  -2.363343   2.726509    -0.87   0.389    -7.797268    3.070581
+------------------------------------------------------------------------------
+(1,006 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_B3.csv saved
+
+. trial, scope(municipal) model(B4) outcome(early_share) rhs("p l_gdp l_seconda
+> ry electronic_share biomedical_share industry_known_share") target("p") flag(
+> use_B4) margin(0)
+TRIAL municipal B4: early_share p l_gdp l_secondary electronic_share biomedical
+> _share industry_known_share
+
+Fixed-effects (within) regression               Number of obs     =        296
+Group variable: panel_id                        Number of groups  =         74
+
+R-squared:                                      Obs per group:
+     Within  = 0.1204                                         min =          2
+     Between = 0.0007                                         avg =        4.0
+     Overall = 0.0045                                         max =         10
+
+                                                F(15, 73)         =       3.01
+corr(u_i, Xb) = -0.9598                         Prob > F          =     0.0009
+
+                               (Std. err. adjusted for 74 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ early_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |   .1513463   .4549894     0.33   0.740    -.7554463    1.058139
+       l_gdp |   1.034952   .5279875     1.96   0.054    -.0173256     2.08723
+ l_secondary |  -4.782679    1.30292    -3.67   0.000    -7.379395   -2.185963
+electronic~e |  -.0427967   .0846662    -0.51   0.615    -.2115363    .1259428
+biomedical~e |  -.1436416    .101779    -1.41   0.162    -.3464868    .0592035
+industry_k~e |   .4702295   .1558225     3.02   0.004     .1596757    .7807832
+             |
+        year |
+       2016  |  -.0321016   .1793979    -0.18   0.858    -.3896412    .3254379
+       2017  |  -.3753315   .1999571    -1.88   0.065    -.7738455    .0231824
+       2018  |  -.5367457   .2134946    -2.51   0.014    -.9622399   -.1112516
+       2019  |  -.7649384   .2864482    -2.67   0.009    -1.335829   -.1940479
+       2020  |  -.9756576   .3284049    -2.97   0.004    -1.630168   -.3211477
+       2021  |  -1.078269    .341061    -3.16   0.002    -1.758002   -.3985353
+       2022  |  -1.136363   .4061278    -2.80   0.007    -1.945774   -.3269512
+       2023  |  -1.185211   .4224248    -2.81   0.006    -2.027102   -.3433197
+       2024  |  -1.180656   .4379506    -2.70   0.009    -2.053491   -.3078221
+             |
+       _cons |   -3.60653   2.718232    -1.33   0.189     -9.02396    1.810899
+-------------+----------------------------------------------------------------
+     sigma_u |  1.0257971
+     sigma_e |  .35240513
+         rho |  .89443709   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,006 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_B4.csv saved
+
+. trial, scope(municipal) model(B5) outcome(early_share) rhs("c.p##c.d l_gdp l_
+> secondary") target("c.p#c.d") flag(use_B5) margin(0)
+TRIAL municipal B5: early_share c.p##c.d l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        253
+Group variable: panel_id                        Number of groups  =         68
+
+R-squared:                                      Obs per group:
+     Within  = 0.1269                                         min =          2
+     Between = 0.0075                                         avg =        3.7
+     Overall = 0.0111                                         max =          9
+
+                                                F(14, 67)         =       3.35
+corr(u_i, Xb) = -0.9429                         Prob > F          =     0.0004
+
+                               (Std. err. adjusted for 68 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ early_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |   .2711957   .5096441     0.53   0.596    -.7460582     1.28845
+           d |  -.0402046   .0276756    -1.45   0.151    -.0954452    .0150361
+             |
+     c.p#c.d |   .0431288   .0565608     0.76   0.448     -.069767    .1560247
+             |
+       l_gdp |   .9982102   .5117059     1.95   0.055     -.023159    2.019579
+ l_secondary |   -4.59017   1.213909    -3.78   0.000    -7.013143   -2.167198
+             |
+        year |
+       2016  |  -.0376797   .1783745    -0.21   0.833    -.3937166    .3183573
+       2017  |  -.3753981   .1973438    -1.90   0.061    -.7692981    .0185018
+       2018  |  -.5137092   .2093792    -2.45   0.017    -.9316319   -.0957865
+       2019  |  -.6836922   .2837892    -2.41   0.019    -1.250138   -.1172466
+       2020  |  -.9473928   .3226983    -2.94   0.005    -1.591501   -.3032842
+       2021  |  -1.011294   .3343215    -3.02   0.004    -1.678602   -.3439852
+       2022  |  -.9523038   .4152335    -2.29   0.025    -1.781113   -.1234943
+       2023  |  -1.116164   .4058956    -2.75   0.008    -1.926335   -.3059933
+       2024  |  -1.056817   .4167111    -2.54   0.014    -1.888576   -.2250582
+             |
+       _cons |  -3.071182   2.683497    -1.14   0.257    -8.427465      2.2851
+-------------+----------------------------------------------------------------
+     sigma_u |  .88010738
+     sigma_e |  .34497839
+         rho |  .86681937   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,049 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_B5.csv saved
+
+. trial, scope(municipal) model(B6) outcome(ln_amount) rhs("p l_gdp l_secondary
+> ") target("p") flag(use_B6) margin(0)
+
+. trial, scope(municipal) model(B7) outcome(known_share) rhs("p l_gdp l_seconda
+> ry") target("p") flag(use_B7) margin(0)
+TRIAL municipal B7: known_share p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        296
+Group variable: panel_id                        Number of groups  =         74
+
+R-squared:                                      Obs per group:
+     Within  = 0.0519                                         min =          2
+     Between = 0.0044                                         avg =        4.0
+     Overall = 0.0002                                         max =         10
+
+                                                F(12, 73)         =       0.09
+corr(u_i, Xb) = -0.8387                         Prob > F          =     1.0000
+
+                               (Std. err. adjusted for 74 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ known_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |    .038295   .0392936     0.97   0.333    -.0400171    .1166071
+       l_gdp |  -.0053856   .0149643    -0.36   0.720    -.0352094    .0244381
+ l_secondary |   .2056556   .2058586     1.00   0.321    -.2046201    .6159312
+             |
+        year |
+       2016  |   .0019633   .0023534     0.83   0.407    -.0027269    .0066536
+       2017  |   .0046505   .0050929     0.91   0.364    -.0054997    .0148007
+       2018  |   .0092979   .0094851     0.98   0.330    -.0096059    .0282018
+       2019  |   .0119889   .0125577     0.95   0.343    -.0130385    .0370164
+       2020  |   .0130471    .014002     0.93   0.355    -.0148588     .040953
+       2021  |   .0139682    .015083     0.93   0.357    -.0160921    .0440285
+       2022  |   .0117439   .0136902     0.86   0.394    -.0155407    .0390285
+       2023  |  -.0042254   .0105249    -0.40   0.689    -.0252015    .0167508
+       2024  |    .011356   .0145643     0.78   0.438    -.0176706    .0403826
+             |
+       _cons |   .9182892   .1200088     7.65   0.000      .679112    1.157466
+-------------+----------------------------------------------------------------
+     sigma_u |  .02487678
+     sigma_e |   .0300491
+         rho |   .4066585   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,006 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/municipal_B7.csv saved
+
+. trial, scope(broad) model(I1) outcome(y1) rhs("c.g##c.p") target("c.g#c.p") f
+> lag(use_I1) margin(1)
+TRIAL broad I1: y1 c.g##c.p
+
+Fixed-effects (within) regression               Number of obs     =        720
+Group variable: panel_id                        Number of groups  =        134
+
+R-squared:                                      Obs per group:
+     Within  = 0.1695                                         min =          2
+     Between = 0.3516                                         avg =        5.4
+     Overall = 0.0626                                         max =          8
+
+                                                F(10, 133)        =      18.89
+corr(u_i, Xb) = -0.3267                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 134 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0480244   .0468629    -1.02   0.307    -.1407174    .0446685
+           p |  -.1507798   .4649295    -0.32   0.746    -1.070392    .7688328
+             |
+     c.g#c.p |   .0550359   .1056916     0.52   0.603     -.154018    .2640898
+             |
+        year |
+       2016  |   .2492038   .0530285     4.70   0.000     .1443155    .3540921
+       2017  |   .3802839   .0546758     6.96   0.000     .2721372    .4884306
+       2018  |     .19809   .0642189     3.08   0.002     .0710675    .3251125
+       2019  |   .3918105   .0630869     6.21   0.000     .2670272    .5165939
+       2020  |   .3839835   .0796785     4.82   0.000     .2263824    .5415846
+       2021  |   .3954484   .0833949     4.74   0.000     .2304964    .5604003
+       2022  |   .4077636   .0778683     5.24   0.000     .2537431    .5617841
+             |
+       _cons |   8.251312   .1643184    50.22   0.000     7.926297    8.576328
+-------------+----------------------------------------------------------------
+     sigma_u |  1.4770071
+     sigma_e |  .25336567
+         rho |  .97141519   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(582 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I1.csv saved
+
+. trial, scope(broad) model(I2) outcome(y1) rhs("c.g##c.p l_gdp l_secondary") t
+> arget("c.g#c.p") flag(use_I2) margin(1)
+TRIAL broad I2: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        720
+Group variable: panel_id                        Number of groups  =        134
+
+R-squared:                                      Obs per group:
+     Within  = 0.1707                                         min =          2
+     Between = 0.0025                                         avg =        5.4
+     Overall = 0.0006                                         max =          8
+
+                                                F(12, 133)        =      15.93
+corr(u_i, Xb) = -0.0573                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 134 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0474801   .0468777    -1.01   0.313    -.1402024    .0452422
+           p |  -.1308368   .4807414    -0.27   0.786    -1.081725    .8200511
+             |
+     c.g#c.p |   .0507817   .1084597     0.47   0.640    -.1637473    .2653108
+             |
+       l_gdp |   .0506922   .3105281     0.16   0.871    -.5635204    .6649048
+ l_secondary |     .35835   .8590656     0.42   0.677    -1.340848    2.057548
+             |
+        year |
+       2016  |   .2491099   .0635886     3.92   0.000      .123334    .3748858
+       2017  |   .3814324   .0859826     4.44   0.000     .2113622    .5515026
+       2018  |   .1963564   .1159115     1.69   0.093    -.0329121    .4256249
+       2019  |   .3897888   .1429197     2.73   0.007     .1070991    .6724784
+       2020  |   .3836127   .1793262     2.14   0.034     .0289124    .7383129
+       2021  |   .3975002   .1937458     2.05   0.042     .0142786    .7807219
+       2022  |   .3991363   .2156858     1.85   0.066    -.0274818    .8257545
+             |
+       _cons |   7.790821   1.621576     4.80   0.000     4.583406    10.99824
+-------------+----------------------------------------------------------------
+     sigma_u |  1.4425348
+     sigma_e |  .25362757
+         rho |  .97001401   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(582 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I2.csv saved
+
+. trial, scope(broad) model(I3) outcome(y1) rhs("c.g##c.p l_gdp l_secondary") t
+> arget("c.g#c.p") flag(use_I3) margin(1)
+TRIAL broad I3: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        614
+Group variable: panel_id                        Number of groups  =        129
+
+R-squared:                                      Obs per group:
+     Within  = 0.1917                                         min =          2
+     Between = 0.7976                                         avg =        4.8
+     Overall = 0.5262                                         max =          7
+
+                                                F(11, 128)        =      17.36
+corr(u_i, Xb) = -0.7894                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 129 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0468119   .0500772    -0.93   0.352    -.1458982    .0522745
+           p |  -.1293249   .4728739    -0.27   0.785    -1.064987    .8063369
+             |
+     c.g#c.p |   .0799963   .1175373     0.68   0.497    -.1525714     .312564
+             |
+       l_gdp |  -.1425203   .2688359    -0.53   0.597     -.674458    .3894174
+ l_secondary |   .0034591    .795689     0.00   0.997    -1.570948    1.577866
+             |
+        year |
+       2016  |   .2569151   .0552155     4.65   0.000     .1476618    .3661684
+       2017  |   .3891016   .0784235     4.96   0.000     .2339273    .5442759
+       2018  |   .2248528   .1036646     2.17   0.032     .0197346     .429971
+       2019  |   .4255174   .1240559     3.43   0.001     .1800517    .6709831
+       2020  |   .4251559    .156995     2.71   0.008     .1145144    .7357973
+       2021  |   .4423145   .1701331     2.60   0.010     .1056772    .7789519
+             |
+       _cons |    9.06886   1.439224     6.30   0.000      6.22111    11.91661
+-------------+----------------------------------------------------------------
+     sigma_u |  1.5810619
+     sigma_e |   .2460573
+         rho |   .9763527   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(688 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I3.csv saved
+
+. trial, scope(broad) model(I4) outcome(y2) rhs("c.g##c.p l_gdp l_secondary") t
+> arget("c.g#c.p") flag(use_I4) margin(1)
+TRIAL broad I4: y2 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        614
+Group variable: panel_id                        Number of groups  =        129
+
+R-squared:                                      Obs per group:
+     Within  = 0.1101                                         min =          2
+     Between = 0.8205                                         avg =        4.8
+     Overall = 0.7301                                         max =          7
+
+                                                F(11, 128)        =      12.74
+corr(u_i, Xb) = -0.8969                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 129 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0266555   .0424793    -0.63   0.531     -.110708    .0573971
+           p |   .4722413    .487256     0.97   0.334    -.4918779    1.436361
+             |
+     c.g#c.p |  -.0263075   .1078503    -0.24   0.808    -.2397078    .1870928
+             |
+       l_gdp |  -.1348065   .2448881    -0.55   0.583    -.6193595    .3497466
+ l_secondary |  -.2748767   .7740944    -0.36   0.723    -1.806555    1.256801
+             |
+        year |
+       2016  |   .0725507   .0558604     1.30   0.196    -.0379787    .1830801
+       2017  |  -.0854056   .0787117    -1.09   0.280    -.2411502     .070339
+       2018  |   .0940513   .1001245     0.94   0.349    -.1040621    .2921647
+       2019  |   .0810636   .1291926     0.63   0.531    -.1745661    .3366933
+       2020  |   .1150962   .1598544     0.72   0.473     -.201203    .4313955
+       2021  |   .1511159   .1699008     0.89   0.375    -.1850619    .4872937
+             |
+       _cons |   9.239526   1.340588     6.89   0.000     6.586943    11.89211
+-------------+----------------------------------------------------------------
+     sigma_u |  1.6457379
+     sigma_e |  .21906933
+         rho |  .98258939   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(688 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I4.csv saved
+
+. trial, scope(broad) model(I5) outcome(y1) rhs("c.g##c.p l_gdp l_secondary") t
+> arget("c.g#c.p") flag(use_I5) margin(1)
+TRIAL broad I5: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        607
+Group variable: panel_id                        Number of groups  =        124
+
+R-squared:                                      Obs per group:
+     Within  = 0.1950                                         min =          2
+     Between = 0.7338                                         avg =        4.9
+     Overall = 0.5068                                         max =          8
+
+                                                F(12, 123)        =      15.14
+corr(u_i, Xb) = -0.7812                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 124 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0369933   .0511314    -0.72   0.471    -.1382047    .0642181
+           p |   -.280337   .4474514    -0.63   0.532     -1.16604    .6053655
+             |
+     c.g#c.p |     .08027   .1174225     0.68   0.496    -.1521606    .3127006
+             |
+       l_gdp |  -.1967284   .2776572    -0.71   0.480    -.7463339    .3528771
+ l_secondary |   -.195495   .7991031    -0.24   0.807    -1.777271    1.386281
+             |
+        year |
+       2016  |   .2832143   .0509248     5.56   0.000     .1824119    .3840168
+       2017  |   .4036197     .07878     5.12   0.000     .2476796    .5595598
+       2018  |   .2377044    .104305     2.28   0.024      .031239    .4441697
+       2019  |   .4422726   .1245609     3.55   0.001     .1957119    .6888333
+       2020  |   .4479802   .1588618     2.82   0.006      .133523    .7624375
+       2021  |   .4490466   .1739109     2.58   0.011     .1048006    .7932926
+       2022  |   .3935227   .1976102     1.99   0.049     .0023653      .78468
+             |
+       _cons |   9.588196   1.484418     6.46   0.000     6.649882    12.52651
+-------------+----------------------------------------------------------------
+     sigma_u |  1.5117453
+     sigma_e |  .24048823
+         rho |  .97531821   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(695 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I5.csv saved
+
+. trial, scope(broad) model(I6) outcome(y1) rhs("c.g##c.p##c.d l_gdp l_secondar
+> y") target("c.g#c.p#c.d") flag(use_I6) margin(2)
+TRIAL broad I6: y1 c.g##c.p##c.d l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        607
+Group variable: panel_id                        Number of groups  =        124
+
+R-squared:                                      Obs per group:
+     Within  = 0.2493                                         min =          2
+     Between = 0.5385                                         avg =        4.9
+     Overall = 0.4201                                         max =          8
+
+                                                F(16, 123)        =      12.70
+corr(u_i, Xb) = -0.7545                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 124 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0771155   .0608889    -1.27   0.208    -.1976413    .0434102
+           p |  -.3266016   .3977645    -0.82   0.413    -1.113952    .4607488
+             |
+     c.g#c.p |   .1654527   .1340303     1.23   0.219     -.099852    .4307575
+             |
+           d |   .0414075   .0197948     2.09   0.039     .0022248    .0805901
+             |
+     c.g#c.d |   .0048632   .0059207     0.82   0.413    -.0068565    .0165829
+             |
+     c.p#c.d |  -.0335021   .0472212    -0.71   0.479    -.1269736    .0599694
+             |
+ c.g#c.p#c.d |  -.0149402   .0138043    -1.08   0.281    -.0422651    .0123846
+             |
+       l_gdp |   -.275071   .2782494    -0.99   0.325    -.8258488    .2757067
+ l_secondary |   .0320009   .7294164     0.04   0.965    -1.411834    1.475836
+             |
+        year |
+       2016  |   .2679375   .0469659     5.70   0.000     .1749713    .3609037
+       2017  |   .3528064     .07354     4.80   0.000     .2072384    .4983744
+       2018  |   .1741384   .0956905     1.82   0.071    -.0152752    .3635519
+       2019  |   .3737008    .115903     3.22   0.002     .1442779    .6031237
+       2020  |   .3900458   .1505867     2.59   0.011     .0919687     .688123
+       2021  |   .3799643   .1679997     2.26   0.025     .0474192    .7125095
+       2022  |   .3505736   .1889201     1.86   0.066    -.0233821    .7245293
+             |
+       _cons |   9.955791   1.510013     6.59   0.000     6.966812    12.94477
+-------------+----------------------------------------------------------------
+     sigma_u |  1.5554938
+     sigma_e |  .23322465
+         rho |  .97801345   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(695 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I6.csv saved
+
+. trial, scope(broad) model(I7a) outcome(y1) rhs("c.g##c.p l_gdp l_secondary") 
+> target("c.g#c.p") flag(use_I7a) margin(1)
+TRIAL broad I7a: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        718
+Group variable: panel_id                        Number of groups  =        133
+
+R-squared:                                      Obs per group:
+     Within  = 0.1703                                         min =          2
+     Between = 0.3842                                         avg =        5.4
+     Overall = 0.1012                                         max =          8
+
+                                                F(12, 132)        =      15.95
+corr(u_i, Xb) = -0.3960                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 133 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0468585   .0469047    -1.00   0.320    -.1396406    .0459236
+           p |  -.1329455   .4806215    -0.28   0.783    -1.083662    .8177714
+             |
+     c.g#c.p |   .0501373   .1085467     0.46   0.645    -.1645788    .2648534
+             |
+       l_gdp |  -.0037127   .3195851    -0.01   0.991    -.6358836    .6284582
+ l_secondary |   .2639849   .8537672     0.31   0.758    -1.424851    1.952821
+             |
+        year |
+       2016  |   .2524961    .064026     3.94   0.000     .1258463    .3791458
+       2017  |   .3872995   .0864348     4.48   0.000     .2163229    .5582761
+       2018  |    .207166   .1168079     1.77   0.078    -.0238916    .4382236
+       2019  |   .4044174   .1442063     2.80   0.006      .119163    .6896718
+       2020  |   .4004861    .180576     2.22   0.028     .0432889    .7576834
+       2021  |   .4170295   .1950194     2.14   0.034     .0312618    .8027972
+       2022  |   .4220128   .2172523     1.94   0.054    -.0077337    .8517592
+             |
+       _cons |   8.153521   1.695369     4.81   0.000     4.799914    11.50713
+-------------+----------------------------------------------------------------
+     sigma_u |  1.4623131
+     sigma_e |  .25350859
+         rho |  .97082274   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(584 observations deleted)
+(file
+    /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_202611
+    > 17/samples/broad_I7a.csv not found)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I7a.csv saved
+
+. trial, scope(broad) model(I7) outcome(y1) rhs("c.g##c.p l_gdp l_secondary l_s
+> citech") target("c.g#c.p") flag(use_I7) margin(1)
+TRIAL broad I7: y1 c.g##c.p l_gdp l_secondary l_scitech
+
+Fixed-effects (within) regression               Number of obs     =        718
+Group variable: panel_id                        Number of groups  =        133
+
+R-squared:                                      Obs per group:
+     Within  = 0.1839                                         min =          2
+     Between = 0.0241                                         avg =        5.4
+     Overall = 0.0120                                         max =          8
+
+                                                F(13, 132)        =      15.92
+corr(u_i, Xb) = 0.0157                          Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 133 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0447128   .0468561    -0.95   0.342    -.1373988    .0479732
+           p |  -.0814349   .4749049    -0.17   0.864    -1.020844     .857974
+             |
+     c.g#c.p |   .0359101   .1099106     0.33   0.744    -.1815039    .2533241
+             |
+       l_gdp |  -.1076845   .3105288    -0.35   0.729    -.7219411    .5065721
+ l_secondary |   .4456466   .8506872     0.52   0.601    -1.237097     2.12839
+   l_scitech |   .1252884   .0568392     2.20   0.029     .0128549    .2377219
+             |
+        year |
+       2016  |   .2440271   .0646477     3.77   0.000     .1161475    .3719066
+       2017  |   .3680482   .0874409     4.21   0.000     .1950814    .5410149
+       2018  |   .1788417   .1196194     1.50   0.137    -.0577774    .4154608
+       2019  |   .3682367   .1477688     2.49   0.014     .0759355    .6605379
+       2020  |   .3581593    .185609     1.93   0.056    -.0089937    .7253122
+       2021  |   .3795805   .1984379     1.91   0.058    -.0129493    .7721102
+       2022  |   .3874074   .2194877     1.77   0.080     -.046761    .8215757
+             |
+       _cons |   7.798395   1.704585     4.57   0.000     4.426558    11.17023
+-------------+----------------------------------------------------------------
+     sigma_u |  1.4100798
+     sigma_e |  .25163536
+         rho |  .96913679   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(584 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I7.csv saved
+
+. trial, scope(broad) model(I8) outcome(grant1) rhs("c.g##c.p l_gdp l_secondary
+> ") target("c.g#c.p") flag(use_I8) margin(1)
+TRIAL broad I8: grant1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        720
+Group variable: panel_id                        Number of groups  =        134
+
+R-squared:                                      Obs per group:
+     Within  = 0.7270                                         min =          2
+     Between = 0.4920                                         avg =        5.4
+     Overall = 0.3566                                         max =          8
+
+                                                F(12, 133)        =      65.37
+corr(u_i, Xb) = 0.3822                          Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 134 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+      grant1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0174384   .0318459    -0.55   0.585    -.0804284    .0455517
+           p |   .5183531    .482886     1.07   0.285    -.4367767    1.473483
+             |
+     c.g#c.p |   .0474654   .0882816     0.54   0.592    -.1271522    .2220831
+             |
+       l_gdp |   .3755181   .2875948     1.31   0.194    -.1933333    .9443695
+ l_secondary |  -.0639908   .6880843    -0.09   0.926    -1.424995    1.297013
+             |
+        year |
+       2016  |   .0002818    .071483     0.00   0.997    -.1411087    .1416724
+       2017  |   .0431974   .0860766     0.50   0.617    -.1270587    .2134536
+       2018  |  -.0157794   .1206295    -0.13   0.896    -.2543799    .2228211
+       2019  |    .161954   .1509778     1.07   0.285    -.1366742    .4605821
+       2020  |   .4166587   .1823614     2.28   0.024     .0559548    .7773625
+       2021  |   .6029933   .1910079     3.16   0.002      .225187    .9807996
+       2022  |    .784226   .2055021     3.82   0.000     .3777508    1.190701
+             |
+       _cons |   4.532865   1.499122     3.02   0.003      1.56766    7.498071
+-------------+----------------------------------------------------------------
+     sigma_u |  1.4217477
+     sigma_e |  .23937581
+         rho |  .97243389   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(582 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I8.csv saved
+
+. trial, scope(broad) model(I9) outcome(y1) rhs("early_share g p l_gdp l_second
+> ary") target("early_share") flag(use_I9) margin(0)
+TRIAL broad I9: y1 early_share g p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        720
+Group variable: panel_id                        Number of groups  =        134
+
+R-squared:                                      Obs per group:
+     Within  = 0.1703                                         min =          2
+     Between = 0.0340                                         avg =        5.4
+     Overall = 0.0132                                         max =          8
+
+                                                F(12, 133)        =      15.79
+corr(u_i, Xb) = 0.0353                          Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 134 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ early_share |   .0182702   .0479225     0.38   0.704    -.0765187    .1130591
+           g |  -.0300773    .024716    -1.22   0.226    -.0789646    .0188101
+           p |   .0050746   .3632594     0.01   0.989    -.7134385    .7235876
+       l_gdp |   .0689429   .3084921     0.22   0.824    -.5412425    .6791283
+ l_secondary |   .3509905   .8610885     0.41   0.684    -1.352209     2.05419
+             |
+        year |
+       2016  |   .2421596    .060524     4.00   0.000     .1224454    .3618738
+       2017  |   .3714777   .0840424     4.42   0.000     .2052451    .5377103
+       2018  |   .1831001   .1127396     1.62   0.107    -.0398946    .4060947
+       2019  |   .3762461   .1396311     2.69   0.008     .1000612     .652431
+       2020  |   .3678281   .1742176     2.11   0.037     .0232324    .7124239
+       2021  |   .3808238   .1892372     2.01   0.046     .0065199    .7551278
+       2022  |   .3808392   .2103284     1.81   0.072    -.0351821    .7968606
+             |
+       _cons |   7.635604   1.582152     4.83   0.000      4.50617    10.76504
+-------------+----------------------------------------------------------------
+     sigma_u |  1.4344105
+     sigma_e |  .25367734
+         rho |  .96967217   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(582 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I9.csv saved
+
+. trial, scope(broad) model(I10) outcome(y1) rhs("c.g##c.p l_gdp l_secondary") 
+> target("c.g#c.p") flag(use_I10) margin(1)
+TRIAL broad I10: y1 c.g##c.p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        828
+Group variable: panel_id                        Number of groups  =        142
+
+R-squared:                                      Obs per group:
+     Within  = 0.1986                                         min =          2
+     Between = 0.6650                                         avg =        5.8
+     Overall = 0.3937                                         max =          9
+
+                                                F(13, 141)        =      25.38
+corr(u_i, Xb) = -0.7071                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 142 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+          y1 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           g |  -.0407444   .0467895    -0.87   0.385     -.133244    .0517553
+           p |   .0353863   .4685132     0.08   0.940    -.8908321    .9616048
+             |
+     c.g#c.p |   .0273071   .1046898     0.26   0.795    -.1796575    .2342718
+             |
+       l_gdp |  -.0711972    .260361    -0.27   0.785     -.585913    .4435187
+ l_secondary |   .8492715    .828929     1.02   0.307    -.7894643    2.488007
+             |
+        year |
+       2016  |   .2620042   .0607131     4.32   0.000     .1419785      .38203
+       2017  |   .4063965   .0786836     5.16   0.000     .2508444    .5619487
+       2018  |   .2322069   .1017427     2.28   0.024     .0310685    .4333453
+       2019  |   .4401753   .1228147     3.58   0.000      .197379    .6829716
+       2020  |   .4498243   .1545196     2.91   0.004     .1443496    .7552989
+       2021  |    .470946   .1668677     2.82   0.005       .14106    .8008319
+       2022  |   .4938334    .183599     2.69   0.008     .1308708    .8567961
+       2023  |     .22367   .2045993     1.09   0.276    -.1808088    .6281488
+             |
+       _cons |   8.183638   1.388341     5.89   0.000     5.438982    10.92829
+-------------+----------------------------------------------------------------
+     sigma_u |  1.5389847
+     sigma_e |  .25612614
+         rho |  .97304906   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(474 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_I10.csv saved
+
+. trial, scope(broad) model(B1) outcome(g) rhs("p l_gdp l_secondary") target("p
+> ") flag(use_B1) margin(0)
+TRIAL broad B1: g p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        916
+Group variable: panel_id                        Number of groups  =        144
+
+R-squared:                                      Obs per group:
+     Within  = 0.3020                                         min =          2
+     Between = 0.5300                                         avg =        6.4
+     Overall = 0.5158                                         max =         10
+
+                                                F(12, 143)        =       9.28
+corr(u_i, Xb) = -0.4282                         Prob > F          =     0.0000
+
+                              (Std. err. adjusted for 144 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+           g | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |   .2158591   .5862407     0.37   0.713    -.9429583    1.374676
+       l_gdp |   1.438508   .3973134     3.62   0.000      .653142    2.223875
+ l_secondary |  -1.225128   1.405778    -0.87   0.385    -4.003919    1.553662
+             |
+        year |
+       2016  |   .2063862   .1002382     2.06   0.041     .0082462    .4045262
+       2017  |   .3261527   .1432081     2.28   0.024     .0430742    .6092311
+       2018  |   .3618117   .1786034     2.03   0.045     .0087677    .7148557
+       2019  |   .2417693    .210491     1.15   0.253    -.1743067    .6578452
+       2020  |   .4201178    .255367     1.65   0.102    -.0846641    .9248997
+       2021  |   .6205747   .2733783     2.27   0.025     .0801898    1.160959
+       2022  |   .3161101   .2944449     1.07   0.285    -.2659169    .8981371
+       2023  |   .0580684   .3136643     0.19   0.853    -.5619492    .6780861
+       2024  |   -.090501   .3399712    -0.27   0.790    -.7625193    .5815173
+             |
+       _cons |  -6.519435   1.946587    -3.35   0.001    -10.36724   -2.671632
+-------------+----------------------------------------------------------------
+     sigma_u |  .85179553
+     sigma_e |  .58739411
+         rho |  .67771728   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(386 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_B1.csv saved
+
+. trial, scope(broad) model(B2) outcome(early_share) rhs("p l_gdp l_secondary")
+>  target("p") flag(use_B2) margin(0)
+TRIAL broad B2: early_share p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        916
+Group variable: panel_id                        Number of groups  =        144
+
+R-squared:                                      Obs per group:
+     Within  = 0.0527                                         min =          2
+     Between = 0.0174                                         avg =        6.4
+     Overall = 0.0022                                         max =         10
+
+                                                F(12, 143)        =       3.20
+corr(u_i, Xb) = -0.8728                         Prob > F          =     0.0004
+
+                              (Std. err. adjusted for 144 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ early_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.2910776   .2227388    -1.31   0.193    -.7313636    .1492085
+       l_gdp |  -.4307026   .2357792    -1.83   0.070    -.8967656    .0353604
+ l_secondary |   .0454433   .7227976     0.06   0.950    -1.383305    1.474192
+             |
+        year |
+       2016  |   .1546927   .0684956     2.26   0.025     .0192979    .2900874
+       2017  |   .1183082   .0812961     1.46   0.148    -.0423892    .2790055
+       2018  |   .1492398   .1016661     1.47   0.144    -.0517227    .3502023
+       2019  |    .133526   .1296244     1.03   0.305    -.1227015    .3897536
+       2020  |   .1176665   .1492216     0.79   0.432    -.1772986    .4126317
+       2021  |   .1761184   .1660091     1.06   0.291    -.1520305    .5042672
+       2022  |   .1853241    .184797     1.00   0.318    -.1799626    .5506109
+       2023  |   .2324089     .19384     1.20   0.233    -.1507532     .615571
+       2024  |   .2624126   .2103662     1.25   0.214    -.1534166    .6782418
+             |
+       _cons |   2.877697   1.201709     2.39   0.018     .5022887    5.253105
+-------------+----------------------------------------------------------------
+     sigma_u |  .38279827
+     sigma_e |  .29229708
+         rho |  .63169027   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(386 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_B2.csv saved
+
+. trial, scope(broad) model(B3) outcome(early_share) rhs("p l_gdp l_secondary")
+>  target("p") flag(use_B3) margin(0) weight(known_count)
+TRIAL broad B3: early_share p l_gdp l_secondary
+(sum of wgt is 22,542)
+
+Linear regression, absorbing indicators             Number of obs     =    916
+Absorbed variable: panel_id                         No. of categories =    144
+                                                    F(12, 143)        =  13.61
+                                                    Prob > F          = 0.0000
+                                                    R-squared         = 0.4534
+                                                    Adj R-squared     = 0.3419
+                                                    Root MSE          = 0.1211
+
+                              (Std. err. adjusted for 144 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ early_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.3411358   .2240215    -1.52   0.130    -.7839572    .1016857
+       l_gdp |  -.2417849   .2551634    -0.95   0.345    -.7461644    .2625947
+ l_secondary |  -.6839334   .7843386    -0.87   0.385    -2.234329    .8664626
+             |
+        year |
+       2016  |   .0746421   .0686215     1.09   0.279    -.0610015    .2102858
+       2017  |   .0469778   .1082065     0.43   0.665    -.1669132    .2608688
+       2018  |   .0632777   .1425859     0.44   0.658    -.2185707    .3451262
+       2019  |  -.0020715   .1695281    -0.01   0.990    -.3371763    .3330333
+       2020  |  -.0500063   .1942678    -0.26   0.797    -.4340139    .3340013
+       2021  |  -.0055936   .2090627    -0.03   0.979    -.4188462    .4076589
+       2022  |   .0670179   .2241798     0.30   0.765    -.3761166    .5101524
+       2023  |   .1280413   .2397138     0.53   0.594     -.345799    .6018817
+       2024  |   .1344842   .2584986     0.52   0.604     -.376488    .6454564
+             |
+       _cons |   2.414633   1.674118     1.44   0.151    -.8945819    5.723849
+------------------------------------------------------------------------------
+(386 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_B3.csv saved
+
+. trial, scope(broad) model(B4) outcome(early_share) rhs("p l_gdp l_secondary e
+> lectronic_share biomedical_share industry_known_share") target("p") flag(use_
+> B4) margin(0)
+TRIAL broad B4: early_share p l_gdp l_secondary electronic_share biomedical_sha
+> re industry_known_share
+
+Fixed-effects (within) regression               Number of obs     =        916
+Group variable: panel_id                        Number of groups  =        144
+
+R-squared:                                      Obs per group:
+     Within  = 0.0624                                         min =          2
+     Between = 0.0211                                         avg =        6.4
+     Overall = 0.0038                                         max =         10
+
+                                                F(15, 143)        =       2.76
+corr(u_i, Xb) = -0.8472                         Prob > F          =     0.0009
+
+                              (Std. err. adjusted for 144 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ early_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.2728493   .2262379    -1.21   0.230    -.7200521    .1743534
+       l_gdp |  -.3939438   .2168989    -1.82   0.071    -.8226863    .0347986
+ l_secondary |  -.0727737   .7067394    -0.10   0.918     -1.46978    1.324233
+electronic~e |   .0280918   .0571359     0.49   0.624    -.0848484     .141032
+biomedical~e |     .00184    .058326     0.03   0.975    -.1134525    .1171326
+industry_k~e |  -.3238841   .1649775    -1.96   0.052    -.6499939    .0022257
+             |
+        year |
+       2016  |    .147691   .0684108     2.16   0.033     .0124639    .2829182
+       2017  |   .1058178   .0804516     1.32   0.191    -.0532103    .2648458
+       2018  |   .1302028   .0991902     1.31   0.191    -.0658658    .3262713
+       2019  |   .1125524   .1259465     0.89   0.373    -.1364051      .36151
+       2020  |   .0822804   .1448492     0.57   0.571    -.2040418    .3686027
+       2021  |   .1474026   .1611119     0.91   0.362    -.1710661    .4658713
+       2022  |   .1562999   .1769486     0.88   0.379     -.193473    .5060727
+       2023  |   .1519498   .1845377     0.82   0.412    -.2128244     .516724
+       2024  |   .2248352   .1997305     1.13   0.262    -.1699705     .619641
+             |
+       _cons |   3.033008   1.104878     2.75   0.007     .8490042    5.217012
+-------------+----------------------------------------------------------------
+     sigma_u |  .35774375
+     sigma_e |  .29137356
+         rho |  .60118896   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(386 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_B4.csv saved
+
+. trial, scope(broad) model(B5) outcome(early_share) rhs("c.p##c.d l_gdp l_seco
+> ndary") target("c.p#c.d") flag(use_B5) margin(0)
+TRIAL broad B5: early_share c.p##c.d l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        798
+Group variable: panel_id                        Number of groups  =        137
+
+R-squared:                                      Obs per group:
+     Within  = 0.0590                                         min =          2
+     Between = 0.0002                                         avg =        5.8
+     Overall = 0.0003                                         max =         10
+
+                                                F(14, 136)        =       3.04
+corr(u_i, Xb) = -0.8908                         Prob > F          =     0.0004
+
+                              (Std. err. adjusted for 137 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ early_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.3283309   .2379334    -1.38   0.170    -.7988587    .1421969
+           d |   .0065577   .0098541     0.67   0.507    -.0129294    .0260449
+             |
+     c.p#c.d |  -.0057394    .018848    -0.30   0.761    -.0430124    .0315335
+             |
+       l_gdp |  -.4891617   .2120053    -2.31   0.023     -.908415   -.0699084
+ l_secondary |  -.1926317   .6860985    -0.28   0.779    -1.549433     1.16417
+             |
+        year |
+       2016  |    .150797   .0697077     2.16   0.032     .0129458    .2886482
+       2017  |   .1068709   .0800952     1.33   0.184    -.0515222    .2652641
+       2018  |   .1433514    .098488     1.46   0.148    -.0514146    .3381174
+       2019  |   .1373588   .1232171     1.11   0.267    -.1063105    .3810281
+       2020  |   .1205279   .1401005     0.86   0.391    -.1565293    .3975852
+       2021  |   .1659168   .1557512     1.07   0.289    -.1420907    .4739244
+       2022  |   .2318825   .1707327     1.36   0.177    -.1057519    .5695168
+       2023  |   .2236199   .1760474     1.27   0.206    -.1245245    .5717642
+       2024  |   .2539924   .1908582     1.33   0.185    -.1234412    .6314261
+             |
+       _cons |   3.346825   1.096886     3.05   0.003     1.177666    5.515984
+-------------+----------------------------------------------------------------
+     sigma_u |  .42758021
+     sigma_e |  .28768424
+         rho |  .68838007   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(504 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_B5.csv saved
+
+. trial, scope(broad) model(B6) outcome(ln_amount) rhs("p l_gdp l_secondary") t
+> arget("p") flag(use_B6) margin(0)
+TRIAL broad B6: ln_amount p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        117
+Group variable: panel_id                        Number of groups  =         46
+
+R-squared:                                      Obs per group:
+     Within  = 0.3416                                         min =          2
+     Between = 0.0150                                         avg =        2.5
+     Overall = 0.0275                                         max =          5
+
+                                                F(12, 45)         =       3.63
+corr(u_i, Xb) = -0.9204                         Prob > F          =     0.0008
+
+                               (Std. err. adjusted for 46 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+   ln_amount | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |   14.17325   4.559606     3.11   0.003     4.989729    23.35676
+       l_gdp |   2.129792   1.934432     1.10   0.277    -1.766355    6.025939
+ l_secondary |  -23.86605   11.51425    -2.07   0.044    -47.05694   -.6751642
+             |
+        year |
+       2016  |  -1.289337   .7814916    -1.65   0.106    -2.863342    .2846678
+       2017  |  -1.399454   1.135216    -1.23   0.224    -3.685896    .8869873
+       2018  |   -1.58614   1.245234    -1.27   0.209    -4.094169    .9218897
+       2019  |  -1.006683    1.40219    -0.72   0.477    -3.830838    1.817473
+       2020  |  -3.216322   1.833924    -1.75   0.086    -6.910034    .4773904
+       2021  |  -2.401958   2.023583    -1.19   0.241    -6.477664    1.673748
+       2022  |  -1.924783   2.009602    -0.96   0.343     -5.97233    2.122764
+       2023  |  -3.231058   1.998599    -1.62   0.113    -7.256443    .7943268
+       2024  |  -2.823185   2.147457    -1.31   0.195    -7.148386    1.502016
+             |
+       _cons |  -2.203929   7.871682    -0.28   0.781    -18.05831    13.65045
+-------------+----------------------------------------------------------------
+     sigma_u |  2.9296787
+     sigma_e |   1.369113
+         rho |  .82075328   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(1,185 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_B6.csv saved
+
+. trial, scope(broad) model(B7) outcome(known_share) rhs("p l_gdp l_secondary")
+>  target("p") flag(use_B7) margin(0)
+TRIAL broad B7: known_share p l_gdp l_secondary
+
+Fixed-effects (within) regression               Number of obs     =        916
+Group variable: panel_id                        Number of groups  =        144
+
+R-squared:                                      Obs per group:
+     Within  = 0.0252                                         min =          2
+     Between = 0.0010                                         avg =        6.4
+     Overall = 0.0035                                         max =         10
+
+                                                F(12, 143)        =       1.26
+corr(u_i, Xb) = -0.6561                         Prob > F          =     0.2505
+
+                              (Std. err. adjusted for 144 clusters in city_id)
+------------------------------------------------------------------------------
+             |               Robust
+ known_share | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |   .0060003   .0053578     1.12   0.265    -.0045904    .0165911
+       l_gdp |  -.0029464   .0017833    -1.65   0.101    -.0064714    .0005786
+ l_secondary |   .0125175   .0156299     0.80   0.425     -.018378     .043413
+             |
+        year |
+       2016  |   .0002157   .0005086     0.42   0.672    -.0007896    .0012211
+       2017  |   .0002254   .0004727     0.48   0.634     -.000709    .0011597
+       2018  |   .0007598   .0008669     0.88   0.382    -.0009539    .0024735
+       2019  |   .0013857    .001127     1.23   0.221    -.0008421    .0036135
+       2020  |   .0012598   .0013753     0.92   0.361    -.0014587    .0039784
+       2021  |   .0007905   .0015581     0.51   0.613    -.0022894    .0038703
+       2022  |    .001634   .0016741     0.98   0.331    -.0016751    .0049431
+       2023  |  -.0028891   .0022663    -1.27   0.204    -.0073689    .0015907
+       2024  |   .0014799   .0017756     0.83   0.406    -.0020299    .0049897
+             |
+       _cons |   1.008716   .0071715   140.66   0.000     .9945402    1.022892
+-------------+----------------------------------------------------------------
+     sigma_u |  .00539769
+     sigma_e |  .00976357
+         rho |  .23408699   (fraction of variance due to u_i)
+------------------------------------------------------------------------------
+(386 observations deleted)
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/samples/broad_B7.csv saved
+
+. 
+. postclose `results'
+
+. postclose `coefficients'
+
+. postclose `margins'
+
+. use `results_file', clear
+
+. export delimited using "`outdir'/model_results.csv", replace
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/model_results.csv saved
+
+. list scope model status b se p N clusters, noobs sepby(scope)
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I1 |                  ok | -.05041512 | .1990705 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .8008485       |       235        |             68        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I2 |                  ok | -.07283784 | .2001317 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .7170417       |       235        |             68        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I3 |                  ok |  .11549975 | .1823862 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .5289243       |       196        |             62        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I4 |                  ok |  .15049218 | .2215187 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .4994761       |       196        |             62        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I5 |                  ok |  .11311354 | .1878093 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .5492964       |       194        |             60        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I6 |                  ok |  .00266117 | .0325257 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .9350688       |       194        |             60        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |   I7a |                  ok | -.07283784 | .2001317 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .7170417       |       235        |             68        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I7 |                  ok | -.06133908 | .2057863 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .7665708       |       235        |             68        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I8 |                  ok | -.20913222 | .1238847 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .0960383       |       235        |             68        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    I9 |                  ok | -.02351711 | .0527473 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .6571468       |       235        |             68        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |   I10 |                  ok | -.10560282 | .1876986 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |        .575442       |       272        |             73        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    B1 |                  ok | -1.7153756 | .8406365 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |        .044911       |       296        |             74        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    B2 |                  ok |  .03255188 | .4969744 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .9479548       |       296        |             74        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    B3 |                  ok |  .06807034 | .5323051 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .8985968       |       296        |             74        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    B4 |                  ok |  .15134634 | .4549894 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .7403616       |       296        |             74        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    B5 |                  ok |  .04312882 | .0565608 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .4484253       |       253        |             68        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    B6 | insufficient_sample |          . |        . |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |              .       |        38        |             18        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  | municipal |    B7 |                  ok |  .03829496 | .0392936 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |        .332985       |       296        |             74        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I1 |                  ok |  .05503586 | .1056916 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .6034269       |       720        |            134        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I2 |                  ok |  .05078175 | .1084597 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .6404019       |       720        |            134        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I3 |                  ok |  .07999629 | .1175373 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .4973519       |       614        |            129        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I4 |                  ok | -.02630753 | .1078503 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .8076784       |       614        |            129        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I5 |                  ok |  .08027001 | .1174225 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .4955136       |       607        |            124        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I6 |                  ok | -.01494022 | .0138043 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .2812436       |       607        |            124        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |   I7a |                  ok |   .0501373 | .1085467 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .6449162       |       718        |            133        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I7 |                  ok |  .03591011 | .1099106 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .7443963       |       718        |            133        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I8 |                  ok |  .04746543 | .0882816 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .5917109       |       720        |            134        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    I9 |                  ok |   .0182702 | .0479225 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |         .70363       |       720        |            134        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |   I10 |                  ok |  .02730711 | .1046898 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .7945979       |       828        |            142        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    B1 |                  ok |  .21585909 | .5862406 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .7132619       |       916        |            144        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    B2 |                  ok | -.29107756 | .2227388 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .1933745       |       916        |            144        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    B3 |                  ok | -.34113576 | .2240215 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .1300217       |       916        |            144        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    B4 |                  ok | -.27284931 | .2262379 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .2297982       |       916        |            144        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    B5 |                  ok | -.00573943 |  .018848 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .7612031       |       798        |            137        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    B6 |                  ok |  14.173246 | 4.559606 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .0032564       |       117        |             46        |
+  +-----------------------------------------------------------------+
+
+  +-----------------------------------------------------------------+
+  |     scope | model |              status |          b |       se |
+  |     broad |    B7 |                  ok |  .00600032 | .0053578 |
+  |-----------------------------------------+-----------------------|
+  |              p       |         N        |       clusters        |
+  |       .2646248       |       916        |            144        |
+  +-----------------------------------------------------------------+
+
+. use `coefficients_file', clear
+
+. export delimited using "`outdir'/all_coefficients.csv", replace
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/all_coefficients.csv saved
+
+. use `margins_file', clear
+
+. export delimited using "`outdir'/marginal_effects.csv", replace
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_trial_2026111
+> 7/marginal_effects.csv saved
+
+. macro drop trial_out trial_results trial_coefficients trial_margins
+
+. display "TRIAL_COMPLETED"
+TRIAL_COMPLETED
+
+. log close
+      name:  <unnamed>
+       log:  /Users/vegetarianwolf/Projects/dachuang/运行日志与do代码/xtreg_fis
+> cal_fund_trial_20261117.log
+  log type:  text
+ closed on:  17 Nov 2026, 12:04:51
+-------------------------------------------------------------------------------
