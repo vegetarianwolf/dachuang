@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "chunk_size_bytes": 95000000,
+  "files": [
+    {
+      "path": "CNRDS专利数据包/上市公司专利分类号信息/上市公司发明申请专利分类号/上市公司发明申请专利分类号.csv",
+      "size": 208062176,
+      "sha256": "5d6f99bf93179cbf6a503c4ec3163266d465999cccf6766de106e52f8791746c",
+      "parts": [
+        {
+          "path": "data_parts/5d6f99bf93179cbf6a503c4ec3163266d465999cccf6766de106e52f8791746c/part-00001.bin",
+          "size": 95000000,
+          "sha256": "3cba4f6dbad802ce4731384d58635d33bb0039099c86762192776c7b77764579"
+        },
+        {
+          "path": "data_parts/5d6f99bf93179cbf6a503c4ec3163266d465999cccf6766de106e52f8791746c/part-00002.bin",
+          "size": 95000000,
+          "sha256": "7f7da3c80f3793c461a56e045b43fc72359efdbf43a326ce54cfad5060c3efdd"
+        },
+        {
+          "path": "data_parts/5d6f99bf93179cbf6a503c4ec3163266d465999cccf6766de106e52f8791746c/part-00003.bin",
+          "size": 18062176,
+          "sha256": "700626d870ef0e5014e9c6fb3d3f3f7fe8021bf1150284b58cb82af3a201aaea"
+        }
+      ]
+    },
+    {
+      "path": "CNRDS专利数据包/上市公司专利分类号信息/上市公司实用新型申请专利分类号/上市公司实用新型申请专利分类号.csv",
+      "size": 123595949,
+      "sha256": "9722428a2bb50dce66ddb56c5f0dcf98890ddeebaa15af87289539fba99c530b",
+      "parts": [
+        {
+          "path": "data_parts/9722428a2bb50dce66ddb56c5f0dcf98890ddeebaa15af87289539fba99c530b/part-00001.bin",
+          "size": 95000000,
+          "sha256": "d50e5a829c8c544733f596da5a99283ad53374e5b434f6fb8b2c42e13ff4f8f0"
+        },
+        {
+          "path": "data_parts/9722428a2bb50dce66ddb56c5f0dcf98890ddeebaa15af87289539fba99c530b/part-00002.bin",
+          "size": 28595949,
+          "sha256": "86168475fca2ede914cddd536a65cde8b4e92d7ef1570e9f50e4ab879d01bfc6"
+        }
+      ]
+    },
+    {
+      "path": "CNRDS专利数据包/上市公司专利分类号信息/上市公司实用新型获得专利分类号/上市公司实用新型获得专利分类号.csv",
+      "size": 126020035,
+      "sha256": "819612a2bfc8f6c91135c3d95ad89f65e9d94cc3dfca8791147f942bc3eb9182",
+      "parts": [
+        {
+          "path": "data_parts/819612a2bfc8f6c91135c3d95ad89f65e9d94cc3dfca8791147f942bc3eb9182/part-00001.bin",
+          "size": 95000000,
+          "sha256": "8789ced835df7cff2e9f681e07b43b693183a2fd92f19e5df4057366a093d053"
+        },
+        {
+          "path": "data_parts/819612a2bfc8f6c91135c3d95ad89f65e9d94cc3dfca8791147f942bc3eb9182/part-00002.bin",
+          "size": 31020035,
+          "sha256": "11183d5131331e935fa45b4a6b108caa6c392ea5953a53d9113227f7af09c0fb"
+        }
+      ]
+    },
+    {
+      "path": "CNRDS专利数据包/上市公司专利分类号信息（细分）/上市公司发明申请专利细分分类号/上市公司发明申请专利细分分类号.csv",
+      "size": 258912514,
+      "sha256": "38490e8b77c36941ded0bf313fa698df13b47963d0e673dcf910159a424240a6",
+      "parts": [
+        {
+          "path": "data_parts/38490e8b77c36941ded0bf313fa698df13b47963d0e673dcf910159a424240a6/part-00001.bin",
+          "size": 95000000,
+          "sha256": "051c7a781e0b69b0453918b63ed15618783279b10861cdfc1cad27e71a157552"
+        },
+        {
+          "path": "data_parts/38490e8b77c36941ded0bf313fa698df13b47963d0e673dcf910159a424240a6/part-00002.bin",
+          "size": 95000000,
+          "sha256": "64958e97faef38cb00a916b51febdc5a12c296bdd6df0f74375067539b5a35bc"
+        },
+        {
+          "path": "data_parts/38490e8b77c36941ded0bf313fa698df13b47963d0e673dcf910159a424240a6/part-00003.bin",
+          "size": 68912514,
+          "sha256": "6d970913a45fa946dc182ed79ff9410063efeac1828283ff5a6be4bfa1f51517"
+        }
+      ]
+    },
+    {
+      "path": "CNRDS专利数据包/上市公司专利分类号信息（细分）/上市公司发明获得专利细分分类号/上市公司发明获得专利细分分类号.csv",
+      "size": 117435379,
+      "sha256": "b59a95af16ef508c2e14e874998009a31d0b1c960422659382cf382b9c7c5bbd",
+      "parts": [
+        {
+          "path": "data_parts/b59a95af16ef508c2e14e874998009a31d0b1c960422659382cf382b9c7c5bbd/part-00001.bin",
+          "size": 95000000,
+          "sha256": "6598eb11f2270a1b0b0e9e58d37678160b456032a5db110cde362a2db28f0480"
+        },
+        {
+          "path": "data_parts/b59a95af16ef508c2e14e874998009a31d0b1c960422659382cf382b9c7c5bbd/part-00002.bin",
+          "size": 22435379,
+          "sha256": "1d80f64f66232fb884abc0816e7936a17bb73c61b0df544b19d638c3bcae2055"
+        }
+      ]
+    },
+    {
+      "path": "CNRDS专利数据包/上市公司专利分类号信息（细分）/上市公司实用新型申请专利细分分类号/上市公司实用新型申请专利细分分类号.csv",
+      "size": 157288148,
+      "sha256": "7347f3a4cdb9fbd496c8de08208e311e00ca4fcee52b9b33c38c10f75940514c",
+      "parts": [
+        {
+          "path": "data_parts/7347f3a4cdb9fbd496c8de08208e311e00ca4fcee52b9b33c38c10f75940514c/part-00001.bin",
+          "size": 95000000,
+          "sha256": "904607d9b0a1ccff1e93afa464271000eb7d7292cd4a01027b5ae10c9970a96e"
+        },
+        {
+          "path": "data_parts/7347f3a4cdb9fbd496c8de08208e311e00ca4fcee52b9b33c38c10f75940514c/part-00002.bin",
+          "size": 62288148,
+          "sha256": "b07dbf008dcc2a7ac770022e4d65dabc0dce8377c732c57b5e7a207406576abd"
+        }
+      ]
+    },
+    {
+      "path": "CNRDS专利数据包/上市公司专利分类号信息（细分）/上市公司实用新型获得专利细分分类号/上市公司实用新型获得专利细分分类号.csv",
+      "size": 160493365,
+      "sha256": "ebbaa0b46d3965f8718ab5a983b6f78279b4ce21df161057bd6e1c21c2bc6a95",
+      "parts": [
+        {
+          "path": "data_parts/ebbaa0b46d3965f8718ab5a983b6f78279b4ce21df161057bd6e1c21c2bc6a95/part-00001.bin",
+          "size": 95000000,
+          "sha256": "607f52eeb0ba3885ac79dde6e6f5db5d083f14e4e3723981b1b10488cf26194b"
+        },
+        {
+          "path": "data_parts/ebbaa0b46d3965f8718ab5a983b6f78279b4ce21df161057bd6e1c21c2bc6a95/part-00002.bin",
+          "size": 65493365,
+          "sha256": "decd30a3dbe7004c02797302d7a3e3e8ac46dea6a9543834858c3cb0ee198bab"
+        }
+      ]
+    },
+    {
+      "path": "csmar_data_export/SRDI_EntInfo_Full.csv",
+      "size": 413393651,
+      "sha256": "bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1",
+      "parts": [
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00001.bin",
+          "size": 95000000,
+          "sha256": "d780a2b0564e6c269f05a05ad3450d71b343ba553d37b8b6c15fc63e646010ac"
+        },
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00002.bin",
+          "size": 95000000,
+          "sha256": "e47497a07c6e6b8cd949095f5b10903ce763e0efa692deb5d085e58b4831f0a0"
+        },
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00003.bin",
+          "size": 95000000,
+          "sha256": "4f02b3bfa3756c953e7f01136f641cb11f74356f16fdb9effc643dabd1f0b0cd"
+        },
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00004.bin",
+          "size": 95000000,
+          "sha256": "4e23b7f43340511b82987bbeba5cc240b59308aa27228b360e1a24f86401a480"
+        },
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00005.bin",
+          "size": 33393651,
+          "sha256": "c08ad34d477d24d133f0fa49a6c78e2b3c02ed4f943f42994da3dd5ac6265471"
+        }
+      ]
+    },
+    {
+      "path": "csmar_data_export/SRDI_EntPatentInfo.csv",
+      "size": 691287215,
+      "sha256": "69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd",
+      "parts": [
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00001.bin",
+          "size": 95000000,
+          "sha256": "591802af295189de718e08624105edbbfdd7666e29f62d3171225203f7cb425f"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00002.bin",
+          "size": 95000000,
+          "sha256": "bb33f884736387261049822e527ac596da0660b787bed1e7fc7464c86e2dd6a6"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00003.bin",
+          "size": 95000000,
+          "sha256": "21287ed7a38844d8da4e57dd9b72fe89f40683c176f73a1ee4bbf3f89ba16cc0"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00004.bin",
+          "size": 95000000,
+          "sha256": "840ed8e4b74bb5a1711db728772abbec3b2273814affe0b3373bad8c41a5655c"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00005.bin",
+          "size": 95000000,
+          "sha256": "762e0f2f3308245cff4653fc067f41a21c8f1b210e605bd5641a9f642d517943"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00006.bin",
+          "size": 95000000,
+          "sha256": "b9b96ad17f11b8c931328dcac79337f9b566aa0cca1b52d9968746d53b30fa54"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00007.bin",
+          "size": 95000000,
+          "sha256": "b8c794420c7df63b8019ad133a74c3e2ac7c98fd5e4f02d3f4d9ebc57ef002aa"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00008.bin",
+          "size": 26287215,
+          "sha256": "19fbd4d9b86d2224b714fd2144d06dfa655d1e55c6b69effbf7a215a8e2a1b1b"
+        }
+      ]
+    },
+    {
+      "path": "csmar_data_export/SRDI_EntPatentInfo_Full.csv",
+      "size": 845365185,
+      "sha256": "236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603",
+      "parts": [
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00001.bin",
+          "size": 95000000,
+          "sha256": "313a53ca6b00f9d914cbb338ee26f45a800e723f495ed2934a8b56a0d51e906e"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00002.bin",
+          "size": 95000000,
+          "sha256": "b679b07fabb074f83caf4d5dd61250c8641a3156347fec756d18372ec0eb9329"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00003.bin",
+          "size": 95000000,
+          "sha256": "473dd6e1535d3fb9b70e956c2b660581d2a6ad30b0f454c593ce1e19231881d5"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00004.bin",
+          "size": 95000000,
+          "sha256": "cbf3a805a6def24aa443d5829c9ca6475919ffd08ddfbd9cfa29d5b37afa89ac"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00005.bin",
+          "size": 95000000,
+          "sha256": "be721f884df9194438556fd55b7d86b49f70bd71d66aaf4754a3640a3a09d20d"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00006.bin",
+          "size": 95000000,
+          "sha256": "2b12d424524f939af77dd9c3b8b3ae4ad0ef2ffaf2b67516336d27909226c981"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00007.bin",
+          "size": 95000000,
+          "sha256": "5d7a17caa672f6f1e285d756ae6365a45d448166fc1576d3def8d074b5faa1f1"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00008.bin",
+          "size": 95000000,
+          "sha256": "c850c3d67c8a3e52a7ec04cd0aaa26dc8603d7ca26fe1ca67a39b5abee5bfdff"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00009.bin",
+          "size": 85365185,
+          "sha256": "d31e8850001ba03de2479daff922240200185ee93a38b299a36b5d6457a92110"
+        }
+      ]
+    }
+  ]
+}
