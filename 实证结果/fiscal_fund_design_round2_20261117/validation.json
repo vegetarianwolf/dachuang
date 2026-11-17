@@ -1,0 +1,2937 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "micro_unique_scope_firm_year",
+      "passed": true,
+      "rows": 71472
+    },
+    {
+      "check": "micro_outcome_year_through_2023",
+      "passed": true
+    },
+    {
+      "check": "micro_relative_year",
+      "passed": true
+    },
+    {
+      "check": "micro_exact_initial_lag_year",
+      "passed": true
+    },
+    {
+      "check": "micro_cohort_flags",
+      "passed": true
+    },
+    {
+      "check": "micro_left_censor_flag",
+      "passed": true
+    },
+    {
+      "check": "micro_no_assignment_of_multiple_initial_cities",
+      "passed": true
+    },
+    {
+      "check": "micro_fiscal_initial_macro_match",
+      "passed": true
+    },
+    {
+      "check": "apply_missing_source_stays_missing",
+      "passed": true
+    },
+    {
+      "check": "apply_nonnegative_integer",
+      "passed": true
+    },
+    {
+      "check": "grant_missing_source_stays_missing",
+      "passed": true
+    },
+    {
+      "check": "grant_nonnegative_integer",
+      "passed": true
+    },
+    {
+      "check": "micro_first_is_earliest_observed_within_scope",
+      "passed": true
+    },
+    {
+      "check": "micro_initial_city_count",
+      "passed": true
+    },
+    {
+      "check": "event_dedup_has_no_conflicting_attributions_in_this_input",
+      "passed": true,
+      "conflicts": 0
+    },
+    {
+      "check": "micro_first_any_matches_original_export",
+      "passed": true
+    },
+    {
+      "check": "micro_earlier_other_exposure_flag",
+      "passed": true
+    },
+    {
+      "check": "apply_panel_values_equal_original_six_cells",
+      "passed": true
+    },
+    {
+      "check": "apply_invention_equals_independent_plus_joint",
+      "passed": true
+    },
+    {
+      "check": "apply_source_presence_equals_original",
+      "passed": true
+    },
+    {
+      "check": "apply_labels_independent_then_joint",
+      "passed": true
+    },
+    {
+      "check": "apply_all_matches_exist_as_exact_raw_names",
+      "passed": true,
+      "normalized_only_names": []
+    },
+    {
+      "check": "grant_panel_values_equal_original_six_cells",
+      "passed": true
+    },
+    {
+      "check": "grant_invention_equals_independent_plus_joint",
+      "passed": true
+    },
+    {
+      "check": "grant_source_presence_equals_original",
+      "passed": true
+    },
+    {
+      "check": "grant_labels_independent_then_joint",
+      "passed": true
+    },
+    {
+      "check": "grant_all_matches_exist_as_exact_raw_names",
+      "passed": true,
+      "normalized_only_names": []
+    },
+    {
+      "check": "F1_recursive_pruning_matches",
+      "passed": true
+    },
+    {
+      "check": "F1_funds_have_multiple_years",
+      "passed": true
+    },
+    {
+      "check": "F1_no_singletons_fund_id",
+      "passed": true
+    },
+    {
+      "check": "F1_no_singletons_year",
+      "passed": true
+    },
+    {
+      "check": "F1_no_singletons_sector_id",
+      "passed": true
+    },
+    {
+      "check": "F2_recursive_pruning_matches",
+      "passed": true
+    },
+    {
+      "check": "F2_funds_have_multiple_years",
+      "passed": true
+    },
+    {
+      "check": "F2_no_singletons_fund_id",
+      "passed": true
+    },
+    {
+      "check": "F2_no_singletons_destination_year",
+      "passed": true
+    },
+    {
+      "check": "F2_no_singletons_sector_id",
+      "passed": true
+    },
+    {
+      "check": "F3_recursive_pruning_matches",
+      "passed": true
+    },
+    {
+      "check": "F3_funds_have_multiple_years",
+      "passed": true
+    },
+    {
+      "check": "F3_no_singletons_fund_id",
+      "passed": true
+    },
+    {
+      "check": "F3_no_singletons_year",
+      "passed": true
+    },
+    {
+      "check": "F3_no_singletons_sector_id",
+      "passed": true
+    },
+    {
+      "check": "F2_and_F2a_same_sample",
+      "passed": true
+    },
+    {
+      "check": "F3_and_F3a_same_sample",
+      "passed": true
+    },
+    {
+      "check": "fund_calendar_lag_p",
+      "passed": true
+    },
+    {
+      "check": "fund_calendar_lag_debt",
+      "passed": true
+    },
+    {
+      "check": "fund_calendar_lag_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "fund_calendar_lag_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "unchanged_construction_input_面板数据/micro_fiscal_round2_20261117.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_construction_input_面板数据/fund_choice_round2_20261117.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_construction_input_面板数据/fiscal_macro_trial_20261117.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_construction_input_原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/2015-2024投资事件_附基金级别分类注册地区_扩展匹配.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_construction_input_面板数据/firm_changes_round2_20261117.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_construction_input_实证结果/fiscal_fund_design_round2_20261117/model_results.csv",
+      "passed": true
+    },
+    {
+      "check": "unchanged_construction_input_实证结果/fiscal_fund_design_round2_20261117/all_coefficients.csv",
+      "passed": true
+    },
+    {
+      "check": "firm_change_calendar_pre3",
+      "passed": true
+    },
+    {
+      "check": "firm_change_calendar_pre2",
+      "passed": true
+    },
+    {
+      "check": "firm_change_calendar_pre1",
+      "passed": true
+    },
+    {
+      "check": "firm_change_calendar_post1",
+      "passed": true
+    },
+    {
+      "check": "firm_change_calendar_post2",
+      "passed": true
+    },
+    {
+      "check": "firm_change_calendar_post3",
+      "passed": true
+    },
+    {
+      "check": "firm_change_one_year_formula",
+      "passed": true
+    },
+    {
+      "check": "firm_pretrend_formula",
+      "passed": true
+    },
+    {
+      "check": "firm_three_year_formula",
+      "passed": true
+    },
+    {
+      "check": "M1_sample_rule",
+      "passed": true
+    },
+    {
+      "check": "M2_sample_rule",
+      "passed": true
+    },
+    {
+      "check": "M3_sample_rule",
+      "passed": true
+    },
+    {
+      "check": "M4_sample_rule",
+      "passed": true
+    },
+    {
+      "check": "M5_sample_rule",
+      "passed": true
+    },
+    {
+      "check": "M6_sample_rule",
+      "passed": true
+    },
+    {
+      "check": "M1_M2_common_sample",
+      "passed": true
+    },
+    {
+      "check": "M3_M4_common_sample",
+      "passed": true
+    },
+    {
+      "check": "M5_M6_common_sample",
+      "passed": true
+    },
+    {
+      "check": "all_11_prespecified_models_present",
+      "passed": true
+    },
+    {
+      "check": "F1_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "F1_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F1_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F2a_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "F2a_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F2a_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F2_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "F2_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F2_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F3a_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "F3a_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F3a_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F3_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "F3_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_coefficient_debt",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_cluster_se_debt",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_pvalue_debt",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_coefficient_pd",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_cluster_se_pd",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_pvalue_pd",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "F3_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M1_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "M1_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M1_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M2_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "M2_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_coefficient_pre1",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_cluster_se_pre1",
+      "passed": true
+    },
+    {
+      "check": "M2_numpy_pvalue_pre1",
+      "passed": true
+    },
+    {
+      "check": "M3_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "M3_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M3_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M4_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "M4_stata_sample_ids",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_coefficient_p",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_cluster_se_p",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_pvalue_p",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_coefficient_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_cluster_se_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_pvalue_l_gdp",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_coefficient_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_cluster_se_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M4_numpy_pvalue_l_secondary",
+      "passed": true
+    },
+    {
+      "check": "M5_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "M5_skip_follows_threshold",
+      "passed": true
+    },
+    {
+      "check": "M6_reported_sample_size",
+      "passed": true
+    },
+    {
+      "check": "M6_skip_follows_threshold",
+      "passed": true
+    },
+    {
+      "check": "Stata_completion_marker",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_40_cities_no_selection",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_input_hash",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_panel_hash",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_starting_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_01_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_01_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_01_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_01_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_01_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_01_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_01_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_02_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_02_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_02_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_02_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_02_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_02_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_02_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_03_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_03_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_03_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_03_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_03_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_03_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_03_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_04_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_04_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_04_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_04_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_04_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_04_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_04_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_05_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_05_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_05_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_05_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_05_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_05_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_05_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_06_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_06_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_06_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_06_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_06_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_06_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_06_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_07_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_07_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_07_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_07_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_07_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_07_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_07_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_08_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_08_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_08_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_08_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_08_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_08_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_08_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_09_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_09_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_09_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_09_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_09_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_09_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_09_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_10_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_10_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_10_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_10_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_10_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_10_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_10_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_11_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_11_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_11_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_11_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_11_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_11_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_11_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_12_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_12_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_12_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_12_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_12_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_12_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_12_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_13_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_13_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_13_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_13_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_13_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_13_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_13_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_14_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_14_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_14_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_14_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_14_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_14_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_14_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_15_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_15_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_15_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_15_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_15_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_15_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_15_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_16_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_16_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_16_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_16_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_16_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_16_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_16_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_17_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_17_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_17_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_17_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_17_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_17_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_17_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_18_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_18_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_18_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_18_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_18_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_18_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_18_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_19_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_19_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_19_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_19_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_19_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_19_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_19_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_20_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_20_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_20_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_20_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_20_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_20_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_20_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_21_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_21_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_21_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_21_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_21_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_21_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_21_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_22_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_22_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_22_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_22_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_22_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_22_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_22_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_23_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_23_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_23_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_23_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_23_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_23_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_23_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_24_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_24_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_24_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_24_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_24_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_24_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_24_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_25_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_25_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_25_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_25_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_25_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_25_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_25_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_26_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_26_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_26_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_26_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_26_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_26_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_26_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_27_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_27_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_27_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_27_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_27_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_27_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_27_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_28_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_28_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_28_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_28_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_28_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_28_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_28_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_29_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_29_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_29_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_29_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_29_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_29_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_29_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_30_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_30_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_30_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_30_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_30_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_30_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_30_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_31_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_31_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_31_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_31_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_31_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_31_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_31_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_32_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_32_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_32_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_32_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_32_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_32_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_32_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_33_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_33_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_33_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_33_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_33_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_33_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_33_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_34_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_34_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_34_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_34_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_34_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_34_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_34_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_35_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_35_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_35_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_35_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_35_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_35_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_35_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_36_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_36_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_36_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_36_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_36_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_36_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_36_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_37_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_37_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_37_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_37_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_37_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_37_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_37_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_38_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_38_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_38_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_38_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_38_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_38_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_38_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_39_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_39_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_39_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_39_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_39_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_39_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_39_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_40_recursive_sample",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_40_sample_counts",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_40_estimable_status",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_40_coefficient",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_40_cluster_se",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_40_pvalue",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_40_confidence_interval",
+      "passed": true
+    },
+    {
+      "check": "F2_influence_Stata_completion_marker",
+      "passed": true
+    }
+  ],
+  "warnings": [
+    "Micro firms are conditioned on observed positive-total patent source rows; missing firm-years remain unknown, not zero. An explicit invention zero can coexist with positive non-invention patents.",
+    "Earliest observed 2015-2024 investment is not first-ever investment; report left censoring and earlier investments from other scopes.",
+    "F2 absorbs destination-year shocks and identifies fiscal variation from connected cross-source observations. Residual-share concentration is a support diagnostic, not a replacement cluster degrees-of-freedom calculation.",
+    "First-year source-city uniqueness refers to all events in that calendar year, not one precise first-day financing event."
+  ],
+  "patent_source_validation": {
+    "apply": {
+      "counts": {
+        "all_valid_source_rows": 4895383,
+        "matched_rows": 33505,
+        "explicit_total_zeros": 0,
+        "explicit_invention_zeros": 4547
+      },
+      "labels": [
+        [
+          "当年独立申请的发明数量",
+          "当年独立申请的实用新型数量",
+          "当年独立申请的外观设计数量",
+          "当年联合申请的发明数量",
+          "当年联合申请的实用新型数量",
+          "当年联合申请的外观设计数量"
+        ]
+      ]
+    },
+    "grant": {
+      "counts": {
+        "all_valid_source_rows": 4624955,
+        "matched_rows": 29349,
+        "explicit_total_zeros": 0,
+        "explicit_invention_zeros": 10434
+      },
+      "labels": [
+        [
+          "当年独立获得的发明数量",
+          "当年独立获得的实用新型数量",
+          "当年独立获得的外观设计数量",
+          "当年联合获得的发明数量",
+          "当年联合获得的实用新型数量",
+          "当年联合获得的外观设计数量"
+        ]
+      ]
+    }
+  },
+  "fund_identification_support": [
+    {
+      "model": "F1",
+      "N": 969,
+      "source_cities": 72,
+      "residual_sd": 0.02753467003159798,
+      "residual_support_cities": 72,
+      "top_city_residual_variation_share": 0.19769659465716452,
+      "top5_city_residual_variation_share": 0.49399938358900364,
+      "inverse_hhi_residual_variation": 13.518843103398076,
+      "top5_cities": {
+        "榆林市": 0.19769659465716452,
+        "武汉市": 0.12465265558112999,
+        "深圳市": 0.07261845810212562,
+        "盐城市": 0.05007700723451651,
+        "常州市": 0.048954668014066935
+      }
+    },
+    {
+      "model": "F2",
+      "N": 727,
+      "source_cities": 40,
+      "residual_sd": 0.008974091105307296,
+      "residual_support_cities": 38,
+      "top_city_residual_variation_share": 0.25315763433858374,
+      "top5_city_residual_variation_share": 0.5539325874920109,
+      "inverse_hhi_residual_variation": 9.813514459654863,
+      "top5_cities": {
+        "榆林市": 0.25315763433858374,
+        "合肥市": 0.09003422666652995,
+        "泰州市": 0.08109048040567655,
+        "深圳市": 0.06879256099743414,
+        "安阳市": 0.06085768508378656
+      },
+      "destination_year_groups": 127,
+      "destination_year_with_multiple_sources": 54,
+      "events_in_multi_source_destination_year": 408,
+      "residual_variance_remaining_vs_F2a": 0.158924584646956
+    },
+    {
+      "model": "F3",
+      "N": 799,
+      "source_cities": 65,
+      "residual_sd": 0.25121179332095517,
+      "residual_support_cities": 65,
+      "top_city_residual_variation_share": 0.264158276546817,
+      "top5_city_residual_variation_share": 0.6732229884476666,
+      "inverse_hhi_residual_variation": 6.920466583922228,
+      "top5_cities": {
+        "贵阳市": 0.264158276546817,
+        "哈尔滨市": 0.2414295445166311,
+        "郑州市": 0.07845815133510692,
+        "合肥市": 0.04539206304010207,
+        "武汉市": 0.043784953009009586
+      }
+    }
+  ],
+  "artifacts_sha256": {
+    "面板数据/micro_fiscal_round2_20261117.csv": "28863f31581d707633bcdc17b398d411c04c31239c2d5fe1a315205ceffcce16",
+    "面板数据/fund_choice_round2_20261117.csv": "b64d98c9f2aa9de0f54408086aea356bdfe29d9c20c72f9817eb692ce2add712",
+    "面板数据/fiscal_macro_trial_20261117.csv": "15b3968f19b7d1e9dcb41314fde407aaca351374fd22b17de14da20fdab19ad0",
+    "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/2015-2024投资事件_附基金级别分类注册地区_扩展匹配.csv": "f1d645473ef1761e483b4d42ed6cec471a899f11290146fba8d2a1823279402a",
+    "面板数据/firm_changes_round2_20261117.csv": "4e6728b018a52cd8206ee8da84f259bed78ca244586236879c136ec4d513db97",
+    "实证结果/fiscal_fund_design_round2_20261117/model_results.csv": "0216361ec4fb88a2061bee387e5652b7b5928f64097492761c223d9fcc9a548f",
+    "实证结果/fiscal_fund_design_round2_20261117/all_coefficients.csv": "ab25d7beebd21b277a084cb24452a600ed65f96ed0641ad3cafb40269eedb6d7",
+    "面板数据/f2_influence_round2_20261117.csv": "403bbd2c1b4652af9e9645f99dacf3ee41a4ba852abd4b4c294832b77333a7d5",
+    "实证结果/fiscal_fund_design_round2_20261117/f2_leave_one_city.csv": "3176e5a6d3e3411c1a2c8a55abaf51f9f4eb7ac4948a72b5572520b54da3884a",
+    "实证结果/fiscal_fund_design_round2_20261117/f2_influence_audit.json": "71540e1e7301c29d4fedff82d13d2e4b3d3a23eced870c85413a2ae2776876c8",
+    "运行日志与do代码/fiscal_round2_f2_influence_20261117.log": "17c2c5ed04b99ecb14b00edf37372809661dc815f75b1574f0a77d783dbb0520"
+  },
+  "regressions_validated": true,
+  "regression_note": "Independent NumPy explicit-dummy OLS with source-city CR1 sandwich, full areg absorbed-effect degrees of freedom, and t inference. All continuous coefficients and standard errors checked for the nine estimable models.",
+  "regression_checks": [
+    {
+      "model": "F1",
+      "N": 969,
+      "clusters": 72,
+      "full_design_rank": 143,
+      "cluster_correction": 1.188418647478089,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": -0.23990126067412298,
+          "stata_b": -0.239901260674114,
+          "b_error": 8.992806499463768e-15,
+          "numpy_se": 0.3989302479247164,
+          "stata_se": 0.39893025,
+          "se_error": 2.0752836116244566e-09,
+          "p": 0.5495145770735483
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": 0.5101320109808011,
+          "stata_b": 0.5101320109808497,
+          "b_error": 4.8627768478581856e-14,
+          "numpy_se": 0.5852303655311073,
+          "stata_se": 0.58523035,
+          "se_error": 1.5531107289135093e-08,
+          "p": 0.386322554396312
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": -4.090929892038641,
+          "stata_b": -4.09092989203875,
+          "b_error": 1.0835776720341528e-13,
+          "numpy_se": 1.3058002615475899,
+          "stata_se": 1.3058003,
+          "se_error": 3.845241014488465e-08,
+          "p": 0.0025152532284790493
+        }
+      ]
+    },
+    {
+      "model": "F2a",
+      "N": 727,
+      "clusters": 40,
+      "full_design_rank": 97,
+      "cluster_correction": 1.1819291819291817,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": -0.9178075301296357,
+          "stata_b": -0.917807530129638,
+          "b_error": 2.3314683517128287e-15,
+          "numpy_se": 0.758613338060292,
+          "stata_se": 0.75861335,
+          "se_error": 1.1939708000063831e-08,
+          "p": 0.23361937121536724
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": -0.013361899717929893,
+          "stata_b": -0.0133618997179908,
+          "b_error": 6.090787596502167e-14,
+          "numpy_se": 0.7913010858573347,
+          "stata_se": 0.79130107,
+          "se_error": 1.5857334667579437e-08,
+          "p": 0.9866136644827512
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": -2.7168724171940495,
+          "stata_b": -2.716872417193968,
+          "b_error": 8.126832540256146e-14,
+          "numpy_se": 2.2473449565028765,
+          "stata_se": 2.247345,
+          "se_error": 4.349712368068026e-08,
+          "p": 0.2339699724381944
+        }
+      ]
+    },
+    {
+      "model": "F2",
+      "N": 727,
+      "clusters": 40,
+      "full_design_rank": 207,
+      "cluster_correction": 1.4319526627218933,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": -2.1129578086474385,
+          "stata_b": -2.112957808648199,
+          "b_error": 7.602807272633072e-13,
+          "numpy_se": 1.0712257139119095,
+          "stata_se": 1.0712258,
+          "se_error": 8.608809043408883e-08,
+          "p": 0.05567629086212929
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": -0.5656144541028919,
+          "stata_b": -0.5656144541047854,
+          "b_error": 1.8934853684982045e-12,
+          "numpy_se": 1.0071613240221222,
+          "stata_se": 1.0071614,
+          "se_error": 7.597787776703058e-08,
+          "p": 0.5776067706480614
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": -4.371962542972085,
+          "stata_b": -4.371962542968281,
+          "b_error": 3.804068171575636e-12,
+          "numpy_se": 3.875141536854592,
+          "stata_se": 3.8751416,
+          "se_error": 6.314540801355406e-08,
+          "p": 0.26612525857336977
+        }
+      ]
+    },
+    {
+      "model": "F3a",
+      "N": 799,
+      "clusters": 65,
+      "full_design_rank": 131,
+      "cluster_correction": 1.2132765718562875,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": -0.14255129815034906,
+          "stata_b": -0.1425512981503001,
+          "b_error": 4.8960835385969403e-14,
+          "numpy_se": 0.44119405933290146,
+          "stata_se": 0.44119406,
+          "se_error": 6.67098543072342e-10,
+          "p": 0.7476702603088659
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": -0.18360982976381054,
+          "stata_b": -0.1836098297636997,
+          "b_error": 1.1085576900882188e-13,
+          "numpy_se": 0.5463558825230278,
+          "stata_se": 0.5463559,
+          "se_error": 1.7476972202778995e-08,
+          "p": 0.7379229093736286
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": -3.4004044807780476,
+          "stata_b": -3.400404480778221,
+          "b_error": 1.7363888105137448e-13,
+          "numpy_se": 1.0396737589873533,
+          "stata_se": 1.0396738,
+          "se_error": 4.101264683420425e-08,
+          "p": 0.0017302242645447533
+        }
+      ]
+    },
+    {
+      "model": "F3",
+      "N": 799,
+      "clusters": 65,
+      "full_design_rank": 133,
+      "cluster_correction": 1.216920045045045,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": -0.0850093681951214,
+          "stata_b": -0.0850093681950674,
+          "b_error": 5.399847236020605e-14,
+          "numpy_se": 0.46161954068333466,
+          "stata_se": 0.46161953,
+          "se_error": 1.0683334661365507e-08,
+          "p": 0.8544744230900795
+        },
+        {
+          "term": "debt",
+          "numpy_b": -0.023826904875720104,
+          "stata_b": -0.0238269048757211,
+          "b_error": 9.957312752106873e-16,
+          "numpy_se": 0.030716256498370204,
+          "stata_se": 0.030716257,
+          "se_error": 5.01629796728631e-10,
+          "p": 0.4407773499366776
+        },
+        {
+          "term": "pd",
+          "numpy_b": 0.030263025261146822,
+          "stata_b": 0.0302630252611496,
+          "b_error": 2.779027008514845e-15,
+          "numpy_se": 0.05053258361584955,
+          "stata_se": 0.050532583,
+          "se_error": 6.158495519104079e-10,
+          "p": 0.5513659399552051
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": 0.051697980052632764,
+          "stata_b": 0.0516979800527369,
+          "b_error": 1.0413891970983968e-13,
+          "numpy_se": 0.6017456778427532,
+          "stata_se": 0.60174567,
+          "se_error": 7.842753224629462e-09,
+          "p": 0.9318035225221964
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": -3.737388710080035,
+          "stata_b": -3.73738871008025,
+          "b_error": 2.149391775674303e-13,
+          "numpy_se": 1.2339682147426554,
+          "stata_se": 1.2339683,
+          "se_error": 8.525734451758638e-08,
+          "p": 0.0035383472468275817
+        }
+      ]
+    },
+    {
+      "model": "M1",
+      "N": 159,
+      "clusters": 41,
+      "full_design_rank": 10,
+      "cluster_correction": 1.0869127516778523,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": -0.3059893795239624,
+          "stata_b": -0.3059893795239774,
+          "b_error": 1.504352198367087e-14,
+          "numpy_se": 0.6634473825718823,
+          "stata_se": 0.66344738,
+          "se_error": 2.571882262714098e-09,
+          "p": 0.647145266375609
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": -0.09552414501561765,
+          "stata_b": -0.0955241450156222,
+          "b_error": 4.551914400963142e-15,
+          "numpy_se": 0.17852779046999145,
+          "stata_se": 0.17852779,
+          "se_error": 4.699914624151091e-10,
+          "p": 0.5955665331763041
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": 0.3011944894853079,
+          "stata_b": 0.3011944894853053,
+          "b_error": 2.609024107869118e-15,
+          "numpy_se": 1.352543274001217,
+          "stata_se": 1.3525432,
+          "se_error": 7.400121715406272e-08,
+          "p": 0.8249119530725867
+        }
+      ]
+    },
+    {
+      "model": "M2",
+      "N": 159,
+      "clusters": 41,
+      "full_design_rank": 11,
+      "cluster_correction": 1.0942567567567567,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": 0.2563705057827995,
+          "stata_b": 0.2563705057827944,
+          "b_error": 5.10702591327572e-15,
+          "numpy_se": 0.7588596505339964,
+          "stata_se": 0.75885963,
+          "se_error": 2.053399639212472e-08,
+          "p": 0.7372530491968032
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": -0.02597873839800595,
+          "stata_b": -0.0259787383980068,
+          "b_error": 8.500145032286355e-16,
+          "numpy_se": 0.19352267822011082,
+          "stata_se": 0.19352268,
+          "se_error": 1.779889180486549e-09,
+          "p": 0.8938849394150707
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": 0.612360819297472,
+          "stata_b": 0.6123608192974679,
+          "b_error": 4.107825191113079e-15,
+          "numpy_se": 1.5484358062303556,
+          "stata_se": 1.5484358,
+          "se_error": 6.2303555647957864e-09,
+          "p": 0.6945969719706326
+        },
+        {
+          "term": "pre1",
+          "numpy_b": -0.4396495460762228,
+          "stata_b": -0.4396495460762224,
+          "b_error": 3.885780586188048e-16,
+          "numpy_se": 0.07966244923166464,
+          "stata_se": 0.07966245,
+          "se_error": 7.683353536735993e-10,
+          "p": 2.239594186262295e-06
+        }
+      ]
+    },
+    {
+      "model": "M3",
+      "N": 105,
+      "clusters": 35,
+      "full_design_rank": 10,
+      "cluster_correction": 1.1269349845201238,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": -0.24115806516937943,
+          "stata_b": -0.2411580651693627,
+          "b_error": 1.6736612096224235e-14,
+          "numpy_se": 0.8355138252605453,
+          "stata_se": 0.83551383,
+          "se_error": 4.739454717572755e-09,
+          "p": 0.7746136128675043
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": -0.22056376909475908,
+          "stata_b": -0.2205637690947533,
+          "b_error": 5.773159728050814e-15,
+          "numpy_se": 0.201970104865623,
+          "stata_se": 0.2019701,
+          "se_error": 4.865622987848539e-09,
+          "p": 0.2824842373444718
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": 1.3777819023748976,
+          "stata_b": 1.377781902374915,
+          "b_error": 1.7319479184152442e-14,
+          "numpy_se": 1.5092940437373072,
+          "stata_se": 1.509294,
+          "se_error": 4.373730733142622e-08,
+          "p": 0.367741442821098
+        }
+      ]
+    },
+    {
+      "model": "M4",
+      "N": 105,
+      "clusters": 35,
+      "full_design_rank": 10,
+      "cluster_correction": 1.1269349845201238,
+      "coefficients": [
+        {
+          "term": "p",
+          "numpy_b": -0.10443367934278702,
+          "stata_b": -0.1044336793427987,
+          "b_error": 1.1671219546371958e-14,
+          "numpy_se": 0.8951749398241189,
+          "stata_se": 0.89517492,
+          "se_error": 1.9824118902000976e-08,
+          "p": 0.9078136127485648
+        },
+        {
+          "term": "l_gdp",
+          "numpy_b": 0.18571110131601903,
+          "stata_b": 0.1857111013160152,
+          "b_error": 3.83026943495679e-15,
+          "numpy_se": 0.1876641244772429,
+          "stata_se": 0.18766412,
+          "se_error": 4.4772429097506006e-09,
+          "p": 0.3293637620446149
+        },
+        {
+          "term": "l_secondary",
+          "numpy_b": -0.006846408006011662,
+          "stata_b": -0.0068464080060234,
+          "b_error": 1.1738006400197065e-14,
+          "numpy_se": 1.4406973246556147,
+          "stata_se": 1.4406973,
+          "se_error": 2.4655614661028835e-08,
+          "p": 0.9962361221196097
+        }
+      ]
+    }
+  ],
+  "influence_checks": [
+    {
+      "omitted_city": "丽水市",
+      "N": 718,
+      "clusters": 38,
+      "funds": 63,
+      "full_design_rank": 202,
+      "numpy_b": -2.1015630180658547,
+      "numpy_se": 1.07262107841055,
+      "numpy_p": 0.057647518630448744,
+      "b_error": 4.933831121434196e-13,
+      "se_error": 2.158945000552137e-08
+    },
+    {
+      "omitted_city": "亳州市",
+      "N": 718,
+      "clusters": 38,
+      "funds": 63,
+      "full_design_rank": 202,
+      "numpy_b": -2.1015630180658547,
+      "numpy_se": 1.07262107841055,
+      "numpy_p": 0.057647518630448744,
+      "b_error": 2.944311461305915e-13,
+      "se_error": 2.158945000552137e-08
+    },
+    {
+      "omitted_city": "兰州市",
+      "N": 707,
+      "clusters": 39,
+      "funds": 62,
+      "full_design_rank": 201,
+      "numpy_b": -2.080312207906278,
+      "numpy_se": 1.0641002973496196,
+      "numpy_p": 0.05796845388272735,
+      "b_error": 5.839773109528323e-13,
+      "se_error": 2.650380359625615e-09
+    },
+    {
+      "omitted_city": "南京市",
+      "N": 694,
+      "clusters": 39,
+      "funds": 63,
+      "full_design_rank": 199,
+      "numpy_b": -1.3739075597361468,
+      "numpy_se": 1.1418871993677893,
+      "numpy_p": 0.2363454289932433,
+      "b_error": 2.391420395042587e-13,
+      "se_error": 6.322107282130673e-10
+    },
+    {
+      "omitted_city": "南通市",
+      "N": 714,
+      "clusters": 39,
+      "funds": 63,
+      "full_design_rank": 201,
+      "numpy_b": -2.0968849056285332,
+      "numpy_se": 1.0668186329231721,
+      "numpy_p": 0.056690029609549504,
+      "b_error": 2.3092638912203256e-13,
+      "se_error": 3.292317218850371e-08
+    },
+    {
+      "omitted_city": "合肥市",
+      "N": 448,
+      "clusters": 38,
+      "funds": 59,
+      "full_design_rank": 188,
+      "numpy_b": -2.439635700329395,
+      "numpy_se": 1.3502265332030765,
+      "numpy_p": 0.07892592999694019,
+      "b_error": 5.5067062021407764e-14,
+      "se_error": 3.3203076510446294e-08
+    },
+    {
+      "omitted_city": "咸宁市",
+      "N": 722,
+      "clusters": 39,
+      "funds": 63,
+      "full_design_rank": 203,
+      "numpy_b": -2.1834590571876964,
+      "numpy_se": 1.1269748936544988,
+      "numpy_p": 0.06014901175380947,
+      "b_error": 2.3669954885008337e-13,
+      "se_error": 6.34550123557176e-09
+    },
+    {
+      "omitted_city": "哈尔滨市",
+      "N": 718,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 203,
+      "numpy_b": -2.1190851809064823,
+      "numpy_se": 1.0718651317804868,
+      "numpy_p": 0.05532972287405711,
+      "b_error": 4.587441537751147e-13,
+      "se_error": 3.178048690877233e-08
+    },
+    {
+      "omitted_city": "宁波市",
+      "N": 724,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -2.112957808647778,
+      "numpy_se": 1.07039145456883,
+      "numpy_p": 0.05568343496876332,
+      "b_error": 6.372680161348399e-13,
+      "se_error": 5.456882989918199e-08
+    },
+    {
+      "omitted_city": "安庆市",
+      "N": 713,
+      "clusters": 39,
+      "funds": 62,
+      "full_design_rank": 200,
+      "numpy_b": -1.9141725445644657,
+      "numpy_se": 1.1472996802664779,
+      "numpy_p": 0.10345395592706108,
+      "b_error": 8.093525849517391e-13,
+      "se_error": 8.026647790870811e-08
+    },
+    {
+      "omitted_city": "安阳市",
+      "N": 718,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 204,
+      "numpy_b": -2.3744095815395965,
+      "numpy_se": 1.195089861468436,
+      "numpy_p": 0.05418911316038987,
+      "b_error": 7.30526750203353e-13,
+      "se_error": 6.14684358968276e-08
+    },
+    {
+      "omitted_city": "宜宾市",
+      "N": 722,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 204,
+      "numpy_b": -2.10147879586491,
+      "numpy_se": 1.0658768137937942,
+      "numpy_p": 0.05596857168942387,
+      "b_error": 1.2168044349891716e-13,
+      "se_error": 1.3793794106931045e-08
+    },
+    {
+      "omitted_city": "宜昌市",
+      "N": 722,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -2.1286810217341303,
+      "numpy_se": 1.0704842168126052,
+      "numpy_p": 0.053991278670894635,
+      "b_error": 2.1360690993788012e-13,
+      "se_error": 1.6812605085902987e-08
+    },
+    {
+      "omitted_city": "宿迁市",
+      "N": 713,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 202,
+      "numpy_b": -2.184561291591614,
+      "numpy_se": 1.0682717805017288,
+      "numpy_p": 0.04783091044842334,
+      "b_error": 1.141309269314661e-13,
+      "se_error": 1.9498271219831054e-08
+    },
+    {
+      "omitted_city": "常州市",
+      "N": 713,
+      "clusters": 39,
+      "funds": 61,
+      "full_design_rank": 199,
+      "numpy_b": -2.112388061930941,
+      "numpy_se": 1.0706887758756138,
+      "numpy_p": 0.055811176356463404,
+      "b_error": 2.7000623958883807e-13,
+      "se_error": 7.587561379196472e-08
+    },
+    {
+      "omitted_city": "常德市",
+      "N": 723,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 206,
+      "numpy_b": -2.5324615115166065,
+      "numpy_se": 1.0986129771008502,
+      "numpy_p": 0.026713283615155212,
+      "b_error": 8.837375276016246e-14,
+      "se_error": 2.28991499096054e-08
+    },
+    {
+      "omitted_city": "广州市",
+      "N": 707,
+      "clusters": 38,
+      "funds": 63,
+      "full_design_rank": 200,
+      "numpy_b": -2.073734441543603,
+      "numpy_se": 1.0969740306042401,
+      "numpy_p": 0.06655455281009517,
+      "b_error": 6.141753772226366e-13,
+      "se_error": 3.060424025314035e-08
+    },
+    {
+      "omitted_city": "德阳市",
+      "N": 720,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -2.217124060114367,
+      "numpy_se": 1.0806330277129834,
+      "numpy_p": 0.047137670320805757,
+      "b_error": 1.5010215292932116e-13,
+      "se_error": 2.7712983463601404e-08
+    },
+    {
+      "omitted_city": "成都市",
+      "N": 706,
+      "clusters": 39,
+      "funds": 62,
+      "full_design_rank": 200,
+      "numpy_b": -1.4906217060870437,
+      "numpy_se": 0.846778523833463,
+      "numpy_p": 0.08639700464694368,
+      "b_error": 5.642153411145046e-13,
+      "se_error": 1.3833462930712415e-08
+    },
+    {
+      "omitted_city": "新乡市",
+      "N": 719,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 202,
+      "numpy_b": -2.107473417063251,
+      "numpy_se": 1.069832950575878,
+      "numpy_p": 0.056169102494506316,
+      "b_error": 3.419486915845482e-13,
+      "se_error": 5.057587793011464e-08
+    },
+    {
+      "omitted_city": "无锡市",
+      "N": 674,
+      "clusters": 39,
+      "funds": 63,
+      "full_design_rank": 200,
+      "numpy_b": -2.376655932913569,
+      "numpy_se": 0.9064649310756753,
+      "numpy_p": 0.012509415372119905,
+      "b_error": 1.0702549957386509e-13,
+      "se_error": 1.0756753265894758e-09
+    },
+    {
+      "omitted_city": "晋城市",
+      "N": 724,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -2.1129578086477805,
+      "numpy_se": 1.0703914545688382,
+      "numpy_p": 0.05568343496876464,
+      "b_error": 4.2543746303636e-13,
+      "se_error": 5.4568838114832374e-08
+    },
+    {
+      "omitted_city": "榆林市",
+      "N": 724,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 206,
+      "numpy_b": -2.958399210249012,
+      "numpy_se": 1.368882372300897,
+      "numpy_p": 0.03704857712083411,
+      "b_error": 1.5498713423767185e-13,
+      "se_error": 2.769910301125833e-08
+    },
+    {
+      "omitted_city": "武汉市",
+      "N": 699,
+      "clusters": 38,
+      "funds": 62,
+      "full_design_rank": 198,
+      "numpy_b": -2.2432212351277947,
+      "numpy_se": 1.1270897327419034,
+      "numpy_p": 0.053986988297062034,
+      "b_error": 3.6548541970660153e-13,
+      "se_error": 3.2741903410737905e-08
+    },
+    {
+      "omitted_city": "泰州市",
+      "N": 702,
+      "clusters": 39,
+      "funds": 63,
+      "full_design_rank": 201,
+      "numpy_b": -1.0094731908725723,
+      "numpy_se": 0.8757496708623005,
+      "numpy_p": 0.2562349945656214,
+      "b_error": 7.771561172376096e-15,
+      "se_error": 2.0862300442736625e-08
+    },
+    {
+      "omitted_city": "洛阳市",
+      "N": 720,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -2.2231662528814202,
+      "numpy_se": 1.0695914280372212,
+      "numpy_p": 0.04446498281116389,
+      "b_error": 2.6778579353958776e-13,
+      "se_error": 2.8037221211363317e-08
+    },
+    {
+      "omitted_city": "深圳市",
+      "N": 719,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -1.5681257571417606,
+      "numpy_se": 1.090679469747785,
+      "numpy_p": 0.15868926231113245,
+      "b_error": 9.883205365213144e-13,
+      "se_error": 3.0252214955339696e-08
+    },
+    {
+      "omitted_city": "湘潭市",
+      "N": 721,
+      "clusters": 39,
+      "funds": 63,
+      "full_design_rank": 203,
+      "numpy_b": -2.2274732060822577,
+      "numpy_se": 1.0902642988208127,
+      "numpy_p": 0.04802696765894664,
+      "b_error": 4.214406601477094e-13,
+      "se_error": 1.1791874143796122e-09
+    },
+    {
+      "omitted_city": "湛江市",
+      "N": 716,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 201,
+      "numpy_b": -2.043708742923812,
+      "numpy_se": 1.0814310485984746,
+      "numpy_p": 0.06642865850372662,
+      "b_error": 4.5430326167661406e-13,
+      "se_error": 4.859847457794331e-08
+    },
+    {
+      "omitted_city": "焦作市",
+      "N": 719,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 202,
+      "numpy_b": -1.9043384048078744,
+      "numpy_se": 1.1159134513148228,
+      "numpy_p": 0.09607072262490259,
+      "b_error": 6.350475700855895e-14,
+      "se_error": 4.8685177223006804e-08
+    },
+    {
+      "omitted_city": "盐城市",
+      "N": 708,
+      "clusters": 39,
+      "funds": 61,
+      "full_design_rank": 199,
+      "numpy_b": -2.2080431137851315,
+      "numpy_se": 1.2859631208239568,
+      "numpy_p": 0.09411439771090283,
+      "b_error": 7.460698725481052e-14,
+      "se_error": 7.917604327722927e-08
+    },
+    {
+      "omitted_city": "眉山市",
+      "N": 724,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -2.021199416552416,
+      "numpy_se": 1.0582909334462223,
+      "numpy_p": 0.06371963960397309,
+      "b_error": 2.913225216616411e-13,
+      "se_error": 6.655377782216476e-08
+    },
+    {
+      "omitted_city": "蚌埠市",
+      "N": 721,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 204,
+      "numpy_b": -2.0848741178657964,
+      "numpy_se": 1.0697026402068344,
+      "numpy_p": 0.05870316190213961,
+      "b_error": 6.217248937900877e-13,
+      "se_error": 4.020683430638883e-08
+    },
+    {
+      "omitted_city": "西安市",
+      "N": 678,
+      "clusters": 39,
+      "funds": 61,
+      "full_design_rank": 195,
+      "numpy_b": -2.9862643933743183,
+      "numpy_se": 0.9944628105701586,
+      "numpy_p": 0.004710142349874535,
+      "b_error": 1.5054624213917123e-13,
+      "se_error": 2.057015857648281e-08
+    },
+    {
+      "omitted_city": "贵阳市",
+      "N": 690,
+      "clusters": 39,
+      "funds": 63,
+      "full_design_rank": 193,
+      "numpy_b": -2.0299810709086636,
+      "numpy_se": 1.108001546529354,
+      "numpy_p": 0.07478118279377406,
+      "b_error": 8.122391648157645e-13,
+      "se_error": 5.3470645910991266e-08
+    },
+    {
+      "omitted_city": "郑州市",
+      "N": 719,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 202,
+      "numpy_b": -2.3350961063162083,
+      "numpy_se": 1.1809086477323156,
+      "numpy_p": 0.05528685069776267,
+      "b_error": 3.255173908200959e-13,
+      "se_error": 5.2267684402806935e-08
+    },
+    {
+      "omitted_city": "长沙市",
+      "N": 715,
+      "clusters": 38,
+      "funds": 62,
+      "full_design_rank": 201,
+      "numpy_b": -2.25309589231648,
+      "numpy_se": 1.1820646317805943,
+      "numpy_p": 0.06443214419269065,
+      "b_error": 5.773159728050814e-13,
+      "se_error": 6.82194056800256e-08
+    },
+    {
+      "omitted_city": "阜阳市",
+      "N": 724,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -2.1114312475272534,
+      "numpy_se": 1.0703711689156965,
+      "numpy_p": 0.05584770095075581,
+      "b_error": 2.8554936193359026e-13,
+      "se_error": 3.108430357556813e-08
+    },
+    {
+      "omitted_city": "青岛市",
+      "N": 718,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 203,
+      "numpy_b": -2.1169305777622958,
+      "numpy_se": 1.2061741170427438,
+      "numpy_p": 0.0873059566195161,
+      "b_error": 6.812328479099961e-13,
+      "se_error": 1.704274388281135e-08
+    },
+    {
+      "omitted_city": "马鞍山市",
+      "N": 723,
+      "clusters": 39,
+      "funds": 64,
+      "full_design_rank": 205,
+      "numpy_b": -2.4762022116629803,
+      "numpy_se": 1.3304082917451263,
+      "numpy_p": 0.07046039416518164,
+      "b_error": 9.205969320191798e-13,
+      "se_error": 8.254873673507745e-09
+    }
+  ],
+  "influence_summary": {
+    "variants": 40,
+    "all_statuses_ok": true,
+    "all_coefficients_negative": true,
+    "b_range": [
+      -2.986264393374469,
+      -1.00947319087258
+    ],
+    "p_range": [
+      0.0047101425,
+      0.256235
+    ],
+    "N_range": [
+      448,
+      724
+    ],
+    "clusters_range": [
+      38,
+      39
+    ],
+    "positive_upper_95ci": 32,
+    "negative_upper_95ci": 8
+  }
+}

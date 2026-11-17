@@ -1,0 +1,1 @@
+﻿source,event_id,firm_id,firm_legal_name,firm_uscc,event_date,announcement_date,date_type,round_raw,amount_raw,amount_value,amount_lower,amount_upper,currency,amount_disclosure_status,transaction_status,industry_code,industry_code_version,firm_city_code,location_valid_at,source_url,record_created_at,record_updated_at,extracted_at

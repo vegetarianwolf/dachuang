@@ -1,0 +1,1 @@
+﻿source,bond_id,cashflow_id,schedule_version,cashflow_type,scheduled_date,scheduled_principal,scheduled_interest,actual_date,actual_principal,actual_interest,currency,put_call_or_prepayment_status,default_or_extension_status,information_as_of,source_document,source_url,extracted_at

@@ -1,0 +1,135 @@
+{
+  "fund_metadata_columns": [
+    "基金简称",
+    "管理机构",
+    "基金全称",
+    "管理机构全称",
+    "管理机构上级",
+    "管理机构上级全称",
+    "基金级别",
+    "基金分类",
+    "注册地区",
+    "成立时间",
+    "组织形式",
+    "募集状态",
+    "目标规模(人民币/百万)",
+    "目标规模(美元/百万)",
+    "管理机构属性",
+    "管理机构是否国资",
+    "出资人名称",
+    "出资人属性",
+    "出资人是否国资",
+    "申请方最低注册资本(人民币/百万)",
+    "申请方最低管理资本量(人民币/百万)",
+    "申请方最低管理基金数",
+    "申请方最低成功退出案例数",
+    "申请方最低认缴出资比例(%)",
+    "申请方注册地区",
+    "source_file"
+  ],
+  "fund_metadata_notes": "Blank fund-name continuation rows inherit the preceding fund solely to attach additional investor entries. Target fund size and applicant minimum subscription percentage are not actual government subscribed/paid-in capital.",
+  "scope": {
+    "all_events": {
+      "events": 24303,
+      "funds": 2932,
+      "funds_observed_multiple_years": 1914,
+      "known_firms": 12201,
+      "same_firm_date_round_multiple_fund_groups": 2513,
+      "funds_with_catalog_match": 648,
+      "funds_with_named_sponsor": 555,
+      "funds_with_fiscal_name_candidate": 58,
+      "events_with_fiscal_name_candidate": 768,
+      "exit_exact_fund_firm_matched_rows": 2320,
+      "exit_exact_fund_firm_pairs": 1860,
+      "investment_events_with_exit_pair": 2082,
+      "matched_exit_methods": {
+        "股权转让": 259,
+        "IPO": 1291,
+        "并购": 171,
+        "分红": 179,
+        "借壳": 10,
+        "并购减持": 16,
+        "新三板": 2,
+        "回购": 115,
+        "上市后减持": 277
+      },
+      "exit_before_first_observed_investment_year": 6,
+      "srdi_direct_symbol_firms": 923,
+      "srdi_unique_direct_symbol_firms": 896,
+      "unique_symbol_firms_in_listed_patents": 404
+    },
+    "municipal": {
+      "events": 1086,
+      "funds": 193,
+      "funds_observed_multiple_years": 112,
+      "known_firms": 939,
+      "same_firm_date_round_multiple_fund_groups": 12,
+      "funds_with_catalog_match": 188,
+      "funds_with_named_sponsor": 151,
+      "funds_with_fiscal_name_candidate": 12,
+      "events_with_fiscal_name_candidate": 45,
+      "exit_exact_fund_firm_matched_rows": 79,
+      "exit_exact_fund_firm_pairs": 74,
+      "investment_events_with_exit_pair": 81,
+      "matched_exit_methods": {
+        "股权转让": 16,
+        "IPO": 36,
+        "并购": 6,
+        "回购": 17,
+        "分红": 1,
+        "借壳": 1,
+        "上市后减持": 2
+      },
+      "exit_before_first_observed_investment_year": 0,
+      "srdi_direct_symbol_firms": 63,
+      "srdi_unique_direct_symbol_firms": 61,
+      "unique_symbol_firms_in_listed_patents": 21
+    }
+  },
+  "srdi": {
+    "SRDI_EntInfo_packed.csv": {
+      "rows": 14686,
+      "matches": {
+        "all_events": {
+          "firms": 47,
+          "rows": 86
+        },
+        "municipal": {
+          "firms": 4,
+          "rows": 8
+        }
+      }
+    },
+    "SRDI_EntIdentInfo.csv": {
+      "rows": 469835,
+      "matches": {
+        "all_events": {
+          "firms": 6467,
+          "rows": 9826
+        },
+        "municipal": {
+          "firms": 505,
+          "rows": 773
+        }
+      }
+    },
+    "SRDI_EntPatentInfo_packed.csv": {
+      "rows": 31805,
+      "matches": {
+        "all_events": {
+          "firms": 32,
+          "rows": 2842
+        },
+        "municipal": {
+          "firms": 3,
+          "rows": 200
+        }
+      }
+    }
+  },
+  "interpretation": {
+    "listed_patents": "Stock-code outcomes are feasible for the exact-name SRDI subset with one direct Symbol. Use Ftyp=上市公司本身 for direct investee innovation; do not sum group totals with subsidiaries.",
+    "exit": "IPO, dividends, transfers and reductions are distinct. Name-pair matches do not establish a unique investment round, final cash exit or continued holding for unmatched events.",
+    "sponsor": "Fiscal-name matches are review candidates, not verified contribution amounts or authoritative jurisdiction assignments."
+  }
+}

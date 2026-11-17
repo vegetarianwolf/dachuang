@@ -1,0 +1,87 @@
+{
+  "input_source": "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/2015-2024投资事件_附基金级别分类注册地区_扩展匹配.csv",
+  "input_sha256": "f1d645473ef1761e483b4d42ed6cec471a899f11290146fba8d2a1823279402a",
+  "output_sha256": "b64d98c9f2aa9de0f54408086aea356bdfe29d9c20c72f9817eb692ce2add712",
+  "raw_municipal_events_with_names": 1086,
+  "known_stage_events": 1084,
+  "models": [
+    {
+      "model": "F1",
+      "N": 969,
+      "funds": 111,
+      "cities": 72,
+      "years": [
+        2015,
+        2024
+      ],
+      "target": "p",
+      "rhs": "p l_gdp l_secondary i.year i.sector_id",
+      "residual_sd": 0.02753467003159798,
+      "supporting_source_cities": 72,
+      "design_rank": 142
+    },
+    {
+      "model": "F2a",
+      "N": 727,
+      "funds": 65,
+      "cities": 40,
+      "years": [
+        2015,
+        2024
+      ],
+      "target": "p",
+      "rhs": "p l_gdp l_secondary i.year i.sector_id",
+      "residual_sd": 0.022511007447768794,
+      "supporting_source_cities": 40,
+      "design_rank": 96
+    },
+    {
+      "model": "F2",
+      "N": 727,
+      "funds": 65,
+      "cities": 40,
+      "years": [
+        2015,
+        2024
+      ],
+      "target": "p",
+      "rhs": "p l_gdp l_secondary i.destination_year i.sector_id",
+      "residual_sd": 0.008974091105307296,
+      "supporting_source_cities": 38,
+      "design_rank": 206
+    },
+    {
+      "model": "F3a",
+      "N": 799,
+      "funds": 99,
+      "cities": 65,
+      "years": [
+        2015,
+        2024
+      ],
+      "target": "p",
+      "rhs": "p l_gdp l_secondary i.year i.sector_id",
+      "residual_sd": 0.027534033359588667,
+      "supporting_source_cities": 65,
+      "design_rank": 130
+    },
+    {
+      "model": "F3",
+      "N": 799,
+      "funds": 99,
+      "cities": 65,
+      "years": [
+        2015,
+        2024
+      ],
+      "target": "pd",
+      "rhs": "p debt pd l_gdp l_secondary i.year i.sector_id",
+      "residual_sd": 0.2512117933209551,
+      "supporting_source_cities": 65,
+      "design_rank": 132
+    }
+  ],
+  "fund_identity": "exact fund full name (fallback short name) plus registration city",
+  "zero_filling": false,
+  "geography": "fund registration proxy; recipient city never used to fill source city"
+}

@@ -1,0 +1,64 @@
+{
+  "firm_count": 939,
+  "initial_unique_city": 937,
+  "earlier_other_observed_excluded": 89,
+  "models": [
+    {
+      "model": "M1",
+      "N": 159,
+      "cities": 41,
+      "years": [
+        2016,
+        2022
+      ]
+    },
+    {
+      "model": "M2",
+      "N": 159,
+      "cities": 41,
+      "years": [
+        2016,
+        2022
+      ]
+    },
+    {
+      "model": "M3",
+      "N": 105,
+      "cities": 35,
+      "years": [
+        2016,
+        2022
+      ]
+    },
+    {
+      "model": "M4",
+      "N": 105,
+      "cities": 35,
+      "years": [
+        2016,
+        2022
+      ]
+    },
+    {
+      "model": "M5",
+      "N": 27,
+      "cities": 16,
+      "years": [
+        2016,
+        2020
+      ]
+    },
+    {
+      "model": "M6",
+      "N": 27,
+      "cities": 16,
+      "years": [
+        2016,
+        2020
+      ]
+    }
+  ],
+  "window3": "six non-event years complete; does not require patent observation in event year",
+  "source_sha256": "28863f31581d707633bcdc17b398d411c04c31239c2d5fe1a315205ceffcce16",
+  "output_sha256": "4e6728b018a52cd8206ee8da84f259bed78ca244586236879c136ec4d513db97"
+}

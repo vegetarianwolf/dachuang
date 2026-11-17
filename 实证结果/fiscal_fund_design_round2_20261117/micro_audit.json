@@ -1,0 +1,250 @@
+{
+  "cleaning": {
+    "raw_events": 24306,
+    "duplicate_events_removed": 2,
+    "invalid_or_outside_year_removed": 1
+  },
+  "scope_counts": {
+    "municipal": {
+      "investment_events": 1086,
+      "events_with_known_firm": 991,
+      "firms": 939,
+      "initial_single_city_firms": 937,
+      "initial_multiple_city_firms": 2,
+      "ever_multiple_source_city_firms": 5,
+      "earlier_other_fund_observed_firms": 89,
+      "p_initial_available_firms": 931,
+      "first_year_counts": {
+        "2015": 20,
+        "2016": 51,
+        "2017": 70,
+        "2018": 90,
+        "2019": 93,
+        "2020": 117,
+        "2021": 120,
+        "2022": 140,
+        "2023": 122,
+        "2024": 116
+      },
+      "apply_matched_firms": 587,
+      "apply_all": {
+        "pair1": 183,
+        "pair2": 105,
+        "pair3": 46,
+        "continuous1": 166,
+        "continuous2": 73,
+        "continuous3": 28
+      },
+      "apply_main_cohort_unique_city_gap": {
+        "pair1": 183,
+        "pair2": 105,
+        "pair3": 46,
+        "continuous1": 166,
+        "continuous2": 73,
+        "continuous3": 28
+      },
+      "grant_matched_firms": 567,
+      "grant_all": {
+        "pair1": 155,
+        "pair2": 82,
+        "pair3": 32,
+        "continuous1": 134,
+        "continuous2": 66,
+        "continuous3": 19
+      },
+      "grant_main_cohort_unique_city_gap": {
+        "pair1": 155,
+        "pair2": 81,
+        "pair3": 32,
+        "continuous1": 134,
+        "continuous2": 66,
+        "continuous3": 19
+      }
+    },
+    "full_known_registration": {
+      "investment_events": 22655,
+      "events_with_known_firm": 19518,
+      "firms": 11425,
+      "initial_single_city_firms": 9878,
+      "initial_multiple_city_firms": 1547,
+      "ever_multiple_source_city_firms": 2858,
+      "earlier_other_fund_observed_firms": 101,
+      "p_initial_available_firms": 9843,
+      "first_year_counts": {
+        "2015": 476,
+        "2016": 531,
+        "2017": 917,
+        "2018": 1103,
+        "2019": 1028,
+        "2020": 1321,
+        "2021": 1986,
+        "2022": 1497,
+        "2023": 1398,
+        "2024": 1168
+      },
+      "apply_matched_firms": 6873,
+      "apply_all": {
+        "pair1": 2162,
+        "pair2": 1196,
+        "pair3": 515,
+        "continuous1": 1942,
+        "continuous2": 891,
+        "continuous3": 315
+      },
+      "apply_main_cohort_unique_city_gap": {
+        "pair1": 1737,
+        "pair2": 962,
+        "pair3": 431,
+        "continuous1": 1547,
+        "continuous2": 696,
+        "continuous3": 263
+      },
+      "grant_matched_firms": 6541,
+      "grant_all": {
+        "pair1": 1603,
+        "pair2": 844,
+        "pair3": 350,
+        "continuous1": 1443,
+        "continuous2": 629,
+        "continuous3": 217
+      },
+      "grant_main_cohort_unique_city_gap": {
+        "pair1": 1290,
+        "pair2": 696,
+        "pair3": 294,
+        "continuous1": 1151,
+        "continuous2": 509,
+        "continuous3": 177
+      }
+    }
+  },
+  "patents": {
+    "apply": {
+      "counts": {
+        "header_or_invalid_year_rows": 10,
+        "all_valid_source_rows": 4895383,
+        "matched_rows_all_years": 33505,
+        "matched_explicit_zero_total_rows": 0,
+        "matched_explicit_zero_invention_rows": 4547,
+        "matched_missing_numeric_rows": 0
+      },
+      "matched_firms": 6873,
+      "raw_exact_matched_firms": 6873,
+      "matched_rows_by_year": {
+        "1993": 1,
+        "1994": 1,
+        "1995": 1,
+        "1996": 2,
+        "1997": 3,
+        "2000": 2,
+        "2001": 7,
+        "2002": 14,
+        "2003": 19,
+        "2004": 17,
+        "2005": 29,
+        "2006": 34,
+        "2007": 65,
+        "2008": 79,
+        "2009": 129,
+        "2010": 176,
+        "2011": 249,
+        "2012": 350,
+        "2013": 445,
+        "2014": 584,
+        "2015": 921,
+        "2016": 1396,
+        "2017": 1877,
+        "2018": 2358,
+        "2019": 2866,
+        "2020": 3480,
+        "2021": 4168,
+        "2022": 4745,
+        "2023": 5186,
+        "2024": 4301
+      }
+    },
+    "grant": {
+      "counts": {
+        "header_or_invalid_year_rows": 10,
+        "all_valid_source_rows": 4624955,
+        "matched_rows_all_years": 29349,
+        "matched_explicit_zero_total_rows": 0,
+        "matched_explicit_zero_invention_rows": 10434,
+        "matched_missing_numeric_rows": 0
+      },
+      "matched_firms": 6541,
+      "raw_exact_matched_firms": 6541,
+      "matched_rows_by_year": {
+        "1995": 1,
+        "1996": 2,
+        "1997": 1,
+        "1998": 1,
+        "1999": 2,
+        "2001": 3,
+        "2002": 7,
+        "2003": 4,
+        "2004": 11,
+        "2005": 21,
+        "2006": 20,
+        "2007": 30,
+        "2008": 47,
+        "2009": 68,
+        "2010": 133,
+        "2011": 168,
+        "2012": 259,
+        "2013": 365,
+        "2014": 439,
+        "2015": 671,
+        "2016": 984,
+        "2017": 1294,
+        "2018": 1735,
+        "2019": 2175,
+        "2020": 2839,
+        "2021": 3609,
+        "2022": 4309,
+        "2023": 4920,
+        "2024": 5231
+      }
+    }
+  },
+  "definitions": {
+    "matching": "Full financing-entity names only, with Unicode NFKC and whitespace normalization; no fuzzy/abbreviated-name matching.",
+    "first_year": "Earliest observed investment year within scope in the 2015-2024 event export, not first-ever investment.",
+    "initial_source_city": "Unique registration city among every same-scope event in first observed year; blank for multiple initial cities.",
+    "p_initial": "Fiscal gap (expenditure-revenue)/expenditure at unique initial source city in first_year-1.",
+    "window": "All firm-years from first_year-3 through min(first_year+3, 2023), including unmatched patent rows as missing.",
+    "zero": "Only explicit source numeric zero is zero; missing source row and missing numeric cell remain missing.",
+    "patent_counts": "Invention count sums independent and joint invention counts; total sums six patent type/ownership cells.",
+    "has_patent_row": "At least one application or grant source row; outcome-specific flags are also saved.",
+    "pair": "Both first_year-width and first_year+width are present; no requirement for intervening years.",
+    "continuous": "Every annual source row in the entire ±width interval is present; result year <=2023.",
+    "patent_selection": "Matched nonlisted source rows have positive total patents; missing firm-years do not establish zero innovation or source coverage.",
+    "multi_city": "No fiscal-pressure averaging or arbitrary sponsor selection; all city/fund associations retained separately."
+  },
+  "input_sha256": {
+    "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/2015-2024投资事件_附基金级别分类注册地区_扩展匹配.csv": "f1d645473ef1761e483b4d42ed6cec471a899f11290146fba8d2a1823279402a",
+    "面板数据/fiscal_macro_trial_20261117.csv": "15b3968f19b7d1e9dcb41314fde407aaca351374fd22b17de14da20fdab19ad0",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_1.csv": "449502949f648bbe3a14c560d522cf0a24d77e84ad3579415bc01467ea06fa11",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_10.csv": "945c289509c6a89095f0dd44f12de8b5ea8654d822ed69695e35707da4c80eb3",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_2.csv": "f29b5ddfa9ddfdb9e2a76f944739a45e74ba66e0eb9a45a9ca12d708f0f9457f",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_3.csv": "cda4d883511a43175ceb037eeba559eefe80f30bc55ac1bedc2cc0786a8d6b24",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_4.csv": "0cc8fcbc74ebd5d7e395c6283977aa1f0d2a1d45750298faac119a5c96c189fc",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_5.csv": "4424d2bec1a3ad11f140cf422f5bc922938bfd18bb4c6c529bc745e0232375d7",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_6.csv": "34b745690fa591519cdd973af60c2e086cc7c4e523767135e8b7744041ff785f",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_7.csv": "c8c0b24b53c1ec31fe9c04c5d2df6382c79d0bd06a41a5a3a1762f42f0e123e2",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_8.csv": "e03365214c83d7a9cc2e21cad096309e28915fffab8da147086840c216a184cc",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利申请情况/非上市公司专利申请情况_9.csv": "be0625c7d7c1976714b717d83803b4209e66f14afbf59ec6e4f10386e05cebff",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_1.csv": "9f82db98dccbf707f58e64e0874d60f4a118786a0697b618b9b5114675c460b0",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_10.csv": "3e6ca5bd253cfd9bed81154695e978be00018a74d3c8b22c46c4118b1ab43fbb",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_2.csv": "53514c8dbdcbad1ca6fa4267a1e1debffabf192f73cde98a13bf69cb2da40258",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_3.csv": "5dd95be11dfa5b9a66150928403efb0ba6d9289c9fbfc48d586c93271124cc0e",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_4.csv": "52f2ea689f3a5b1c39aca37883c63d7292574b4c129a638ba1d36845c3bf02f9",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_5.csv": "a055a5d7be99c1f5310ebc0192d8ba50d8edebd2b37a87abff738a99085224c9",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_6.csv": "24754842e5751dfa8e797cef56cb0a2e4c5f761b314b9883c8b7d9f7658de5ef",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_7.csv": "b88326bc9ad45c8ca5b74424ee6be0cd357d0084385ad84c026779776ce71c05",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_8.csv": "59f08d931f19a595d95130d8c8f345314e65d3cecdec017d16a94c45a7a5ed88",
+    "原始数据打包_20260401/CNRDS专利数据包/非上市公司专利申请与获得/非上市公司专利获得情况/非上市公司专利获得情况_9.csv": "3831210b1aa58a89b4102cc45f496c675c7b0323ccf9b1f41a7feaec9a7c5d83"
+  },
+  "output_rows": 71472,
+  "output_sha256": "28863f31581d707633bcdc17b398d411c04c31239c2d5fe1a315205ceffcce16"
+}
