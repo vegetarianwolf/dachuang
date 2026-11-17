@@ -1,227 +1,179 @@
 #!/usr/bin/env python3
+"""Validate the staged snapshot against this repository's plain-Git policy.
 
+The historical filename is retained for compatibility. This command only reads
+Git's index: it does not generate attributes, stage files, or migrate history.
+Every ordinary Git blob must be strictly smaller than 100,000,000 bytes, and
+LFS placeholder pointers are rejected. Large source datasets belong in the
+lossless parts managed by scripts/data_parts.py.
+"""
 from __future__ import annotations
 
 import argparse
-import io
+import os
+import re
 import subprocess
 import sys
-from dataclasses import dataclass
+from collections import defaultdict
 from pathlib import Path
 
-
-DEFAULT_THRESHOLD_MB = 100
-POINTER_PREFIX = b"version https://git-lfs.github.com/spec/v1\n"
+MAX_FILE_BYTES = 100_000_000
 POINTER_SCAN_LIMIT = 1024
+POINTER_PREFIX = b"version https://git-lfs.github.com/spec/v1\n"
+OID = re.compile(r"[0-9a-f]{40,64}\Z")
 
 
-@dataclass(frozen=True)
-class TrackedEntry:
-    path: str
-    oid: str
-    blob_size: int
-    effective_size: int
-    is_lfs_pointer: bool
+class GitError(RuntimeError):
+    """A read-only Git query failed."""
 
 
-def run_git(repo_root: Path, *args: str, input_bytes: bytes | None = None, check: bool = True) -> subprocess.CompletedProcess[bytes]:
-    result = subprocess.run(
-        ["git", *args],
-        cwd=repo_root,
-        input=input_bytes,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
-    if check and result.returncode != 0:
-        message = result.stderr.decode("utf-8", "replace").strip()
-        raise SystemExit(message or f"git {' '.join(args)} failed")
-    return result
+def _git_command(repo_root: Path, *args: str) -> list[str]:
+    return ["git", "-c", "core.hooksPath=/dev/null", "-c",
+            "core.fsmonitor=false", "-C", str(repo_root), *args]
 
 
-def load_tracked_paths(repo_root: Path) -> list[tuple[str, str]]:
-    result = run_git(repo_root, "ls-files", "-s", "-z")
-    entries: list[tuple[str, str]] = []
-    for record in result.stdout.split(b"\0"):
+def _git_env() -> dict[str, str]:
+    # Preserve GIT_INDEX_FILE: commit hooks may receive a temporary commit index.
+    return dict(os.environ, GIT_OPTIONAL_LOCKS="0")
+
+
+def run_git(repo_root: Path, *args: str,
+            input_bytes: bytes | None = None) -> bytes:
+    result = subprocess.run(_git_command(repo_root, *args), input=input_bytes,
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                            env=_git_env())
+    if result.returncode:
+        detail = result.stderr.decode("utf-8", "replace").strip()
+        raise GitError(detail or f"Git 查询失败：{args[0]}")
+    return result.stdout
+
+
+def _read_small_blobs(repo_root: Path, sizes: dict[str, int]) -> dict[str, bytes]:
+    """Read only blobs that were already measured at no more than 1 KiB."""
+    if not sizes:
+        return {}
+    proc = subprocess.Popen(_git_command(repo_root, "cat-file", "--batch"),
+                            stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE, env=_git_env())
+    blobs: dict[str, bytes] = {}
+    try:
+        assert proc.stdin is not None and proc.stdout is not None
+        for oid, expected_size in sizes.items():
+            proc.stdin.write((oid + "\n").encode("ascii"))
+            proc.stdin.flush()
+            fields = proc.stdout.readline(256).split()
+            if len(fields) != 3 or fields[0].decode("ascii") != oid or fields[1] != b"blob":
+                raise GitError("git cat-file 返回了无效对象信息")
+            size = int(fields[2])
+            if size != expected_size or size > POINTER_SCAN_LIMIT:
+                raise GitError("候选指针的对象大小发生变化")
+            content = proc.stdout.read(size)
+            if len(content) != size or proc.stdout.read(1) != b"\n":
+                raise GitError("无法完整读取候选指针")
+            blobs[oid] = content
+        proc.stdin.close()
+        if proc.wait() != 0:
+            raise GitError("git cat-file 查询失败")
+    finally:
+        if proc.poll() is None:
+            proc.kill()
+            proc.wait()
+        for stream in (proc.stdin, proc.stdout, proc.stderr):
+            if stream is not None and not stream.closed:
+                stream.close()
+    return blobs
+
+
+def is_lfs_pointer(content: bytes) -> bool:
+    # An extension-bearing pointer still contains the standard version, oid,
+    # and size fields. Do not mistake an ordinary prose mention for a pointer.
+    lines = content.splitlines()
+    if not lines or lines[0] != POINTER_PREFIX.rstrip(b"\n"):
+        return False
+    has_oid = any(re.fullmatch(rb"oid sha256:[0-9a-f]{64}", line)
+                  for line in lines[1:])
+    has_size = any(re.fullmatch(rb"size [0-9]+", line) for line in lines[1:])
+    return has_oid and has_size
+
+
+def check_index(repo_root: Path, threshold_bytes: int = MAX_FILE_BYTES) -> list[str]:
+    """Return violations without changing the index or working files.
+
+    A lower threshold is useful for focused tests. Increasing the production
+    limit through this API is rejected as well as through the CLI.
+    """
+    if not 0 < threshold_bytes <= MAX_FILE_BYTES:
+        raise ValueError("阈值必须大于 0 且不能超过 100,000,000 字节")
+    records = run_git(repo_root, "ls-files", "--stage", "--full-name", "-z")
+    paths_by_oid: dict[str, list[str]] = defaultdict(list)
+    errors: list[str] = []
+    conflicts: set[str] = set()
+    for record in records.split(b"\0"):
         if not record:
             continue
-        meta, raw_path = record.split(b"\t", 1)
-        _mode, oid, stage = meta.decode("ascii").split()
+        try:
+            metadata, raw_path = record.split(b"\t", 1)
+            mode, oid, stage = metadata.decode("ascii").split()
+            path = os.fsdecode(raw_path)
+            if not OID.fullmatch(oid):
+                raise ValueError("无效对象编号")
+        except (ValueError, UnicodeError) as error:
+            raise GitError("无法解析 Git 索引条目") from error
         if stage != "0":
-            continue
-        entries.append((raw_path.decode("utf-8"), oid))
-    return entries
-
-
-def batch_blob_sizes(repo_root: Path, oids: list[str]) -> dict[str, int]:
-    if not oids:
-        return {}
-    payload = "".join(f"{oid}\n" for oid in oids).encode("utf-8")
-    result = run_git(repo_root, "cat-file", "--batch-check=%(objectname) %(objecttype) %(objectsize)", input_bytes=payload)
+            conflicts.add(path)
+        elif mode != "160000":  # Gitlinks are commits rather than file blobs.
+            paths_by_oid[oid].append(path)
+    errors.extend(f"未解决的合并冲突：{path}" for path in sorted(conflicts))
+    if not paths_by_oid:
+        return errors
+    response = run_git(repo_root, "cat-file",
+                       "--batch-check=%(objectname) %(objecttype) %(objectsize)",
+                       input_bytes="".join(oid + "\n" for oid in paths_by_oid).encode("ascii"))
     sizes: dict[str, int] = {}
-    for line in result.stdout.decode("utf-8").splitlines():
-        oid, obj_type, size_text = line.split()
-        if obj_type == "blob":
-            sizes[oid] = int(size_text)
-    return sizes
-
-
-def parse_lfs_size(content: bytes) -> int | None:
-    if not content.startswith(POINTER_PREFIX):
-        return None
-    for line in content.splitlines():
-        if line.startswith(b"size "):
-            return int(line.split()[1])
-    return None
-
-
-def batch_pointer_sizes(repo_root: Path, candidate_oids: list[str]) -> dict[str, int]:
-    if not candidate_oids:
-        return {}
-    payload = "".join(f"{oid}\n" for oid in candidate_oids).encode("utf-8")
-    result = run_git(repo_root, "cat-file", "--batch", input_bytes=payload)
-    output = io.BytesIO(result.stdout)
-    pointer_sizes: dict[str, int] = {}
-    while True:
-        header = output.readline()
-        if not header:
-            break
-        oid, obj_type, size_text = header.decode("utf-8").strip().split()
-        size = int(size_text)
-        content = output.read(size)
-        output.read(1)
-        if obj_type != "blob":
-            continue
-        lfs_size = parse_lfs_size(content)
-        if lfs_size is not None:
-            pointer_sizes[oid] = lfs_size
-    return pointer_sizes
-
-
-def load_tracked_entries(repo_root: Path) -> list[TrackedEntry]:
-    tracked_paths = load_tracked_paths(repo_root)
-    unique_oids = sorted({oid for _, oid in tracked_paths})
-    blob_sizes = batch_blob_sizes(repo_root, unique_oids)
-    pointer_candidates = [oid for oid, size in blob_sizes.items() if size <= POINTER_SCAN_LIMIT]
-    pointer_sizes = batch_pointer_sizes(repo_root, pointer_candidates)
-
-    entries: list[TrackedEntry] = []
-    for path, oid in tracked_paths:
-        blob_size = blob_sizes[oid]
-        if oid in pointer_sizes:
-            effective_size = pointer_sizes[oid]
-            is_pointer = True
-        else:
-            effective_size = blob_size
-            is_pointer = False
-        entries.append(
-            TrackedEntry(
-                path=path,
-                oid=oid,
-                blob_size=blob_size,
-                effective_size=effective_size,
-                is_lfs_pointer=is_pointer,
-            )
-        )
-    return entries
-
-
-def escape_gitattributes_path(path: str) -> str:
-    escaped: list[str] = []
-    for char in path:
-        if char in {"\\", " ", "\t", "*", "?", "[", "]"}:
-            escaped.append("\\")
-        escaped.append(char)
-    return "".join(escaped)
-
-
-def render_gitattributes(paths: list[str], threshold_mb: int) -> str:
-    lines = [
-        "# Auto-generated by scripts/sync_git_lfs_by_size.py",
-        f"# Only tracked files larger than {threshold_mb} MB use Git LFS.",
-        "",
-    ]
-    lines.extend(
-        f"/{escape_gitattributes_path(path)} filter=lfs diff=lfs merge=lfs -text"
-        for path in sorted(paths)
-    )
-    return "\n".join(lines).rstrip() + "\n"
-
-
-def write_gitattributes(repo_root: Path, content: str) -> bool:
-    gitattributes_path = repo_root / ".gitattributes"
-    existing = gitattributes_path.read_text(encoding="utf-8") if gitattributes_path.exists() else ""
-    if existing == content:
-        return False
-    gitattributes_path.write_text(content, encoding="utf-8")
-    return True
-
-
-def has_git_lfs(repo_root: Path) -> bool:
-    result = run_git(repo_root, "lfs", "version", check=False)
-    return result.returncode == 0
-
-
-def staged_paths(repo_root: Path) -> set[str]:
-    result = run_git(repo_root, "diff", "--cached", "--name-only", "-z", "--diff-filter=AM")
-    return {path.decode("utf-8") for path in result.stdout.split(b"\0") if path}
-
-
-def restage_large_files(repo_root: Path, entries_by_path: dict[str, TrackedEntry], large_paths: set[str], attrs_changed: bool) -> None:
-    staged = staged_paths(repo_root)
-    if not staged and not attrs_changed:
-        return
-
-    to_convert = sorted(
-        path for path in staged
-        if path in large_paths and not entries_by_path[path].is_lfs_pointer
-    )
-
-    if to_convert and not has_git_lfs(repo_root):
-        joined = "\n".join(f"- {path}" for path in to_convert)
-        raise SystemExit(
-            "git-lfs is not installed, so newly staged files larger than 100 MB cannot be re-added as LFS objects.\n"
-            "Install git-lfs and re-run the commit.\n"
-            f"Affected files:\n{joined}"
-        )
-
-    if attrs_changed:
-        run_git(repo_root, "add", ".gitattributes")
-    if to_convert:
-        run_git(repo_root, "add", "--", *to_convert)
+    for line in response.splitlines():
+        fields = line.split()
+        if len(fields) != 3 or fields[1] != b"blob":
+            raise GitError("索引中的文件对象不存在或不是 blob")
+        oid = fields[0].decode("ascii")
+        if oid not in paths_by_oid:
+            raise GitError("git cat-file 返回了未知对象")
+        sizes[oid] = int(fields[2])
+    if sizes.keys() != paths_by_oid.keys():
+        raise GitError("部分索引对象未返回大小信息")
+    for oid, paths in paths_by_oid.items():
+        if sizes[oid] >= threshold_bytes:
+            errors.extend(f"文件必须小于 {threshold_bytes:,} 字节：{path}（{sizes[oid]:,} 字节）"
+                          for path in paths)
+    candidates = {oid: size for oid, size in sizes.items() if size <= POINTER_SCAN_LIMIT}
+    for oid, content in _read_small_blobs(repo_root, candidates).items():
+        if is_lfs_pointer(content):
+            errors.extend(f"仍为 LFS 占位指针：{path}" for path in paths_by_oid[oid])
+    return errors
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Sync Git LFS tracking rules from a size threshold.")
-    parser.add_argument("--threshold-mb", type=int, default=DEFAULT_THRESHOLD_MB)
-    parser.add_argument("--write", action="store_true", help="Write the generated rules to .gitattributes.")
-    parser.add_argument(
-        "--restage-staged",
-        action="store_true",
-        help="Stage .gitattributes and re-add staged large files so LFS filters can apply.",
-    )
+    parser = argparse.ArgumentParser(description="检查索引：普通 Git 文件须小于 100 MB，且不得含 LFS 指针。")
+    parser.add_argument("--check", action="store_true", help="只检查已暂存的快照，不修改任何文件。")
+    parser.add_argument("--write", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--restage-staged", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--threshold-mb", type=int, help=argparse.SUPPRESS)
     args = parser.parse_args()
-
-    repo_root_text = run_git(Path.cwd(), "rev-parse", "--show-toplevel").stdout.decode("utf-8").strip()
-    repo_root = Path(repo_root_text)
-    threshold_bytes = args.threshold_mb * 1024 * 1024
-
-    entries = load_tracked_entries(repo_root)
-    entries_by_path = {entry.path: entry for entry in entries}
-    large_paths = {entry.path for entry in entries if entry.effective_size > threshold_bytes}
-    content = render_gitattributes(sorted(large_paths), args.threshold_mb)
-
-    attrs_changed = False
-    if args.write:
-        attrs_changed = write_gitattributes(repo_root, content)
-    else:
-        sys.stdout.write(content)
-
-    if args.restage_staged:
-        restage_large_files(repo_root, entries_by_path, large_paths, attrs_changed)
-
-    if args.write:
-        state = "updated" if attrs_changed else "already up to date"
-        print(f".gitattributes {state}; tracking {len(large_paths)} file(s) above {args.threshold_mb} MB.")
+    if args.write or args.restage_staged or args.threshold_mb is not None:
+        parser.error("原有自动生成 LFS 规则的方式已停用；请使用 --check，大文件请用 scripts/data_parts.py 分片。")
+    try:
+        root = Path(os.fsdecode(run_git(Path.cwd(), "rev-parse", "--show-toplevel").rstrip(b"\n")))
+        errors = check_index(root)
+    except (GitError, OSError, ValueError) as error:
+        print(f"存储检查无法完成：{error}", file=sys.stderr)
+        return 2
+    if errors:
+        print("普通 Git 存储检查未通过：", file=sys.stderr)
+        for error in errors:
+            print(f"- {error}", file=sys.stderr)
+        print("小文件请重新暂存实际内容；大数据请使用 scripts/data_parts.py 分片后暂存分片。",
+              file=sys.stderr)
+        return 1
+    print("普通 Git 存储检查通过：索引中无 LFS 指针，所有文件均小于 100 MB。")
     return 0
 
 

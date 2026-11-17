@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79cd8cf3a96319e03115b43339ede9f475a958afeb0893dc2e1437306dd845d0
-size 158
+sample,spec,xvar,dvar,mvar,yvar,b_debt,se_debt,p_debt,N_m,r2w_m,b_m,se_m,p_m,N_y,r2w_y,mech_ok10,y_ok10,chain_ok10,mech_ok05,y_ok05,chain_ok05,sig_debt,sig_m

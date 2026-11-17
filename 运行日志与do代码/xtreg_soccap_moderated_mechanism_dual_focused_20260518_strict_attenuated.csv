@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd53179ca2a13a3b73eb9b25afe6e4ba47ab1eb0a73228ea886719327c8ccc01
-size 758
+scheme,sample,spec,xvar,dvar,mvar,yvar,b_base_xn,se_base_xn,p_base_xn,N_base,r2w_base,b_mech,se_mech,p_mech,N_mech,r2w_mech,b_y_key,se_y_key,p_y_key,b_y_m,se_y_m,p_y_m,b_y_xn,se_y_xn,p_y_xn,N_y,r2w_y,base_ok10,base_ok05,mech_ok10,mech_ok05,ykey_ok10,ykey_ok05,theory_ok10,theory_ok05,attenuated,strict_ok10,strict_ok05,sig_base_xn,sig_mech,sig_y_key,sig_y_m,sig_y_xn
+scheme2_moderator,low_fin,ctrl5,fund_est_scale_cum,debt_burden_l1,soccap_leverage_govp5_w,pat_utility_apply,-.0139552353146197,.0051054857,.0081271715,121,.67527854,-.0938660896374486,.055651814,.096613713,121,.25368184,.1129267181409798,.058340583,.057401635,-2540.424488879005,980.3111,.0118631,-.0118204890919065,.0036895378,.0021289785,121,.74912786,1,1,1,0,1,0,1,0,1,1,0,***,*,*,**,***

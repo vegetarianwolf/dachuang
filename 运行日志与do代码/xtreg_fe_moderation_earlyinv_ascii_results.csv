@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1656d5c2b5328ead414e1ba1fb2df5777daa937d602b175726d320bdb74ab75a
-size 2698
+yvar,mvar,dvar,spec,b3,se3,p3,N,r2w
+pat_apply_total,early_inv_amt,debt_pressure,ctrl,-5.37281716496e-08,1.9480519e-08,.0066948687,575,.71641672
+pat_apply_total,early_inv_amt,debt_pressure,noctrl,-1.41294763333e-08,1.9743586e-08,.47521356,1039,.69966143
+pat_apply_total,early_inv_amt,debt_pressure_l1,ctrl,-5.27477481041e-08,2.1699600e-08,.01650738,577,.69904381
+pat_apply_total,early_inv_amt,debt_pressure_l1,noctrl,-1.80832397207e-09,1.3880094e-08,.89650214,1035,.69366729
+pat_apply_total,early_inv_count,debt_pressure,ctrl,3.51904766944e-08,6.0298817e-07,.95355493,683,.7462216
+pat_apply_total,early_inv_count,debt_pressure,noctrl,-8.42378710329e-08,6.7254513e-07,.90047532,1242,.71129757
+pat_apply_total,early_inv_count,debt_pressure_l1,ctrl,-1.08860147471e-07,5.7032702e-07,.84893459,687,.74840939
+pat_apply_total,early_inv_count,debt_pressure_l1,noctrl,5.69946390406e-08,7.4905199e-07,.93944043,1243,.71840006
+pat_invent_apply,early_inv_amt,debt_pressure,ctrl,-7.81720993148e-09,1.0397954e-08,.45359436,575,.74844515
+pat_invent_apply,early_inv_amt,debt_pressure,noctrl,1.59381094391e-08,1.3941944e-08,.2546111,1039,.75584412
+pat_invent_apply,early_inv_amt,debt_pressure_l1,ctrl,-8.09418593975e-09,1.1171622e-08,.47011578,577,.74339426
+pat_invent_apply,early_inv_amt,debt_pressure_l1,noctrl,1.55415018802e-08,6.1607439e-09,.012593354,1035,.76405162
+pat_invent_apply,early_inv_count,debt_pressure,ctrl,2.33966945601e-07,1.9267058e-07,.22690833,683,.74188936
+pat_invent_apply,early_inv_count,debt_pressure,noctrl,2.06002557440e-07,2.1742872e-07,.34478736,1242,.74802047
+pat_invent_apply,early_inv_count,debt_pressure_l1,ctrl,2.72680777824e-07,2.1442628e-07,.20584917,687,.74571168
+pat_invent_apply,early_inv_count,debt_pressure_l1,noctrl,6.02048444029e-07,3.9933440e-07,.13356157,1243,.76021254
+pat_utility_apply,early_inv_amt,debt_pressure,ctrl,-3.32233963294e-08,1.1672443e-08,.0051774057,575,.62929332
+pat_utility_apply,early_inv_amt,debt_pressure,noctrl,-1.95474449736e-08,7.1113027e-09,.0066440203,1039,.56532854
+pat_utility_apply,early_inv_amt,debt_pressure_l1,ctrl,-3.10909841345e-08,1.0573085e-08,.0039148787,577,.62078422
+pat_utility_apply,early_inv_amt,debt_pressure_l1,noctrl,-1.13996453504e-08,4.9100040e-09,.021470498,1035,.55895966
+pat_utility_apply,early_inv_count,debt_pressure,ctrl,-8.34620533798e-08,4.1103908e-07,.83942503,683,.66211778
+pat_utility_apply,early_inv_count,debt_pressure,noctrl,-1.13975458305e-07,3.9007003e-07,.77050447,1242,.60310948
+pat_utility_apply,early_inv_count,debt_pressure_l1,ctrl,-2.20543107557e-07,3.5709175e-07,.5379566,687,.6703344
+pat_utility_apply,early_inv_count,debt_pressure_l1,noctrl,-2.78403008207e-07,2.9306628e-07,.34351888,1243,.62036741

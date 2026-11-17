@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81217d6007364593a945f04f59315489176f3be5ed16978a0e8aa991d31a559d
-size 3143
+model,dbase,dtransform,xtransform,msource,mtransform,sample_rule,xvar,dvar,mvar,N,b,se,p,r2w,theory_path1_10,theory_path1_05
+mediated,debt_l1,raw,logx,early_inv_count_share,raw,interior_debt_trim,z_ln_fund_est_scale_cum,z_debt_pressure_l1,early_inv_count_share,182,-.17343721,.081380628,.037250619,.22858678,1,1
+mediated,debt_l1,winsor,logx,early_inv_count_share,raw,interior_debt_trim,z_ln_fund_est_scale_cum,z_w_debt_pressure_l1,early_inv_count_share,182,-.15689194,.07361722,.037250619,.22858678,1,1
+mediated,debt_l1,raw,logx,early_inv_count_share,winsor,interior_debt_trim,z_ln_fund_est_scale_cum,z_debt_pressure_l1,w_early_inv_count_share,182,-.17343721,.081380628,.037250619,.22858678,1,1
+mediated,debt_l1,winsor,logx,early_inv_count_share,winsor,interior_debt_trim,z_ln_fund_est_scale_cum,z_w_debt_pressure_l1,w_early_inv_count_share,182,-.15689194,.07361722,.037250619,.22858678,1,1
+mediated,debt_l1,winsor,logx,early_inv_count_share,asin,interior_debt_trim,z_ln_fund_est_scale_cum,z_w_debt_pressure_l1,asin_early_inv_count_share,182,-.16834001,.079735637,.038999263,.22188635,1,1
+mediated,debt_l1,raw,logx,early_inv_count_share,asin,interior_debt_trim,z_ln_fund_est_scale_cum,z_debt_pressure_l1,asin_early_inv_count_share,182,-.18609256,.08814428,.038999263,.22188635,1,1
+mediated,debt_l1,raw,logx,early_inv_count_share,raw,denom_ge2,z_ln_fund_est_scale_cum,z_debt_pressure_l1,early_inv_count_share,299,-.11095059,.063794352,.085800074,.1125556,1,0
+mediated,debt_l1,raw,logx,early_inv_count_share,raw,denom_high25,z_ln_fund_est_scale_cum,z_debt_pressure_l1,early_inv_count_share,299,-.11095059,.063794352,.085800074,.1125556,1,0
+mediated,debt_l1,raw,logx,early_inv_count_share,winsor,denom_ge2,z_ln_fund_est_scale_cum,z_debt_pressure_l1,w_early_inv_count_share,299,-.11095059,.063794352,.085800074,.1125556,1,0
+mediated,debt_l1,raw,logx,early_inv_count_share,winsor,denom_high25,z_ln_fund_est_scale_cum,z_debt_pressure_l1,w_early_inv_count_share,299,-.11095059,.063794352,.085800074,.1125556,1,0
+mediated,debt_l1,raw,logx,early_inv_count_share,asin,denom_ge2,z_ln_fund_est_scale_cum,z_debt_pressure_l1,asin_early_inv_count_share,299,-.13711105,.080991849,.094317645,.092025638,1,0
+mediated,debt_l1,raw,logx,early_inv_count_share,asin,denom_high25,z_ln_fund_est_scale_cum,z_debt_pressure_l1,asin_early_inv_count_share,299,-.13711105,.080991849,.094317645,.092025638,1,0
+mediated,debt_l1,winsor,logx,early_inv_count_share,raw,denom_ge2,z_ln_fund_est_scale_cum,z_w_debt_pressure_l1,early_inv_count_share,299,-.09836252,.058853928,.098522007,.11267529,1,0
+mediated,debt_l1,winsor,logx,early_inv_count_share,raw,denom_high25,z_ln_fund_est_scale_cum,z_w_debt_pressure_l1,early_inv_count_share,299,-.09836252,.058853928,.098522007,.11267529,1,0
+mediated,debt_l1,winsor,logx,early_inv_count_share,winsor,denom_ge2,z_ln_fund_est_scale_cum,z_w_debt_pressure_l1,w_early_inv_count_share,299,-.09836252,.058853928,.098522007,.11267529,1,0
+mediated,debt_l1,winsor,logx,early_inv_count_share,winsor,denom_high25,z_ln_fund_est_scale_cum,z_w_debt_pressure_l1,w_early_inv_count_share,299,-.09836252,.058853928,.098522007,.11267529,1,0
