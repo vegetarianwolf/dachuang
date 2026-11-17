@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:44929163f856207710a4a6cae39fe73c3421b2e22277c2b9a42b925b3f442395
-size 92
+model,b,se,t,p,N
+OLS_core_yearFE,-4.237098459172207,.34921572,-12.133183,1.8627255e-27,5641
