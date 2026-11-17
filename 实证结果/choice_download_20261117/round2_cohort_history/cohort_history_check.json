@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "sample": "round-two M1 fixed 159 firms",
+  "total_firms": 159,
+  "choice_fullname_matched_firms": 143,
+  "choice_unmatched_firms": 16,
+  "choice_matching_rate": 0.89937106918239,
+  "choice_matched_event_rows": 466,
+  "prior_any_event_firms": 76,
+  "prior_explicit_venture_round_firms": 37,
+  "prior_only_other_event_labels_firms": 39,
+  "matched_without_observed_prior_event_firms": 67,
+  "prior_any_rate_in_full_cohort": 0.4779874213836478,
+  "prior_explicit_rate_in_full_cohort": 0.23270440251572327,
+  "prior_any_rate_in_matched_firms": 0.5314685314685315,
+  "prior_explicit_rate_in_matched_firms": 0.25874125874125875,
+  "prior_any_event_rows": 141,
+  "prior_explicit_event_rows": 57,
+  "prior_round_group_counts": {
+    "unspecified_equity": 43,
+    "a": 22,
+    "listing": 18,
+    "acquisition_merger_privatization": 1,
+    "angel": 21,
+    "pre_a": 4,
+    "seed": 1,
+    "debt": 1,
+    "b": 6,
+    "equity_transfer": 2,
+    "strategic_investment": 5,
+    "listed_financing": 14,
+    "c_or_later": 3
+  },
+  "original_round2_files_unchanged": true,
+  "input_sha256": {
+    "实证结果/fiscal_fund_design_round2_20261117/samples/M1.csv": "8f2d10a9c8b5d1e212db68cd4758c045d6274511f708c59f00b545152df6d984",
+    "面板数据/firm_changes_round2_20261117.csv": "4e6728b018a52cd8206ee8da84f259bed78ca244586236879c136ec4d513db97",
+    "实证结果/choice_download_20261117/prepare/choice_events_normalized.csv.gz": "c4d6ef3728a127c79cdddcb0d17fb423be482238da61d59a4d75905ff0ce5ec9",
+    "实证结果/choice_download_20261117/prepare/choice_round_flags.csv.gz": "d0aaa143741de911f1c3f9c6a1f81c26d4429c4447c62e7dba3bac86e3da706f",
+    "实证结果/choice_download_20261117/prepare/prepare_summary.json": "09c8a8d9670a33aaaad8d83747048dba477b0c2cc36bcba72d4358b162a35e10",
+    "实证结果/choice_download_20261117/prepare/company_fullname_overlap.csv": "2fea9fcfe03a4b199e964e2b772b3954189c2023d880c1245def6bd5ef4d8f1b",
+    "实证结果/fiscal_fund_design_round2_20261117/model_results.csv": "0216361ec4fb88a2061bee387e5652b7b5928f64097492761c223d9fcc9a548f"
+  },
+  "output_sha256": {
+    "cohort_history_check.csv": "690243bdaec8c525cab30d919378dad5556dcade206adefdbbd3187601752ef1",
+    "cohort_matched_choice_event_rows.csv": "5da00b1c314077a7d7f9b65d058cce24c0d9b63440cb953aecee3b559cb28efe"
+  },
+  "script_sha256": "e71bc6e8d9920d8b8c64169994803d5e2a8ca0bc56797fc893c1acc85531bba5",
+  "rules": {
+    "company_match": "NFKC and whitespace removal, then complete-string equality; no aliases or parent/subsidiary substitution",
+    "prior_history": "Choice event year strictly less than the original M1 government cohort year; same-year ordering not classified",
+    "explicit_rounds": "Seed, angel, Pre-A, A/A+, B/Pre-B/B+, C and later lettered financing rounds; use the finalized separate Choice flags",
+    "unmatched": "Prior-history indicators remain missing for unmatched firms; no record does not establish no financing",
+    "treatment_time": "M1 uses the earliest observed municipal-fund year in the existing 2015–2024 government-fund export; the M1 exclusion of earlier observed other-scope funds is retained",
+    "financing_vs_government_entry": "First general financing and first government investment are distinct events. Earlier financing alone does not invalidate a first-government-entry cohort. Earlier investors need event-date fund/LP ownership evidence.",
+    "no_private_imputation": "All Choice government statuses remain unknown; neither match absence nor earlier timing establishes private VC status"
+  }
+}

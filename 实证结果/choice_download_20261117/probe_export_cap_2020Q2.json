@@ -1,0 +1,28 @@
+{
+  "file": "choice_probe_2020Q2.xlsx",
+  "formal_batch": false,
+  "purpose": "Test whether the UI display limit of 10000 also truncates an exported query.",
+  "query_date_from": "2020-04-01",
+  "query_date_to": "2020-06-30",
+  "region_filter": "全选",
+  "other_filters": "全选",
+  "ui_count_observation": ">10000",
+  "ui_observation_source": "Parent agent observed Choice UI query and performed export.",
+  "actual_event_rows": 10000,
+  "date_min": "2020-04-16",
+  "date_max": "2020-06-30",
+  "invalid_date_rows": 0,
+  "outside_query_date_range_rows": 0,
+  "column_count": 17,
+  "sha256": "16a46f18603b502e08e220166de57c310b5a52f32f06f72a085d5bcda6e45835",
+  "stable_during_read": true,
+  "independent_omitted_day_observation": {
+    "query_date_from": "2020-04-10",
+    "query_date_to": "2020-04-10",
+    "ui_count": 2626,
+    "source": "Parent agent separately queried and observed stable count with all other filters selected."
+  },
+  "conclusion": "This export is truncated to 10000 records; it omits earlier query dates including independently observed records on 2020-04-10. Complete acquisition requires disjoint smaller queries.",
+  "raw_file_action": "Retained unchanged; excluded from formal manifest, row totals, interval coverage and duplicate checks.",
+  "read_method": "openpyxl read_only=True, data_only=False; header, empty rows and 数据来源 footer excluded. No workbook saved."
+}

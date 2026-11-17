@@ -1,0 +1,97 @@
+{
+  "status": "historical_snapshot_superseded",
+  "generated_at": "2026-11-17T15:18:36+08:00",
+  "target_date_from": "2012-01-01",
+  "target_date_to": "2024-12-31",
+  "registered_date_from": "2012-01-01",
+  "registered_date_to": "2020-04-09",
+  "formal_batches": 34,
+  "actual_event_rows": 217865,
+  "rows_by_year": {
+    "2012": 6654,
+    "2013": 9284,
+    "2014": 17852,
+    "2015": 32075,
+    "2016": 41816,
+    "2017": 37097,
+    "2018": 33710,
+    "2019": 26097,
+    "2020": 13280
+  },
+  "passing_batches": 33,
+  "pending_count_verification": [
+    {
+      "file": "choice_events_2014Q1.xlsx",
+      "recorded_ui_count": 7233,
+      "actual_event_rows": 3476
+    }
+  ],
+  "query_interval_check": {
+    "target_date_from": "2012-01-01",
+    "target_date_to": "2024-12-31",
+    "target_days": 4749,
+    "covered_days": 3022,
+    "gap_intervals": [
+      {
+        "date_from": "2020-04-10",
+        "date_to": "2024-12-31",
+        "days": 1727,
+        "files": []
+      }
+    ],
+    "overlap_intervals": [],
+    "invalid_interval_records": [],
+    "outside_target_intervals": [],
+    "complete_without_overlap": false
+  },
+  "all_inputs_stable": true,
+  "prior_hash_comparisons": 33,
+  "prior_hash_changes": 0,
+  "new_hash_baselines": [
+    "choice_events_20200401_20200409.xlsx"
+  ],
+  "exact_content_duplicate_rows": 0,
+  "ignored_probe_files": [
+    "choice_probe_2020Q2.xlsx"
+  ],
+  "invalid_date_rows": 0,
+  "outside_query_date_range_rows": 0,
+  "latest_batch": {
+    "file": "choice_events_20200401_20200409.xlsx",
+    "query_date_from": "2020-04-01",
+    "query_date_to": "2020-04-09",
+    "actual_event_rows": 9162,
+    "sha256": "1b01b575b7f26e593a5b083b2f58fdc75bfab8fdc01344240e78b5973815ad11",
+    "amount_missing": 9024,
+    "news_link_missing": 9031,
+    "investor_missing": 2524,
+    "round_distribution": {
+      "Pre-A轮": 622,
+      "天使轮": 1668,
+      "股权投资": 6577,
+      "股权转让": 16,
+      "种子轮": 49,
+      "被收购": 53,
+      "A轮": 83,
+      "战略投资": 27,
+      "B+轮": 6,
+      "IPO": 6,
+      "主板定向增发": 6,
+      "A+轮": 18,
+      "新三板": 5,
+      "B轮": 6,
+      "C轮": 8,
+      "C+轮": 2,
+      "新三板定增": 4,
+      "Pre-IPO": 1,
+      "Pre-B轮": 4,
+      "E轮": 1
+    }
+  },
+  "resume_from": "2020-04-10",
+  "download_interruption": "Parent reports Mac lock screen; awaiting user unlock to continue Choice UI.",
+  "final_acceptance_passed": false,
+  "original_status": "download_in_progress",
+  "superseded_by": "download_final_snapshot.json",
+  "superseded_at": "2026-11-17T16:28:43+08:00"
+}

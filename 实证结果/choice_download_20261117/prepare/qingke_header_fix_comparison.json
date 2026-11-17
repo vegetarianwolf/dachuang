@@ -1,0 +1,28 @@
+{
+  "purpose": "Compare outputs before and after excluding one explicit shifted Qingke header; all Choice and matching outputs should be unchanged.",
+  "changed_existing_artifacts": {
+    "qingke_source_row_index.csv": {
+      "before": "f3de1edccb8bf15f60659862ad7be5f23c7e8dce4bfde95f7dd2fee8413b2770",
+      "after": "243bda937c983e4a4381dbd8765102e628b4fea9427820be445a73884a967c9e"
+    }
+  },
+  "unchanged_existing_artifacts": [
+    "choice_events_normalized.csv.gz",
+    "choice_investor_tokens.csv.gz",
+    "choice_round_flags.csv.gz",
+    "company_fullname_overlap.csv",
+    "government_event_candidates.csv.gz",
+    "independent_audit_comparison.csv",
+    "overlap_by_year.csv",
+    "round_classification_rules.csv",
+    "source_notes.csv",
+    "template_field_assessment.csv"
+  ],
+  "qingke_valid_rows": 24305,
+  "qingke_valid_companies": 12202,
+  "excluded_qingke_source_rows": [
+    22750
+  ],
+  "updated_qingke_company_overlap_rate": 0.8767415177839698,
+  "passed": true
+}

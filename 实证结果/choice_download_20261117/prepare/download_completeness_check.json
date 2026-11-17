@@ -1,0 +1,692 @@
+{
+  "passed": true,
+  "target_date_from": "2012-01-01",
+  "target_date_to": "2024-12-31",
+  "boundary_basis": "UI manifest query dates; observed record min/max dates do not establish coverage",
+  "audit_sha256": "16d007cab9e4c98b8930141dd4e9b59f7d80f25897cb8306bc2e1430d60763cc",
+  "ui_manifest_sha256": "23a514c343e7be23629645f24c1affc1baf5d6279bc68e06251db7dafc5b451f",
+  "audit_path": "实证结果/choice_download_20261117/download_audit.json",
+  "ui_manifest_path": "实证结果/choice_download_20261117/ui_expected_counts.json",
+  "prepared_files": 56,
+  "audited_files": 56,
+  "registered_files": 56,
+  "gaps": [],
+  "overlaps": [],
+  "issues": [],
+  "registered_intervals": [
+    {
+      "file": "choice_events_2012.xlsx",
+      "date_from": "2012-01-01",
+      "date_to": "2012-12-31"
+    },
+    {
+      "file": "choice_events_2013.xlsx",
+      "date_from": "2013-01-01",
+      "date_to": "2013-12-31"
+    },
+    {
+      "file": "choice_events_2014Q1.xlsx",
+      "date_from": "2014-01-01",
+      "date_to": "2014-03-31"
+    },
+    {
+      "file": "choice_events_2014Q2.xlsx",
+      "date_from": "2014-04-01",
+      "date_to": "2014-06-30"
+    },
+    {
+      "file": "choice_events_2014Q3.xlsx",
+      "date_from": "2014-07-01",
+      "date_to": "2014-09-30"
+    },
+    {
+      "file": "choice_events_2014Q4.xlsx",
+      "date_from": "2014-10-01",
+      "date_to": "2014-12-31"
+    },
+    {
+      "file": "choice_events_2015M01.xlsx",
+      "date_from": "2015-01-01",
+      "date_to": "2015-01-31"
+    },
+    {
+      "file": "choice_events_2015M02_M03.xlsx",
+      "date_from": "2015-02-01",
+      "date_to": "2015-03-31"
+    },
+    {
+      "file": "choice_events_2015M10_M11.xlsx",
+      "date_from": "2015-10-01",
+      "date_to": "2015-11-30"
+    },
+    {
+      "file": "choice_events_2015M12.xlsx",
+      "date_from": "2015-12-01",
+      "date_to": "2015-12-31"
+    },
+    {
+      "file": "choice_events_2015Q2.xlsx",
+      "date_from": "2015-04-01",
+      "date_to": "2015-06-30"
+    },
+    {
+      "file": "choice_events_2015Q3.xlsx",
+      "date_from": "2015-07-01",
+      "date_to": "2015-09-30"
+    },
+    {
+      "file": "choice_events_2016M01_M02.xlsx",
+      "date_from": "2016-01-01",
+      "date_to": "2016-02-29"
+    },
+    {
+      "file": "choice_events_2016M03.xlsx",
+      "date_from": "2016-03-01",
+      "date_to": "2016-03-31"
+    },
+    {
+      "file": "choice_events_2016M04_M05.xlsx",
+      "date_from": "2016-04-01",
+      "date_to": "2016-05-31"
+    },
+    {
+      "file": "choice_events_2016M06.xlsx",
+      "date_from": "2016-06-01",
+      "date_to": "2016-06-30"
+    },
+    {
+      "file": "choice_events_2016M10_M11.xlsx",
+      "date_from": "2016-10-01",
+      "date_to": "2016-11-30"
+    },
+    {
+      "file": "choice_events_2016M12.xlsx",
+      "date_from": "2016-12-01",
+      "date_to": "2016-12-31"
+    },
+    {
+      "file": "choice_events_2016Q3.xlsx",
+      "date_from": "2016-07-01",
+      "date_to": "2016-09-30"
+    },
+    {
+      "file": "choice_events_2017M10_M11.xlsx",
+      "date_from": "2017-10-01",
+      "date_to": "2017-11-30"
+    },
+    {
+      "file": "choice_events_2017M12.xlsx",
+      "date_from": "2017-12-01",
+      "date_to": "2017-12-31"
+    },
+    {
+      "file": "choice_events_2017Q1.xlsx",
+      "date_from": "2017-01-01",
+      "date_to": "2017-03-31"
+    },
+    {
+      "file": "choice_events_2017Q2.xlsx",
+      "date_from": "2017-04-01",
+      "date_to": "2017-06-30"
+    },
+    {
+      "file": "choice_events_2017Q3.xlsx",
+      "date_from": "2017-07-01",
+      "date_to": "2017-09-30"
+    },
+    {
+      "file": "choice_events_2018Q1.xlsx",
+      "date_from": "2018-01-01",
+      "date_to": "2018-03-31"
+    },
+    {
+      "file": "choice_events_2018Q2.xlsx",
+      "date_from": "2018-04-01",
+      "date_to": "2018-06-30"
+    },
+    {
+      "file": "choice_events_2018Q3.xlsx",
+      "date_from": "2018-07-01",
+      "date_to": "2018-09-30"
+    },
+    {
+      "file": "choice_events_2018Q4.xlsx",
+      "date_from": "2018-10-01",
+      "date_to": "2018-12-31"
+    },
+    {
+      "file": "choice_events_2019Q1.xlsx",
+      "date_from": "2019-01-01",
+      "date_to": "2019-03-31"
+    },
+    {
+      "file": "choice_events_2019Q2.xlsx",
+      "date_from": "2019-04-01",
+      "date_to": "2019-06-30"
+    },
+    {
+      "file": "choice_events_2019Q3.xlsx",
+      "date_from": "2019-07-01",
+      "date_to": "2019-09-30"
+    },
+    {
+      "file": "choice_events_2019Q4.xlsx",
+      "date_from": "2019-10-01",
+      "date_to": "2019-12-31"
+    },
+    {
+      "file": "choice_events_20200401_20200409.xlsx",
+      "date_from": "2020-04-01",
+      "date_to": "2020-04-09"
+    },
+    {
+      "file": "choice_events_20200410_20200412.xlsx",
+      "date_from": "2020-04-10",
+      "date_to": "2020-04-12"
+    },
+    {
+      "file": "choice_events_20200413_20200415.xlsx",
+      "date_from": "2020-04-13",
+      "date_to": "2020-04-15"
+    },
+    {
+      "file": "choice_events_20200416_20200430.xlsx",
+      "date_from": "2020-04-16",
+      "date_to": "2020-04-30"
+    },
+    {
+      "file": "choice_events_2020M05_M06.xlsx",
+      "date_from": "2020-05-01",
+      "date_to": "2020-06-30"
+    },
+    {
+      "file": "choice_events_2020Q1.xlsx",
+      "date_from": "2020-01-01",
+      "date_to": "2020-03-31"
+    },
+    {
+      "file": "choice_events_2020Q3.xlsx",
+      "date_from": "2020-07-01",
+      "date_to": "2020-09-30"
+    },
+    {
+      "file": "choice_events_2020Q4.xlsx",
+      "date_from": "2020-10-01",
+      "date_to": "2020-12-31"
+    },
+    {
+      "file": "choice_events_2021Q1.xlsx",
+      "date_from": "2021-01-01",
+      "date_to": "2021-03-31"
+    },
+    {
+      "file": "choice_events_2021Q2.xlsx",
+      "date_from": "2021-04-01",
+      "date_to": "2021-06-30"
+    },
+    {
+      "file": "choice_events_2021Q3.xlsx",
+      "date_from": "2021-07-01",
+      "date_to": "2021-09-30"
+    },
+    {
+      "file": "choice_events_2021Q4.xlsx",
+      "date_from": "2021-10-01",
+      "date_to": "2021-12-31"
+    },
+    {
+      "file": "choice_events_2022Q1.xlsx",
+      "date_from": "2022-01-01",
+      "date_to": "2022-03-31"
+    },
+    {
+      "file": "choice_events_2022Q2.xlsx",
+      "date_from": "2022-04-01",
+      "date_to": "2022-06-30"
+    },
+    {
+      "file": "choice_events_2022Q3.xlsx",
+      "date_from": "2022-07-01",
+      "date_to": "2022-09-30"
+    },
+    {
+      "file": "choice_events_2022Q4.xlsx",
+      "date_from": "2022-10-01",
+      "date_to": "2022-12-31"
+    },
+    {
+      "file": "choice_events_2023Q1.xlsx",
+      "date_from": "2023-01-01",
+      "date_to": "2023-03-31"
+    },
+    {
+      "file": "choice_events_2023Q2.xlsx",
+      "date_from": "2023-04-01",
+      "date_to": "2023-06-30"
+    },
+    {
+      "file": "choice_events_2023Q3.xlsx",
+      "date_from": "2023-07-01",
+      "date_to": "2023-09-30"
+    },
+    {
+      "file": "choice_events_2023Q4.xlsx",
+      "date_from": "2023-10-01",
+      "date_to": "2023-12-31"
+    },
+    {
+      "file": "choice_events_2024Q1.xlsx",
+      "date_from": "2024-01-01",
+      "date_to": "2024-03-31"
+    },
+    {
+      "file": "choice_events_2024Q2.xlsx",
+      "date_from": "2024-04-01",
+      "date_to": "2024-06-30"
+    },
+    {
+      "file": "choice_events_2024Q3.xlsx",
+      "date_from": "2024-07-01",
+      "date_to": "2024-09-30"
+    },
+    {
+      "file": "choice_events_2024Q4.xlsx",
+      "date_from": "2024-10-01",
+      "date_to": "2024-12-31"
+    }
+  ],
+  "file_comparison": [
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2012.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6654,
+      "audited_rows": 6654,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2013.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9284,
+      "audited_rows": 9284,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 3476,
+      "audited_rows": 3476,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 3757,
+      "audited_rows": 3757,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4736,
+      "audited_rows": 4736,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5883,
+      "audited_rows": 5883,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M01.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 2177,
+      "audited_rows": 2177,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M02_M03.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 3282,
+      "audited_rows": 3282,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M10_M11.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5457,
+      "audited_rows": 5457,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M12.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5181,
+      "audited_rows": 5181,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7287,
+      "audited_rows": 7287,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8691,
+      "audited_rows": 8691,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M01_M02.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5495,
+      "audited_rows": 5495,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M03.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4946,
+      "audited_rows": 4946,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M04_M05.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6698,
+      "audited_rows": 6698,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M06.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 3504,
+      "audited_rows": 3504,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M10_M11.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6376,
+      "audited_rows": 6376,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M12.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4854,
+      "audited_rows": 4854,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9943,
+      "audited_rows": 9943,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017M10_M11.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5540,
+      "audited_rows": 5540,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017M12.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4774,
+      "audited_rows": 4774,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8649,
+      "audited_rows": 8649,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9048,
+      "audited_rows": 9048,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9086,
+      "audited_rows": 9086,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8433,
+      "audited_rows": 8433,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8781,
+      "audited_rows": 8781,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8288,
+      "audited_rows": 8288,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8208,
+      "audited_rows": 8208,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6150,
+      "audited_rows": 6150,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6390,
+      "audited_rows": 6390,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6370,
+      "audited_rows": 6370,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7187,
+      "audited_rows": 7187,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200401_20200409.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9162,
+      "audited_rows": 9162,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200410_20200412.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5400,
+      "audited_rows": 5400,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200413_20200415.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4601,
+      "audited_rows": 4601,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200416_20200430.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7025,
+      "audited_rows": 7025,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020M05_M06.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4178,
+      "audited_rows": 4178,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4118,
+      "audited_rows": 4118,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7488,
+      "audited_rows": 7488,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9268,
+      "audited_rows": 9268,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7433,
+      "audited_rows": 7433,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7599,
+      "audited_rows": 7599,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9209,
+      "audited_rows": 9209,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9103,
+      "audited_rows": 9103,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6478,
+      "audited_rows": 6478,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6338,
+      "audited_rows": 6338,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6930,
+      "audited_rows": 6930,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6827,
+      "audited_rows": 6827,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6158,
+      "audited_rows": 6158,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5837,
+      "audited_rows": 5837,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6138,
+      "audited_rows": 6138,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6733,
+      "audited_rows": 6733,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4864,
+      "audited_rows": 4864,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4717,
+      "audited_rows": 4717,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4704,
+      "audited_rows": 4704,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5731,
+      "audited_rows": 5731,
+      "rows_match": true
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "status": "final_download_acceptance_passed",
+  "generated_at": "2026-11-17T16:28:43+08:00",
+  "target_date_from": "2012-01-01",
+  "target_date_to": "2024-12-31",
+  "formal_batches": 56,
+  "actual_event_rows": 360624,
+  "passing_batches": 56,
+  "registered_query_intervals": {
+    "target_date_from": "2012-01-01",
+    "target_date_to": "2024-12-31",
+    "target_days": 4749,
+    "covered_days": 4749,
+    "gap_intervals": [],
+    "overlap_intervals": [],
+    "invalid_interval_records": [],
+    "outside_target_intervals": [],
+    "complete_without_overlap": true
+  },
+  "all_inputs_stable": true,
+  "prior_hash_comparisons": 56,
+  "prior_hash_changes": 0,
+  "exact_content_duplicate_rows": 0,
+  "invalid_date_rows": 0,
+  "outside_query_date_range_rows": 0,
+  "ignored_probe_files": [
+    "choice_probe_2020Q2.xlsx"
+  ],
+  "rows_by_year": {
+    "2012": 6654,
+    "2013": 9284,
+    "2014": 17852,
+    "2015": 32075,
+    "2016": 41816,
+    "2017": 37097,
+    "2018": 33710,
+    "2019": 26097,
+    "2020": 51240,
+    "2021": 33344,
+    "2022": 26573,
+    "2023": 24866,
+    "2024": 20016
+  },
+  "count_correction_2014Q1": [
+    {
+      "previous_count": 7233,
+      "corrected_count": 3476,
+      "basis": "Two stable UI screenshots after requery, not inferred from downloaded row count."
+    }
+  ],
+  "date_density_counts_and_hashes_verified": true,
+  "focus_2020_april": {
+    "rows": 26188,
+    "unique_company_names": 26156,
+    "observed_days": 30,
+    "amount_missing": 25698,
+    "news_title_missing": 25788,
+    "news_link_missing": 25762,
+    "news_both_missing": 25762,
+    "amount_and_news_missing": 25595,
+    "investor_missing": 4419,
+    "real_estate_name_keywords": 850,
+    "real_estate_industry": 1463,
+    "rounds": {
+      "股权投资": 15429,
+      "天使轮": 8208,
+      "Pre-A轮": 1625,
+      "A轮": 190,
+      "被收购": 168,
+      "种子轮": 158,
+      "战略投资": 76,
+      "股权转让": 66,
+      "A+轮": 55,
+      "新三板定增": 37,
+      "B轮": 33,
+      "IPO": 32,
+      "主板定向增发": 28,
+      "B+轮": 24,
+      "C轮": 17,
+      "新三板": 13,
+      "Pre-B轮": 8,
+      "D轮": 7,
+      "C+轮": 5,
+      "Pre-IPO": 2,
+      "E轮": 2,
+      "债权融资": 2,
+      "IPO后": 2,
+      "F轮": 1
+    },
+    "industries_level1": {
+      "制造业": 6527,
+      "科学研究和技术服务业": 4624,
+      "租赁和商务服务业": 2903,
+      "批发和零售业": 2687,
+      "信息传输、软件和信息技术服务业": 1983,
+      "房地产业": 1463,
+      "建筑业": 1062,
+      "金融业": 957,
+      "交通运输、仓储和邮政业": 867,
+      "电力、热力、燃气及水生产和供应业": 839,
+      "文化、体育和娱乐业": 643,
+      "水利、环境和公共设施管理业": 451,
+      "农、林、牧、渔业": 388,
+      "居民服务、修理和其他服务业": 249,
+      "采矿业": 201,
+      "住宿和餐饮业": 183,
+      "卫生和社会工作": 98,
+      "教育": 51,
+      "[missing]": 12
+    },
+    "top_dates": [
+      [
+        "2020-04-08",
+        5322
+      ],
+      [
+        "2020-04-10",
+        2626
+      ],
+      [
+        "2020-04-09",
+        2400
+      ],
+      [
+        "2020-04-15",
+        1910
+      ],
+      [
+        "2020-04-16",
+        1843
+      ],
+      [
+        "2020-04-14",
+        1518
+      ],
+      [
+        "2020-04-17",
+        1496
+      ],
+      [
+        "2020-04-12",
+        1446
+      ],
+      [
+        "2020-04-11",
+        1328
+      ],
+      [
+        "2020-04-13",
+        1173
+      ]
+    ]
+  },
+  "final_acceptance_passed": true,
+  "source_artifact_sha256": {
+    "ui_expected_counts.json": "23a514c343e7be23629645f24c1affc1baf5d6279bc68e06251db7dafc5b451f",
+    "download_audit.json": "16d007cab9e4c98b8930141dd4e9b59f7d80f25897cb8306bc2e1430d60763cc",
+    "date_density_diagnostic.json": "b583ef91725d302e840f46fcaf1c487c9c1476582337fe52ae7821e832b32eb9"
+  }
+}

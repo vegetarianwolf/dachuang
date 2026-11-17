@@ -1,0 +1,953 @@
+﻿file,sheet,column,rows,blank_count,missing_marker_count,numeric_zero_count,unique_nonblank,value_types,max_text_length
+choice_events_2012.xlsx,Sheet1,序号,6654,0,0,0,6654,"{""float"": 6654}",0
+choice_events_2012.xlsx,Sheet1,获投时间,6654,0,0,0,341,"{""str"": 6654}",10
+choice_events_2012.xlsx,Sheet1,公司名称,6654,0,0,0,6337,"{""str"": 6654}",38
+choice_events_2012.xlsx,Sheet1,公司项目简介,6654,1431,0,0,4336,"{""str"": 5223, ""NoneType"": 1431}",75
+choice_events_2012.xlsx,Sheet1,获投轮次,6654,0,0,0,24,"{""str"": 6654}",7
+choice_events_2012.xlsx,Sheet1,获投金额(元),6654,4451,0,0,1066,"{""NoneType"": 4451, ""float"": 2203}",0
+choice_events_2012.xlsx,Sheet1,币种,6654,2559,0,0,4,"{""str"": 4095, ""NoneType"": 2559}",3
+choice_events_2012.xlsx,Sheet1,主题,6654,5245,0,0,364,"{""NoneType"": 5245, ""str"": 1409}",32
+choice_events_2012.xlsx,Sheet1,地区,6654,0,0,0,33,"{""str"": 6654}",3
+choice_events_2012.xlsx,Sheet1,投资方,6654,590,0,0,4692,"{""str"": 6064, ""NoneType"": 590}",367
+choice_events_2012.xlsx,Sheet1,相关新闻标题,6654,6540,0,0,112,"{""NoneType"": 6540, ""str"": 114}",75
+choice_events_2012.xlsx,Sheet1,相关新闻链接,6654,6492,0,0,158,"{""NoneType"": 6492, ""str"": 162}",613
+choice_events_2012.xlsx,Sheet1,创新属性标签,6654,4058,0,0,11,"{""NoneType"": 4058, ""str"": 2596}",35
+choice_events_2012.xlsx,Sheet1,行业一级,6654,23,0,0,18,"{""str"": 6631, ""NoneType"": 23}",16
+choice_events_2012.xlsx,Sheet1,行业二级,6654,28,0,0,89,"{""str"": 6626, ""NoneType"": 28}",20
+choice_events_2012.xlsx,Sheet1,行业三级,6654,653,0,0,358,"{""str"": 6001, ""NoneType"": 653}",21
+choice_events_2012.xlsx,Sheet1,行业四级,6654,2972,0,0,619,"{""str"": 3682, ""NoneType"": 2972}",17
+choice_events_2013.xlsx,Sheet1,序号,9284,0,0,0,9284,"{""float"": 9284}",0
+choice_events_2013.xlsx,Sheet1,获投时间,9284,0,0,0,357,"{""str"": 9284}",10
+choice_events_2013.xlsx,Sheet1,公司名称,9284,0,0,0,8846,"{""str"": 9284}",36
+choice_events_2013.xlsx,Sheet1,公司项目简介,9284,2068,0,0,5805,"{""str"": 7216, ""NoneType"": 2068}",103
+choice_events_2013.xlsx,Sheet1,获投轮次,9284,0,0,0,24,"{""str"": 9284}",7
+choice_events_2013.xlsx,Sheet1,获投金额(元),9284,5827,0,0,1602,"{""float"": 3457, ""NoneType"": 5827}",0
+choice_events_2013.xlsx,Sheet1,币种,9284,3441,0,0,4,"{""str"": 5843, ""NoneType"": 3441}",3
+choice_events_2013.xlsx,Sheet1,主题,9284,7163,0,0,484,"{""NoneType"": 7163, ""str"": 2121}",70
+choice_events_2013.xlsx,Sheet1,地区,9284,0,0,0,33,"{""str"": 9284}",3
+choice_events_2013.xlsx,Sheet1,投资方,9284,709,10,0,6381,"{""str"": 8575, ""NoneType"": 709}",261
+choice_events_2013.xlsx,Sheet1,相关新闻标题,9284,9045,0,0,233,"{""NoneType"": 9045, ""str"": 239}",82
+choice_events_2013.xlsx,Sheet1,相关新闻链接,9284,8967,0,0,306,"{""NoneType"": 8967, ""str"": 317}",229
+choice_events_2013.xlsx,Sheet1,创新属性标签,9284,6001,0,0,12,"{""NoneType"": 6001, ""str"": 3283}",35
+choice_events_2013.xlsx,Sheet1,行业一级,9284,52,0,0,18,"{""str"": 9232, ""NoneType"": 52}",16
+choice_events_2013.xlsx,Sheet1,行业二级,9284,59,0,0,88,"{""str"": 9225, ""NoneType"": 59}",20
+choice_events_2013.xlsx,Sheet1,行业三级,9284,1003,0,0,366,"{""str"": 8281, ""NoneType"": 1003}",21
+choice_events_2013.xlsx,Sheet1,行业四级,9284,4247,0,0,646,"{""str"": 5037, ""NoneType"": 4247}",18
+choice_events_2014Q1.xlsx,Sheet1,序号,3476,0,0,0,3476,"{""float"": 3476}",0
+choice_events_2014Q1.xlsx,Sheet1,获投时间,3476,0,0,0,88,"{""str"": 3476}",10
+choice_events_2014Q1.xlsx,Sheet1,公司名称,3476,0,0,0,3431,"{""str"": 3476}",24
+choice_events_2014Q1.xlsx,Sheet1,公司项目简介,3476,621,0,0,2558,"{""str"": 2855, ""NoneType"": 621}",103
+choice_events_2014Q1.xlsx,Sheet1,获投轮次,3476,0,0,0,23,"{""str"": 3476}",7
+choice_events_2014Q1.xlsx,Sheet1,获投金额(元),3476,2249,0,0,517,"{""NoneType"": 2249, ""float"": 1227}",0
+choice_events_2014Q1.xlsx,Sheet1,币种,3476,1391,0,0,3,"{""str"": 2085, ""NoneType"": 1391}",3
+choice_events_2014Q1.xlsx,Sheet1,主题,3476,2576,0,0,277,"{""NoneType"": 2576, ""str"": 900}",31
+choice_events_2014Q1.xlsx,Sheet1,地区,3476,0,0,0,33,"{""str"": 3476}",3
+choice_events_2014Q1.xlsx,Sheet1,投资方,3476,596,5,0,2367,"{""str"": 2880, ""NoneType"": 596}",237
+choice_events_2014Q1.xlsx,Sheet1,相关新闻标题,3476,3336,0,0,139,"{""NoneType"": 3336, ""str"": 140}",54
+choice_events_2014Q1.xlsx,Sheet1,相关新闻链接,3476,3305,0,0,170,"{""NoneType"": 3305, ""str"": 171}",98
+choice_events_2014Q1.xlsx,Sheet1,创新属性标签,3476,2079,0,0,10,"{""NoneType"": 2079, ""str"": 1397}",27
+choice_events_2014Q1.xlsx,Sheet1,行业一级,3476,22,0,0,18,"{""str"": 3454, ""NoneType"": 22}",16
+choice_events_2014Q1.xlsx,Sheet1,行业二级,3476,23,0,0,84,"{""str"": 3453, ""NoneType"": 23}",20
+choice_events_2014Q1.xlsx,Sheet1,行业三级,3476,404,0,0,281,"{""str"": 3072, ""NoneType"": 404}",21
+choice_events_2014Q1.xlsx,Sheet1,行业四级,3476,1665,0,0,410,"{""NoneType"": 1665, ""str"": 1811}",18
+choice_events_2014Q2.xlsx,Sheet1,序号,3757,0,0,0,3757,"{""float"": 3757}",0
+choice_events_2014Q2.xlsx,Sheet1,获投时间,3757,0,0,0,91,"{""str"": 3757}",10
+choice_events_2014Q2.xlsx,Sheet1,公司名称,3757,0,0,0,3708,"{""str"": 3757}",24
+choice_events_2014Q2.xlsx,Sheet1,公司项目简介,3757,673,0,0,2786,"{""str"": 3084, ""NoneType"": 673}",103
+choice_events_2014Q2.xlsx,Sheet1,获投轮次,3757,0,0,0,27,"{""str"": 3757}",7
+choice_events_2014Q2.xlsx,Sheet1,获投金额(元),3757,2480,0,0,532,"{""float"": 1277, ""NoneType"": 2480}",0
+choice_events_2014Q2.xlsx,Sheet1,币种,3757,1444,0,0,3,"{""str"": 2313, ""NoneType"": 1444}",3
+choice_events_2014Q2.xlsx,Sheet1,主题,3757,2817,0,0,299,"{""str"": 940, ""NoneType"": 2817}",32
+choice_events_2014Q2.xlsx,Sheet1,地区,3757,0,0,0,33,"{""str"": 3757}",3
+choice_events_2014Q2.xlsx,Sheet1,投资方,3757,401,3,0,2676,"{""str"": 3356, ""NoneType"": 401}",164
+choice_events_2014Q2.xlsx,Sheet1,相关新闻标题,3757,3597,0,0,159,"{""NoneType"": 3597, ""str"": 160}",68
+choice_events_2014Q2.xlsx,Sheet1,相关新闻链接,3757,3567,0,0,189,"{""NoneType"": 3567, ""str"": 190}",206
+choice_events_2014Q2.xlsx,Sheet1,创新属性标签,3757,2390,0,0,10,"{""NoneType"": 2390, ""str"": 1367}",35
+choice_events_2014Q2.xlsx,Sheet1,行业一级,3757,15,0,0,18,"{""str"": 3742, ""NoneType"": 15}",16
+choice_events_2014Q2.xlsx,Sheet1,行业二级,3757,16,0,0,87,"{""str"": 3741, ""NoneType"": 16}",20
+choice_events_2014Q2.xlsx,Sheet1,行业三级,3757,428,0,0,291,"{""str"": 3329, ""NoneType"": 428}",21
+choice_events_2014Q2.xlsx,Sheet1,行业四级,3757,1763,0,0,454,"{""str"": 1994, ""NoneType"": 1763}",17
+choice_events_2014Q3.xlsx,Sheet1,序号,4736,0,0,0,4736,"{""float"": 4736}",0
+choice_events_2014Q3.xlsx,Sheet1,获投时间,4736,0,0,0,92,"{""str"": 4736}",10
+choice_events_2014Q3.xlsx,Sheet1,公司名称,4736,0,0,0,4663,"{""str"": 4736}",26
+choice_events_2014Q3.xlsx,Sheet1,公司项目简介,4736,760,0,0,3584,"{""str"": 3976, ""NoneType"": 760}",57
+choice_events_2014Q3.xlsx,Sheet1,获投轮次,4736,0,0,0,25,"{""str"": 4736}",7
+choice_events_2014Q3.xlsx,Sheet1,获投金额(元),4736,3002,0,0,678,"{""NoneType"": 3002, ""float"": 1734}",0
+choice_events_2014Q3.xlsx,Sheet1,币种,4736,1785,0,0,3,"{""str"": 2951, ""NoneType"": 1785}",3
+choice_events_2014Q3.xlsx,Sheet1,主题,4736,3485,0,0,340,"{""str"": 1251, ""NoneType"": 3485}",35
+choice_events_2014Q3.xlsx,Sheet1,地区,4736,0,0,0,33,"{""str"": 4736}",3
+choice_events_2014Q3.xlsx,Sheet1,投资方,4736,679,3,0,3177,"{""str"": 4057, ""NoneType"": 679}",214
+choice_events_2014Q3.xlsx,Sheet1,相关新闻标题,4736,4472,0,0,261,"{""NoneType"": 4472, ""str"": 264}",80
+choice_events_2014Q3.xlsx,Sheet1,相关新闻链接,4736,4430,0,0,304,"{""NoneType"": 4430, ""str"": 306}",206
+choice_events_2014Q3.xlsx,Sheet1,创新属性标签,4736,2863,0,0,10,"{""NoneType"": 2863, ""str"": 1873}",35
+choice_events_2014Q3.xlsx,Sheet1,行业一级,4736,19,0,0,18,"{""str"": 4717, ""NoneType"": 19}",16
+choice_events_2014Q3.xlsx,Sheet1,行业二级,4736,21,0,0,86,"{""str"": 4715, ""NoneType"": 21}",20
+choice_events_2014Q3.xlsx,Sheet1,行业三级,4736,569,0,0,316,"{""str"": 4167, ""NoneType"": 569}",21
+choice_events_2014Q3.xlsx,Sheet1,行业四级,4736,2193,0,0,489,"{""NoneType"": 2193, ""str"": 2543}",17
+choice_events_2014Q4.xlsx,Sheet1,序号,5883,0,0,0,5883,"{""float"": 5883}",0
+choice_events_2014Q4.xlsx,Sheet1,获投时间,5883,0,0,0,91,"{""str"": 5883}",10
+choice_events_2014Q4.xlsx,Sheet1,公司名称,5883,0,0,0,5770,"{""str"": 5883}",36
+choice_events_2014Q4.xlsx,Sheet1,公司项目简介,5883,959,0,0,4281,"{""str"": 4924, ""NoneType"": 959}",58
+choice_events_2014Q4.xlsx,Sheet1,获投轮次,5883,0,0,0,26,"{""str"": 5883}",7
+choice_events_2014Q4.xlsx,Sheet1,获投金额(元),5883,3710,0,0,826,"{""NoneType"": 3710, ""float"": 2173}",0
+choice_events_2014Q4.xlsx,Sheet1,币种,5883,2214,0,0,3,"{""str"": 3669, ""NoneType"": 2214}",3
+choice_events_2014Q4.xlsx,Sheet1,主题,5883,4379,0,0,392,"{""NoneType"": 4379, ""str"": 1504}",31
+choice_events_2014Q4.xlsx,Sheet1,地区,5883,0,0,0,33,"{""str"": 5883}",3
+choice_events_2014Q4.xlsx,Sheet1,投资方,5883,880,7,0,3815,"{""str"": 5003, ""NoneType"": 880}",364
+choice_events_2014Q4.xlsx,Sheet1,相关新闻标题,5883,5575,0,0,306,"{""NoneType"": 5575, ""str"": 308}",90
+choice_events_2014Q4.xlsx,Sheet1,相关新闻链接,5883,5517,0,0,355,"{""NoneType"": 5517, ""str"": 366}",355
+choice_events_2014Q4.xlsx,Sheet1,创新属性标签,5883,3688,0,0,10,"{""NoneType"": 3688, ""str"": 2195}",27
+choice_events_2014Q4.xlsx,Sheet1,行业一级,5883,21,0,0,18,"{""str"": 5862, ""NoneType"": 21}",16
+choice_events_2014Q4.xlsx,Sheet1,行业二级,5883,23,0,0,90,"{""str"": 5860, ""NoneType"": 23}",20
+choice_events_2014Q4.xlsx,Sheet1,行业三级,5883,607,0,0,341,"{""str"": 5276, ""NoneType"": 607}",21
+choice_events_2014Q4.xlsx,Sheet1,行业四级,5883,2623,0,0,555,"{""str"": 3260, ""NoneType"": 2623}",17
+choice_events_2015M01.xlsx,Sheet1,序号,2177,0,0,0,2177,"{""float"": 2177}",0
+choice_events_2015M01.xlsx,Sheet1,获投时间,2177,0,0,0,31,"{""str"": 2177}",10
+choice_events_2015M01.xlsx,Sheet1,公司名称,2177,0,0,0,2166,"{""str"": 2177}",21
+choice_events_2015M01.xlsx,Sheet1,公司项目简介,2177,252,0,0,1855,"{""str"": 1925, ""NoneType"": 252}",103
+choice_events_2015M01.xlsx,Sheet1,获投轮次,2177,0,0,0,23,"{""str"": 2177}",7
+choice_events_2015M01.xlsx,Sheet1,获投金额(元),2177,1385,0,0,252,"{""NoneType"": 1385, ""float"": 792}",0
+choice_events_2015M01.xlsx,Sheet1,币种,2177,806,0,0,3,"{""str"": 1371, ""NoneType"": 806}",3
+choice_events_2015M01.xlsx,Sheet1,主题,2177,1502,0,0,243,"{""str"": 675, ""NoneType"": 1502}",32
+choice_events_2015M01.xlsx,Sheet1,地区,2177,0,0,0,34,"{""str"": 2177}",3
+choice_events_2015M01.xlsx,Sheet1,投资方,2177,527,1,0,1396,"{""str"": 1650, ""NoneType"": 527}",216
+choice_events_2015M01.xlsx,Sheet1,相关新闻标题,2177,2005,0,0,172,"{""str"": 172, ""NoneType"": 2005}",54
+choice_events_2015M01.xlsx,Sheet1,相关新闻链接,2177,1984,0,0,193,"{""str"": 193, ""NoneType"": 1984}",196
+choice_events_2015M01.xlsx,Sheet1,创新属性标签,2177,1327,0,0,9,"{""str"": 850, ""NoneType"": 1327}",35
+choice_events_2015M01.xlsx,Sheet1,行业一级,2177,10,0,0,18,"{""str"": 2167, ""NoneType"": 10}",16
+choice_events_2015M01.xlsx,Sheet1,行业二级,2177,13,0,0,80,"{""str"": 2164, ""NoneType"": 13}",20
+choice_events_2015M01.xlsx,Sheet1,行业三级,2177,240,0,0,260,"{""str"": 1937, ""NoneType"": 240}",21
+choice_events_2015M01.xlsx,Sheet1,行业四级,2177,1015,0,0,329,"{""str"": 1162, ""NoneType"": 1015}",15
+choice_events_2015M02_M03.xlsx,Sheet1,序号,3282,0,0,0,3282,"{""float"": 3282}",0
+choice_events_2015M02_M03.xlsx,Sheet1,获投时间,3282,0,0,0,59,"{""str"": 3282}",10
+choice_events_2015M02_M03.xlsx,Sheet1,公司名称,3282,0,0,0,3252,"{""str"": 3282}",40
+choice_events_2015M02_M03.xlsx,Sheet1,公司项目简介,3282,406,0,0,2714,"{""str"": 2876, ""NoneType"": 406}",47
+choice_events_2015M02_M03.xlsx,Sheet1,获投轮次,3282,0,0,0,21,"{""str"": 3282}",6
+choice_events_2015M02_M03.xlsx,Sheet1,获投金额(元),3282,1987,0,0,491,"{""float"": 1295, ""NoneType"": 1987}",0
+choice_events_2015M02_M03.xlsx,Sheet1,币种,3282,1165,0,0,3,"{""str"": 2117, ""NoneType"": 1165}",3
+choice_events_2015M02_M03.xlsx,Sheet1,主题,3282,2341,0,0,288,"{""NoneType"": 2341, ""str"": 941}",151
+choice_events_2015M02_M03.xlsx,Sheet1,地区,3282,0,0,0,33,"{""str"": 3282}",3
+choice_events_2015M02_M03.xlsx,Sheet1,投资方,3282,605,4,0,2209,"{""NoneType"": 605, ""str"": 2677}",274
+choice_events_2015M02_M03.xlsx,Sheet1,相关新闻标题,3282,3027,0,0,252,"{""NoneType"": 3027, ""str"": 255}",58
+choice_events_2015M02_M03.xlsx,Sheet1,相关新闻链接,3282,2985,0,0,294,"{""NoneType"": 2985, ""str"": 297}",249
+choice_events_2015M02_M03.xlsx,Sheet1,创新属性标签,3282,1981,0,0,8,"{""NoneType"": 1981, ""str"": 1301}",27
+choice_events_2015M02_M03.xlsx,Sheet1,行业一级,3282,9,0,0,18,"{""str"": 3273, ""NoneType"": 9}",16
+choice_events_2015M02_M03.xlsx,Sheet1,行业二级,3282,10,0,0,82,"{""str"": 3272, ""NoneType"": 10}",20
+choice_events_2015M02_M03.xlsx,Sheet1,行业三级,3282,359,0,0,281,"{""str"": 2923, ""NoneType"": 359}",21
+choice_events_2015M02_M03.xlsx,Sheet1,行业四级,3282,1489,0,0,376,"{""str"": 1793, ""NoneType"": 1489}",16
+choice_events_2015M10_M11.xlsx,Sheet1,序号,5457,0,0,0,5457,"{""float"": 5457}",0
+choice_events_2015M10_M11.xlsx,Sheet1,获投时间,5457,0,0,0,61,"{""str"": 5457}",10
+choice_events_2015M10_M11.xlsx,Sheet1,公司名称,5457,0,0,0,5379,"{""str"": 5457}",37
+choice_events_2015M10_M11.xlsx,Sheet1,公司项目简介,5457,595,0,0,4484,"{""str"": 4862, ""NoneType"": 595}",38
+choice_events_2015M10_M11.xlsx,Sheet1,获投轮次,5457,0,0,0,24,"{""str"": 5457}",7
+choice_events_2015M10_M11.xlsx,Sheet1,获投金额(元),5457,3652,0,0,639,"{""float"": 1805, ""NoneType"": 3652}",0
+choice_events_2015M10_M11.xlsx,Sheet1,币种,5457,2202,0,0,3,"{""str"": 3255, ""NoneType"": 2202}",3
+choice_events_2015M10_M11.xlsx,Sheet1,主题,5457,3879,0,0,398,"{""NoneType"": 3879, ""str"": 1578}",38
+choice_events_2015M10_M11.xlsx,Sheet1,地区,5457,0,0,0,32,"{""str"": 5457}",3
+choice_events_2015M10_M11.xlsx,Sheet1,投资方,5457,1184,6,0,3589,"{""NoneType"": 1184, ""str"": 4273}",188
+choice_events_2015M10_M11.xlsx,Sheet1,相关新闻标题,5457,4950,0,0,503,"{""NoneType"": 4950, ""str"": 507}",54
+choice_events_2015M10_M11.xlsx,Sheet1,相关新闻链接,5457,4892,0,0,564,"{""NoneType"": 4892, ""str"": 565}",240
+choice_events_2015M10_M11.xlsx,Sheet1,创新属性标签,5457,2998,0,0,10,"{""NoneType"": 2998, ""str"": 2459}",35
+choice_events_2015M10_M11.xlsx,Sheet1,行业一级,5457,13,0,0,18,"{""str"": 5444, ""NoneType"": 13}",16
+choice_events_2015M10_M11.xlsx,Sheet1,行业二级,5457,17,0,0,87,"{""str"": 5440, ""NoneType"": 17}",20
+choice_events_2015M10_M11.xlsx,Sheet1,行业三级,5457,702,0,0,311,"{""str"": 4755, ""NoneType"": 702}",21
+choice_events_2015M10_M11.xlsx,Sheet1,行业四级,5457,2549,0,0,509,"{""str"": 2908, ""NoneType"": 2549}",18
+choice_events_2015M12.xlsx,Sheet1,序号,5181,0,0,0,5181,"{""float"": 5181}",0
+choice_events_2015M12.xlsx,Sheet1,获投时间,5181,0,0,0,31,"{""str"": 5181}",10
+choice_events_2015M12.xlsx,Sheet1,公司名称,5181,0,0,0,5131,"{""str"": 5181}",23
+choice_events_2015M12.xlsx,Sheet1,公司项目简介,5181,803,0,0,4015,"{""str"": 4378, ""NoneType"": 803}",40
+choice_events_2015M12.xlsx,Sheet1,获投轮次,5181,0,0,0,25,"{""str"": 5181}",7
+choice_events_2015M12.xlsx,Sheet1,获投金额(元),5181,3791,0,0,632,"{""NoneType"": 3791, ""float"": 1390}",0
+choice_events_2015M12.xlsx,Sheet1,币种,5181,2293,0,0,3,"{""str"": 2888, ""NoneType"": 2293}",3
+choice_events_2015M12.xlsx,Sheet1,主题,5181,3838,0,0,384,"{""NoneType"": 3838, ""str"": 1343}",151
+choice_events_2015M12.xlsx,Sheet1,地区,5181,0,0,0,32,"{""str"": 5181}",3
+choice_events_2015M12.xlsx,Sheet1,投资方,5181,1095,7,0,3398,"{""str"": 4086, ""NoneType"": 1095}",255
+choice_events_2015M12.xlsx,Sheet1,相关新闻标题,5181,4811,0,0,369,"{""NoneType"": 4811, ""str"": 370}",67
+choice_events_2015M12.xlsx,Sheet1,相关新闻链接,5181,4759,0,0,422,"{""NoneType"": 4759, ""str"": 422}",573
+choice_events_2015M12.xlsx,Sheet1,创新属性标签,5181,2942,0,0,9,"{""str"": 2239, ""NoneType"": 2942}",27
+choice_events_2015M12.xlsx,Sheet1,行业一级,5181,17,0,0,18,"{""str"": 5164, ""NoneType"": 17}",16
+choice_events_2015M12.xlsx,Sheet1,行业二级,5181,20,0,0,86,"{""str"": 5161, ""NoneType"": 20}",20
+choice_events_2015M12.xlsx,Sheet1,行业三级,5181,636,0,0,320,"{""str"": 4545, ""NoneType"": 636}",21
+choice_events_2015M12.xlsx,Sheet1,行业四级,5181,2365,0,0,512,"{""NoneType"": 2365, ""str"": 2816}",16
+choice_events_2015Q2.xlsx,Sheet1,序号,7287,0,0,0,7287,"{""float"": 7287}",0
+choice_events_2015Q2.xlsx,Sheet1,获投时间,7287,0,0,0,91,"{""str"": 7287}",10
+choice_events_2015Q2.xlsx,Sheet1,公司名称,7287,0,0,0,7127,"{""str"": 7287}",38
+choice_events_2015Q2.xlsx,Sheet1,公司项目简介,7287,857,0,0,5850,"{""str"": 6430, ""NoneType"": 857}",63
+choice_events_2015Q2.xlsx,Sheet1,获投轮次,7287,0,0,0,26,"{""str"": 7287}",6
+choice_events_2015Q2.xlsx,Sheet1,获投金额(元),7287,4334,0,0,975,"{""NoneType"": 4334, ""float"": 2953}",0
+choice_events_2015Q2.xlsx,Sheet1,币种,7287,2372,0,0,3,"{""str"": 4915, ""NoneType"": 2372}",3
+choice_events_2015Q2.xlsx,Sheet1,主题,7287,5190,0,0,492,"{""NoneType"": 5190, ""str"": 2097}",31
+choice_events_2015Q2.xlsx,Sheet1,地区,7287,0,0,0,33,"{""str"": 7287}",3
+choice_events_2015Q2.xlsx,Sheet1,投资方,7287,1267,7,0,4760,"{""str"": 6020, ""NoneType"": 1267}",163
+choice_events_2015Q2.xlsx,Sheet1,相关新闻标题,7287,6718,0,0,565,"{""NoneType"": 6718, ""str"": 569}",69
+choice_events_2015Q2.xlsx,Sheet1,相关新闻链接,7287,6625,0,0,658,"{""NoneType"": 6625, ""str"": 662}",746
+choice_events_2015Q2.xlsx,Sheet1,创新属性标签,7287,4224,0,0,10,"{""str"": 3063, ""NoneType"": 4224}",35
+choice_events_2015Q2.xlsx,Sheet1,行业一级,7287,27,0,0,18,"{""str"": 7260, ""NoneType"": 27}",16
+choice_events_2015Q2.xlsx,Sheet1,行业二级,7287,31,0,0,89,"{""str"": 7256, ""NoneType"": 31}",20
+choice_events_2015Q2.xlsx,Sheet1,行业三级,7287,833,0,0,337,"{""str"": 6454, ""NoneType"": 833}",21
+choice_events_2015Q2.xlsx,Sheet1,行业四级,7287,3242,0,0,587,"{""NoneType"": 3242, ""str"": 4045}",17
+choice_events_2015Q3.xlsx,Sheet1,序号,8691,0,0,0,8691,"{""float"": 8691}",0
+choice_events_2015Q3.xlsx,Sheet1,获投时间,8691,0,0,0,92,"{""str"": 8691}",10
+choice_events_2015Q3.xlsx,Sheet1,公司名称,8691,0,0,0,8489,"{""str"": 8691}",49
+choice_events_2015Q3.xlsx,Sheet1,公司项目简介,8691,910,0,0,7083,"{""str"": 7781, ""NoneType"": 910}",57
+choice_events_2015Q3.xlsx,Sheet1,获投轮次,8691,0,0,0,27,"{""str"": 8691}",7
+choice_events_2015Q3.xlsx,Sheet1,获投金额(元),8691,5400,0,0,966,"{""NoneType"": 5400, ""float"": 3291}",0
+choice_events_2015Q3.xlsx,Sheet1,币种,8691,3104,0,0,3,"{""str"": 5587, ""NoneType"": 3104}",3
+choice_events_2015Q3.xlsx,Sheet1,主题,8691,6111,0,0,553,"{""str"": 2580, ""NoneType"": 6111}",33
+choice_events_2015Q3.xlsx,Sheet1,地区,8691,0,0,0,33,"{""str"": 8691}",3
+choice_events_2015Q3.xlsx,Sheet1,投资方,8691,1600,11,0,5671,"{""str"": 7091, ""NoneType"": 1600}",201
+choice_events_2015Q3.xlsx,Sheet1,相关新闻标题,8691,7937,0,0,751,"{""NoneType"": 7937, ""str"": 754}",63
+choice_events_2015Q3.xlsx,Sheet1,相关新闻链接,8691,7818,0,0,870,"{""NoneType"": 7818, ""str"": 873}",500
+choice_events_2015Q3.xlsx,Sheet1,创新属性标签,8691,4814,0,0,10,"{""NoneType"": 4814, ""str"": 3877}",35
+choice_events_2015Q3.xlsx,Sheet1,行业一级,8691,27,0,0,18,"{""str"": 8664, ""NoneType"": 27}",16
+choice_events_2015Q3.xlsx,Sheet1,行业二级,8691,32,0,0,89,"{""str"": 8659, ""NoneType"": 32}",20
+choice_events_2015Q3.xlsx,Sheet1,行业三级,8691,1098,0,0,331,"{""str"": 7593, ""NoneType"": 1098}",21
+choice_events_2015Q3.xlsx,Sheet1,行业四级,8691,4055,0,0,575,"{""str"": 4636, ""NoneType"": 4055}",18
+choice_events_2016M01_M02.xlsx,Sheet1,序号,5495,0,0,0,5495,"{""float"": 5495}",0
+choice_events_2016M01_M02.xlsx,Sheet1,获投时间,5495,0,0,0,58,"{""str"": 5495}",10
+choice_events_2016M01_M02.xlsx,Sheet1,公司名称,5495,0,0,0,5422,"{""str"": 5495}",30
+choice_events_2016M01_M02.xlsx,Sheet1,公司项目简介,5495,646,0,0,4484,"{""str"": 4849, ""NoneType"": 646}",58
+choice_events_2016M01_M02.xlsx,Sheet1,获投轮次,5495,0,0,0,24,"{""str"": 5495}",7
+choice_events_2016M01_M02.xlsx,Sheet1,获投金额(元),5495,3660,0,0,654,"{""float"": 1835, ""NoneType"": 3660}",0
+choice_events_2016M01_M02.xlsx,Sheet1,币种,5495,2041,0,0,3,"{""str"": 3454, ""NoneType"": 2041}",3
+choice_events_2016M01_M02.xlsx,Sheet1,主题,5495,3850,0,0,403,"{""NoneType"": 3850, ""str"": 1645}",31
+choice_events_2016M01_M02.xlsx,Sheet1,地区,5495,0,0,0,33,"{""str"": 5495}",3
+choice_events_2016M01_M02.xlsx,Sheet1,投资方,5495,1044,10,0,3701,"{""str"": 4451, ""NoneType"": 1044}",243
+choice_events_2016M01_M02.xlsx,Sheet1,相关新闻标题,5495,4977,0,0,516,"{""NoneType"": 4977, ""str"": 518}",60
+choice_events_2016M01_M02.xlsx,Sheet1,相关新闻链接,5495,4904,0,0,587,"{""NoneType"": 4904, ""str"": 591}",249
+choice_events_2016M01_M02.xlsx,Sheet1,创新属性标签,5495,3157,0,0,10,"{""str"": 2338, ""NoneType"": 3157}",27
+choice_events_2016M01_M02.xlsx,Sheet1,行业一级,5495,14,0,0,18,"{""str"": 5481, ""NoneType"": 14}",16
+choice_events_2016M01_M02.xlsx,Sheet1,行业二级,5495,16,0,0,88,"{""str"": 5479, ""NoneType"": 16}",20
+choice_events_2016M01_M02.xlsx,Sheet1,行业三级,5495,636,0,0,314,"{""str"": 4859, ""NoneType"": 636}",21
+choice_events_2016M01_M02.xlsx,Sheet1,行业四级,5495,2577,0,0,476,"{""str"": 2918, ""NoneType"": 2577}",17
+choice_events_2016M03.xlsx,Sheet1,序号,4946,0,0,0,4946,"{""float"": 4946}",0
+choice_events_2016M03.xlsx,Sheet1,获投时间,4946,0,0,0,31,"{""str"": 4946}",10
+choice_events_2016M03.xlsx,Sheet1,公司名称,4946,0,0,0,4905,"{""str"": 4946}",48
+choice_events_2016M03.xlsx,Sheet1,公司项目简介,4946,456,0,0,4181,"{""str"": 4490, ""NoneType"": 456}",47
+choice_events_2016M03.xlsx,Sheet1,获投轮次,4946,0,0,0,27,"{""str"": 4946}",7
+choice_events_2016M03.xlsx,Sheet1,获投金额(元),4946,3702,0,0,472,"{""NoneType"": 3702, ""float"": 1244}",0
+choice_events_2016M03.xlsx,Sheet1,币种,4946,1496,0,0,3,"{""str"": 3450, ""NoneType"": 1496}",3
+choice_events_2016M03.xlsx,Sheet1,主题,4946,3575,0,0,385,"{""str"": 1371, ""NoneType"": 3575}",31
+choice_events_2016M03.xlsx,Sheet1,地区,4946,0,0,0,32,"{""str"": 4946}",3
+choice_events_2016M03.xlsx,Sheet1,投资方,4946,760,8,0,3339,"{""str"": 4186, ""NoneType"": 760}",265
+choice_events_2016M03.xlsx,Sheet1,相关新闻标题,4946,4567,0,0,377,"{""NoneType"": 4567, ""str"": 379}",55
+choice_events_2016M03.xlsx,Sheet1,相关新闻链接,4946,4516,0,0,428,"{""NoneType"": 4516, ""str"": 430}",417
+choice_events_2016M03.xlsx,Sheet1,创新属性标签,4946,2669,0,0,11,"{""NoneType"": 2669, ""str"": 2277}",27
+choice_events_2016M03.xlsx,Sheet1,行业一级,4946,17,0,0,18,"{""str"": 4929, ""NoneType"": 17}",16
+choice_events_2016M03.xlsx,Sheet1,行业二级,4946,21,0,0,87,"{""str"": 4925, ""NoneType"": 21}",20
+choice_events_2016M03.xlsx,Sheet1,行业三级,4946,595,0,0,322,"{""str"": 4351, ""NoneType"": 595}",21
+choice_events_2016M03.xlsx,Sheet1,行业四级,4946,2289,0,0,505,"{""str"": 2657, ""NoneType"": 2289}",17
+choice_events_2016M04_M05.xlsx,Sheet1,序号,6698,0,0,0,6698,"{""float"": 6698}",0
+choice_events_2016M04_M05.xlsx,Sheet1,获投时间,6698,0,0,0,61,"{""str"": 6698}",10
+choice_events_2016M04_M05.xlsx,Sheet1,公司名称,6698,0,0,0,6628,"{""str"": 6698}",56
+choice_events_2016M04_M05.xlsx,Sheet1,公司项目简介,6698,803,0,0,5420,"{""str"": 5895, ""NoneType"": 803}",103
+choice_events_2016M04_M05.xlsx,Sheet1,获投轮次,6698,0,0,0,27,"{""str"": 6698}",7
+choice_events_2016M04_M05.xlsx,Sheet1,获投金额(元),6698,4550,0,0,779,"{""NoneType"": 4550, ""float"": 2148}",0
+choice_events_2016M04_M05.xlsx,Sheet1,币种,6698,2777,0,0,3,"{""str"": 3921, ""NoneType"": 2777}",3
+choice_events_2016M04_M05.xlsx,Sheet1,主题,6698,4789,0,0,470,"{""NoneType"": 4789, ""str"": 1909}",31
+choice_events_2016M04_M05.xlsx,Sheet1,地区,6698,0,0,0,33,"{""str"": 6698}",3
+choice_events_2016M04_M05.xlsx,Sheet1,投资方,6698,1496,10,0,4357,"{""str"": 5202, ""NoneType"": 1496}",317
+choice_events_2016M04_M05.xlsx,Sheet1,相关新闻标题,6698,6011,0,0,680,"{""NoneType"": 6011, ""str"": 687}",100
+choice_events_2016M04_M05.xlsx,Sheet1,相关新闻链接,6698,5913,0,0,781,"{""NoneType"": 5913, ""str"": 785}",500
+choice_events_2016M04_M05.xlsx,Sheet1,创新属性标签,6698,3700,0,0,10,"{""NoneType"": 3700, ""str"": 2998}",35
+choice_events_2016M04_M05.xlsx,Sheet1,行业一级,6698,22,0,0,18,"{""str"": 6676, ""NoneType"": 22}",16
+choice_events_2016M04_M05.xlsx,Sheet1,行业二级,6698,25,0,0,87,"{""str"": 6673, ""NoneType"": 25}",20
+choice_events_2016M04_M05.xlsx,Sheet1,行业三级,6698,859,0,0,343,"{""str"": 5839, ""NoneType"": 859}",21
+choice_events_2016M04_M05.xlsx,Sheet1,行业四级,6698,3192,0,0,553,"{""str"": 3506, ""NoneType"": 3192}",17
+choice_events_2016M06.xlsx,Sheet1,序号,3504,0,0,0,3504,"{""float"": 3504}",0
+choice_events_2016M06.xlsx,Sheet1,获投时间,3504,0,0,0,30,"{""str"": 3504}",10
+choice_events_2016M06.xlsx,Sheet1,公司名称,3504,0,0,0,3477,"{""str"": 3504}",22
+choice_events_2016M06.xlsx,Sheet1,公司项目简介,3504,503,0,0,2804,"{""str"": 3001, ""NoneType"": 503}",40
+choice_events_2016M06.xlsx,Sheet1,获投轮次,3504,0,0,0,24,"{""str"": 3504}",6
+choice_events_2016M06.xlsx,Sheet1,获投金额(元),3504,2354,0,0,466,"{""NoneType"": 2354, ""float"": 1150}",0
+choice_events_2016M06.xlsx,Sheet1,币种,3504,1237,0,0,3,"{""str"": 2267, ""NoneType"": 1237}",3
+choice_events_2016M06.xlsx,Sheet1,主题,3504,2510,0,0,301,"{""NoneType"": 2510, ""str"": 994}",26
+choice_events_2016M06.xlsx,Sheet1,地区,3504,0,0,0,33,"{""str"": 3504}",3
+choice_events_2016M06.xlsx,Sheet1,投资方,3504,500,3,0,2573,"{""str"": 3004, ""NoneType"": 500}",483
+choice_events_2016M06.xlsx,Sheet1,相关新闻标题,3504,3107,0,0,395,"{""str"": 397, ""NoneType"": 3107}",55
+choice_events_2016M06.xlsx,Sheet1,相关新闻链接,3504,3067,0,0,437,"{""str"": 437, ""NoneType"": 3067}",298
+choice_events_2016M06.xlsx,Sheet1,创新属性标签,3504,2110,0,0,8,"{""str"": 1394, ""NoneType"": 2110}",27
+choice_events_2016M06.xlsx,Sheet1,行业一级,3504,12,0,0,18,"{""str"": 3492, ""NoneType"": 12}",16
+choice_events_2016M06.xlsx,Sheet1,行业二级,3504,12,0,0,84,"{""str"": 3492, ""NoneType"": 12}",20
+choice_events_2016M06.xlsx,Sheet1,行业三级,3504,353,0,0,291,"{""str"": 3151, ""NoneType"": 353}",21
+choice_events_2016M06.xlsx,Sheet1,行业四级,3504,1622,0,0,425,"{""NoneType"": 1622, ""str"": 1882}",18
+choice_events_2016M10_M11.xlsx,Sheet1,序号,6376,0,0,0,6376,"{""float"": 6376}",0
+choice_events_2016M10_M11.xlsx,Sheet1,获投时间,6376,0,0,0,61,"{""str"": 6376}",10
+choice_events_2016M10_M11.xlsx,Sheet1,公司名称,6376,0,0,0,6293,"{""str"": 6376}",26
+choice_events_2016M10_M11.xlsx,Sheet1,公司项目简介,6376,977,0,0,4893,"{""str"": 5399, ""NoneType"": 977}",57
+choice_events_2016M10_M11.xlsx,Sheet1,获投轮次,6376,0,0,0,26,"{""str"": 6376}",7
+choice_events_2016M10_M11.xlsx,Sheet1,获投金额(元),6376,4347,0,0,862,"{""float"": 2029, ""NoneType"": 4347}",0
+choice_events_2016M10_M11.xlsx,Sheet1,币种,6376,2505,0,0,5,"{""str"": 3871, ""NoneType"": 2505}",4
+choice_events_2016M10_M11.xlsx,Sheet1,主题,6376,4683,0,0,422,"{""str"": 1693, ""NoneType"": 4683}",28
+choice_events_2016M10_M11.xlsx,Sheet1,地区,6376,0,0,0,33,"{""str"": 6376}",3
+choice_events_2016M10_M11.xlsx,Sheet1,投资方,6376,1089,4,0,4276,"{""str"": 5287, ""NoneType"": 1089}",246
+choice_events_2016M10_M11.xlsx,Sheet1,相关新闻标题,6376,5631,0,0,737,"{""str"": 745, ""NoneType"": 5631}",55
+choice_events_2016M10_M11.xlsx,Sheet1,相关新闻链接,6376,5571,0,0,799,"{""str"": 805, ""NoneType"": 5571}",207
+choice_events_2016M10_M11.xlsx,Sheet1,创新属性标签,6376,3744,0,0,9,"{""str"": 2632, ""NoneType"": 3744}",27
+choice_events_2016M10_M11.xlsx,Sheet1,行业一级,6376,22,0,0,18,"{""str"": 6354, ""NoneType"": 22}",16
+choice_events_2016M10_M11.xlsx,Sheet1,行业二级,6376,29,0,0,87,"{""str"": 6347, ""NoneType"": 29}",20
+choice_events_2016M10_M11.xlsx,Sheet1,行业三级,6376,705,0,0,330,"{""str"": 5671, ""NoneType"": 705}",21
+choice_events_2016M10_M11.xlsx,Sheet1,行业四级,6376,2943,0,0,559,"{""str"": 3433, ""NoneType"": 2943}",17
+choice_events_2016M12.xlsx,Sheet1,序号,4854,0,0,0,4854,"{""float"": 4854}",0
+choice_events_2016M12.xlsx,Sheet1,获投时间,4854,0,0,0,31,"{""str"": 4854}",10
+choice_events_2016M12.xlsx,Sheet1,公司名称,4854,0,0,0,4814,"{""str"": 4854}",38
+choice_events_2016M12.xlsx,Sheet1,公司项目简介,4854,838,0,0,3690,"{""str"": 4016, ""NoneType"": 838}",103
+choice_events_2016M12.xlsx,Sheet1,获投轮次,4854,0,0,0,22,"{""str"": 4854}",6
+choice_events_2016M12.xlsx,Sheet1,获投金额(元),4854,3667,0,0,557,"{""float"": 1187, ""NoneType"": 3667}",0
+choice_events_2016M12.xlsx,Sheet1,币种,4854,2188,0,0,4,"{""str"": 2666, ""NoneType"": 2188}",3
+choice_events_2016M12.xlsx,Sheet1,主题,4854,3646,0,0,344,"{""NoneType"": 3646, ""str"": 1208}",70
+choice_events_2016M12.xlsx,Sheet1,地区,4854,0,0,0,33,"{""str"": 4854}",3
+choice_events_2016M12.xlsx,Sheet1,投资方,4854,742,3,0,3549,"{""str"": 4112, ""NoneType"": 742}",286
+choice_events_2016M12.xlsx,Sheet1,相关新闻标题,4854,4284,0,0,568,"{""str"": 570, ""NoneType"": 4284}",64
+choice_events_2016M12.xlsx,Sheet1,相关新闻链接,4854,4243,0,0,609,"{""str"": 611, ""NoneType"": 4243}",478
+choice_events_2016M12.xlsx,Sheet1,创新属性标签,4854,2945,0,0,10,"{""NoneType"": 2945, ""str"": 1909}",27
+choice_events_2016M12.xlsx,Sheet1,行业一级,4854,6,0,0,18,"{""str"": 4848, ""NoneType"": 6}",16
+choice_events_2016M12.xlsx,Sheet1,行业二级,4854,6,0,0,87,"{""str"": 4848, ""NoneType"": 6}",20
+choice_events_2016M12.xlsx,Sheet1,行业三级,4854,563,0,0,316,"{""str"": 4291, ""NoneType"": 563}",21
+choice_events_2016M12.xlsx,Sheet1,行业四级,4854,2293,0,0,475,"{""str"": 2561, ""NoneType"": 2293}",17
+choice_events_2016Q3.xlsx,Sheet1,序号,9943,0,0,0,9943,"{""float"": 9943}",0
+choice_events_2016Q3.xlsx,Sheet1,获投时间,9943,0,0,0,92,"{""str"": 9943}",10
+choice_events_2016Q3.xlsx,Sheet1,公司名称,9943,0,0,0,9791,"{""str"": 9943}",35
+choice_events_2016Q3.xlsx,Sheet1,公司项目简介,9943,1364,0,0,7694,"{""str"": 8579, ""NoneType"": 1364}",75
+choice_events_2016Q3.xlsx,Sheet1,获投轮次,9943,0,0,0,26,"{""str"": 9943}",7
+choice_events_2016Q3.xlsx,Sheet1,获投金额(元),9943,6949,0,1,1126,"{""float"": 2994, ""NoneType"": 6949}",0
+choice_events_2016Q3.xlsx,Sheet1,币种,9943,4236,0,0,5,"{""str"": 5707, ""NoneType"": 4236}",3
+choice_events_2016Q3.xlsx,Sheet1,主题,9943,7151,0,0,572,"{""NoneType"": 7151, ""str"": 2792}",81
+choice_events_2016Q3.xlsx,Sheet1,地区,9943,0,0,0,34,"{""str"": 9943}",3
+choice_events_2016Q3.xlsx,Sheet1,投资方,9943,2101,13,0,6239,"{""NoneType"": 2101, ""str"": 7842}",500
+choice_events_2016Q3.xlsx,Sheet1,相关新闻标题,9943,8815,0,0,1121,"{""NoneType"": 8815, ""str"": 1128}",76
+choice_events_2016Q3.xlsx,Sheet1,相关新闻链接,9943,8689,0,0,1248,"{""str"": 1254, ""NoneType"": 8689}",242
+choice_events_2016Q3.xlsx,Sheet1,创新属性标签,9943,5841,0,0,10,"{""NoneType"": 5841, ""str"": 4102}",35
+choice_events_2016Q3.xlsx,Sheet1,行业一级,9943,38,0,0,18,"{""str"": 9905, ""NoneType"": 38}",16
+choice_events_2016Q3.xlsx,Sheet1,行业二级,9943,46,0,0,89,"{""str"": 9897, ""NoneType"": 46}",20
+choice_events_2016Q3.xlsx,Sheet1,行业三级,9943,1127,0,0,364,"{""str"": 8816, ""NoneType"": 1127}",21
+choice_events_2016Q3.xlsx,Sheet1,行业四级,9943,4655,0,0,619,"{""NoneType"": 4655, ""str"": 5288}",17
+choice_events_2017M10_M11.xlsx,Sheet1,序号,5540,0,0,0,5540,"{""float"": 5540}",0
+choice_events_2017M10_M11.xlsx,Sheet1,获投时间,5540,0,0,0,61,"{""str"": 5540}",10
+choice_events_2017M10_M11.xlsx,Sheet1,公司名称,5540,0,0,0,5469,"{""str"": 5540}",38
+choice_events_2017M10_M11.xlsx,Sheet1,公司项目简介,5540,981,0,0,4137,"{""NoneType"": 981, ""str"": 4559}",75
+choice_events_2017M10_M11.xlsx,Sheet1,获投轮次,5540,0,0,0,26,"{""str"": 5540}",7
+choice_events_2017M10_M11.xlsx,Sheet1,获投金额(元),5540,3832,0,0,810,"{""NoneType"": 3832, ""float"": 1708}",0
+choice_events_2017M10_M11.xlsx,Sheet1,币种,5540,2181,0,0,3,"{""NoneType"": 2181, ""str"": 3359}",3
+choice_events_2017M10_M11.xlsx,Sheet1,主题,5540,4158,0,0,377,"{""NoneType"": 4158, ""str"": 1382}",84
+choice_events_2017M10_M11.xlsx,Sheet1,地区,5540,0,0,0,33,"{""str"": 5540}",3
+choice_events_2017M10_M11.xlsx,Sheet1,投资方,5540,563,7,0,4217,"{""str"": 4977, ""NoneType"": 563}",474
+choice_events_2017M10_M11.xlsx,Sheet1,相关新闻标题,5540,4709,0,0,829,"{""NoneType"": 4709, ""str"": 831}",88
+choice_events_2017M10_M11.xlsx,Sheet1,相关新闻链接,5540,4658,0,0,880,"{""NoneType"": 4658, ""str"": 882}",264
+choice_events_2017M10_M11.xlsx,Sheet1,创新属性标签,5540,3282,0,0,8,"{""NoneType"": 3282, ""str"": 2258}",27
+choice_events_2017M10_M11.xlsx,Sheet1,行业一级,5540,22,0,0,18,"{""str"": 5518, ""NoneType"": 22}",16
+choice_events_2017M10_M11.xlsx,Sheet1,行业二级,5540,29,0,0,85,"{""str"": 5511, ""NoneType"": 29}",20
+choice_events_2017M10_M11.xlsx,Sheet1,行业三级,5540,569,0,0,321,"{""NoneType"": 569, ""str"": 4971}",21
+choice_events_2017M10_M11.xlsx,Sheet1,行业四级,5540,2584,0,0,489,"{""NoneType"": 2584, ""str"": 2956}",18
+choice_events_2017M12.xlsx,Sheet1,序号,4774,0,0,0,4774,"{""float"": 4774}",0
+choice_events_2017M12.xlsx,Sheet1,获投时间,4774,0,0,0,31,"{""str"": 4774}",10
+choice_events_2017M12.xlsx,Sheet1,公司名称,4774,0,0,0,4745,"{""str"": 4774}",28
+choice_events_2017M12.xlsx,Sheet1,公司项目简介,4774,1087,0,0,3352,"{""str"": 3687, ""NoneType"": 1087}",36
+choice_events_2017M12.xlsx,Sheet1,获投轮次,4774,0,0,0,25,"{""str"": 4774}",7
+choice_events_2017M12.xlsx,Sheet1,获投金额(元),4774,3732,0,0,511,"{""float"": 1042, ""NoneType"": 3732}",0
+choice_events_2017M12.xlsx,Sheet1,币种,4774,2296,0,0,5,"{""str"": 2478, ""NoneType"": 2296}",3
+choice_events_2017M12.xlsx,Sheet1,主题,4774,3721,0,0,333,"{""str"": 1053, ""NoneType"": 3721}",27
+choice_events_2017M12.xlsx,Sheet1,地区,4774,0,0,0,32,"{""str"": 4774}",3
+choice_events_2017M12.xlsx,Sheet1,投资方,4774,416,0,0,3745,"{""str"": 4358, ""NoneType"": 416}",359
+choice_events_2017M12.xlsx,Sheet1,相关新闻标题,4774,4239,0,0,533,"{""str"": 535, ""NoneType"": 4239}",96
+choice_events_2017M12.xlsx,Sheet1,相关新闻链接,4774,4208,0,0,564,"{""str"": 566, ""NoneType"": 4208}",241
+choice_events_2017M12.xlsx,Sheet1,创新属性标签,4774,3003,0,0,11,"{""NoneType"": 3003, ""str"": 1771}",35
+choice_events_2017M12.xlsx,Sheet1,行业一级,4774,16,0,0,18,"{""str"": 4758, ""NoneType"": 16}",16
+choice_events_2017M12.xlsx,Sheet1,行业二级,4774,19,0,0,86,"{""str"": 4755, ""NoneType"": 19}",20
+choice_events_2017M12.xlsx,Sheet1,行业三级,4774,478,0,0,328,"{""str"": 4296, ""NoneType"": 478}",21
+choice_events_2017M12.xlsx,Sheet1,行业四级,4774,2168,0,0,473,"{""NoneType"": 2168, ""str"": 2606}",17
+choice_events_2017Q1.xlsx,Sheet1,序号,8649,0,0,0,8649,"{""float"": 8649}",0
+choice_events_2017Q1.xlsx,Sheet1,获投时间,8649,0,0,0,90,"{""str"": 8649}",10
+choice_events_2017Q1.xlsx,Sheet1,公司名称,8649,0,0,0,8507,"{""str"": 8649}",33
+choice_events_2017Q1.xlsx,Sheet1,公司项目简介,8649,1267,0,0,6644,"{""str"": 7382, ""NoneType"": 1267}",50
+choice_events_2017Q1.xlsx,Sheet1,获投轮次,8649,0,0,0,27,"{""str"": 8649}",7
+choice_events_2017Q1.xlsx,Sheet1,获投金额(元),8649,6146,0,0,1098,"{""NoneType"": 6146, ""float"": 2503}",0
+choice_events_2017Q1.xlsx,Sheet1,币种,8649,3475,0,0,3,"{""str"": 5174, ""NoneType"": 3475}",3
+choice_events_2017Q1.xlsx,Sheet1,主题,8649,6388,0,0,509,"{""NoneType"": 6388, ""str"": 2261}",151
+choice_events_2017Q1.xlsx,Sheet1,地区,8649,0,0,0,33,"{""str"": 8649}",3
+choice_events_2017Q1.xlsx,Sheet1,投资方,8649,1554,5,0,5762,"{""str"": 7095, ""NoneType"": 1554}",285
+choice_events_2017Q1.xlsx,Sheet1,相关新闻标题,8649,7545,0,0,1095,"{""NoneType"": 7545, ""str"": 1104}",75
+choice_events_2017Q1.xlsx,Sheet1,相关新闻链接,8649,7460,0,0,1182,"{""NoneType"": 7460, ""str"": 1189}",623
+choice_events_2017Q1.xlsx,Sheet1,创新属性标签,8649,4942,0,0,9,"{""NoneType"": 4942, ""str"": 3707}",35
+choice_events_2017Q1.xlsx,Sheet1,行业一级,8649,32,0,0,18,"{""str"": 8617, ""NoneType"": 32}",16
+choice_events_2017Q1.xlsx,Sheet1,行业二级,8649,44,0,0,89,"{""str"": 8605, ""NoneType"": 44}",20
+choice_events_2017Q1.xlsx,Sheet1,行业三级,8649,995,0,0,356,"{""str"": 7654, ""NoneType"": 995}",21
+choice_events_2017Q1.xlsx,Sheet1,行业四级,8649,4003,0,0,611,"{""NoneType"": 4003, ""str"": 4646}",17
+choice_events_2017Q2.xlsx,Sheet1,序号,9048,0,0,0,9048,"{""float"": 9048}",0
+choice_events_2017Q2.xlsx,Sheet1,获投时间,9048,0,0,0,91,"{""str"": 9048}",10
+choice_events_2017Q2.xlsx,Sheet1,公司名称,9048,0,0,0,8892,"{""str"": 9048}",27
+choice_events_2017Q2.xlsx,Sheet1,公司项目简介,9048,1627,0,0,6587,"{""str"": 7421, ""NoneType"": 1627}",39
+choice_events_2017Q2.xlsx,Sheet1,获投轮次,9048,0,0,0,27,"{""str"": 9048}",7
+choice_events_2017Q2.xlsx,Sheet1,获投金额(元),9048,6357,0,0,1125,"{""NoneType"": 6357, ""float"": 2691}",0
+choice_events_2017Q2.xlsx,Sheet1,币种,9048,3568,0,0,5,"{""str"": 5480, ""NoneType"": 3568}",3
+choice_events_2017Q2.xlsx,Sheet1,主题,9048,6723,0,0,514,"{""str"": 2325, ""NoneType"": 6723}",32
+choice_events_2017Q2.xlsx,Sheet1,地区,9048,0,0,0,32,"{""str"": 9048}",3
+choice_events_2017Q2.xlsx,Sheet1,投资方,9048,1020,12,0,6546,"{""str"": 8028, ""NoneType"": 1020}",296
+choice_events_2017Q2.xlsx,Sheet1,相关新闻标题,9048,7814,0,0,1229,"{""NoneType"": 7814, ""str"": 1234}",69
+choice_events_2017Q2.xlsx,Sheet1,相关新闻链接,9048,7734,0,0,1308,"{""NoneType"": 7734, ""str"": 1314}",302
+choice_events_2017Q2.xlsx,Sheet1,创新属性标签,9048,5433,0,0,10,"{""NoneType"": 5433, ""str"": 3615}",35
+choice_events_2017Q2.xlsx,Sheet1,行业一级,9048,31,0,0,18,"{""str"": 9017, ""NoneType"": 31}",16
+choice_events_2017Q2.xlsx,Sheet1,行业二级,9048,41,0,0,88,"{""str"": 9007, ""NoneType"": 41}",20
+choice_events_2017Q2.xlsx,Sheet1,行业三级,9048,903,0,0,351,"{""str"": 8145, ""NoneType"": 903}",21
+choice_events_2017Q2.xlsx,Sheet1,行业四级,9048,4162,0,0,598,"{""str"": 4886, ""NoneType"": 4162}",17
+choice_events_2017Q3.xlsx,Sheet1,序号,9086,0,0,0,9086,"{""float"": 9086}",0
+choice_events_2017Q3.xlsx,Sheet1,获投时间,9086,0,0,0,92,"{""str"": 9086}",10
+choice_events_2017Q3.xlsx,Sheet1,公司名称,9086,0,0,0,8950,"{""str"": 9086}",40
+choice_events_2017Q3.xlsx,Sheet1,公司项目简介,9086,1527,0,0,6745,"{""str"": 7559, ""NoneType"": 1527}",44
+choice_events_2017Q3.xlsx,Sheet1,获投轮次,9086,0,0,0,28,"{""str"": 9086}",7
+choice_events_2017Q3.xlsx,Sheet1,获投金额(元),9086,6583,0,0,1029,"{""NoneType"": 6583, ""float"": 2503}",0
+choice_events_2017Q3.xlsx,Sheet1,币种,9086,3858,0,0,3,"{""str"": 5228, ""NoneType"": 3858}",3
+choice_events_2017Q3.xlsx,Sheet1,主题,9086,6795,0,0,519,"{""NoneType"": 6795, ""str"": 2291}",142
+choice_events_2017Q3.xlsx,Sheet1,地区,9086,0,0,0,33,"{""str"": 9086}",3
+choice_events_2017Q3.xlsx,Sheet1,投资方,9086,1208,4,0,6483,"{""str"": 7878, ""NoneType"": 1208}",325
+choice_events_2017Q3.xlsx,Sheet1,相关新闻标题,9086,7640,0,0,1430,"{""NoneType"": 7640, ""str"": 1446}",59
+choice_events_2017Q3.xlsx,Sheet1,相关新闻链接,9086,7543,0,0,1527,"{""NoneType"": 7543, ""str"": 1543}",621
+choice_events_2017Q3.xlsx,Sheet1,创新属性标签,9086,5313,0,0,10,"{""NoneType"": 5313, ""str"": 3773}",35
+choice_events_2017Q3.xlsx,Sheet1,行业一级,9086,33,0,0,18,"{""str"": 9053, ""NoneType"": 33}",16
+choice_events_2017Q3.xlsx,Sheet1,行业二级,9086,39,0,0,88,"{""str"": 9047, ""NoneType"": 39}",20
+choice_events_2017Q3.xlsx,Sheet1,行业三级,9086,964,0,0,356,"{""str"": 8122, ""NoneType"": 964}",21
+choice_events_2017Q3.xlsx,Sheet1,行业四级,9086,4224,0,0,593,"{""str"": 4862, ""NoneType"": 4224}",17
+choice_events_2018Q1.xlsx,Sheet1,序号,8433,0,0,0,8433,"{""float"": 8433}",0
+choice_events_2018Q1.xlsx,Sheet1,获投时间,8433,0,0,0,88,"{""str"": 8433}",10
+choice_events_2018Q1.xlsx,Sheet1,公司名称,8433,0,0,0,8319,"{""str"": 8433}",30
+choice_events_2018Q1.xlsx,Sheet1,公司项目简介,8433,1585,0,0,6116,"{""str"": 6848, ""NoneType"": 1585}",75
+choice_events_2018Q1.xlsx,Sheet1,获投轮次,8433,0,0,0,27,"{""str"": 8433}",7
+choice_events_2018Q1.xlsx,Sheet1,获投金额(元),8433,6208,0,0,867,"{""NoneType"": 6208, ""float"": 2225}",0
+choice_events_2018Q1.xlsx,Sheet1,币种,8433,3438,0,0,4,"{""str"": 4995, ""NoneType"": 3438}",3
+choice_events_2018Q1.xlsx,Sheet1,主题,8433,6201,0,0,503,"{""NoneType"": 6201, ""str"": 2232}",113
+choice_events_2018Q1.xlsx,Sheet1,地区,8433,0,0,0,32,"{""str"": 8433}",3
+choice_events_2018Q1.xlsx,Sheet1,投资方,8433,710,5,0,6232,"{""str"": 7723, ""NoneType"": 710}",297
+choice_events_2018Q1.xlsx,Sheet1,相关新闻标题,8433,6905,0,0,1520,"{""NoneType"": 6905, ""str"": 1528}",118
+choice_events_2018Q1.xlsx,Sheet1,相关新闻链接,8433,6836,0,0,1588,"{""NoneType"": 6836, ""str"": 1597}",302
+choice_events_2018Q1.xlsx,Sheet1,创新属性标签,8433,4988,0,0,11,"{""str"": 3445, ""NoneType"": 4988}",35
+choice_events_2018Q1.xlsx,Sheet1,行业一级,8433,28,0,0,18,"{""str"": 8405, ""NoneType"": 28}",16
+choice_events_2018Q1.xlsx,Sheet1,行业二级,8433,39,0,0,89,"{""str"": 8394, ""NoneType"": 39}",20
+choice_events_2018Q1.xlsx,Sheet1,行业三级,8433,793,0,0,355,"{""str"": 7640, ""NoneType"": 793}",21
+choice_events_2018Q1.xlsx,Sheet1,行业四级,8433,3899,0,0,591,"{""str"": 4534, ""NoneType"": 3899}",17
+choice_events_2018Q2.xlsx,Sheet1,序号,8781,0,0,0,8781,"{""float"": 8781}",0
+choice_events_2018Q2.xlsx,Sheet1,获投时间,8781,0,0,0,91,"{""str"": 8781}",10
+choice_events_2018Q2.xlsx,Sheet1,公司名称,8781,0,0,0,8630,"{""str"": 8781}",43
+choice_events_2018Q2.xlsx,Sheet1,公司项目简介,8781,1875,0,0,6046,"{""str"": 6906, ""NoneType"": 1875}",348
+choice_events_2018Q2.xlsx,Sheet1,获投轮次,8781,0,0,0,28,"{""str"": 8781}",7
+choice_events_2018Q2.xlsx,Sheet1,获投金额(元),8781,6403,0,1,881,"{""NoneType"": 6403, ""float"": 2378}",0
+choice_events_2018Q2.xlsx,Sheet1,币种,8781,3768,0,0,3,"{""str"": 5013, ""NoneType"": 3768}",3
+choice_events_2018Q2.xlsx,Sheet1,主题,8781,6547,0,0,519,"{""NoneType"": 6547, ""str"": 2234}",81
+choice_events_2018Q2.xlsx,Sheet1,地区,8781,0,0,0,33,"{""str"": 8781}",3
+choice_events_2018Q2.xlsx,Sheet1,投资方,8781,616,0,0,6689,"{""str"": 8165, ""NoneType"": 616}",292
+choice_events_2018Q2.xlsx,Sheet1,相关新闻标题,8781,7102,0,0,1663,"{""NoneType"": 7102, ""str"": 1679}",100
+choice_events_2018Q2.xlsx,Sheet1,相关新闻链接,8781,7016,0,0,1746,"{""NoneType"": 7016, ""str"": 1765}",302
+choice_events_2018Q2.xlsx,Sheet1,创新属性标签,8781,5368,0,0,9,"{""str"": 3413, ""NoneType"": 5368}",27
+choice_events_2018Q2.xlsx,Sheet1,行业一级,8781,37,0,0,18,"{""str"": 8744, ""NoneType"": 37}",16
+choice_events_2018Q2.xlsx,Sheet1,行业二级,8781,40,0,0,88,"{""str"": 8741, ""NoneType"": 40}",20
+choice_events_2018Q2.xlsx,Sheet1,行业三级,8781,847,0,0,351,"{""str"": 7934, ""NoneType"": 847}",21
+choice_events_2018Q2.xlsx,Sheet1,行业四级,8781,4110,0,0,567,"{""str"": 4671, ""NoneType"": 4110}",17
+choice_events_2018Q3.xlsx,Sheet1,序号,8288,0,0,0,8288,"{""float"": 8288}",0
+choice_events_2018Q3.xlsx,Sheet1,获投时间,8288,0,0,0,92,"{""str"": 8288}",10
+choice_events_2018Q3.xlsx,Sheet1,公司名称,8288,0,0,0,8160,"{""str"": 8288}",48
+choice_events_2018Q3.xlsx,Sheet1,公司项目简介,8288,1577,0,0,5949,"{""str"": 6711, ""NoneType"": 1577}",58
+choice_events_2018Q3.xlsx,Sheet1,获投轮次,8288,0,0,0,26,"{""str"": 8288}",7
+choice_events_2018Q3.xlsx,Sheet1,获投金额(元),8288,6257,0,0,745,"{""float"": 2031, ""NoneType"": 6257}",0
+choice_events_2018Q3.xlsx,Sheet1,币种,8288,3877,0,0,4,"{""str"": 4411, ""NoneType"": 3877}",3
+choice_events_2018Q3.xlsx,Sheet1,主题,8288,6127,0,0,491,"{""NoneType"": 6127, ""str"": 2161}",203
+choice_events_2018Q3.xlsx,Sheet1,地区,8288,0,0,0,32,"{""str"": 8288}",3
+choice_events_2018Q3.xlsx,Sheet1,投资方,8288,689,0,0,6303,"{""str"": 7599, ""NoneType"": 689}",339
+choice_events_2018Q3.xlsx,Sheet1,相关新闻标题,8288,6595,0,0,1655,"{""NoneType"": 6595, ""str"": 1693}",68
+choice_events_2018Q3.xlsx,Sheet1,相关新闻链接,8288,6504,0,0,1745,"{""str"": 1784, ""NoneType"": 6504}",302
+choice_events_2018Q3.xlsx,Sheet1,创新属性标签,8288,4875,0,0,10,"{""str"": 3413, ""NoneType"": 4875}",35
+choice_events_2018Q3.xlsx,Sheet1,行业一级,8288,21,0,0,18,"{""str"": 8267, ""NoneType"": 21}",16
+choice_events_2018Q3.xlsx,Sheet1,行业二级,8288,33,0,0,87,"{""str"": 8255, ""NoneType"": 33}",20
+choice_events_2018Q3.xlsx,Sheet1,行业三级,8288,810,0,0,350,"{""str"": 7478, ""NoneType"": 810}",21
+choice_events_2018Q3.xlsx,Sheet1,行业四级,8288,3930,0,0,566,"{""NoneType"": 3930, ""str"": 4358}",17
+choice_events_2018Q4.xlsx,Sheet1,序号,8208,0,0,0,8208,"{""float"": 8208}",0
+choice_events_2018Q4.xlsx,Sheet1,获投时间,8208,0,0,0,92,"{""str"": 8208}",10
+choice_events_2018Q4.xlsx,Sheet1,公司名称,8208,0,0,0,8087,"{""str"": 8208}",37
+choice_events_2018Q4.xlsx,Sheet1,公司项目简介,8208,1700,0,0,5701,"{""str"": 6508, ""NoneType"": 1700}",124
+choice_events_2018Q4.xlsx,Sheet1,获投轮次,8208,0,0,0,26,"{""str"": 8208}",7
+choice_events_2018Q4.xlsx,Sheet1,获投金额(元),8208,6479,0,0,714,"{""NoneType"": 6479, ""float"": 1729}",0
+choice_events_2018Q4.xlsx,Sheet1,币种,8208,3906,0,0,5,"{""str"": 4302, ""NoneType"": 3906}",3
+choice_events_2018Q4.xlsx,Sheet1,主题,8208,6284,0,0,419,"{""NoneType"": 6284, ""str"": 1924}",151
+choice_events_2018Q4.xlsx,Sheet1,地区,8208,0,0,0,33,"{""str"": 8208}",3
+choice_events_2018Q4.xlsx,Sheet1,投资方,8208,620,0,0,6281,"{""str"": 7588, ""NoneType"": 620}",419
+choice_events_2018Q4.xlsx,Sheet1,相关新闻标题,8208,6858,0,0,1317,"{""NoneType"": 6858, ""str"": 1350}",63
+choice_events_2018Q4.xlsx,Sheet1,相关新闻链接,8208,6771,0,0,1402,"{""NoneType"": 6771, ""str"": 1437}",302
+choice_events_2018Q4.xlsx,Sheet1,创新属性标签,8208,5039,0,0,10,"{""str"": 3169, ""NoneType"": 5039}",35
+choice_events_2018Q4.xlsx,Sheet1,行业一级,8208,46,0,0,18,"{""str"": 8162, ""NoneType"": 46}",16
+choice_events_2018Q4.xlsx,Sheet1,行业二级,8208,52,0,0,86,"{""str"": 8156, ""NoneType"": 52}",20
+choice_events_2018Q4.xlsx,Sheet1,行业三级,8208,817,0,0,347,"{""str"": 7391, ""NoneType"": 817}",21
+choice_events_2018Q4.xlsx,Sheet1,行业四级,8208,3715,0,0,601,"{""NoneType"": 3715, ""str"": 4493}",17
+choice_events_2019Q1.xlsx,Sheet1,序号,6150,0,0,0,6150,"{""float"": 6150}",0
+choice_events_2019Q1.xlsx,Sheet1,获投时间,6150,0,0,0,88,"{""str"": 6150}",10
+choice_events_2019Q1.xlsx,Sheet1,公司名称,6150,0,0,0,6064,"{""str"": 6150}",26
+choice_events_2019Q1.xlsx,Sheet1,公司项目简介,6150,1043,0,0,4630,"{""str"": 5107, ""NoneType"": 1043}",107
+choice_events_2019Q1.xlsx,Sheet1,获投轮次,6150,0,0,0,25,"{""str"": 6150}",7
+choice_events_2019Q1.xlsx,Sheet1,获投金额(元),6150,4851,0,0,530,"{""NoneType"": 4851, ""float"": 1299}",0
+choice_events_2019Q1.xlsx,Sheet1,币种,6150,2610,0,0,3,"{""str"": 3540, ""NoneType"": 2610}",3
+choice_events_2019Q1.xlsx,Sheet1,主题,6150,4610,0,0,388,"{""NoneType"": 4610, ""str"": 1540}",84
+choice_events_2019Q1.xlsx,Sheet1,地区,6150,0,0,0,33,"{""str"": 6150}",3
+choice_events_2019Q1.xlsx,Sheet1,投资方,6150,488,0,0,4797,"{""str"": 5662, ""NoneType"": 488}",196
+choice_events_2019Q1.xlsx,Sheet1,相关新闻标题,6150,5072,0,0,1067,"{""NoneType"": 5072, ""str"": 1078}",89
+choice_events_2019Q1.xlsx,Sheet1,相关新闻链接,6150,4998,0,0,1141,"{""NoneType"": 4998, ""str"": 1152}",302
+choice_events_2019Q1.xlsx,Sheet1,创新属性标签,6150,3438,0,0,10,"{""NoneType"": 3438, ""str"": 2712}",35
+choice_events_2019Q1.xlsx,Sheet1,行业一级,6150,32,0,0,18,"{""str"": 6118, ""NoneType"": 32}",16
+choice_events_2019Q1.xlsx,Sheet1,行业二级,6150,39,0,0,88,"{""str"": 6111, ""NoneType"": 39}",20
+choice_events_2019Q1.xlsx,Sheet1,行业三级,6150,652,0,0,322,"{""str"": 5498, ""NoneType"": 652}",21
+choice_events_2019Q1.xlsx,Sheet1,行业四级,6150,2864,0,0,509,"{""str"": 3286, ""NoneType"": 2864}",17
+choice_events_2019Q2.xlsx,Sheet1,序号,6390,0,0,0,6390,"{""float"": 6390}",0
+choice_events_2019Q2.xlsx,Sheet1,获投时间,6390,0,0,0,90,"{""str"": 6390}",10
+choice_events_2019Q2.xlsx,Sheet1,公司名称,6390,0,0,0,6292,"{""str"": 6390}",34
+choice_events_2019Q2.xlsx,Sheet1,公司项目简介,6390,1437,0,0,4420,"{""str"": 4953, ""NoneType"": 1437}",48
+choice_events_2019Q2.xlsx,Sheet1,获投轮次,6390,0,0,0,26,"{""str"": 6390}",7
+choice_events_2019Q2.xlsx,Sheet1,获投金额(元),6390,4996,0,0,603,"{""NoneType"": 4996, ""float"": 1394}",0
+choice_events_2019Q2.xlsx,Sheet1,币种,6390,3609,0,0,3,"{""str"": 2781, ""NoneType"": 3609}",3
+choice_events_2019Q2.xlsx,Sheet1,主题,6390,4851,0,0,384,"{""NoneType"": 4851, ""str"": 1539}",151
+choice_events_2019Q2.xlsx,Sheet1,地区,6390,0,0,0,33,"{""str"": 6390}",3
+choice_events_2019Q2.xlsx,Sheet1,投资方,6390,427,0,0,5067,"{""str"": 5963, ""NoneType"": 427}",152
+choice_events_2019Q2.xlsx,Sheet1,相关新闻标题,6390,5216,0,0,1157,"{""NoneType"": 5216, ""str"": 1174}",62
+choice_events_2019Q2.xlsx,Sheet1,相关新闻链接,6390,5148,0,0,1225,"{""NoneType"": 5148, ""str"": 1242}",302
+choice_events_2019Q2.xlsx,Sheet1,创新属性标签,6390,3795,0,0,9,"{""NoneType"": 3795, ""str"": 2595}",27
+choice_events_2019Q2.xlsx,Sheet1,行业一级,6390,38,0,0,18,"{""str"": 6352, ""NoneType"": 38}",16
+choice_events_2019Q2.xlsx,Sheet1,行业二级,6390,42,0,0,87,"{""str"": 6348, ""NoneType"": 42}",20
+choice_events_2019Q2.xlsx,Sheet1,行业三级,6390,654,0,0,328,"{""str"": 5736, ""NoneType"": 654}",21
+choice_events_2019Q2.xlsx,Sheet1,行业四级,6390,2993,0,0,518,"{""NoneType"": 2993, ""str"": 3397}",17
+choice_events_2019Q3.xlsx,Sheet1,序号,6370,0,0,0,6370,"{""float"": 6370}",0
+choice_events_2019Q3.xlsx,Sheet1,获投时间,6370,0,0,0,90,"{""str"": 6370}",10
+choice_events_2019Q3.xlsx,Sheet1,公司名称,6370,0,0,0,6280,"{""str"": 6370}",25
+choice_events_2019Q3.xlsx,Sheet1,公司项目简介,6370,1230,0,0,4547,"{""str"": 5140, ""NoneType"": 1230}",48
+choice_events_2019Q3.xlsx,Sheet1,获投轮次,6370,0,0,0,26,"{""str"": 6370}",7
+choice_events_2019Q3.xlsx,Sheet1,获投金额(元),6370,4852,0,0,679,"{""NoneType"": 4852, ""float"": 1518}",0
+choice_events_2019Q3.xlsx,Sheet1,币种,6370,3383,0,0,3,"{""str"": 2987, ""NoneType"": 3383}",3
+choice_events_2019Q3.xlsx,Sheet1,主题,6370,4898,0,0,363,"{""NoneType"": 4898, ""str"": 1472}",203
+choice_events_2019Q3.xlsx,Sheet1,地区,6370,0,0,0,34,"{""str"": 6370}",3
+choice_events_2019Q3.xlsx,Sheet1,投资方,6370,493,0,0,4950,"{""str"": 5877, ""NoneType"": 493}",208
+choice_events_2019Q3.xlsx,Sheet1,相关新闻标题,6370,5082,0,0,1267,"{""NoneType"": 5082, ""str"": 1288}",66
+choice_events_2019Q3.xlsx,Sheet1,相关新闻链接,6370,4967,0,0,1382,"{""NoneType"": 4967, ""str"": 1403}",302
+choice_events_2019Q3.xlsx,Sheet1,创新属性标签,6370,3810,0,0,11,"{""NoneType"": 3810, ""str"": 2560}",35
+choice_events_2019Q3.xlsx,Sheet1,行业一级,6370,33,0,0,18,"{""str"": 6337, ""NoneType"": 33}",16
+choice_events_2019Q3.xlsx,Sheet1,行业二级,6370,43,0,0,88,"{""str"": 6327, ""NoneType"": 43}",20
+choice_events_2019Q3.xlsx,Sheet1,行业三级,6370,688,0,0,327,"{""str"": 5682, ""NoneType"": 688}",21
+choice_events_2019Q3.xlsx,Sheet1,行业四级,6370,3022,0,0,516,"{""str"": 3348, ""NoneType"": 3022}",15
+choice_events_2019Q4.xlsx,Sheet1,序号,7187,0,0,0,7187,"{""float"": 7187}",0
+choice_events_2019Q4.xlsx,Sheet1,获投时间,7187,0,0,0,90,"{""str"": 7187}",10
+choice_events_2019Q4.xlsx,Sheet1,公司名称,7187,0,0,0,7070,"{""str"": 7187}",37
+choice_events_2019Q4.xlsx,Sheet1,公司项目简介,7187,1632,0,0,4931,"{""NoneType"": 1632, ""str"": 5555}",57
+choice_events_2019Q4.xlsx,Sheet1,获投轮次,7187,0,0,0,27,"{""str"": 7187}",7
+choice_events_2019Q4.xlsx,Sheet1,获投金额(元),7187,5660,0,0,728,"{""NoneType"": 5660, ""float"": 1527}",0
+choice_events_2019Q4.xlsx,Sheet1,币种,7187,3990,0,0,4,"{""str"": 3197, ""NoneType"": 3990}",3
+choice_events_2019Q4.xlsx,Sheet1,主题,7187,5611,0,0,401,"{""NoneType"": 5611, ""str"": 1576}",32
+choice_events_2019Q4.xlsx,Sheet1,地区,7187,0,0,0,33,"{""str"": 7187}",3
+choice_events_2019Q4.xlsx,Sheet1,投资方,7187,580,0,0,5473,"{""str"": 6607, ""NoneType"": 580}",246
+choice_events_2019Q4.xlsx,Sheet1,相关新闻标题,7187,5963,0,0,1196,"{""NoneType"": 5963, ""str"": 1224}",63
+choice_events_2019Q4.xlsx,Sheet1,相关新闻链接,7187,5892,0,0,1263,"{""NoneType"": 5892, ""str"": 1295}",192
+choice_events_2019Q4.xlsx,Sheet1,创新属性标签,7187,4173,0,0,12,"{""NoneType"": 4173, ""str"": 3014}",35
+choice_events_2019Q4.xlsx,Sheet1,行业一级,7187,40,0,0,18,"{""str"": 7147, ""NoneType"": 40}",16
+choice_events_2019Q4.xlsx,Sheet1,行业二级,7187,49,0,0,88,"{""str"": 7138, ""NoneType"": 49}",20
+choice_events_2019Q4.xlsx,Sheet1,行业三级,7187,801,0,0,336,"{""str"": 6386, ""NoneType"": 801}",21
+choice_events_2019Q4.xlsx,Sheet1,行业四级,7187,3333,0,0,550,"{""NoneType"": 3333, ""str"": 3854}",17
+choice_events_20200401_20200409.xlsx,Sheet1,序号,9162,0,0,0,9162,"{""float"": 9162}",0
+choice_events_20200401_20200409.xlsx,Sheet1,获投时间,9162,0,0,0,9,"{""str"": 9162}",10
+choice_events_20200401_20200409.xlsx,Sheet1,公司名称,9162,0,0,0,9155,"{""str"": 9162}",37
+choice_events_20200401_20200409.xlsx,Sheet1,公司项目简介,9162,3523,0,0,4455,"{""str"": 5639, ""NoneType"": 3523}",39
+choice_events_20200401_20200409.xlsx,Sheet1,获投轮次,9162,0,0,0,20,"{""str"": 9162}",7
+choice_events_20200401_20200409.xlsx,Sheet1,获投金额(元),9162,9024,0,0,79,"{""NoneType"": 9024, ""float"": 138}",0
+choice_events_20200401_20200409.xlsx,Sheet1,币种,9162,8888,0,0,2,"{""str"": 274, ""NoneType"": 8888}",3
+choice_events_20200401_20200409.xlsx,Sheet1,主题,9162,8989,0,0,87,"{""NoneType"": 8989, ""str"": 173}",40
+choice_events_20200401_20200409.xlsx,Sheet1,地区,9162,0,0,0,32,"{""str"": 9162}",3
+choice_events_20200401_20200409.xlsx,Sheet1,投资方,9162,2524,0,0,5879,"{""str"": 6638, ""NoneType"": 2524}",500
+choice_events_20200401_20200409.xlsx,Sheet1,相关新闻标题,9162,9038,0,0,123,"{""str"": 124, ""NoneType"": 9038}",55
+choice_events_20200401_20200409.xlsx,Sheet1,相关新闻链接,9162,9031,0,0,130,"{""str"": 131, ""NoneType"": 9031}",80
+choice_events_20200401_20200409.xlsx,Sheet1,创新属性标签,9162,7137,0,0,10,"{""str"": 2025, ""NoneType"": 7137}",35
+choice_events_20200401_20200409.xlsx,Sheet1,行业一级,9162,4,0,0,18,"{""str"": 9158, ""NoneType"": 4}",16
+choice_events_20200401_20200409.xlsx,Sheet1,行业二级,9162,4,0,0,89,"{""str"": 9158, ""NoneType"": 4}",20
+choice_events_20200401_20200409.xlsx,Sheet1,行业三级,9162,770,0,0,387,"{""str"": 8392, ""NoneType"": 770}",21
+choice_events_20200401_20200409.xlsx,Sheet1,行业四级,9162,3870,0,0,674,"{""str"": 5292, ""NoneType"": 3870}",17
+choice_events_20200410_20200412.xlsx,Sheet1,序号,5400,0,0,0,5400,"{""float"": 5400}",0
+choice_events_20200410_20200412.xlsx,Sheet1,获投时间,5400,0,0,0,3,"{""str"": 5400}",10
+choice_events_20200410_20200412.xlsx,Sheet1,公司名称,5400,0,0,0,5400,"{""str"": 5400}",52
+choice_events_20200410_20200412.xlsx,Sheet1,公司项目简介,5400,2670,0,0,2197,"{""NoneType"": 2670, ""str"": 2730}",25
+choice_events_20200410_20200412.xlsx,Sheet1,获投轮次,5400,0,0,0,12,"{""str"": 5400}",6
+choice_events_20200410_20200412.xlsx,Sheet1,获投金额(元),5400,5374,0,0,17,"{""NoneType"": 5374, ""float"": 26}",0
+choice_events_20200410_20200412.xlsx,Sheet1,币种,5400,5346,0,0,3,"{""NoneType"": 5346, ""str"": 54}",3
+choice_events_20200410_20200412.xlsx,Sheet1,主题,5400,5352,0,0,27,"{""NoneType"": 5352, ""str"": 48}",43
+choice_events_20200410_20200412.xlsx,Sheet1,地区,5400,0,0,0,32,"{""str"": 5400}",3
+choice_events_20200410_20200412.xlsx,Sheet1,投资方,5400,875,0,0,4065,"{""NoneType"": 875, ""str"": 4525}",468
+choice_events_20200410_20200412.xlsx,Sheet1,相关新闻标题,5400,5381,0,0,18,"{""NoneType"": 5381, ""str"": 19}",48
+choice_events_20200410_20200412.xlsx,Sheet1,相关新闻链接,5400,5381,0,0,18,"{""NoneType"": 5381, ""str"": 19}",63
+choice_events_20200410_20200412.xlsx,Sheet1,创新属性标签,5400,4921,0,0,5,"{""NoneType"": 4921, ""str"": 479}",17
+choice_events_20200410_20200412.xlsx,Sheet1,行业一级,5400,1,0,0,18,"{""str"": 5399, ""NoneType"": 1}",16
+choice_events_20200410_20200412.xlsx,Sheet1,行业二级,5400,1,0,0,88,"{""str"": 5399, ""NoneType"": 1}",20
+choice_events_20200410_20200412.xlsx,Sheet1,行业三级,5400,355,0,0,344,"{""str"": 5045, ""NoneType"": 355}",21
+choice_events_20200410_20200412.xlsx,Sheet1,行业四级,5400,2263,0,0,536,"{""NoneType"": 2263, ""str"": 3137}",15
+choice_events_20200413_20200415.xlsx,Sheet1,序号,4601,0,0,0,4601,"{""float"": 4601}",0
+choice_events_20200413_20200415.xlsx,Sheet1,获投时间,4601,0,0,0,3,"{""str"": 4601}",10
+choice_events_20200413_20200415.xlsx,Sheet1,公司名称,4601,0,0,0,4601,"{""str"": 4601}",30
+choice_events_20200413_20200415.xlsx,Sheet1,公司项目简介,4601,2436,0,0,1789,"{""NoneType"": 2436, ""str"": 2165}",24
+choice_events_20200413_20200415.xlsx,Sheet1,获投轮次,4601,0,0,0,19,"{""str"": 4601}",6
+choice_events_20200413_20200415.xlsx,Sheet1,获投金额(元),4601,4557,0,0,31,"{""NoneType"": 4557, ""float"": 44}",0
+choice_events_20200413_20200415.xlsx,Sheet1,币种,4601,4480,0,0,2,"{""NoneType"": 4480, ""str"": 121}",3
+choice_events_20200413_20200415.xlsx,Sheet1,主题,4601,4528,0,0,43,"{""NoneType"": 4528, ""str"": 73}",32
+choice_events_20200413_20200415.xlsx,Sheet1,地区,4601,0,0,0,32,"{""str"": 4601}",3
+choice_events_20200413_20200415.xlsx,Sheet1,投资方,4601,519,0,0,3623,"{""NoneType"": 519, ""str"": 4082}",500
+choice_events_20200413_20200415.xlsx,Sheet1,相关新闻标题,4601,4555,0,0,44,"{""NoneType"": 4555, ""str"": 46}",55
+choice_events_20200413_20200415.xlsx,Sheet1,相关新闻链接,4601,4549,0,0,50,"{""NoneType"": 4549, ""str"": 52}",70
+choice_events_20200413_20200415.xlsx,Sheet1,创新属性标签,4601,4230,0,0,6,"{""NoneType"": 4230, ""str"": 371}",24
+choice_events_20200413_20200415.xlsx,Sheet1,行业一级,4601,3,0,0,18,"{""str"": 4598, ""NoneType"": 3}",16
+choice_events_20200413_20200415.xlsx,Sheet1,行业二级,4601,4,0,0,87,"{""str"": 4597, ""NoneType"": 4}",20
+choice_events_20200413_20200415.xlsx,Sheet1,行业三级,4601,359,0,0,331,"{""str"": 4242, ""NoneType"": 359}",21
+choice_events_20200413_20200415.xlsx,Sheet1,行业四级,4601,1816,0,0,511,"{""str"": 2785, ""NoneType"": 1816}",15
+choice_events_20200416_20200430.xlsx,Sheet1,序号,7025,0,0,0,7025,"{""float"": 7025}",0
+choice_events_20200416_20200430.xlsx,Sheet1,获投时间,7025,0,0,0,15,"{""str"": 7025}",10
+choice_events_20200416_20200430.xlsx,Sheet1,公司名称,7025,0,0,0,7018,"{""str"": 7025}",27
+choice_events_20200416_20200430.xlsx,Sheet1,公司项目简介,7025,4588,0,0,2119,"{""NoneType"": 4588, ""str"": 2437}",36
+choice_events_20200416_20200430.xlsx,Sheet1,获投轮次,7025,0,0,0,23,"{""str"": 7025}",7
+choice_events_20200416_20200430.xlsx,Sheet1,获投金额(元),7025,6743,0,0,164,"{""float"": 282, ""NoneType"": 6743}",0
+choice_events_20200416_20200430.xlsx,Sheet1,币种,7025,6497,0,0,3,"{""str"": 528, ""NoneType"": 6497}",3
+choice_events_20200416_20200430.xlsx,Sheet1,主题,7025,6733,0,0,121,"{""str"": 292, ""NoneType"": 6733}",50
+choice_events_20200416_20200430.xlsx,Sheet1,地区,7025,0,0,0,32,"{""str"": 7025}",3
+choice_events_20200416_20200430.xlsx,Sheet1,投资方,7025,501,0,0,5402,"{""str"": 6524, ""NoneType"": 501}",464
+choice_events_20200416_20200430.xlsx,Sheet1,相关新闻标题,7025,6814,0,0,211,"{""NoneType"": 6814, ""str"": 211}",60
+choice_events_20200416_20200430.xlsx,Sheet1,相关新闻链接,7025,6801,0,0,224,"{""NoneType"": 6801, ""str"": 224}",208
+choice_events_20200416_20200430.xlsx,Sheet1,创新属性标签,7025,6309,0,0,7,"{""NoneType"": 6309, ""str"": 716}",27
+choice_events_20200416_20200430.xlsx,Sheet1,行业一级,7025,4,0,0,18,"{""str"": 7021, ""NoneType"": 4}",16
+choice_events_20200416_20200430.xlsx,Sheet1,行业二级,7025,6,0,0,87,"{""str"": 7019, ""NoneType"": 6}",20
+choice_events_20200416_20200430.xlsx,Sheet1,行业三级,7025,540,0,0,333,"{""str"": 6485, ""NoneType"": 540}",21
+choice_events_20200416_20200430.xlsx,Sheet1,行业四级,7025,2605,0,0,535,"{""NoneType"": 2605, ""str"": 4420}",17
+choice_events_2020M05_M06.xlsx,Sheet1,序号,4178,0,0,0,4178,"{""float"": 4178}",0
+choice_events_2020M05_M06.xlsx,Sheet1,获投时间,4178,0,0,0,60,"{""str"": 4178}",10
+choice_events_2020M05_M06.xlsx,Sheet1,公司名称,4178,0,0,0,4134,"{""str"": 4178}",31
+choice_events_2020M05_M06.xlsx,Sheet1,公司项目简介,4178,1092,0,0,2800,"{""str"": 3086, ""NoneType"": 1092}",78
+choice_events_2020M05_M06.xlsx,Sheet1,获投轮次,4178,0,0,0,26,"{""str"": 4178}",7
+choice_events_2020M05_M06.xlsx,Sheet1,获投金额(元),4178,3355,0,0,400,"{""NoneType"": 3355, ""float"": 823}",0
+choice_events_2020M05_M06.xlsx,Sheet1,币种,4178,2452,0,0,4,"{""str"": 1726, ""NoneType"": 2452}",3
+choice_events_2020M05_M06.xlsx,Sheet1,主题,4178,3173,0,0,282,"{""NoneType"": 3173, ""str"": 1005}",32
+choice_events_2020M05_M06.xlsx,Sheet1,地区,4178,0,0,0,33,"{""str"": 4178}",3
+choice_events_2020M05_M06.xlsx,Sheet1,投资方,4178,276,0,0,3379,"{""str"": 3902, ""NoneType"": 276}",500
+choice_events_2020M05_M06.xlsx,Sheet1,相关新闻标题,4178,3459,0,0,705,"{""NoneType"": 3459, ""str"": 719}",95
+choice_events_2020M05_M06.xlsx,Sheet1,相关新闻链接,4178,3410,0,0,754,"{""NoneType"": 3410, ""str"": 768}",208
+choice_events_2020M05_M06.xlsx,Sheet1,创新属性标签,4178,2471,0,0,10,"{""str"": 1707, ""NoneType"": 2471}",35
+choice_events_2020M05_M06.xlsx,Sheet1,行业一级,4178,19,0,0,18,"{""str"": 4159, ""NoneType"": 19}",16
+choice_events_2020M05_M06.xlsx,Sheet1,行业二级,4178,25,0,0,83,"{""str"": 4153, ""NoneType"": 25}",20
+choice_events_2020M05_M06.xlsx,Sheet1,行业三级,4178,469,0,0,282,"{""str"": 3709, ""NoneType"": 469}",21
+choice_events_2020M05_M06.xlsx,Sheet1,行业四级,4178,1878,0,0,461,"{""str"": 2300, ""NoneType"": 1878}",18
+choice_events_2020Q1.xlsx,Sheet1,序号,4118,0,0,0,4118,"{""float"": 4118}",0
+choice_events_2020Q1.xlsx,Sheet1,获投时间,4118,0,0,0,88,"{""str"": 4118}",10
+choice_events_2020Q1.xlsx,Sheet1,公司名称,4118,0,0,0,4062,"{""str"": 4118}",35
+choice_events_2020Q1.xlsx,Sheet1,公司项目简介,4118,748,0,0,3134,"{""NoneType"": 748, ""str"": 3370}",39
+choice_events_2020Q1.xlsx,Sheet1,获投轮次,4118,0,0,0,28,"{""str"": 4118}",7
+choice_events_2020Q1.xlsx,Sheet1,获投金额(元),4118,3124,0,0,434,"{""NoneType"": 3124, ""float"": 994}",0
+choice_events_2020Q1.xlsx,Sheet1,币种,4118,2097,0,0,4,"{""NoneType"": 2097, ""str"": 2021}",3
+choice_events_2020Q1.xlsx,Sheet1,主题,4118,3131,0,0,287,"{""NoneType"": 3131, ""str"": 987}",28
+choice_events_2020Q1.xlsx,Sheet1,地区,4118,0,0,0,33,"{""str"": 4118}",3
+choice_events_2020Q1.xlsx,Sheet1,投资方,4118,321,0,0,3269,"{""str"": 3797, ""NoneType"": 321}",444
+choice_events_2020Q1.xlsx,Sheet1,相关新闻标题,4118,3196,0,0,894,"{""NoneType"": 3196, ""str"": 922}",59
+choice_events_2020Q1.xlsx,Sheet1,相关新闻链接,4118,3142,0,0,946,"{""NoneType"": 3142, ""str"": 976}",192
+choice_events_2020Q1.xlsx,Sheet1,创新属性标签,4118,2187,0,0,7,"{""NoneType"": 2187, ""str"": 1931}",27
+choice_events_2020Q1.xlsx,Sheet1,行业一级,4118,23,0,0,18,"{""str"": 4095, ""NoneType"": 23}",16
+choice_events_2020Q1.xlsx,Sheet1,行业二级,4118,28,0,0,87,"{""str"": 4090, ""NoneType"": 28}",20
+choice_events_2020Q1.xlsx,Sheet1,行业三级,4118,412,0,0,305,"{""str"": 3706, ""NoneType"": 412}",21
+choice_events_2020Q1.xlsx,Sheet1,行业四级,4118,1965,0,0,440,"{""str"": 2153, ""NoneType"": 1965}",17
+choice_events_2020Q3.xlsx,Sheet1,序号,7488,0,0,0,7488,"{""float"": 7488}",0
+choice_events_2020Q3.xlsx,Sheet1,获投时间,7488,0,0,0,92,"{""str"": 7488}",10
+choice_events_2020Q3.xlsx,Sheet1,公司名称,7488,0,0,0,7323,"{""str"": 7488}",38
+choice_events_2020Q3.xlsx,Sheet1,公司项目简介,7488,1739,0,0,5047,"{""str"": 5749, ""NoneType"": 1739}",40
+choice_events_2020Q3.xlsx,Sheet1,获投轮次,7488,0,0,0,28,"{""str"": 7488}",7
+choice_events_2020Q3.xlsx,Sheet1,获投金额(元),7488,5905,0,0,755,"{""NoneType"": 5905, ""float"": 1583}",0
+choice_events_2020Q3.xlsx,Sheet1,币种,7488,4516,0,0,4,"{""str"": 2972, ""NoneType"": 4516}",3
+choice_events_2020Q3.xlsx,Sheet1,主题,7488,5895,0,0,368,"{""str"": 1593, ""NoneType"": 5895}",84
+choice_events_2020Q3.xlsx,Sheet1,地区,7488,0,0,0,32,"{""str"": 7488}",3
+choice_events_2020Q3.xlsx,Sheet1,投资方,7488,642,0,0,5689,"{""str"": 6846, ""NoneType"": 642}",385
+choice_events_2020Q3.xlsx,Sheet1,相关新闻标题,7488,6167,0,0,1312,"{""NoneType"": 6167, ""str"": 1321}",119
+choice_events_2020Q3.xlsx,Sheet1,相关新闻链接,7488,6066,0,0,1413,"{""NoneType"": 6066, ""str"": 1422}",222
+choice_events_2020Q3.xlsx,Sheet1,创新属性标签,7488,4267,0,0,12,"{""str"": 3221, ""NoneType"": 4267}",35
+choice_events_2020Q3.xlsx,Sheet1,行业一级,7488,36,0,0,18,"{""str"": 7452, ""NoneType"": 36}",16
+choice_events_2020Q3.xlsx,Sheet1,行业二级,7488,46,0,0,90,"{""str"": 7442, ""NoneType"": 46}",20
+choice_events_2020Q3.xlsx,Sheet1,行业三级,7488,799,0,0,333,"{""str"": 6689, ""NoneType"": 799}",21
+choice_events_2020Q3.xlsx,Sheet1,行业四级,7488,3461,0,0,564,"{""str"": 4027, ""NoneType"": 3461}",18
+choice_events_2020Q4.xlsx,Sheet1,序号,9268,0,0,0,9268,"{""float"": 9268}",0
+choice_events_2020Q4.xlsx,Sheet1,获投时间,9268,0,0,0,90,"{""str"": 9268}",10
+choice_events_2020Q4.xlsx,Sheet1,公司名称,9268,0,0,0,9052,"{""str"": 9268}",40
+choice_events_2020Q4.xlsx,Sheet1,公司项目简介,9268,1977,0,0,6164,"{""NoneType"": 1977, ""str"": 7291}",32
+choice_events_2020Q4.xlsx,Sheet1,获投轮次,9268,0,0,0,29,"{""str"": 9268}",7
+choice_events_2020Q4.xlsx,Sheet1,获投金额(元),9268,7282,0,0,881,"{""NoneType"": 7282, ""float"": 1986}",0
+choice_events_2020Q4.xlsx,Sheet1,币种,9268,5282,0,0,5,"{""str"": 3986, ""NoneType"": 5282}",3
+choice_events_2020Q4.xlsx,Sheet1,主题,9268,7328,0,0,391,"{""str"": 1940, ""NoneType"": 7328}",81
+choice_events_2020Q4.xlsx,Sheet1,地区,9268,0,0,0,32,"{""str"": 9268}",3
+choice_events_2020Q4.xlsx,Sheet1,投资方,9268,592,1,0,7137,"{""str"": 8676, ""NoneType"": 592}",373
+choice_events_2020Q4.xlsx,Sheet1,相关新闻标题,9268,7562,0,0,1676,"{""NoneType"": 7562, ""str"": 1706}",75
+choice_events_2020Q4.xlsx,Sheet1,相关新闻链接,9268,7426,0,0,1808,"{""NoneType"": 7426, ""str"": 1842}",542
+choice_events_2020Q4.xlsx,Sheet1,创新属性标签,9268,5254,0,0,12,"{""NoneType"": 5254, ""str"": 4014}",35
+choice_events_2020Q4.xlsx,Sheet1,行业一级,9268,39,0,0,18,"{""str"": 9229, ""NoneType"": 39}",16
+choice_events_2020Q4.xlsx,Sheet1,行业二级,9268,51,0,0,88,"{""str"": 9217, ""NoneType"": 51}",20
+choice_events_2020Q4.xlsx,Sheet1,行业三级,9268,960,0,0,352,"{""str"": 8308, ""NoneType"": 960}",21
+choice_events_2020Q4.xlsx,Sheet1,行业四级,9268,4100,0,0,613,"{""str"": 5168, ""NoneType"": 4100}",17
+choice_events_2021Q1.xlsx,Sheet1,序号,7433,0,0,0,7433,"{""float"": 7433}",0
+choice_events_2021Q1.xlsx,Sheet1,获投时间,7433,0,0,0,88,"{""str"": 7433}",10
+choice_events_2021Q1.xlsx,Sheet1,公司名称,7433,0,0,0,7278,"{""str"": 7433}",28
+choice_events_2021Q1.xlsx,Sheet1,公司项目简介,7433,1380,0,0,5211,"{""str"": 6053, ""NoneType"": 1380}",348
+choice_events_2021Q1.xlsx,Sheet1,获投轮次,7433,0,0,0,26,"{""str"": 7433}",7
+choice_events_2021Q1.xlsx,Sheet1,获投金额(元),7433,5741,0,0,610,"{""NoneType"": 5741, ""float"": 1692}",0
+choice_events_2021Q1.xlsx,Sheet1,币种,7433,4464,0,0,5,"{""str"": 2969, ""NoneType"": 4464}",4
+choice_events_2021Q1.xlsx,Sheet1,主题,7433,5770,0,0,346,"{""str"": 1663, ""NoneType"": 5770}",151
+choice_events_2021Q1.xlsx,Sheet1,地区,7433,0,0,0,33,"{""str"": 7433}",3
+choice_events_2021Q1.xlsx,Sheet1,投资方,7433,529,0,0,5792,"{""NoneType"": 529, ""str"": 6904}",409
+choice_events_2021Q1.xlsx,Sheet1,相关新闻标题,7433,5774,0,0,1632,"{""str"": 1659, ""NoneType"": 5774}",60
+choice_events_2021Q1.xlsx,Sheet1,相关新闻链接,7433,5704,0,0,1699,"{""str"": 1729, ""NoneType"": 5704}",353
+choice_events_2021Q1.xlsx,Sheet1,创新属性标签,7433,4128,0,0,11,"{""NoneType"": 4128, ""str"": 3305}",35
+choice_events_2021Q1.xlsx,Sheet1,行业一级,7433,36,0,0,18,"{""str"": 7397, ""NoneType"": 36}",16
+choice_events_2021Q1.xlsx,Sheet1,行业二级,7433,45,0,0,86,"{""str"": 7388, ""NoneType"": 45}",20
+choice_events_2021Q1.xlsx,Sheet1,行业三级,7433,716,0,0,324,"{""str"": 6717, ""NoneType"": 716}",21
+choice_events_2021Q1.xlsx,Sheet1,行业四级,7433,3333,0,0,533,"{""str"": 4100, ""NoneType"": 3333}",17
+choice_events_2021Q2.xlsx,Sheet1,序号,7599,0,0,0,7599,"{""float"": 7599}",0
+choice_events_2021Q2.xlsx,Sheet1,获投时间,7599,0,0,0,91,"{""str"": 7599}",10
+choice_events_2021Q2.xlsx,Sheet1,公司名称,7599,0,0,0,7416,"{""str"": 7599}",46
+choice_events_2021Q2.xlsx,Sheet1,公司项目简介,7599,1566,0,0,5076,"{""str"": 6033, ""NoneType"": 1566}",58
+choice_events_2021Q2.xlsx,Sheet1,获投轮次,7599,0,0,0,27,"{""str"": 7599}",7
+choice_events_2021Q2.xlsx,Sheet1,获投金额(元),7599,5898,0,0,561,"{""NoneType"": 5898, ""float"": 1701}",0
+choice_events_2021Q2.xlsx,Sheet1,币种,7599,4612,0,0,4,"{""NoneType"": 4612, ""str"": 2987}",3
+choice_events_2021Q2.xlsx,Sheet1,主题,7599,5902,0,0,348,"{""str"": 1697, ""NoneType"": 5902}",122
+choice_events_2021Q2.xlsx,Sheet1,地区,7599,0,0,0,33,"{""str"": 7599}",3
+choice_events_2021Q2.xlsx,Sheet1,投资方,7599,550,0,0,5765,"{""str"": 7049, ""NoneType"": 550}",263
+choice_events_2021Q2.xlsx,Sheet1,相关新闻标题,7599,5906,0,0,1655,"{""NoneType"": 5906, ""str"": 1693}",79
+choice_events_2021Q2.xlsx,Sheet1,相关新闻链接,7599,5820,0,0,1737,"{""NoneType"": 5820, ""str"": 1779}",209
+choice_events_2021Q2.xlsx,Sheet1,创新属性标签,7599,4448,0,0,11,"{""NoneType"": 4448, ""str"": 3151}",35
+choice_events_2021Q2.xlsx,Sheet1,行业一级,7599,27,0,0,18,"{""str"": 7572, ""NoneType"": 27}",16
+choice_events_2021Q2.xlsx,Sheet1,行业二级,7599,33,0,0,88,"{""str"": 7566, ""NoneType"": 33}",20
+choice_events_2021Q2.xlsx,Sheet1,行业三级,7599,811,0,0,329,"{""str"": 6788, ""NoneType"": 811}",21
+choice_events_2021Q2.xlsx,Sheet1,行业四级,7599,3586,0,0,529,"{""str"": 4013, ""NoneType"": 3586}",17
+choice_events_2021Q3.xlsx,Sheet1,序号,9209,0,0,0,9209,"{""float"": 9209}",0
+choice_events_2021Q3.xlsx,Sheet1,获投时间,9209,0,0,0,92,"{""str"": 9209}",10
+choice_events_2021Q3.xlsx,Sheet1,公司名称,9209,0,0,0,9052,"{""str"": 9209}",52
+choice_events_2021Q3.xlsx,Sheet1,公司项目简介,9209,2258,0,0,5820,"{""str"": 6951, ""NoneType"": 2258}",39
+choice_events_2021Q3.xlsx,Sheet1,获投轮次,9209,0,0,0,25,"{""str"": 9209}",7
+choice_events_2021Q3.xlsx,Sheet1,获投金额(元),9209,7242,0,0,543,"{""NoneType"": 7242, ""float"": 1967}",0
+choice_events_2021Q3.xlsx,Sheet1,币种,9209,5858,0,0,6,"{""str"": 3351, ""NoneType"": 5858}",3
+choice_events_2021Q3.xlsx,Sheet1,主题,9209,7441,0,0,358,"{""NoneType"": 7441, ""str"": 1768}",203
+choice_events_2021Q3.xlsx,Sheet1,地区,9209,0,0,0,34,"{""str"": 9209}",3
+choice_events_2021Q3.xlsx,Sheet1,投资方,9209,574,0,0,6997,"{""NoneType"": 574, ""str"": 8635}",401
+choice_events_2021Q3.xlsx,Sheet1,相关新闻标题,9209,7077,0,0,2109,"{""NoneType"": 7077, ""str"": 2132}",65
+choice_events_2021Q3.xlsx,Sheet1,相关新闻链接,9209,6972,0,0,2210,"{""NoneType"": 6972, ""str"": 2237}",352
+choice_events_2021Q3.xlsx,Sheet1,创新属性标签,9209,5635,0,0,11,"{""str"": 3574, ""NoneType"": 5635}",35
+choice_events_2021Q3.xlsx,Sheet1,行业一级,9209,39,0,0,18,"{""str"": 9170, ""NoneType"": 39}",16
+choice_events_2021Q3.xlsx,Sheet1,行业二级,9209,51,0,0,88,"{""str"": 9158, ""NoneType"": 51}",20
+choice_events_2021Q3.xlsx,Sheet1,行业三级,9209,842,0,0,349,"{""str"": 8367, ""NoneType"": 842}",21
+choice_events_2021Q3.xlsx,Sheet1,行业四级,9209,3963,0,0,584,"{""str"": 5246, ""NoneType"": 3963}",17
+choice_events_2021Q4.xlsx,Sheet1,序号,9103,0,0,0,9103,"{""float"": 9103}",0
+choice_events_2021Q4.xlsx,Sheet1,获投时间,9103,0,0,0,92,"{""str"": 9103}",10
+choice_events_2021Q4.xlsx,Sheet1,公司名称,9103,0,0,0,8809,"{""str"": 9103}",52
+choice_events_2021Q4.xlsx,Sheet1,公司项目简介,9103,1438,0,0,6469,"{""str"": 7665, ""NoneType"": 1438}",50
+choice_events_2021Q4.xlsx,Sheet1,获投轮次,9103,0,0,0,27,"{""str"": 9103}",7
+choice_events_2021Q4.xlsx,Sheet1,获投金额(元),9103,6926,0,0,739,"{""NoneType"": 6926, ""float"": 2177}",0
+choice_events_2021Q4.xlsx,Sheet1,币种,9103,5199,0,0,5,"{""str"": 3904, ""NoneType"": 5199}",3
+choice_events_2021Q4.xlsx,Sheet1,主题,9103,7376,0,0,363,"{""NoneType"": 7376, ""str"": 1727}",203
+choice_events_2021Q4.xlsx,Sheet1,地区,9103,0,0,0,32,"{""str"": 9103}",3
+choice_events_2021Q4.xlsx,Sheet1,投资方,9103,662,0,0,6949,"{""str"": 8441, ""NoneType"": 662}",396
+choice_events_2021Q4.xlsx,Sheet1,相关新闻标题,9103,6819,0,0,2256,"{""NoneType"": 6819, ""str"": 2284}",71
+choice_events_2021Q4.xlsx,Sheet1,相关新闻链接,9103,6671,0,0,2394,"{""NoneType"": 6671, ""str"": 2432}",320
+choice_events_2021Q4.xlsx,Sheet1,创新属性标签,9103,4990,0,0,10,"{""str"": 4113, ""NoneType"": 4990}",27
+choice_events_2021Q4.xlsx,Sheet1,行业一级,9103,37,0,0,18,"{""str"": 9066, ""NoneType"": 37}",16
+choice_events_2021Q4.xlsx,Sheet1,行业二级,9103,49,0,0,89,"{""str"": 9054, ""NoneType"": 49}",20
+choice_events_2021Q4.xlsx,Sheet1,行业三级,9103,957,0,0,369,"{""str"": 8146, ""NoneType"": 957}",21
+choice_events_2021Q4.xlsx,Sheet1,行业四级,9103,4103,0,0,613,"{""NoneType"": 4103, ""str"": 5000}",18
+choice_events_2022Q1.xlsx,Sheet1,序号,6478,0,0,0,6478,"{""float"": 6478}",0
+choice_events_2022Q1.xlsx,Sheet1,获投时间,6478,0,0,0,86,"{""str"": 6478}",10
+choice_events_2022Q1.xlsx,Sheet1,公司名称,6478,0,0,0,6338,"{""str"": 6478}",48
+choice_events_2022Q1.xlsx,Sheet1,公司项目简介,6478,854,0,0,5009,"{""str"": 5624, ""NoneType"": 854}",39
+choice_events_2022Q1.xlsx,Sheet1,获投轮次,6478,0,0,0,26,"{""str"": 6478}",7
+choice_events_2022Q1.xlsx,Sheet1,获投金额(元),6478,4806,0,0,486,"{""float"": 1672, ""NoneType"": 4806}",0
+choice_events_2022Q1.xlsx,Sheet1,币种,6478,3637,0,0,4,"{""str"": 2841, ""NoneType"": 3637}",3
+choice_events_2022Q1.xlsx,Sheet1,主题,6478,5154,0,0,325,"{""NoneType"": 5154, ""str"": 1324}",151
+choice_events_2022Q1.xlsx,Sheet1,地区,6478,0,0,0,34,"{""str"": 6478}",3
+choice_events_2022Q1.xlsx,Sheet1,投资方,6478,449,0,0,5184,"{""str"": 6029, ""NoneType"": 449}",282
+choice_events_2022Q1.xlsx,Sheet1,相关新闻标题,6478,4690,0,0,1768,"{""str"": 1788, ""NoneType"": 4690}",83
+choice_events_2022Q1.xlsx,Sheet1,相关新闻链接,6478,4623,0,0,1830,"{""str"": 1855, ""NoneType"": 4623}",208
+choice_events_2022Q1.xlsx,Sheet1,创新属性标签,6478,3345,0,0,10,"{""str"": 3133, ""NoneType"": 3345}",27
+choice_events_2022Q1.xlsx,Sheet1,行业一级,6478,27,0,0,18,"{""str"": 6451, ""NoneType"": 27}",16
+choice_events_2022Q1.xlsx,Sheet1,行业二级,6478,31,0,0,85,"{""str"": 6447, ""NoneType"": 31}",20
+choice_events_2022Q1.xlsx,Sheet1,行业三级,6478,654,0,0,328,"{""str"": 5824, ""NoneType"": 654}",21
+choice_events_2022Q1.xlsx,Sheet1,行业四级,6478,2888,0,0,520,"{""NoneType"": 2888, ""str"": 3590}",17
+choice_events_2022Q2.xlsx,Sheet1,序号,6338,0,0,0,6338,"{""float"": 6338}",0
+choice_events_2022Q2.xlsx,Sheet1,获投时间,6338,0,0,0,90,"{""str"": 6338}",10
+choice_events_2022Q2.xlsx,Sheet1,公司名称,6338,0,0,0,6213,"{""str"": 6338}",48
+choice_events_2022Q2.xlsx,Sheet1,公司项目简介,6338,1003,0,0,4701,"{""NoneType"": 1003, ""str"": 5335}",30
+choice_events_2022Q2.xlsx,Sheet1,获投轮次,6338,0,0,0,27,"{""str"": 6338}",7
+choice_events_2022Q2.xlsx,Sheet1,获投金额(元),6338,4700,0,0,586,"{""NoneType"": 4700, ""float"": 1638}",0
+choice_events_2022Q2.xlsx,Sheet1,币种,6338,3542,0,0,4,"{""NoneType"": 3542, ""str"": 2796}",3
+choice_events_2022Q2.xlsx,Sheet1,主题,6338,5173,0,0,294,"{""NoneType"": 5173, ""str"": 1165}",122
+choice_events_2022Q2.xlsx,Sheet1,地区,6338,0,0,0,32,"{""str"": 6338}",3
+choice_events_2022Q2.xlsx,Sheet1,投资方,6338,468,0,0,5004,"{""str"": 5870, ""NoneType"": 468}",300
+choice_events_2022Q2.xlsx,Sheet1,相关新闻标题,6338,4616,0,0,1686,"{""NoneType"": 4616, ""str"": 1722}",68
+choice_events_2022Q2.xlsx,Sheet1,相关新闻链接,6338,4518,0,0,1777,"{""NoneType"": 4518, ""str"": 1820}",211
+choice_events_2022Q2.xlsx,Sheet1,创新属性标签,6338,3499,0,0,12,"{""NoneType"": 3499, ""str"": 2839}",35
+choice_events_2022Q2.xlsx,Sheet1,行业一级,6338,19,0,0,18,"{""str"": 6319, ""NoneType"": 19}",16
+choice_events_2022Q2.xlsx,Sheet1,行业二级,6338,25,0,0,85,"{""str"": 6313, ""NoneType"": 25}",20
+choice_events_2022Q2.xlsx,Sheet1,行业三级,6338,689,0,0,317,"{""str"": 5649, ""NoneType"": 689}",21
+choice_events_2022Q2.xlsx,Sheet1,行业四级,6338,2857,0,0,522,"{""str"": 3481, ""NoneType"": 2857}",17
+choice_events_2022Q3.xlsx,Sheet1,序号,6930,0,0,0,6930,"{""float"": 6930}",0
+choice_events_2022Q3.xlsx,Sheet1,获投时间,6930,0,0,0,92,"{""str"": 6930}",10
+choice_events_2022Q3.xlsx,Sheet1,公司名称,6930,0,0,0,6746,"{""str"": 6930}",37
+choice_events_2022Q3.xlsx,Sheet1,公司项目简介,6930,927,0,0,5199,"{""str"": 6003, ""NoneType"": 927}",44
+choice_events_2022Q3.xlsx,Sheet1,获投轮次,6930,0,0,0,25,"{""str"": 6930}",7
+choice_events_2022Q3.xlsx,Sheet1,获投金额(元),6930,5258,0,0,590,"{""NoneType"": 5258, ""float"": 1672}",0
+choice_events_2022Q3.xlsx,Sheet1,币种,6930,4110,0,0,4,"{""NoneType"": 4110, ""str"": 2820}",3
+choice_events_2022Q3.xlsx,Sheet1,主题,6930,5587,0,0,317,"{""str"": 1343, ""NoneType"": 5587}",102
+choice_events_2022Q3.xlsx,Sheet1,地区,6930,0,0,0,32,"{""str"": 6930}",3
+choice_events_2022Q3.xlsx,Sheet1,投资方,6930,724,0,0,5291,"{""str"": 6206, ""NoneType"": 724}",318
+choice_events_2022Q3.xlsx,Sheet1,相关新闻标题,6930,5158,0,0,1739,"{""NoneType"": 5158, ""str"": 1772}",72
+choice_events_2022Q3.xlsx,Sheet1,相关新闻链接,6930,5070,0,0,1819,"{""NoneType"": 5070, ""str"": 1860}",208
+choice_events_2022Q3.xlsx,Sheet1,创新属性标签,6930,3644,0,0,10,"{""NoneType"": 3644, ""str"": 3286}",35
+choice_events_2022Q3.xlsx,Sheet1,行业一级,6930,14,0,0,18,"{""str"": 6916, ""NoneType"": 14}",16
+choice_events_2022Q3.xlsx,Sheet1,行业二级,6930,18,0,0,88,"{""str"": 6912, ""NoneType"": 18}",20
+choice_events_2022Q3.xlsx,Sheet1,行业三级,6930,715,0,0,325,"{""str"": 6215, ""NoneType"": 715}",21
+choice_events_2022Q3.xlsx,Sheet1,行业四级,6930,3081,0,0,521,"{""str"": 3849, ""NoneType"": 3081}",17
+choice_events_2022Q4.xlsx,Sheet1,序号,6827,0,0,0,6827,"{""float"": 6827}",0
+choice_events_2022Q4.xlsx,Sheet1,获投时间,6827,0,0,0,92,"{""str"": 6827}",10
+choice_events_2022Q4.xlsx,Sheet1,公司名称,6827,0,0,0,6615,"{""str"": 6827}",32
+choice_events_2022Q4.xlsx,Sheet1,公司项目简介,6827,1067,0,0,5058,"{""NoneType"": 1067, ""str"": 5760}",47
+choice_events_2022Q4.xlsx,Sheet1,获投轮次,6827,0,0,0,26,"{""str"": 6827}",7
+choice_events_2022Q4.xlsx,Sheet1,获投金额(元),6827,5066,0,0,711,"{""NoneType"": 5066, ""float"": 1761}",0
+choice_events_2022Q4.xlsx,Sheet1,币种,6827,3817,0,0,3,"{""NoneType"": 3817, ""str"": 3010}",3
+choice_events_2022Q4.xlsx,Sheet1,主题,6827,5645,0,0,285,"{""NoneType"": 5645, ""str"": 1182}",173
+choice_events_2022Q4.xlsx,Sheet1,地区,6827,0,0,0,33,"{""str"": 6827}",3
+choice_events_2022Q4.xlsx,Sheet1,投资方,6827,687,0,0,5317,"{""str"": 6140, ""NoneType"": 687}",454
+choice_events_2022Q4.xlsx,Sheet1,相关新闻标题,6827,5043,0,0,1735,"{""NoneType"": 5043, ""str"": 1784}",71
+choice_events_2022Q4.xlsx,Sheet1,相关新闻链接,6827,4952,0,0,1823,"{""NoneType"": 4952, ""str"": 1875}",223
+choice_events_2022Q4.xlsx,Sheet1,创新属性标签,6827,3573,0,0,9,"{""NoneType"": 3573, ""str"": 3254}",27
+choice_events_2022Q4.xlsx,Sheet1,行业一级,6827,18,0,0,18,"{""str"": 6809, ""NoneType"": 18}",16
+choice_events_2022Q4.xlsx,Sheet1,行业二级,6827,22,0,0,89,"{""str"": 6805, ""NoneType"": 22}",20
+choice_events_2022Q4.xlsx,Sheet1,行业三级,6827,725,0,0,341,"{""str"": 6102, ""NoneType"": 725}",21
+choice_events_2022Q4.xlsx,Sheet1,行业四级,6827,2963,0,0,555,"{""NoneType"": 2963, ""str"": 3864}",17
+choice_events_2023Q1.xlsx,Sheet1,序号,6158,0,0,0,6158,"{""float"": 6158}",0
+choice_events_2023Q1.xlsx,Sheet1,获投时间,6158,0,0,0,89,"{""str"": 6158}",10
+choice_events_2023Q1.xlsx,Sheet1,公司名称,6158,0,0,0,5997,"{""str"": 6158}",28
+choice_events_2023Q1.xlsx,Sheet1,公司项目简介,6158,1059,0,0,4514,"{""str"": 5099, ""NoneType"": 1059}",39
+choice_events_2023Q1.xlsx,Sheet1,获投轮次,6158,0,0,0,25,"{""str"": 6158}",7
+choice_events_2023Q1.xlsx,Sheet1,获投金额(元),6158,4785,0,0,498,"{""float"": 1373, ""NoneType"": 4785}",0
+choice_events_2023Q1.xlsx,Sheet1,币种,6158,3657,0,0,3,"{""str"": 2501, ""NoneType"": 3657}",3
+choice_events_2023Q1.xlsx,Sheet1,主题,6158,5117,0,0,251,"{""NoneType"": 5117, ""str"": 1041}",102
+choice_events_2023Q1.xlsx,Sheet1,地区,6158,0,0,0,33,"{""str"": 6158}",3
+choice_events_2023Q1.xlsx,Sheet1,投资方,6158,652,0,0,4805,"{""NoneType"": 652, ""str"": 5506}",250
+choice_events_2023Q1.xlsx,Sheet1,相关新闻标题,6158,4770,0,0,1357,"{""NoneType"": 4770, ""str"": 1388}",61
+choice_events_2023Q1.xlsx,Sheet1,相关新闻链接,6158,4516,0,0,1603,"{""NoneType"": 4516, ""str"": 1642}",406
+choice_events_2023Q1.xlsx,Sheet1,创新属性标签,6158,3342,0,0,10,"{""NoneType"": 3342, ""str"": 2816}",27
+choice_events_2023Q1.xlsx,Sheet1,行业一级,6158,16,0,0,18,"{""str"": 6142, ""NoneType"": 16}",16
+choice_events_2023Q1.xlsx,Sheet1,行业二级,6158,19,0,0,88,"{""str"": 6139, ""NoneType"": 19}",20
+choice_events_2023Q1.xlsx,Sheet1,行业三级,6158,621,0,0,324,"{""NoneType"": 621, ""str"": 5537}",21
+choice_events_2023Q1.xlsx,Sheet1,行业四级,6158,2686,0,0,502,"{""NoneType"": 2686, ""str"": 3472}",18
+choice_events_2023Q2.xlsx,Sheet1,序号,5837,0,0,0,5837,"{""float"": 5837}",0
+choice_events_2023Q2.xlsx,Sheet1,获投时间,5837,0,0,0,90,"{""str"": 5837}",10
+choice_events_2023Q2.xlsx,Sheet1,公司名称,5837,0,0,0,5646,"{""str"": 5837}",24
+choice_events_2023Q2.xlsx,Sheet1,公司项目简介,5837,1261,0,0,4093,"{""str"": 4576, ""NoneType"": 1261}",58
+choice_events_2023Q2.xlsx,Sheet1,获投轮次,5837,0,0,0,23,"{""str"": 5837}",7
+choice_events_2023Q2.xlsx,Sheet1,获投金额(元),5837,4551,0,0,444,"{""NoneType"": 4551, ""float"": 1286}",0
+choice_events_2023Q2.xlsx,Sheet1,币种,5837,3712,0,0,3,"{""NoneType"": 3712, ""str"": 2125}",3
+choice_events_2023Q2.xlsx,Sheet1,主题,5837,4902,0,0,251,"{""str"": 935, ""NoneType"": 4902}",203
+choice_events_2023Q2.xlsx,Sheet1,地区,5837,0,0,0,33,"{""str"": 5837}",3
+choice_events_2023Q2.xlsx,Sheet1,投资方,5837,602,0,0,4645,"{""str"": 5235, ""NoneType"": 602}",354
+choice_events_2023Q2.xlsx,Sheet1,相关新闻标题,5837,4551,0,0,1261,"{""str"": 1286, ""NoneType"": 4551}",61
+choice_events_2023Q2.xlsx,Sheet1,相关新闻链接,5837,4381,0,0,1427,"{""str"": 1456, ""NoneType"": 4381}",215
+choice_events_2023Q2.xlsx,Sheet1,创新属性标签,5837,3306,0,0,10,"{""str"": 2531, ""NoneType"": 3306}",35
+choice_events_2023Q2.xlsx,Sheet1,行业一级,5837,12,0,0,18,"{""str"": 5825, ""NoneType"": 12}",16
+choice_events_2023Q2.xlsx,Sheet1,行业二级,5837,17,0,0,87,"{""str"": 5820, ""NoneType"": 17}",20
+choice_events_2023Q2.xlsx,Sheet1,行业三级,5837,599,0,0,307,"{""str"": 5238, ""NoneType"": 599}",21
+choice_events_2023Q2.xlsx,Sheet1,行业四级,5837,2470,0,0,484,"{""NoneType"": 2470, ""str"": 3367}",17
+choice_events_2023Q3.xlsx,Sheet1,序号,6138,0,0,0,6138,"{""float"": 6138}",0
+choice_events_2023Q3.xlsx,Sheet1,获投时间,6138,0,0,0,91,"{""str"": 6138}",10
+choice_events_2023Q3.xlsx,Sheet1,公司名称,6138,0,0,0,5917,"{""str"": 6138}",37
+choice_events_2023Q3.xlsx,Sheet1,公司项目简介,6138,856,0,0,4513,"{""str"": 5282, ""NoneType"": 856}",25
+choice_events_2023Q3.xlsx,Sheet1,获投轮次,6138,0,0,0,26,"{""str"": 6138}",7
+choice_events_2023Q3.xlsx,Sheet1,获投金额(元),6138,4736,0,0,481,"{""NoneType"": 4736, ""float"": 1402}",0
+choice_events_2023Q3.xlsx,Sheet1,币种,6138,3652,0,0,3,"{""str"": 2486, ""NoneType"": 3652}",3
+choice_events_2023Q3.xlsx,Sheet1,主题,6138,5074,0,0,265,"{""NoneType"": 5074, ""str"": 1064}",141
+choice_events_2023Q3.xlsx,Sheet1,地区,6138,0,0,0,33,"{""str"": 6138}",3
+choice_events_2023Q3.xlsx,Sheet1,投资方,6138,575,0,0,4959,"{""str"": 5563, ""NoneType"": 575}",500
+choice_events_2023Q3.xlsx,Sheet1,相关新闻标题,6138,4735,0,0,1379,"{""NoneType"": 4735, ""str"": 1403}",64
+choice_events_2023Q3.xlsx,Sheet1,相关新闻链接,6138,4492,0,0,1614,"{""str"": 1646, ""NoneType"": 4492}",209
+choice_events_2023Q3.xlsx,Sheet1,创新属性标签,6138,3393,0,0,8,"{""str"": 2745, ""NoneType"": 3393}",35
+choice_events_2023Q3.xlsx,Sheet1,行业一级,6138,15,0,0,18,"{""str"": 6123, ""NoneType"": 15}",16
+choice_events_2023Q3.xlsx,Sheet1,行业二级,6138,24,0,0,87,"{""str"": 6114, ""NoneType"": 24}",20
+choice_events_2023Q3.xlsx,Sheet1,行业三级,6138,656,0,0,316,"{""NoneType"": 656, ""str"": 5482}",21
+choice_events_2023Q3.xlsx,Sheet1,行业四级,6138,2670,0,0,490,"{""NoneType"": 2670, ""str"": 3468}",18
+choice_events_2023Q4.xlsx,Sheet1,序号,6733,0,0,0,6733,"{""float"": 6733}",0
+choice_events_2023Q4.xlsx,Sheet1,获投时间,6733,0,0,0,92,"{""str"": 6733}",10
+choice_events_2023Q4.xlsx,Sheet1,公司名称,6733,0,0,0,6524,"{""str"": 6733}",29
+choice_events_2023Q4.xlsx,Sheet1,公司项目简介,6733,838,0,0,5053,"{""str"": 5895, ""NoneType"": 838}",30
+choice_events_2023Q4.xlsx,Sheet1,获投轮次,6733,0,0,0,27,"{""str"": 6733}",7
+choice_events_2023Q4.xlsx,Sheet1,获投金额(元),6733,5153,0,0,619,"{""NoneType"": 5153, ""float"": 1580}",0
+choice_events_2023Q4.xlsx,Sheet1,币种,6733,3358,0,0,4,"{""str"": 3375, ""NoneType"": 3358}",3
+choice_events_2023Q4.xlsx,Sheet1,主题,6733,5640,0,0,257,"{""NoneType"": 5640, ""str"": 1093}",203
+choice_events_2023Q4.xlsx,Sheet1,地区,6733,0,0,0,32,"{""str"": 6733}",3
+choice_events_2023Q4.xlsx,Sheet1,投资方,6733,713,0,0,5351,"{""str"": 6020, ""NoneType"": 713}",383
+choice_events_2023Q4.xlsx,Sheet1,相关新闻标题,6733,5190,0,0,1509,"{""NoneType"": 5190, ""str"": 1543}",61
+choice_events_2023Q4.xlsx,Sheet1,相关新闻链接,6733,4832,0,0,1850,"{""NoneType"": 4832, ""str"": 1901}",1024
+choice_events_2023Q4.xlsx,Sheet1,创新属性标签,6733,3810,0,0,11,"{""str"": 2923, ""NoneType"": 3810}",35
+choice_events_2023Q4.xlsx,Sheet1,行业一级,6733,16,0,0,18,"{""str"": 6717, ""NoneType"": 16}",16
+choice_events_2023Q4.xlsx,Sheet1,行业二级,6733,25,0,0,88,"{""str"": 6708, ""NoneType"": 25}",20
+choice_events_2023Q4.xlsx,Sheet1,行业三级,6733,685,0,0,320,"{""NoneType"": 685, ""str"": 6048}",21
+choice_events_2023Q4.xlsx,Sheet1,行业四级,6733,2920,0,0,531,"{""NoneType"": 2920, ""str"": 3813}",18
+choice_events_2024Q1.xlsx,Sheet1,序号,4864,0,0,0,4864,"{""float"": 4864}",0
+choice_events_2024Q1.xlsx,Sheet1,获投时间,4864,0,0,0,90,"{""str"": 4864}",10
+choice_events_2024Q1.xlsx,Sheet1,公司名称,4864,0,0,0,4727,"{""str"": 4864}",28
+choice_events_2024Q1.xlsx,Sheet1,公司项目简介,4864,594,0,0,3705,"{""str"": 4270, ""NoneType"": 594}",39
+choice_events_2024Q1.xlsx,Sheet1,获投轮次,4864,0,0,0,24,"{""str"": 4864}",7
+choice_events_2024Q1.xlsx,Sheet1,获投金额(元),4864,3712,0,0,409,"{""NoneType"": 3712, ""float"": 1152}",0
+choice_events_2024Q1.xlsx,Sheet1,币种,4864,2579,0,0,4,"{""NoneType"": 2579, ""str"": 2285}",3
+choice_events_2024Q1.xlsx,Sheet1,主题,4864,4133,0,0,192,"{""NoneType"": 4133, ""str"": 731}",119
+choice_events_2024Q1.xlsx,Sheet1,地区,4864,0,0,0,32,"{""str"": 4864}",3
+choice_events_2024Q1.xlsx,Sheet1,投资方,4864,523,0,0,3977,"{""str"": 4341, ""NoneType"": 523}",305
+choice_events_2024Q1.xlsx,Sheet1,相关新闻标题,4864,3593,0,0,1253,"{""NoneType"": 3593, ""str"": 1271}",75
+choice_events_2024Q1.xlsx,Sheet1,相关新闻链接,4864,3344,0,0,1490,"{""NoneType"": 3344, ""str"": 1520}",232
+choice_events_2024Q1.xlsx,Sheet1,创新属性标签,4864,2833,0,0,11,"{""str"": 2031, ""NoneType"": 2833}",27
+choice_events_2024Q1.xlsx,Sheet1,行业一级,4864,17,0,0,18,"{""str"": 4847, ""NoneType"": 17}",16
+choice_events_2024Q1.xlsx,Sheet1,行业二级,4864,21,0,0,85,"{""str"": 4843, ""NoneType"": 21}",20
+choice_events_2024Q1.xlsx,Sheet1,行业三级,4864,475,0,0,292,"{""str"": 4389, ""NoneType"": 475}",21
+choice_events_2024Q1.xlsx,Sheet1,行业四级,4864,2120,0,0,442,"{""NoneType"": 2120, ""str"": 2744}",17
+choice_events_2024Q2.xlsx,Sheet1,序号,4717,0,0,0,4717,"{""float"": 4717}",0
+choice_events_2024Q2.xlsx,Sheet1,获投时间,4717,0,0,0,90,"{""str"": 4717}",10
+choice_events_2024Q2.xlsx,Sheet1,公司名称,4717,0,0,0,4603,"{""str"": 4717}",25
+choice_events_2024Q2.xlsx,Sheet1,公司项目简介,4717,630,0,0,3579,"{""str"": 4087, ""NoneType"": 630}",34
+choice_events_2024Q2.xlsx,Sheet1,获投轮次,4717,0,0,0,26,"{""str"": 4717}",7
+choice_events_2024Q2.xlsx,Sheet1,获投金额(元),4717,3605,0,0,390,"{""NoneType"": 3605, ""float"": 1112}",0
+choice_events_2024Q2.xlsx,Sheet1,币种,4717,1996,0,0,3,"{""str"": 2721, ""NoneType"": 1996}",3
+choice_events_2024Q2.xlsx,Sheet1,主题,4717,4094,0,0,170,"{""NoneType"": 4094, ""str"": 623}",203
+choice_events_2024Q2.xlsx,Sheet1,地区,4717,0,0,0,32,"{""str"": 4717}",3
+choice_events_2024Q2.xlsx,Sheet1,投资方,4717,526,0,0,3787,"{""str"": 4191, ""NoneType"": 526}",292
+choice_events_2024Q2.xlsx,Sheet1,相关新闻标题,4717,3430,0,0,1263,"{""NoneType"": 3430, ""str"": 1287}",73
+choice_events_2024Q2.xlsx,Sheet1,相关新闻链接,4717,3229,0,0,1457,"{""NoneType"": 3229, ""str"": 1488}",327
+choice_events_2024Q2.xlsx,Sheet1,创新属性标签,4717,2942,0,0,8,"{""str"": 1775, ""NoneType"": 2942}",27
+choice_events_2024Q2.xlsx,Sheet1,行业一级,4717,15,0,0,18,"{""str"": 4702, ""NoneType"": 15}",16
+choice_events_2024Q2.xlsx,Sheet1,行业二级,4717,23,0,0,84,"{""str"": 4694, ""NoneType"": 23}",20
+choice_events_2024Q2.xlsx,Sheet1,行业三级,4717,517,0,0,272,"{""str"": 4200, ""NoneType"": 517}",21
+choice_events_2024Q2.xlsx,Sheet1,行业四级,4717,2057,0,0,405,"{""NoneType"": 2057, ""str"": 2660}",17
+choice_events_2024Q3.xlsx,Sheet1,序号,4704,0,0,0,4704,"{""float"": 4704}",0
+choice_events_2024Q3.xlsx,Sheet1,获投时间,4704,0,0,0,92,"{""str"": 4704}",10
+choice_events_2024Q3.xlsx,Sheet1,公司名称,4704,0,0,0,4591,"{""str"": 4704}",30
+choice_events_2024Q3.xlsx,Sheet1,公司项目简介,4704,656,0,0,3593,"{""str"": 4048, ""NoneType"": 656}",48
+choice_events_2024Q3.xlsx,Sheet1,获投轮次,4704,0,0,0,25,"{""str"": 4704}",7
+choice_events_2024Q3.xlsx,Sheet1,获投金额(元),4704,3643,0,0,414,"{""NoneType"": 3643, ""float"": 1061}",0
+choice_events_2024Q3.xlsx,Sheet1,币种,4704,1556,0,0,3,"{""NoneType"": 1556, ""str"": 3148}",3
+choice_events_2024Q3.xlsx,Sheet1,主题,4704,4060,0,0,178,"{""NoneType"": 4060, ""str"": 644}",122
+choice_events_2024Q3.xlsx,Sheet1,地区,4704,0,0,0,34,"{""str"": 4704}",3
+choice_events_2024Q3.xlsx,Sheet1,投资方,4704,535,0,0,3762,"{""str"": 4169, ""NoneType"": 535}",287
+choice_events_2024Q3.xlsx,Sheet1,相关新闻标题,4704,3523,0,0,1156,"{""NoneType"": 3523, ""str"": 1181}",74
+choice_events_2024Q3.xlsx,Sheet1,相关新闻链接,4704,3257,0,0,1415,"{""NoneType"": 3257, ""str"": 1447}",223
+choice_events_2024Q3.xlsx,Sheet1,创新属性标签,4704,2946,0,0,7,"{""str"": 1758, ""NoneType"": 2946}",27
+choice_events_2024Q3.xlsx,Sheet1,行业一级,4704,17,0,0,18,"{""str"": 4687, ""NoneType"": 17}",16
+choice_events_2024Q3.xlsx,Sheet1,行业二级,4704,22,0,0,87,"{""str"": 4682, ""NoneType"": 22}",20
+choice_events_2024Q3.xlsx,Sheet1,行业三级,4704,477,0,0,292,"{""NoneType"": 477, ""str"": 4227}",21
+choice_events_2024Q3.xlsx,Sheet1,行业四级,4704,2016,0,0,433,"{""NoneType"": 2016, ""str"": 2688}",16
+choice_events_2024Q4.xlsx,Sheet1,序号,5731,0,0,0,5731,"{""float"": 5731}",0
+choice_events_2024Q4.xlsx,Sheet1,获投时间,5731,0,0,0,92,"{""str"": 5731}",10
+choice_events_2024Q4.xlsx,Sheet1,公司名称,5731,0,0,0,5562,"{""str"": 5731}",25
+choice_events_2024Q4.xlsx,Sheet1,公司项目简介,5731,872,0,0,4319,"{""str"": 4859, ""NoneType"": 872}",27
+choice_events_2024Q4.xlsx,Sheet1,获投轮次,5731,0,0,0,26,"{""str"": 5731}",7
+choice_events_2024Q4.xlsx,Sheet1,获投金额(元),5731,4288,0,0,623,"{""float"": 1443, ""NoneType"": 4288}",0
+choice_events_2024Q4.xlsx,Sheet1,币种,5731,2062,0,0,3,"{""str"": 3669, ""NoneType"": 2062}",3
+choice_events_2024Q4.xlsx,Sheet1,主题,5731,5005,0,0,214,"{""NoneType"": 5005, ""str"": 726}",38
+choice_events_2024Q4.xlsx,Sheet1,地区,5731,0,0,0,32,"{""str"": 5731}",3
+choice_events_2024Q4.xlsx,Sheet1,投资方,5731,665,0,0,4483,"{""str"": 5066, ""NoneType"": 665}",500
+choice_events_2024Q4.xlsx,Sheet1,相关新闻标题,5731,4399,0,0,1255,"{""NoneType"": 4399, ""str"": 1332}",91
+choice_events_2024Q4.xlsx,Sheet1,相关新闻链接,5731,3885,0,0,1754,"{""str"": 1846, ""NoneType"": 3885}",280
+choice_events_2024Q4.xlsx,Sheet1,创新属性标签,5731,3527,0,0,9,"{""str"": 2204, ""NoneType"": 3527}",27
+choice_events_2024Q4.xlsx,Sheet1,行业一级,5731,19,0,0,18,"{""str"": 5712, ""NoneType"": 19}",16
+choice_events_2024Q4.xlsx,Sheet1,行业二级,5731,24,0,0,87,"{""str"": 5707, ""NoneType"": 24}",20
+choice_events_2024Q4.xlsx,Sheet1,行业三级,5731,536,0,0,310,"{""str"": 5195, ""NoneType"": 536}",21
+choice_events_2024Q4.xlsx,Sheet1,行业四级,5731,2412,0,0,519,"{""str"": 3319, ""NoneType"": 2412}",18

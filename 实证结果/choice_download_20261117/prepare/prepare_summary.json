@@ -1,0 +1,2871 @@
+{
+  "snapshot_started_at_utc": "2026-11-17T08:36:27.828361+00:00",
+  "extraction_date": "2026-11-17",
+  "download_snapshot": "final_download_files",
+  "script_sha256": "1e04090291a59c7d39be69a5fb31678cf9151de0694904e4f6122c5e85ecad30",
+  "template_input": {
+    "path": "实证结果/fiscal_fund_design_round2_20261117/templates/financing_events.csv",
+    "sha256": "2f2a5c61a3555474f95f6db53f1778737998537ed3b7c6f5c5340f7ba00718e6"
+  },
+  "raw_directory": "原始数据/Choice_创投事件_20261117/raw",
+  "files_read": 56,
+  "files_skipped": [],
+  "ignored_non_event_workbooks": [
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_probe_2020Q2.xlsx",
+      "bytes": 1272676,
+      "reason": "diagnostic_probe_not_formal_event_batch"
+    }
+  ],
+  "excluded_metadata_rows": 56,
+  "excluded_blank_rows": 280,
+  "independent_audit_comparison": [
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2012.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6654,
+      "audited_rows": 6654,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2013.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9284,
+      "audited_rows": 9284,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 3476,
+      "audited_rows": 3476,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 3757,
+      "audited_rows": 3757,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4736,
+      "audited_rows": 4736,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5883,
+      "audited_rows": 5883,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M01.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 2177,
+      "audited_rows": 2177,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M02_M03.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 3282,
+      "audited_rows": 3282,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M10_M11.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5457,
+      "audited_rows": 5457,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M12.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5181,
+      "audited_rows": 5181,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7287,
+      "audited_rows": 7287,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8691,
+      "audited_rows": 8691,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M01_M02.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5495,
+      "audited_rows": 5495,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M03.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4946,
+      "audited_rows": 4946,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M04_M05.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6698,
+      "audited_rows": 6698,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M06.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 3504,
+      "audited_rows": 3504,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M10_M11.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6376,
+      "audited_rows": 6376,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M12.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4854,
+      "audited_rows": 4854,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9943,
+      "audited_rows": 9943,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017M10_M11.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5540,
+      "audited_rows": 5540,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017M12.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4774,
+      "audited_rows": 4774,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8649,
+      "audited_rows": 8649,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9048,
+      "audited_rows": 9048,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9086,
+      "audited_rows": 9086,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8433,
+      "audited_rows": 8433,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8781,
+      "audited_rows": 8781,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8288,
+      "audited_rows": 8288,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 8208,
+      "audited_rows": 8208,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6150,
+      "audited_rows": 6150,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6390,
+      "audited_rows": 6390,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6370,
+      "audited_rows": 6370,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7187,
+      "audited_rows": 7187,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200401_20200409.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9162,
+      "audited_rows": 9162,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200410_20200412.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5400,
+      "audited_rows": 5400,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200413_20200415.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4601,
+      "audited_rows": 4601,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200416_20200430.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7025,
+      "audited_rows": 7025,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020M05_M06.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4178,
+      "audited_rows": 4178,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4118,
+      "audited_rows": 4118,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7488,
+      "audited_rows": 7488,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9268,
+      "audited_rows": 9268,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7433,
+      "audited_rows": 7433,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 7599,
+      "audited_rows": 7599,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9209,
+      "audited_rows": 9209,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 9103,
+      "audited_rows": 9103,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6478,
+      "audited_rows": 6478,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6338,
+      "audited_rows": 6338,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6930,
+      "audited_rows": 6930,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6827,
+      "audited_rows": 6827,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6158,
+      "audited_rows": 6158,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5837,
+      "audited_rows": 5837,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6138,
+      "audited_rows": 6138,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 6733,
+      "audited_rows": 6733,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q1.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4864,
+      "audited_rows": 4864,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q2.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4717,
+      "audited_rows": 4717,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q3.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 4704,
+      "audited_rows": 4704,
+      "rows_match": true
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q4.xlsx",
+      "same_input_hash": true,
+      "prepared_rows": 5731,
+      "audited_rows": 5731,
+      "rows_match": true
+    }
+  ],
+  "download_completeness": {
+    "passed": true,
+    "target_date_from": "2012-01-01",
+    "target_date_to": "2024-12-31",
+    "boundary_basis": "UI manifest query dates; observed record min/max dates do not establish coverage",
+    "audit_sha256": "16d007cab9e4c98b8930141dd4e9b59f7d80f25897cb8306bc2e1430d60763cc",
+    "ui_manifest_sha256": "23a514c343e7be23629645f24c1affc1baf5d6279bc68e06251db7dafc5b451f",
+    "audit_path": "实证结果/choice_download_20261117/download_audit.json",
+    "ui_manifest_path": "实证结果/choice_download_20261117/ui_expected_counts.json",
+    "prepared_files": 56,
+    "audited_files": 56,
+    "registered_files": 56,
+    "gaps": [],
+    "overlaps": [],
+    "issues": [],
+    "registered_intervals": [
+      {
+        "file": "choice_events_2012.xlsx",
+        "date_from": "2012-01-01",
+        "date_to": "2012-12-31"
+      },
+      {
+        "file": "choice_events_2013.xlsx",
+        "date_from": "2013-01-01",
+        "date_to": "2013-12-31"
+      },
+      {
+        "file": "choice_events_2014Q1.xlsx",
+        "date_from": "2014-01-01",
+        "date_to": "2014-03-31"
+      },
+      {
+        "file": "choice_events_2014Q2.xlsx",
+        "date_from": "2014-04-01",
+        "date_to": "2014-06-30"
+      },
+      {
+        "file": "choice_events_2014Q3.xlsx",
+        "date_from": "2014-07-01",
+        "date_to": "2014-09-30"
+      },
+      {
+        "file": "choice_events_2014Q4.xlsx",
+        "date_from": "2014-10-01",
+        "date_to": "2014-12-31"
+      },
+      {
+        "file": "choice_events_2015M01.xlsx",
+        "date_from": "2015-01-01",
+        "date_to": "2015-01-31"
+      },
+      {
+        "file": "choice_events_2015M02_M03.xlsx",
+        "date_from": "2015-02-01",
+        "date_to": "2015-03-31"
+      },
+      {
+        "file": "choice_events_2015M10_M11.xlsx",
+        "date_from": "2015-10-01",
+        "date_to": "2015-11-30"
+      },
+      {
+        "file": "choice_events_2015M12.xlsx",
+        "date_from": "2015-12-01",
+        "date_to": "2015-12-31"
+      },
+      {
+        "file": "choice_events_2015Q2.xlsx",
+        "date_from": "2015-04-01",
+        "date_to": "2015-06-30"
+      },
+      {
+        "file": "choice_events_2015Q3.xlsx",
+        "date_from": "2015-07-01",
+        "date_to": "2015-09-30"
+      },
+      {
+        "file": "choice_events_2016M01_M02.xlsx",
+        "date_from": "2016-01-01",
+        "date_to": "2016-02-29"
+      },
+      {
+        "file": "choice_events_2016M03.xlsx",
+        "date_from": "2016-03-01",
+        "date_to": "2016-03-31"
+      },
+      {
+        "file": "choice_events_2016M04_M05.xlsx",
+        "date_from": "2016-04-01",
+        "date_to": "2016-05-31"
+      },
+      {
+        "file": "choice_events_2016M06.xlsx",
+        "date_from": "2016-06-01",
+        "date_to": "2016-06-30"
+      },
+      {
+        "file": "choice_events_2016M10_M11.xlsx",
+        "date_from": "2016-10-01",
+        "date_to": "2016-11-30"
+      },
+      {
+        "file": "choice_events_2016M12.xlsx",
+        "date_from": "2016-12-01",
+        "date_to": "2016-12-31"
+      },
+      {
+        "file": "choice_events_2016Q3.xlsx",
+        "date_from": "2016-07-01",
+        "date_to": "2016-09-30"
+      },
+      {
+        "file": "choice_events_2017M10_M11.xlsx",
+        "date_from": "2017-10-01",
+        "date_to": "2017-11-30"
+      },
+      {
+        "file": "choice_events_2017M12.xlsx",
+        "date_from": "2017-12-01",
+        "date_to": "2017-12-31"
+      },
+      {
+        "file": "choice_events_2017Q1.xlsx",
+        "date_from": "2017-01-01",
+        "date_to": "2017-03-31"
+      },
+      {
+        "file": "choice_events_2017Q2.xlsx",
+        "date_from": "2017-04-01",
+        "date_to": "2017-06-30"
+      },
+      {
+        "file": "choice_events_2017Q3.xlsx",
+        "date_from": "2017-07-01",
+        "date_to": "2017-09-30"
+      },
+      {
+        "file": "choice_events_2018Q1.xlsx",
+        "date_from": "2018-01-01",
+        "date_to": "2018-03-31"
+      },
+      {
+        "file": "choice_events_2018Q2.xlsx",
+        "date_from": "2018-04-01",
+        "date_to": "2018-06-30"
+      },
+      {
+        "file": "choice_events_2018Q3.xlsx",
+        "date_from": "2018-07-01",
+        "date_to": "2018-09-30"
+      },
+      {
+        "file": "choice_events_2018Q4.xlsx",
+        "date_from": "2018-10-01",
+        "date_to": "2018-12-31"
+      },
+      {
+        "file": "choice_events_2019Q1.xlsx",
+        "date_from": "2019-01-01",
+        "date_to": "2019-03-31"
+      },
+      {
+        "file": "choice_events_2019Q2.xlsx",
+        "date_from": "2019-04-01",
+        "date_to": "2019-06-30"
+      },
+      {
+        "file": "choice_events_2019Q3.xlsx",
+        "date_from": "2019-07-01",
+        "date_to": "2019-09-30"
+      },
+      {
+        "file": "choice_events_2019Q4.xlsx",
+        "date_from": "2019-10-01",
+        "date_to": "2019-12-31"
+      },
+      {
+        "file": "choice_events_20200401_20200409.xlsx",
+        "date_from": "2020-04-01",
+        "date_to": "2020-04-09"
+      },
+      {
+        "file": "choice_events_20200410_20200412.xlsx",
+        "date_from": "2020-04-10",
+        "date_to": "2020-04-12"
+      },
+      {
+        "file": "choice_events_20200413_20200415.xlsx",
+        "date_from": "2020-04-13",
+        "date_to": "2020-04-15"
+      },
+      {
+        "file": "choice_events_20200416_20200430.xlsx",
+        "date_from": "2020-04-16",
+        "date_to": "2020-04-30"
+      },
+      {
+        "file": "choice_events_2020M05_M06.xlsx",
+        "date_from": "2020-05-01",
+        "date_to": "2020-06-30"
+      },
+      {
+        "file": "choice_events_2020Q1.xlsx",
+        "date_from": "2020-01-01",
+        "date_to": "2020-03-31"
+      },
+      {
+        "file": "choice_events_2020Q3.xlsx",
+        "date_from": "2020-07-01",
+        "date_to": "2020-09-30"
+      },
+      {
+        "file": "choice_events_2020Q4.xlsx",
+        "date_from": "2020-10-01",
+        "date_to": "2020-12-31"
+      },
+      {
+        "file": "choice_events_2021Q1.xlsx",
+        "date_from": "2021-01-01",
+        "date_to": "2021-03-31"
+      },
+      {
+        "file": "choice_events_2021Q2.xlsx",
+        "date_from": "2021-04-01",
+        "date_to": "2021-06-30"
+      },
+      {
+        "file": "choice_events_2021Q3.xlsx",
+        "date_from": "2021-07-01",
+        "date_to": "2021-09-30"
+      },
+      {
+        "file": "choice_events_2021Q4.xlsx",
+        "date_from": "2021-10-01",
+        "date_to": "2021-12-31"
+      },
+      {
+        "file": "choice_events_2022Q1.xlsx",
+        "date_from": "2022-01-01",
+        "date_to": "2022-03-31"
+      },
+      {
+        "file": "choice_events_2022Q2.xlsx",
+        "date_from": "2022-04-01",
+        "date_to": "2022-06-30"
+      },
+      {
+        "file": "choice_events_2022Q3.xlsx",
+        "date_from": "2022-07-01",
+        "date_to": "2022-09-30"
+      },
+      {
+        "file": "choice_events_2022Q4.xlsx",
+        "date_from": "2022-10-01",
+        "date_to": "2022-12-31"
+      },
+      {
+        "file": "choice_events_2023Q1.xlsx",
+        "date_from": "2023-01-01",
+        "date_to": "2023-03-31"
+      },
+      {
+        "file": "choice_events_2023Q2.xlsx",
+        "date_from": "2023-04-01",
+        "date_to": "2023-06-30"
+      },
+      {
+        "file": "choice_events_2023Q3.xlsx",
+        "date_from": "2023-07-01",
+        "date_to": "2023-09-30"
+      },
+      {
+        "file": "choice_events_2023Q4.xlsx",
+        "date_from": "2023-10-01",
+        "date_to": "2023-12-31"
+      },
+      {
+        "file": "choice_events_2024Q1.xlsx",
+        "date_from": "2024-01-01",
+        "date_to": "2024-03-31"
+      },
+      {
+        "file": "choice_events_2024Q2.xlsx",
+        "date_from": "2024-04-01",
+        "date_to": "2024-06-30"
+      },
+      {
+        "file": "choice_events_2024Q3.xlsx",
+        "date_from": "2024-07-01",
+        "date_to": "2024-09-30"
+      },
+      {
+        "file": "choice_events_2024Q4.xlsx",
+        "date_from": "2024-10-01",
+        "date_to": "2024-12-31"
+      }
+    ],
+    "file_comparison": [
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2012.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6654,
+        "audited_rows": 6654,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2013.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 9284,
+        "audited_rows": 9284,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 3476,
+        "audited_rows": 3476,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 3757,
+        "audited_rows": 3757,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4736,
+        "audited_rows": 4736,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q4.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 5883,
+        "audited_rows": 5883,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M01.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 2177,
+        "audited_rows": 2177,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M02_M03.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 3282,
+        "audited_rows": 3282,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M10_M11.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 5457,
+        "audited_rows": 5457,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M12.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 5181,
+        "audited_rows": 5181,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 7287,
+        "audited_rows": 7287,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 8691,
+        "audited_rows": 8691,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M01_M02.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 5495,
+        "audited_rows": 5495,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M03.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4946,
+        "audited_rows": 4946,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M04_M05.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6698,
+        "audited_rows": 6698,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M06.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 3504,
+        "audited_rows": 3504,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M10_M11.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6376,
+        "audited_rows": 6376,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M12.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4854,
+        "audited_rows": 4854,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 9943,
+        "audited_rows": 9943,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017M10_M11.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 5540,
+        "audited_rows": 5540,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017M12.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4774,
+        "audited_rows": 4774,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 8649,
+        "audited_rows": 8649,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 9048,
+        "audited_rows": 9048,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 9086,
+        "audited_rows": 9086,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 8433,
+        "audited_rows": 8433,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 8781,
+        "audited_rows": 8781,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 8288,
+        "audited_rows": 8288,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q4.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 8208,
+        "audited_rows": 8208,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6150,
+        "audited_rows": 6150,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6390,
+        "audited_rows": 6390,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6370,
+        "audited_rows": 6370,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q4.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 7187,
+        "audited_rows": 7187,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200401_20200409.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 9162,
+        "audited_rows": 9162,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200410_20200412.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 5400,
+        "audited_rows": 5400,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200413_20200415.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4601,
+        "audited_rows": 4601,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200416_20200430.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 7025,
+        "audited_rows": 7025,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020M05_M06.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4178,
+        "audited_rows": 4178,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4118,
+        "audited_rows": 4118,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 7488,
+        "audited_rows": 7488,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q4.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 9268,
+        "audited_rows": 9268,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 7433,
+        "audited_rows": 7433,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 7599,
+        "audited_rows": 7599,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 9209,
+        "audited_rows": 9209,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q4.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 9103,
+        "audited_rows": 9103,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6478,
+        "audited_rows": 6478,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6338,
+        "audited_rows": 6338,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6930,
+        "audited_rows": 6930,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q4.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6827,
+        "audited_rows": 6827,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6158,
+        "audited_rows": 6158,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 5837,
+        "audited_rows": 5837,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6138,
+        "audited_rows": 6138,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q4.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 6733,
+        "audited_rows": 6733,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q1.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4864,
+        "audited_rows": 4864,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q2.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4717,
+        "audited_rows": 4717,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q3.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 4704,
+        "audited_rows": 4704,
+        "rows_match": true
+      },
+      {
+        "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q4.xlsx",
+        "same_input_hash": true,
+        "prepared_rows": 5731,
+        "audited_rows": 5731,
+        "rows_match": true
+      }
+    ]
+  },
+  "source_rows": 360624,
+  "unique_company_fullnames": 232965,
+  "source_years": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "choice_companies_overlapping_qingke": 10698,
+  "qingke_unique_companies": 12202,
+  "choice_company_overlap_rate": 0.04592106110359925,
+  "qingke_company_overlap_rate": 0.8767415177839698,
+  "company_overlap_source_rows": 38105,
+  "same_year_event_candidate_rows": 16442,
+  "same_day_event_candidate_rows": 7029,
+  "exact_known_fund_token_rows": 5921,
+  "investor_token_rows": 503921,
+  "verified_private_events": 0,
+  "government_status_unknown_events": 360624,
+  "earlier_history_overlap_companies": 5811,
+  "earlier_explicit_venture_round_overlap_companies": 3315,
+  "exact_content_duplicate_excess_rows": 0,
+  "round_group_counts": {
+    "unspecified_equity": 156641,
+    "equity_transfer": 9131,
+    "listing": 19318,
+    "a": 28545,
+    "angel": 57899,
+    "b": 9393,
+    "c_or_later": 4207,
+    "acquisition_merger_privatization": 27881,
+    "listed_financing": 11809,
+    "pre_a": 13303,
+    "seed": 9752,
+    "strategic_investment": 12180,
+    "pre_ipo": 281,
+    "late_stage_label": 47,
+    "support_fund_label": 38,
+    "crowdfunding": 29,
+    "debt": 166,
+    "ico_label": 4
+  },
+  "amount_disclosure_counts": {
+    "missing": 269327,
+    "reported_numeric": 91297
+  },
+  "field_gaps": {
+    "vendor_event_id_missing_rows": 360624,
+    "firm_identifier_missing_rows": 360624,
+    "investor_list_missing_rows": 43110,
+    "investor_list_missing_components": {
+      "<blank>": 42933,
+      "未披露": 148,
+      "未透露": 28,
+      "暂无": 1
+    },
+    "investor_list_additional_untold_rows": 28,
+    "currency_missing_rows": 182584,
+    "numeric_amount_currency_missing_rows": 0,
+    "news_link_missing_rows": 300051,
+    "firm_region_missing_rows": 0,
+    "source_columns_not_provided": [
+      "vendor_event_id",
+      "firm_id",
+      "firm_uscc",
+      "announcement_date",
+      "transaction_status",
+      "industry_code",
+      "industry_code_version",
+      "firm_city_code",
+      "record_created_at",
+      "record_updated_at",
+      "fund_lp_identity",
+      "historical_government_status",
+      "investor_amount"
+    ]
+  },
+  "raw_cell_type_counts": {
+    "序号": {
+      "float": 360624
+    },
+    "获投时间": {
+      "str": 360624
+    },
+    "公司名称": {
+      "str": 360624
+    },
+    "公司项目简介": {
+      "str": 290102,
+      "NoneType": 70522
+    },
+    "获投轮次": {
+      "str": 360624
+    },
+    "获投金额(元)": {
+      "NoneType": 269327,
+      "float": 91297
+    },
+    "币种": {
+      "str": 178040,
+      "NoneType": 182584
+    },
+    "主题": {
+      "NoneType": 282846,
+      "str": 77778
+    },
+    "地区": {
+      "str": 360624
+    },
+    "投资方": {
+      "str": 317691,
+      "NoneType": 42933
+    },
+    "相关新闻标题": {
+      "NoneType": 305591,
+      "str": 55033
+    },
+    "相关新闻链接": {
+      "NoneType": 300051,
+      "str": 60573
+    },
+    "创新属性标签": {
+      "NoneType": 217127,
+      "str": 143497
+    },
+    "行业一级": {
+      "str": 359356,
+      "NoneType": 1268
+    },
+    "行业二级": {
+      "str": 359053,
+      "NoneType": 1571
+    },
+    "行业三级": {
+      "str": 322944,
+      "NoneType": 37680
+    },
+    "行业四级": {
+      "str": 197785,
+      "NoneType": 162839
+    }
+  },
+  "qingke_input": {
+    "path": "原始数据打包_20260401/清科政府引导基金投资事件截止到2024年/2015-2024投资事件_附基金级别分类注册地区_扩展匹配.csv",
+    "sha256": "f1d645473ef1761e483b4d42ed6cec471a899f11290146fba8d2a1823279402a",
+    "rows": 24305,
+    "raw_rows": 24306,
+    "excluded_rows": 1,
+    "excluded_source_rows": [
+      22750
+    ]
+  },
+  "inputs": [
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2012.xlsx",
+      "sha256": "567604deea53f298bdb77fb15f92e142f068e361d59c059dcc8f5b2f5a74a746",
+      "sheet": "Sheet1",
+      "rows": 6654,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 870436,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2013.xlsx",
+      "sha256": "2ea2bfa5f0fe1e6a74c351468853a2fb3da14e84265ded9ccc4c5d80b9d1b0b6",
+      "sheet": "Sheet1",
+      "rows": 9284,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1203027,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q1.xlsx",
+      "sha256": "5d99cce538e37a27ee48e6c96121bd660d5ecb7e5487c2334c4378d24780d7bb",
+      "sheet": "Sheet1",
+      "rows": 3476,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 449215,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q2.xlsx",
+      "sha256": "4e8cc2800e2fe24083fd270f70537778c04eb41fcac91bd80f2946dd37f74d50",
+      "sheet": "Sheet1",
+      "rows": 3757,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 491221,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q3.xlsx",
+      "sha256": "1b833fe5e475a4b0b0e2d57ee9dbcc733a02da59ace0a4ecbc2ef7c63215e976",
+      "sheet": "Sheet1",
+      "rows": 4736,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 626165,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2014Q4.xlsx",
+      "sha256": "69c77962e2ba7f7e62658847358fea6d74bebcb5d92bde6809ea404d170b204f",
+      "sheet": "Sheet1",
+      "rows": 5883,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 770326,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M01.xlsx",
+      "sha256": "fa6f7260594c1d864e416443075790b0b03b3e3918a689685ebc95737292309c",
+      "sheet": "Sheet1",
+      "rows": 2177,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 293655,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M02_M03.xlsx",
+      "sha256": "b060c2af02109da032cb04193853b2105d463cdc5906ad52df7b1c1fb8519e16",
+      "sheet": "Sheet1",
+      "rows": 3282,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 441507,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M10_M11.xlsx",
+      "sha256": "612f0f6a7964ade7126f0ad18b341e880f2874fbcd26703f5aec697e3276dc87",
+      "sheet": "Sheet1",
+      "rows": 5457,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 741821,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015M12.xlsx",
+      "sha256": "739023e1d70102d842c919358ce33adfcd17ca3b238e4331df2a3a249671559e",
+      "sheet": "Sheet1",
+      "rows": 5181,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 691520,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015Q2.xlsx",
+      "sha256": "2f5773fd38e8f38ee8bad461f7b6b4cb85436e8e48b40afa305d6d61d7e2d229",
+      "sheet": "Sheet1",
+      "rows": 7287,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 987468,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2015Q3.xlsx",
+      "sha256": "18fa92bfa3a77b4a97971e60bcc2b76c79231d431833860bcb430ebf60fc457c",
+      "sheet": "Sheet1",
+      "rows": 8691,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1186590,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M01_M02.xlsx",
+      "sha256": "805c5360a29cab312a9fb30df08752b232701a44023e60b09fd7b14eeeeedfc6",
+      "sheet": "Sheet1",
+      "rows": 5495,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 750700,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M03.xlsx",
+      "sha256": "bcc5415120a2bd2ae648fbdbd8fdb30f171bd5baa8917a4596395e48a46f51ce",
+      "sheet": "Sheet1",
+      "rows": 4946,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 667257,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M04_M05.xlsx",
+      "sha256": "995597521db630054da2592cfe9de2bee835ab3eac253d18de0852e1e0e7d1a3",
+      "sheet": "Sheet1",
+      "rows": 6698,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 915372,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M06.xlsx",
+      "sha256": "9b5f98f6ff315c193dd672d00a81044af8a63db3455a05ad8c098e2e87868cad",
+      "sheet": "Sheet1",
+      "rows": 3504,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 484109,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M10_M11.xlsx",
+      "sha256": "de8d445fb291204d710476ac5986d5c06cce13a6a1cfe9f3a9312f48c949c99f",
+      "sheet": "Sheet1",
+      "rows": 6376,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 874924,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016M12.xlsx",
+      "sha256": "045f1f3c80c0330d75baa04c850c111353269d431e946ac9f75e0c48d0f1943c",
+      "sheet": "Sheet1",
+      "rows": 4854,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 665354,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2016Q3.xlsx",
+      "sha256": "e60c0ae28153748898932b1d59131fcdad5f747ee7fd7f77e25f36714bbe62db",
+      "sheet": "Sheet1",
+      "rows": 9943,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1353003,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017M10_M11.xlsx",
+      "sha256": "bf788d20b598dfdb46c8942f32814bc38e7d7d5625e954078d681f31e025feea",
+      "sheet": "Sheet1",
+      "rows": 5540,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 790716,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017M12.xlsx",
+      "sha256": "779d5d626b0f0c2472040d1bd2f82818cd32ae853e8cde031aacb64eaa769629",
+      "sheet": "Sheet1",
+      "rows": 4774,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 654618,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q1.xlsx",
+      "sha256": "2947042825c157db797e37f91f8f40fede21aac470ebb8e1ca2615b2e6c94843",
+      "sheet": "Sheet1",
+      "rows": 8649,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1197978,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q2.xlsx",
+      "sha256": "8ac4c5b53ac55eab5b898c81813db65d2f63efc83fdfba513a5af135178b5c0d",
+      "sheet": "Sheet1",
+      "rows": 9048,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1259557,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2017Q3.xlsx",
+      "sha256": "4dbfadae2d524696e0b922ac62104b1eac7f7fe6f6c7abd2e5b6ac3e4d2d9352",
+      "sheet": "Sheet1",
+      "rows": 9086,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1290454,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q1.xlsx",
+      "sha256": "3c6b8e098e068bd8f0c3093af84a5c576fdbab961e086c35e986494123d12306",
+      "sheet": "Sheet1",
+      "rows": 8433,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1221320,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q2.xlsx",
+      "sha256": "c580a68c7acb9483f65fe51c782fabaa365e958c557e51d97db55395c5f3e954",
+      "sheet": "Sheet1",
+      "rows": 8781,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1270879,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q3.xlsx",
+      "sha256": "2e271aedf5a515ccc091f7d799fcb2ca86bb63fa3dcef2a8fe5f2fb8b43df185",
+      "sheet": "Sheet1",
+      "rows": 8288,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1199527,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2018Q4.xlsx",
+      "sha256": "c5b28db2afa36eb097cd9c62c712af52f66c8a65edbad42c207c973a4b2e0d0c",
+      "sheet": "Sheet1",
+      "rows": 8208,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1157513,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q1.xlsx",
+      "sha256": "87eb17cffc75cf6bdb5974527883b65bc42898636e0e7c9980872c66a38c68cd",
+      "sheet": "Sheet1",
+      "rows": 6150,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 883167,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q2.xlsx",
+      "sha256": "04707da499666dd692b49ae0dddfe14a2a8ba40c146237d87a9df0c83f5c774c",
+      "sheet": "Sheet1",
+      "rows": 6390,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 909905,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q3.xlsx",
+      "sha256": "3ce3c8aad910ea6714f20b23f5a8adf0837a3e903c50e48bc8083d453d995469",
+      "sheet": "Sheet1",
+      "rows": 6370,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 919142,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2019Q4.xlsx",
+      "sha256": "537140e9267d80957591a42632fc3b5d5e5ab3d13726c1af5dbce246995d04a1",
+      "sheet": "Sheet1",
+      "rows": 7187,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 996904,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200401_20200409.xlsx",
+      "sha256": "1b01b575b7f26e593a5b083b2f58fdc75bfab8fdc01344240e78b5973815ad11",
+      "sheet": "Sheet1",
+      "rows": 9162,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1087339,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200410_20200412.xlsx",
+      "sha256": "7a3608754cd89521c53c94a4835ecbccee2a28430aaa4fcec50195a14cd1042d",
+      "sheet": "Sheet1",
+      "rows": 5400,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 637409,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200413_20200415.xlsx",
+      "sha256": "c763b67ae16a102582d00776379b4ccac10bdba8551fa9049c4074570193ae4d",
+      "sheet": "Sheet1",
+      "rows": 4601,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 538371,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_20200416_20200430.xlsx",
+      "sha256": "80cc5762f34500f82bba0dc1c6696d30bc3a4571bf8d2489e31c795dd9f13d9a",
+      "sheet": "Sheet1",
+      "rows": 7025,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 816216,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020M05_M06.xlsx",
+      "sha256": "7742cba1621c037652b7513246151a5b02c07dccfc0943b71da29d98924faa24",
+      "sheet": "Sheet1",
+      "rows": 4178,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 591091,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q1.xlsx",
+      "sha256": "e97a7db363bea5822a941f70e5ef8d0295c449eae8db1409ba587c8d959b63ce",
+      "sheet": "Sheet1",
+      "rows": 4118,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 594113,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q3.xlsx",
+      "sha256": "551dd9a9137da744b5604c163a2872d44cf86092e77c87ae75cf2e6bd1416f41",
+      "sheet": "Sheet1",
+      "rows": 7488,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1071161,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2020Q4.xlsx",
+      "sha256": "fb0141e0b087456073441bf11c2d169662a61917efe42204185e20ae72a0c27c",
+      "sheet": "Sheet1",
+      "rows": 9268,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1334678,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q1.xlsx",
+      "sha256": "ad5a87b6a3eb722f3e7274bb5aa4d3c246625698a2fed0a4fa3f3a76cf4267ca",
+      "sheet": "Sheet1",
+      "rows": 7433,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1084912,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q2.xlsx",
+      "sha256": "ace8972cd2b3bdf8532a5b448ba4355141e372917d6320ead8586020c3cf41e0",
+      "sheet": "Sheet1",
+      "rows": 7599,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1099707,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q3.xlsx",
+      "sha256": "91471e5b3604e5faf54b276a703e6411da2d558653beed1474bd3644e5161862",
+      "sheet": "Sheet1",
+      "rows": 9209,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1329734,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2021Q4.xlsx",
+      "sha256": "9b6a1a311ea28fb109954cf2072aa8ce5571839b8b29067c8c429ca6343987c7",
+      "sheet": "Sheet1",
+      "rows": 9103,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1366571,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q1.xlsx",
+      "sha256": "f8405c6251688a7ea2c4f9ac98c4e38ba9f7fd5c13c9d0046b4138d98f5590ed",
+      "sheet": "Sheet1",
+      "rows": 6478,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 983907,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q2.xlsx",
+      "sha256": "cec2433a6e092069d407ab0828ff3fdf3ef659b617217a3d610e659fe7651800",
+      "sheet": "Sheet1",
+      "rows": 6338,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 960774,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q3.xlsx",
+      "sha256": "aced4dcadc10974abd044f5f10cfffc03f44e058bc92b07091be00eff65d3b26",
+      "sheet": "Sheet1",
+      "rows": 6930,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1044374,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2022Q4.xlsx",
+      "sha256": "cca36a62d842c6e0b38956e8478bbc0a025ce5aa76e6bf1919aaa9da5ff8db60",
+      "sheet": "Sheet1",
+      "rows": 6827,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1037867,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q1.xlsx",
+      "sha256": "37a7019dcef38fb9aa1b4336f8a7e79fb8a6420b5ab07cdfb27cfb21d7b6f37f",
+      "sheet": "Sheet1",
+      "rows": 6158,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 910920,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q2.xlsx",
+      "sha256": "3cb86d0ae000be31cb9fb32d04f6107bc0363ebdc4c7ee50a7982a5659033430",
+      "sheet": "Sheet1",
+      "rows": 5837,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 863667,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q3.xlsx",
+      "sha256": "6dd5938913aa52dbb5cb9eb83d4ee1f59a9872225a7cc0ab425a5af126d15434",
+      "sheet": "Sheet1",
+      "rows": 6138,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 931495,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2023Q4.xlsx",
+      "sha256": "f656aaaa7729545246c715deae41dd2a96129441237cd20653cbc14f8904d8bf",
+      "sheet": "Sheet1",
+      "rows": 6733,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 1041281,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q1.xlsx",
+      "sha256": "6ccbee18643c4835baa4d23897b9b6bafac2c4055e9b8c21fa2426dc900cf1f6",
+      "sheet": "Sheet1",
+      "rows": 4864,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 759780,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q2.xlsx",
+      "sha256": "c9aa4ce66a5c8101a0a607faf6ffc1465fdb28c7ecc236f1568c45127040cb33",
+      "sheet": "Sheet1",
+      "rows": 4717,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 737830,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q3.xlsx",
+      "sha256": "1359a29c7d925bb9d01149b41170c5dd2025079c6ded4d97a211de58a06543ce",
+      "sheet": "Sheet1",
+      "rows": 4704,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 737791,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    },
+    {
+      "file": "原始数据/Choice_创投事件_20261117/raw/choice_events_2024Q4.xlsx",
+      "sha256": "1e8c43dde1976957bea5de509d0c74ba94fc6e4c8efe870e027d74de12382383",
+      "sheet": "Sheet1",
+      "rows": 5731,
+      "ignored_blank_rows": 5,
+      "metadata_rows": 1,
+      "bytes": 897570,
+      "columns": [
+        "序号",
+        "获投时间",
+        "公司名称",
+        "公司项目简介",
+        "获投轮次",
+        "获投金额(元)",
+        "币种",
+        "主题",
+        "地区",
+        "投资方",
+        "相关新闻标题",
+        "相关新闻链接",
+        "创新属性标签",
+        "行业一级",
+        "行业二级",
+        "行业三级",
+        "行业四级"
+      ]
+    }
+  ],
+  "validation": {
+    "source_rows_conserved": true,
+    "source_row_ids_unique": true,
+    "round_flags_one_per_source_row": true,
+    "government_status_unknown_preserved": true,
+    "input_files_unchanged_during_read": true
+  },
+  "rules": {
+    "company_match": "NFKC + whitespace removal only, then full-string equality; literal equality flagged separately",
+    "input_rows": "Only choice_events_*.xlsx formal batches. Diagnostic choice_probe_* files remain raw and are listed as ignored. Rows below the event header exclude blanks, repeated headers and 数据来源 footers; metadata retained separately in source_notes.csv.",
+    "government_candidates": "Company overlap describes financing history; name+year/date and exact known fund tokens are review candidates. Ownership and government status remain unknown.",
+    "qingke_header": "Exclude only the explicit shifted-header signature 融资主体=基金全称, 投资时间=投资类型, 基金全称=上级机构全称, 轮次=投资金额(USD/M); preserve source record number and raw values separately.",
+    "investor_tokens": "Split top-level comma/Chinese comma/dunhao/semicolon/newline; parentheses preserved. No fuzzy names, role inference, legal-entity inference or investor-amount allocation.",
+    "monetary_amounts": "Keep original cell value and currency; numeric cells copied without conversion. No missing-to-zero or midpoint imputation.",
+    "duplicate_policy": "All source rows retained; content fingerprint excludes only the batch sequence. Identical-content frequency is diagnostic.",
+    "round_flags": "Supplier financing labels classified separately; no inference from round to government identity or firm maturity.",
+    "region_and_tags": "Region, industry and innovation labels retained as exported; historical effective dates are not supplied."
+  },
+  "outputs_sha256": {
+    "choice_events_normalized.csv.gz": "c4d6ef3728a127c79cdddcb0d17fb423be482238da61d59a4d75905ff0ce5ec9",
+    "choice_investor_tokens.csv.gz": "80c51e49247da7218e18f866b1c800bcc1711bc513035dae10b5b5e654fc3298",
+    "choice_round_flags.csv.gz": "d0aaa143741de911f1c3f9c6a1f81c26d4429c4447c62e7dba3bac86e3da706f",
+    "company_fullname_overlap.csv": "2fea9fcfe03a4b199e964e2b772b3954189c2023d880c1245def6bd5ef4d8f1b",
+    "government_event_candidates.csv.gz": "075ad390bd5558f99a84538730b2ad8ad5e9344f82fa6e6bfc11eca1cc3eb148",
+    "independent_audit_comparison.csv": "47999d9ea54cd1721ec592f20542d8100978b8cb93f259c473d3faf04077b653",
+    "overlap_by_year.csv": "a22a6f92930d8e29168efb3858c92b6c608b5b151c8e1bebe210c1fc2995b2a0",
+    "qingke_excluded_source_rows.csv": "9038f6dca19c910cb28c512567c422408514dab6cee3db42de57d83cd759e473",
+    "qingke_source_row_index.csv": "243bda937c983e4a4381dbd8765102e628b4fea9427820be445a73884a967c9e",
+    "round_classification_rules.csv": "d7b0cd8fcc54d4cc0aa6c8428a1101556b6e755f2547bde705072917d4456b44",
+    "source_notes.csv": "3fd2b780f5f5a763c8d39097c9b6faa8a989e9c37a494761341f633f21052695",
+    "template_field_assessment.csv": "f35fac76494f254a70704f1d223fd14dcb8bcb07392d3d82d609f95ec2684969"
+  }
+}
