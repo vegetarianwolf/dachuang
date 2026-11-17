@@ -4,3 +4,8 @@ __pycache__/
 *token.txt
 signCode.txt
 .DS_Store
+
+# Rebuilt large datasets; tracked lossless parts are in data_parts/.
+/csmar_data_export/SRDI_EntInfo_Full.csv
+/csmar_data_export/SRDI_EntPatentInfo.csv
+/csmar_data_export/SRDI_EntPatentInfo_Full.csv

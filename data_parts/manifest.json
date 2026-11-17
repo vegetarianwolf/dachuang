@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "chunk_size_bytes": 95000000,
+  "files": [
+    {
+      "path": "csmar_data_export/SRDI_EntInfo_Full.csv",
+      "size": 413393651,
+      "sha256": "bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1",
+      "parts": [
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00001.bin",
+          "size": 95000000,
+          "sha256": "d780a2b0564e6c269f05a05ad3450d71b343ba553d37b8b6c15fc63e646010ac"
+        },
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00002.bin",
+          "size": 95000000,
+          "sha256": "e47497a07c6e6b8cd949095f5b10903ce763e0efa692deb5d085e58b4831f0a0"
+        },
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00003.bin",
+          "size": 95000000,
+          "sha256": "4f02b3bfa3756c953e7f01136f641cb11f74356f16fdb9effc643dabd1f0b0cd"
+        },
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00004.bin",
+          "size": 95000000,
+          "sha256": "4e23b7f43340511b82987bbeba5cc240b59308aa27228b360e1a24f86401a480"
+        },
+        {
+          "path": "data_parts/bb645b78a1737a3956fb6492a7329cf7c846e6946da671c3ab2af778a9214bf1/part-00005.bin",
+          "size": 33393651,
+          "sha256": "c08ad34d477d24d133f0fa49a6c78e2b3c02ed4f943f42994da3dd5ac6265471"
+        }
+      ]
+    },
+    {
+      "path": "csmar_data_export/SRDI_EntPatentInfo.csv",
+      "size": 691287215,
+      "sha256": "69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd",
+      "parts": [
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00001.bin",
+          "size": 95000000,
+          "sha256": "591802af295189de718e08624105edbbfdd7666e29f62d3171225203f7cb425f"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00002.bin",
+          "size": 95000000,
+          "sha256": "bb33f884736387261049822e527ac596da0660b787bed1e7fc7464c86e2dd6a6"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00003.bin",
+          "size": 95000000,
+          "sha256": "21287ed7a38844d8da4e57dd9b72fe89f40683c176f73a1ee4bbf3f89ba16cc0"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00004.bin",
+          "size": 95000000,
+          "sha256": "840ed8e4b74bb5a1711db728772abbec3b2273814affe0b3373bad8c41a5655c"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00005.bin",
+          "size": 95000000,
+          "sha256": "762e0f2f3308245cff4653fc067f41a21c8f1b210e605bd5641a9f642d517943"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00006.bin",
+          "size": 95000000,
+          "sha256": "b9b96ad17f11b8c931328dcac79337f9b566aa0cca1b52d9968746d53b30fa54"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00007.bin",
+          "size": 95000000,
+          "sha256": "b8c794420c7df63b8019ad133a74c3e2ac7c98fd5e4f02d3f4d9ebc57ef002aa"
+        },
+        {
+          "path": "data_parts/69061ee84fec558c3a1e8d3005ad4c9cab645811a82a800f62e60b24db3a8abd/part-00008.bin",
+          "size": 26287215,
+          "sha256": "19fbd4d9b86d2224b714fd2144d06dfa655d1e55c6b69effbf7a215a8e2a1b1b"
+        }
+      ]
+    },
+    {
+      "path": "csmar_data_export/SRDI_EntPatentInfo_Full.csv",
+      "size": 845365185,
+      "sha256": "236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603",
+      "parts": [
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00001.bin",
+          "size": 95000000,
+          "sha256": "313a53ca6b00f9d914cbb338ee26f45a800e723f495ed2934a8b56a0d51e906e"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00002.bin",
+          "size": 95000000,
+          "sha256": "b679b07fabb074f83caf4d5dd61250c8641a3156347fec756d18372ec0eb9329"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00003.bin",
+          "size": 95000000,
+          "sha256": "473dd6e1535d3fb9b70e956c2b660581d2a6ad30b0f454c593ce1e19231881d5"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00004.bin",
+          "size": 95000000,
+          "sha256": "cbf3a805a6def24aa443d5829c9ca6475919ffd08ddfbd9cfa29d5b37afa89ac"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00005.bin",
+          "size": 95000000,
+          "sha256": "be721f884df9194438556fd55b7d86b49f70bd71d66aaf4754a3640a3a09d20d"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00006.bin",
+          "size": 95000000,
+          "sha256": "2b12d424524f939af77dd9c3b8b3ae4ad0ef2ffaf2b67516336d27909226c981"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00007.bin",
+          "size": 95000000,
+          "sha256": "5d7a17caa672f6f1e285d756ae6365a45d448166fc1576d3def8d074b5faa1f1"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00008.bin",
+          "size": 95000000,
+          "sha256": "c850c3d67c8a3e52a7ec04cd0aaa26dc8603d7ca26fe1ca67a39b5abee5bfdff"
+        },
+        {
+          "path": "data_parts/236c5c107c6d997e2d9f8d5d76e17c374d09ea42aa7f626aa0674ca5b8ed1603/part-00009.bin",
+          "size": 85365185,
+          "sha256": "d31e8850001ba03de2479daff922240200185ee93a38b299a36b5d6457a92110"
+        }
+      ]
+    }
+  ]
+}
