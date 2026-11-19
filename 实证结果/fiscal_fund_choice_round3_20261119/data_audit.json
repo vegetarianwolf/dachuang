@@ -1,0 +1,25 @@
+{
+  "input_sha256": {
+    "面板数据/firm_changes_round2_20261117.csv": "4e6728b018a52cd8206ee8da84f259bed78ca244586236879c136ec4d513db97",
+    "实证结果/choice_download_20261117/prepare/choice_events_normalized.csv.gz": "c4d6ef3728a127c79cdddcb0d17fb423be482238da61d59a4d75905ff0ce5ec9",
+    "实证结果/choice_download_20261117/prepare/choice_round_flags.csv.gz": "d0aaa143741de911f1c3f9c6a1f81c26d4429c4447c62e7dba3bac86e3da706f",
+    "面板数据/micro_fiscal_round2_20261117.csv": "28863f31581d707633bcdc17b398d411c04c31239c2d5fe1a315205ceffcce16",
+    "实证结果/fiscal_fund_design_round2_20261117/samples/M1.csv": "8f2d10a9c8b5d1e212db68cd4758c045d6274511f708c59f00b545152df6d984",
+    "实证结果/choice_download_20261117/prepare/prepare_summary.json": "09c8a8d9670a33aaaad8d83747048dba477b0c2cc36bcba72d4358b162a35e10"
+  },
+  "panel_sha256": "3aa52dd92a11ad3a1784e7b19270c3377219c772ae828425b4bebbec1cd96026",
+  "cohort_firms": 613,
+  "patent_m1_firms": 159,
+  "patent_linked_firms": 143,
+  "patent_linked_by_entry_firms": 141,
+  "patent_prior_explicit_firms": 37,
+  "follow_firms": 496,
+  "follow_source_cities": 83,
+  "follow_observed_explicit_firms": 61,
+  "follow_prior_explicit_firms": 69,
+  "follow_no_april_firms": 493,
+  "follow_no_april_same_sample_full_outcome_ones": 61,
+  "follow_no_april_outcome_ones": 61,
+  "follow_debt_firms": 388,
+  "follow_debt_outcome_ones": 49
+}

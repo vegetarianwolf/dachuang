@@ -1,0 +1,573 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/vegetarianwolf/Projects/dachuang/运行日志与do代码/fiscal_ch
+> oice_debt_diagnostics_20261119.log
+  log type:  text
+ opened on:  19 Nov 2026, 23:10:14
+
+. 
+. tempfile macro estimates influence slopes
+
+. tempname results leaveout marginal cutoff
+
+. import delimited using "`root'/面板数据/fiscal_macro_trial_20261117.csv", cle
+> ar encoding(UTF-8) asdouble
+(24 vars, 3,047 obs)
+
+. keep city year debt_ratio debt_gdp_ratio
+
+. rename (city year debt_ratio) (source_city lag_year macro_debt)
+
+. isid source_city lag_year
+
+. save `macro'
+file /var/folders/vg/d131wddn7t1g02rrshk6lhh00000gn/T//St77039.000001 saved
+    as .dta format
+
+. import delimited using "`root'/面板数据/firm_choice_fiscal_round3_20261119.cs
+> v", clear encoding(UTF-8) asdouble
+(28 vars, 613 obs)
+
+. generate int lag_year = year - 1
+
+. merge m:1 source_city lag_year using `macro', keep(master match) nogen
+(variable source_city was str15, now str33 to accommodate using data's
+       values)
+
+    Result                      Number of obs
+    -----------------------------------------
+    Not matched                             0
+    Matched                               613  
+    -----------------------------------------
+
+. assert missing(debt) == missing(macro_debt)
+
+. assert abs(debt - macro_debt) < 1e-10 if !missing(debt)
+
+. generate byte common = entry_rows > 0 & !missing(debt)
+
+. quietly summarize debt if common, detail
+
+. local center = r(mean)
+
+. scalar `cutoff' = r(p95)
+
+. local q25 = r(p25)
+
+. local q50 = r(p50)
+
+. local q75 = r(p75)
+
+. display "Debt ratio: mean " `center' ", p95 " `cutoff'
+Debt ratio: mean 6.4083046, p95 14.880701
+
+. generate double debt_c = debt - `center' if common
+(225 missing values generated)
+
+. generate double p_debt = p*debt_c
+(225 missing values generated)
+
+. generate double p_sq = p^2
+
+. generate double debt_sq = debt_c^2
+(225 missing values generated)
+
+. generate byte below95 = common & debt <= scalar(`cutoff')
+
+. generate byte gdp_debt_common = common & !missing(debt_gdp_ratio)
+
+. quietly summarize debt_gdp_ratio if gdp_debt_common, meanonly
+
+. generate double gdp_debt_c = debt_gdp_ratio - r(mean) if gdp_debt_common
+(230 missing values generated)
+
+. generate double p_gdp_debt = p*gdp_debt_c
+(230 missing values generated)
+
+. generate byte common_noapr = common & entry_rows_noapr > 0
+
+. 
+. program define diagnostic
+  1.     syntax, MODEL(name) Y(name) RHS(string) TARGET(name) FLAG(name) RESULT
+> S(name)
+  2.     display "DIAGNOSTIC `model'"
+  3.     regress `y' `rhs' if `flag', vce(cluster source_id)
+  4.     quietly lincom `target'
+  5.     post `results' ("`model'") ("`y'") ("`target'") (r(estimate)) (r(se)) 
+> (r(p)) (r(lb)) (r(ub)) (e(N)) (e(N_clust))
+  6. end
+
+. 
+. postfile `results' str24 model str20 outcome str16 target double b se p_value
+>  ci_lo ci_hi n clusters using `estimates', replace
+(file /var/folders/vg/d131wddn7t1g02rrshk6lhh00000gn/T//St77039.000002 not
+    found)
+
+. local base "p l_gdp l_secondary i.year"
+
+. local interaction "`base' debt_c p_debt"
+
+. local handle "results(`results')"
+
+. diagnostic, model(Q3_replicated) y(follow2) rhs("`interaction' pre2_round") t
+> arget(p_debt) flag(common) `handle'
+DIAGNOSTIC Q3_replicated
+
+Linear regression                               Number of obs     =        388
+                                                F(12, 70)         =       9.58
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1060
+                                                Root MSE          =     .31948
+
+                             (Std. err. adjusted for 71 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+     follow2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.5646832   .1586354    -3.56   0.001    -.8810714   -.2482949
+       l_gdp |   .0008356   .0381957     0.02   0.983    -.0753432    .0770144
+ l_secondary |   .3255657   .2749189     1.18   0.240    -.2227428    .8738742
+             |
+        year |
+       2017  |   .0075352   .0921849     0.08   0.935    -.1763217    .1913921
+       2018  |   .0238873   .0795329     0.30   0.765    -.1347361    .1825107
+       2019  |  -.0146671   .0791968    -0.19   0.854    -.1726202     .143286
+       2020  |   .0407156   .0831895     0.49   0.626    -.1252006    .2066319
+       2021  |  -.0004151   .0886505    -0.00   0.996    -.1772229    .1763927
+       2022  |  -.0847772    .111143    -0.76   0.448    -.3064449    .1368906
+             |
+      debt_c |   .0356585    .009784     3.64   0.001     .0161449    .0551721
+      p_debt |   -.081632   .0217919    -3.75   0.000    -.1250945   -.0381695
+  pre2_round |   .1333001   .0680968     1.96   0.054    -.0025147    .2691148
+       _cons |   .1559425   .3019666     0.52   0.607     -.446311     .758196
+------------------------------------------------------------------------------
+
+. diagnostic, model(below_debt_p95) y(follow2) rhs("`interaction' pre2_round") 
+> target(p_debt) flag(below95) `handle'
+DIAGNOSTIC below_debt_p95
+
+Linear regression                               Number of obs     =        369
+                                                F(12, 69)         =      15.82
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1245
+                                                Root MSE          =     .31468
+
+                             (Std. err. adjusted for 70 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+     follow2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.6090347   .1401174    -4.35   0.000    -.8885612   -.3295081
+       l_gdp |  -.0139827   .0442628    -0.32   0.753    -.1022845    .0743191
+ l_secondary |   .4779315   .3154091     1.52   0.134    -.1512924    1.107155
+             |
+        year |
+       2017  |   .0060063   .0950321     0.06   0.950    -.1835776    .1955903
+       2018  |   .0344731   .0737931     0.47   0.642    -.1127401    .1816862
+       2019  |  -.0033022      .0771    -0.04   0.966    -.1571124     .150508
+       2020  |   .0109118   .0856507     0.13   0.899    -.1599566    .1817802
+       2021  |  -.0019417   .0876097    -0.02   0.982    -.1767182    .1728348
+       2022  |  -.0552913   .1247909    -0.44   0.659    -.3042423    .1936597
+             |
+      debt_c |   .0442179   .0087029     5.08   0.000      .026856    .0615797
+      p_debt |  -.0918996   .0147968    -6.21   0.000    -.1214183   -.0623808
+  pre2_round |    .143805   .0716116     2.01   0.049     .0009437    .2866663
+       _cons |   .2079804    .306757     0.68   0.500    -.4039831     .819944
+------------------------------------------------------------------------------
+
+. diagnostic, model(quadratic_main_terms) y(follow2) rhs("`interaction' pre2_ro
+> und p_sq debt_sq") target(p_debt) flag(common) `handle'
+DIAGNOSTIC quadratic_main_terms
+
+Linear regression                               Number of obs     =        388
+                                                F(14, 70)         =      10.53
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1115
+                                                Root MSE          =     .31933
+
+                             (Std. err. adjusted for 71 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+     follow2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.3315145   .3554068    -0.93   0.354    -1.040351    .3773219
+       l_gdp |  -.0168665   .0425611    -0.40   0.693     -.101752    .0680189
+ l_secondary |   .4106532   .3618097     1.13   0.260    -.3109535     1.13226
+             |
+        year |
+       2017  |   .0033161   .0920426     0.04   0.971    -.1802572    .1868893
+       2018  |   .0178602   .0762395     0.23   0.815    -.1341947     .169915
+       2019  |  -.0224757   .0780222    -0.29   0.774    -.1780862    .1331347
+       2020  |    .032624   .0814667     0.40   0.690    -.1298562    .1951043
+       2021  |   .0008063   .0900187     0.01   0.993    -.1787304    .1803429
+       2022  |  -.0489513   .1280497    -0.38   0.703    -.3043384    .2064357
+             |
+      debt_c |   .0411925   .0103944     3.96   0.000     .0204615    .0619235
+      p_debt |  -.0866453   .0250837    -3.45   0.001    -.1366733   -.0366174
+  pre2_round |   .1345719   .0687578     1.96   0.054    -.0025612    .2717049
+        p_sq |  -.3096626   .4540465    -0.68   0.497     -1.21523    .5959046
+     debt_sq |  -.0004161   .0002826    -1.47   0.145    -.0009798    .0001476
+       _cons |   .2183782   .3045181     0.72   0.476     -.388964    .8257204
+------------------------------------------------------------------------------
+
+. diagnostic, model(debt_gdp_same_sample) y(follow2) rhs("`interaction' pre2_ro
+> und") target(p_debt) flag(gdp_debt_common) `handle'
+DIAGNOSTIC debt_gdp_same_sample
+
+Linear regression                               Number of obs     =        383
+                                                F(11, 70)         =       8.67
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1048
+                                                Root MSE          =     .32111
+
+                             (Std. err. adjusted for 71 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+     follow2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.5579325   .1627345    -3.43   0.001    -.8824963   -.2333687
+       l_gdp |   .0027261   .0395828     0.07   0.945    -.0762194    .0816715
+ l_secondary |   .3294373   .2735795     1.20   0.233    -.2161999    .8750745
+             |
+        year |
+       2017  |   .0074146   .0922164     0.08   0.936    -.1765052    .1913344
+       2018  |   .0231452   .0792539     0.29   0.771    -.1349217    .1812121
+       2019  |  -.0158412   .0790582    -0.20   0.842    -.1735178    .1418354
+       2020  |   .0392379   .0830123     0.47   0.638    -.1263249    .2048007
+       2021  |  -.0017887   .0885404    -0.02   0.984     -.178377    .1747997
+             |
+      debt_c |   .0356941   .0099461     3.59   0.001     .0158572     .055531
+      p_debt |  -.0814996   .0221156    -3.69   0.000    -.1256078   -.0373914
+  pre2_round |   .1355231   .0686885     1.97   0.052    -.0014717     .272518
+       _cons |   .1406002   .3114672     0.45   0.653    -.4806015    .7618019
+------------------------------------------------------------------------------
+
+. diagnostic, model(debt_over_gdp) y(follow2) rhs("`base' gdp_debt_c p_gdp_debt
+>  pre2_round") target(p_gdp_debt) flag(gdp_debt_common) `handle'
+DIAGNOSTIC debt_over_gdp
+
+Linear regression                               Number of obs     =        383
+                                                F(11, 70)         =       9.22
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1038
+                                                Root MSE          =     .32129
+
+                             (Std. err. adjusted for 71 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+     follow2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.4698301   .1549709    -3.03   0.003    -.7789098   -.1607505
+       l_gdp |    .013184   .0403025     0.33   0.745    -.0671967    .0935647
+ l_secondary |   .3188822   .2571926     1.24   0.219    -.1940722    .8318367
+             |
+        year |
+       2017  |   .0067111   .0930392     0.07   0.943    -.1788497    .1922719
+       2018  |   .0235051   .0797832     0.29   0.769    -.1356176    .1826278
+       2019  |  -.0126018   .0797153    -0.16   0.875    -.1715889    .1463854
+       2020  |   .0413577   .0853373     0.48   0.629    -.1288423    .2115576
+       2021  |   .0025698   .0901242     0.03   0.977    -.1771773     .182317
+             |
+  gdp_debt_c |   .3127556   .0832782     3.76   0.000     .1466625    .4788488
+  p_gdp_debt |  -.7152707   .1870205    -3.82   0.000    -1.088271   -.3422701
+  pre2_round |   .1351279    .069492     1.94   0.056    -.0034696    .2737254
+       _cons |   .0440413   .3178342     0.14   0.890     -.589859    .6779417
+------------------------------------------------------------------------------
+
+. diagnostic, model(pre_post_before) y(pre2_round) rhs("`interaction'") target(
+> p_debt) flag(common) `handle'
+DIAGNOSTIC pre_post_before
+
+Linear regression                               Number of obs     =        388
+                                                F(11, 70)         =       1.07
+                                                Prob > F          =     0.3956
+                                                R-squared         =     0.0198
+                                                Root MSE          =     .36363
+
+                             (Std. err. adjusted for 71 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+  pre2_round | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |   -.053902   .1797394    -0.30   0.765    -.4123809    .3045768
+       l_gdp |   .0226566   .0473297     0.48   0.634    -.0717396    .1170527
+ l_secondary |   .1521781   .3405297     0.45   0.656     -.526987    .8313431
+             |
+        year |
+       2017  |   -.092311   .0864951    -1.07   0.290    -.2648201    .0801981
+       2018  |  -.0736494   .0892711    -0.83   0.412    -.2516949    .1043961
+       2019  |  -.0006055   .0921522    -0.01   0.995    -.1843973    .1831862
+       2020  |  -.0344997   .0904572    -0.38   0.704    -.2149109    .1459114
+       2021  |  -.0926589   .0878918    -1.05   0.295    -.2679534    .0826357
+       2022  |  -.0280802   .1592312    -0.18   0.861    -.3456569    .2894964
+             |
+      debt_c |    -.00046   .0107653    -0.04   0.966    -.0219308    .0210107
+      p_debt |    .006584   .0227279     0.29   0.773    -.0387455    .0519134
+       _cons |   .0286331   .4084594     0.07   0.944    -.7860135    .8432797
+------------------------------------------------------------------------------
+
+. diagnostic, model(pre_post_after) y(follow2) rhs("`interaction'") target(p_de
+> bt) flag(common) `handle'
+DIAGNOSTIC pre_post_after
+
+Linear regression                               Number of obs     =        388
+                                                F(11, 70)         =      10.32
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0853
+                                                Root MSE          =     .32271
+
+                             (Std. err. adjusted for 71 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+     follow2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.5718683   .1633507    -3.50   0.001     -.897661   -.2460756
+       l_gdp |   .0038557   .0403827     0.10   0.924    -.0766851    .0843966
+ l_secondary |    .345851   .2829177     1.22   0.226    -.2184106    .9101127
+             |
+        year |
+       2017  |  -.0047699    .087296    -0.05   0.957    -.1788763    .1693366
+       2018  |   .0140698   .0737504     0.19   0.849    -.1330208    .1611604
+       2019  |  -.0147478   .0767941    -0.19   0.848    -.1679089    .1384132
+       2020  |   .0361168   .0821182     0.44   0.661    -.1276627    .1998963
+       2021  |  -.0127665   .0837548    -0.15   0.879    -.1798102    .1542771
+       2022  |  -.0885203    .103722    -0.85   0.396    -.2953873    .1183468
+             |
+      debt_c |   .0355972   .0093018     3.83   0.000     .0170452    .0541491
+      p_debt |  -.0807543   .0208729    -3.87   0.000     -.122384   -.0391247
+       _cons |   .1597593   .3088822     0.52   0.607    -.4562868    .7758054
+------------------------------------------------------------------------------
+
+. diagnostic, model(april_common_full) y(follow2) rhs("`interaction' pre2_round
+> ") target(p_debt) flag(common_noapr) `handle'
+DIAGNOSTIC april_common_full
+
+Linear regression                               Number of obs     =        385
+                                                F(12, 69)         =       9.47
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1080
+                                                Root MSE          =     .32023
+
+                             (Std. err. adjusted for 70 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+     follow2 | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.5640449    .160108    -3.52   0.001    -.8834517   -.2446382
+       l_gdp |   .0021211   .0387125     0.05   0.956    -.0751081    .0793504
+ l_secondary |   .3659015   .2909263     1.26   0.213    -.2144806    .9462836
+             |
+        year |
+       2017  |   .0080878   .0924473     0.09   0.931    -.1763396    .1925151
+       2018  |   .0262442   .0800782     0.33   0.744    -.1335074    .1859959
+       2019  |  -.0116269   .0794576    -0.15   0.884    -.1701404    .1468866
+       2020  |    .050499    .083534     0.60   0.547    -.1161467    .2171447
+       2021  |   .0020793   .0891622     0.02   0.981    -.1757944     .179953
+       2022  |  -.0820098   .1115431    -0.74   0.465    -.3045322    .1405125
+             |
+      debt_c |    .035165   .0099042     3.55   0.001     .0154068    .0549233
+      p_debt |   -.080332   .0222326    -3.61   0.001    -.1246848   -.0359791
+  pre2_round |   .1368852    .068267     2.01   0.049     .0006962    .2730742
+       _cons |   .1292861   .3142183     0.41   0.682    -.4975623    .7561345
+------------------------------------------------------------------------------
+
+. diagnostic, model(april_rows_excluded) y(follow2_noapr) rhs("`interaction' pr
+> e2_round_noapr") target(p_debt) flag(common_noapr) `handle'
+DIAGNOSTIC april_rows_excluded
+
+Linear regression                               Number of obs     =        385
+                                                F(12, 69)         =       9.40
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1102
+                                                Root MSE          =     .31983
+
+                             (Std. err. adjusted for 70 clusters in source_id)
+------------------------------------------------------------------------------
+             |               Robust
+follow2_no~r | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+           p |  -.5619304   .1603004    -3.51   0.001     -.881721   -.2421398
+       l_gdp |    .001158   .0386847     0.03   0.976    -.0760159    .0783318
+ l_secondary |   .3634616   .2867851     1.27   0.209     -.208659    .9355823
+             |
+        year |
+       2017  |   .0088794   .0927045     0.10   0.924     -.176061    .1938198
+       2018  |   .0267185   .0803563     0.33   0.741     -.133588     .187025
+       2019  |  -.0120163   .0798449    -0.15   0.881    -.1713024    .1472699
+       2020  |   .0502312   .0834743     0.60   0.549    -.1162954    .2167577
+       2021  |   .0062658     .08964     0.07   0.944    -.1725611    .1850927
+       2022  |  -.0816809   .1124515    -0.73   0.470    -.3060154    .1426536
+             |
+      debt_c |   .0348762   .0099043     3.52   0.001     .0151177    .0546346
+      p_debt |  -.0791744   .0224232    -3.53   0.001    -.1239075   -.0344412
+pre2_round~r |   .1459782   .0681299     2.14   0.036     .0100626    .2818937
+       _cons |   .1342598   .3122227     0.43   0.669    -.4886074     .757127
+------------------------------------------------------------------------------
+
+. postclose `results'
+
+. 
+. postfile `marginal' str3 percentile double debt b_pp se_pp ci_lo_pp ci_hi_pp 
+> using `slopes', replace
+(file /var/folders/vg/d131wddn7t1g02rrshk6lhh00000gn/T//St77039.000004 not
+    found)
+
+. quietly regress follow2 `interaction' pre2_round if common, vce(cluster sourc
+> e_id)
+
+. foreach q in 25 50 75 {
+  2.     local offset = `q`q'' - `center'
+  3.     quietly lincom 10*(p + `offset'*p_debt)
+  4.     post `marginal' ("p`q'") (`q`q'') (r(estimate)) (r(se)) (r(lb)) (r(ub)
+> )
+  5. }
+
+. postclose `marginal'
+
+. 
+. quietly regress p_debt `base' debt_c pre2_round if common
+
+. predict double residual_interaction if e(sample), residuals
+(225 missing values generated)
+
+. generate double residual_sq = residual_interaction^2
+(225 missing values generated)
+
+. quietly summarize residual_sq if common, meanonly
+
+. local total = r(sum)
+
+. quietly levelsof source_id if common, local(cities)
+
+. postfile `leaveout' int source_id str50 source_city double partial_variation_
+> share b se p_value ci_lo ci_hi n clusters using `influence', replace
+(file /var/folders/vg/d131wddn7t1g02rrshk6lhh00000gn/T//St77039.000003 not
+    found)
+
+. foreach city of local cities {
+  2.     quietly levelsof source_city if source_id == `city', local(name) clean
+  3.     quietly summarize residual_sq if common & source_id == `city', meanonl
+> y
+  4.     local share = r(sum)/`total'
+  5.     quietly regress follow2 `interaction' pre2_round if common & source_id
+>  != `city', vce(cluster source_id)
+  6.     quietly lincom p_debt
+  7.     post `leaveout' (`city') ("`name'") (`share') (r(estimate)) (r(se)) (r
+> (p)) (r(lb)) (r(ub)) (e(N)) (e(N_clust))
+  8. }
+
+. postclose `leaveout'
+
+. 
+. use `estimates', clear
+
+. export delimited using "`outdir'/debt_diagnostics.csv", replace
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_choice_round3
+> _20261119/debt_diagnostics.csv saved
+
+. list model n clusters b ci_lo ci_hi, noobs
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  |        Q3_replicated | 388 |       71 | -.08163198 | -.1250945 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                           -.0381695                            |
+  +----------------------------------------------------------------+
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  |       below_debt_p95 | 369 |       70 | -.09189956 | -.1214183 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                           -.0623808                            |
+  +----------------------------------------------------------------+
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  | quadratic_main_terms | 388 |       71 | -.08664532 | -.1366733 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                           -.0366174                            |
+  +----------------------------------------------------------------+
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  | debt_gdp_same_sample | 383 |       71 | -.08149957 | -.1256077 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                           -.0373914                            |
+  +----------------------------------------------------------------+
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  |        debt_over_gdp | 383 |       71 | -.71527073 | -1.088271 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                           -.3422701                            |
+  +----------------------------------------------------------------+
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  |      pre_post_before | 388 |       71 |  .00658399 | -.0387455 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                            .0519134                            |
+  +----------------------------------------------------------------+
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  |       pre_post_after | 388 |       71 | -.08075433 |  -.122384 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                           -.0391247                            |
+  +----------------------------------------------------------------+
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  |    april_common_full | 385 |       70 | -.08033197 | -.1246848 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                           -.0359791                            |
+  +----------------------------------------------------------------+
+
+  +----------------------------------------------------------------+
+  |                model |   n | clusters |          b |     ci_lo |
+  |  april_rows_excluded | 385 |       70 | -.07917437 | -.1239075 |
+  |----------------------------------------------------------------|
+  |                               ci_hi                            |
+  |                           -.0344412                            |
+  +----------------------------------------------------------------+
+
+. use `slopes', clear
+
+. export delimited using "`outdir'/debt_marginal_effects.csv", replace
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_choice_round3
+> _20261119/debt_marginal_effects.csv saved
+
+. list, noobs
+
+  +---------------------------------------------------------------------+
+  | percen~e        debt        b_pp      se_pp    ci_lo_pp    ci_hi_pp |
+  |---------------------------------------------------------------------|
+  |      p25   .77802095    -1.05072   1.435935   -3.914603    1.813163 |
+  |      p50   2.8959272   -2.779609   1.371005   -5.513993   -.0452248 |
+  |      p75   11.816378   -10.06155    2.40584   -14.85985   -5.263252 |
+  +---------------------------------------------------------------------+
+
+. use `influence', clear
+
+. export delimited using "`outdir'/debt_leave_one_city.csv", replace
+file /Users/vegetarianwolf/Projects/dachuang/实证结果/fiscal_fund_choice_round3
+> _20261119/debt_leave_one_city.csv saved
+
+. display "DEBT_DIAGNOSTICS_COMPLETED"
+DEBT_DIAGNOSTICS_COMPLETED
+
+. log close
+      name:  <unnamed>
+       log:  /Users/vegetarianwolf/Projects/dachuang/运行日志与do代码/fiscal_ch
+> oice_debt_diagnostics_20261119.log
+  log type:  text
+ closed on:  19 Nov 2026, 23:10:15
+-------------------------------------------------------------------------------
